@@ -1,0 +1,733 @@
+<!-- terms.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | SA Daily Portal</title>
+    <meta name="description" content="Terms of Service for SA Daily Portal - Understand the rules and guidelines for using our services.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="terms of service, user agreement, website terms, conditions of use">
+    <meta name="author" content="SA Daily Portal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9750885759333419"
+     crossorigin="anonymous"></script>
+    
+    <!-- Styles -->
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --background: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 2rem 0;
+            min-height: calc(100vh - 300px);
+        }
+        
+        /* Hero Section */
+        .terms-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .terms-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .terms-hero > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .terms-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+        
+        .terms-hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Content Section */
+        .content-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border);
+            font-size: 1.8rem;
+        }
+        
+        .content-section h3 {
+            color: var(--text);
+            margin: 1.5rem 0 0.75rem 0;
+            font-size: 1.3rem;
+        }
+        
+        .content-section p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+        
+        .content-section ul, .content-section ol {
+            margin: 1rem 0 1rem 2rem;
+            color: var(--text-light);
+        }
+        
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+        
+        .warning-box strong {
+            color: #92400e;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+        
+        .info-box strong {
+            color: var(--primary);
+        }
+        
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .terms-card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .terms-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .terms-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* AdSense */
+        .adsense-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .ad-label {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .ad-unit {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ad-unit-content {
+            margin: 1.5rem 0;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-social a {
+            color: #9ca3af;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+        
+        .footer-social a:hover {
+            color: white;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact i {
+            width: 20px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+        }
+        
+        .footer-disclaimer {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .compliance-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .compliance-badge {
+            padding: 0.35rem 0.75rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-menu {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .terms-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-flag"></i>
+                </div>
+                <span>SA Daily Portal</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/weather" class="nav-link">
+                    <i class="fas fa-cloud-sun"></i> Weather
+                </a>
+                <a href="/sassa" class="nav-link">
+                    <i class="fas fa-hand-holding-heart"></i> SASSA
+                </a>
+                <a href="/sports" class="nav-link">
+                    <i class="fas fa-futbol"></i> Football
+                </a>
+                <a href="/howto" class="nav-link">
+                    <i class="fas fa-book"></i> Guides
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="terms-hero">
+                <h1><i class="fas fa-file-contract"></i> Terms of Service</h1>
+                <p>Please read these terms carefully before using SA Daily Portal services.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.9;">Effective Date: January 2024</p>
+            </div>
+
+            <!-- Ad Unit -->
+            <div class="adsense-container">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-unit ad-unit-content">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9750885759333419"
+                         data-ad-slot="1234567890"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="content-section">
+                <h2>Terms of Service Agreement</h2>
+                
+                <div class="warning-box">
+                    <strong>Important Disclaimer:</strong> SA Daily Portal is an UNOFFICIAL informational website. We are NOT affiliated with any government department, including SASSA. All information provided is for informational purposes only.
+                </div>
+                
+                <div class="info-box">
+                    <strong>Acceptance of Terms:</strong> By accessing and using SA Daily Portal, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to these terms, please do not use our services.
+                </div>
+                
+                <h3>1. Service Description</h3>
+                <p>SA Daily Portal provides the following services:</p>
+                
+                <div class="terms-grid">
+                    <div class="terms-card">
+                        <h4><i class="fas fa-cloud-sun"></i> Weather Information</h4>
+                        <p>Real-time weather data and forecasts for South African locations. Data sourced from third-party weather providers.</p>
+                    </div>
+                    
+                    <div class="terms-card">
+                        <h4><i class="fas fa-hand-holding-heart"></i> SASSA Information</h4>
+                        <p>Unofficial information about SASSA grants, payments, and procedures. Always verify with official sources.</p>
+                    </div>
+                    
+                    <div class="terms-card">
+                        <h4><i class="fas fa-futbol"></i> Sports Data</h4>
+                        <p>European football scores, standings, and fixtures. Data sourced from third-party sports data providers.</p>
+                    </div>
+                </div>
+                
+                <h3>2. User Responsibilities</h3>
+                <p>As a user of SA Daily Portal, you agree to:</p>
+                <ul>
+                    <li>Use the services only for lawful purposes</li>
+                    <li>Not attempt to disrupt or interfere with the website's functionality</li>
+                    <li>Not use automated systems to access our services without permission</li>
+                    <li>Respect intellectual property rights</li>
+                    <li>Verify critical information with official sources before taking action</li>
+                </ul>
+                
+                <h3>3. Intellectual Property</h3>
+                <p>All content on SA Daily Portal, unless otherwise stated, is the property of SA Daily Portal. This includes:</p>
+                <ul>
+                    <li>Website design and layout</li>
+                    <li>Original written content</li>
+                    <li>Graphics and visual elements</li>
+                    <li>Logo and branding</li>
+                </ul>
+                <p>Third-party content (weather data, sports data, etc.) remains the property of their respective owners.</p>
+                
+                <h3>4. Third-Party Services</h3>
+                <p>We use the following third-party services:</p>
+                <ul>
+                    <li><strong>Google AdSense:</strong> For displaying advertisements</li>
+                    <li><strong>OpenWeatherMap:</strong> For weather data</li>
+                    <li><strong>Football Data APIs:</strong> For sports information</li>
+                    <li><strong>Google Analytics:</strong> For website analytics</li>
+                </ul>
+                <p>Your use of these services is subject to their respective terms and privacy policies.</p>
+                
+                <h3>5. Disclaimer of Warranties</h3>
+                <p>SA Daily Portal services are provided "as is" and "as available" without any warranties of any kind, including:</p>
+                <ul>
+                    <li>Accuracy or completeness of information</li>
+                    <li>Uninterrupted or error-free service</li>
+                    <li>Fitness for a particular purpose</li>
+                    <li>Non-infringement of third-party rights</li>
+                </ul>
+                
+                <div class="warning-box">
+                    <strong>Critical Information Notice:</strong> Information provided on SA Daily Portal should NOT be used as the sole basis for important decisions. Always verify with official government sources for critical matters like SASSA grants, legal requirements, or emergency situations.
+                </div>
+                
+                <h3>6. Limitation of Liability</h3>
+                <p>To the fullest extent permitted by law, SA Daily Portal shall not be liable for:</p>
+                <ul>
+                    <li>Any direct, indirect, incidental, or consequential damages</li>
+                    <li>Loss of data, profits, or business opportunities</li>
+                    <li>Inaccuracies in the information provided</li>
+                    <li>Third-party actions or content</li>
+                    <li>Service interruptions or technical issues</li>
+                </ul>
+                
+                <h3>7. User-Generated Content</h3>
+                <p>If you submit any content to SA Daily Portal (comments, feedback, etc.), you grant us a non-exclusive, worldwide, royalty-free license to use, modify, and display that content. You are responsible for ensuring you have the rights to any content you submit.</p>
+                
+                <h3>8. Prohibited Activities</h3>
+                <p>You may not:</p>
+                <ul>
+                    <li>Use the service for any illegal purpose</li>
+                    <li>Attempt to gain unauthorized access to our systems</li>
+                    <li>Interfere with other users' enjoyment of the service</li>
+                    <li>Use automated systems to scrape or collect data without permission</li>
+                    <li>Impersonate any person or entity</li>
+                    <li>Spread malware or engage in hacking attempts</li>
+                </ul>
+                
+                <h3>9. Termination</h3>
+                <p>We reserve the right to:</p>
+                <ul>
+                    <li>Terminate or suspend access to our services for any reason</li>
+                    <li>Remove any content that violates these terms</li>
+                    <li>Take legal action for violations of these terms</li>
+                </ul>
+                
+                <h3>10. Changes to Terms</h3>
+                <p>We may update these Terms of Service from time to time. We will notify users of significant changes by:</p>
+                <ul>
+                    <li>Posting the updated terms on this page</li>
+                    <li>Updating the "Effective Date" at the top</li>
+                    <li>Sending notifications to registered users (if applicable)</li>
+                </ul>
+                <p>Your continued use of our services after changes constitutes acceptance of the new terms.</p>
+                
+                <h3>11. Governing Law</h3>
+                <p>These terms shall be governed by and construed in accordance with the laws of South Africa. Any disputes shall be subject to the exclusive jurisdiction of the courts of South Africa.</p>
+                
+                <h3>12. Contact Information</h3>
+                <p>For questions about these Terms of Service, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> sibiyan4444@gmail.com</li>
+                    <li><strong>Phone:</strong> 072 472 8166</li>
+                    <li><strong>Address:</strong> Ermelo, South Africa</li>
+                    <li><strong>Business Hours:</strong> Monday-Friday, 9am-5pm SAST</li>
+                </ul>
+                
+                <div class="info-box">
+                    <strong>Consumer Protection:</strong> These terms are designed to be fair and transparent. If you believe any term is unreasonable under South African consumer protection laws, please contact us to discuss.
+                </div>
+            </div>
+
+            <!-- Ad Unit -->
+            <div class="adsense-container">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-unit ad-unit-content">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9750885759333419"
+                         data-ad-slot="2345678901"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>SA Daily Portal</h4>
+                    <p>Your trusted source for South African information, weather updates, and helpful guides.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/weather">Weather</a></li>
+                        <li><a href="/sassa">SASSA Center</a></li>
+                        <li><a href="/sports">Sports Hub</a></li>
+                        <li><a href="/howto">How-To Guides</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms" class="active">Terms of Service</a></li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-user"></i> Developer: Nompumelelo</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ermelo, South Africa</li>
+                        <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 072 472 8166</li>
+                        <li><i class="fas fa-clock"></i> Business Hours: 9am-5pm</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 SA Daily Portal. All rights reserved. Unofficial information site - Not affiliated with any government department.</p>
+                <p class="footer-disclaimer">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Always verify information with official sources. This site uses cookies for analytics and advertising.
+                </p>
+                <div class="compliance-badges">
+                    <span class="compliance-badge">
+                        <i class="fas fa-shield-alt"></i> Terms Compliant
+                    </span>
+                    <span class="compliance-badge">
+                        <i class="fas fa-user-shield"></i> Consumer Protection
+                    </span>
+                    <span class="compliance-badge">
+                        <i class="fas fa-mobile-alt"></i> Mobile Friendly
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize AdSense
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        
+        // Add active class to current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

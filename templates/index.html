@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA Daily Portal 2026 - Real-time South African Information</title>
+    <meta name="description" content="South Africa's premier portal for 2026: Real-time weather, SASSA info, European football scores, and helpful guides">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="South Africa 2026, SA weather, SASSA 2026, European football, live scores, Premier League">
+    <meta name="author" content="SA Daily Portal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9750885759333419"
+     crossorigin="anonymous"></script>
+    
+    <!-- Core Styles -->
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --background: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        /* Navigation */
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        /* Sports Ticker */
+        .sports-ticker-container {
+            background: linear-gradient(90deg, #1e3a8a, #2563eb);
+            color: white;
+            overflow: hidden;
+            padding: 0.75rem 0;
+            position: relative;
+        }
+        
+        .sports-ticker {
+            display: flex;
+            align-items: center;
+            animation: ticker-scroll 40s linear infinite;
+            white-space: nowrap;
+            padding: 0.5rem 0;
+        }
+        
+        @keyframes ticker-scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .ticker-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            margin-right: 1.5rem;
+            white-space: nowrap;
+            backdrop-filter: blur(10px);
+        }
+        
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            margin-right: 1.5rem;
+            min-width: 380px;
+            transition: all 0.3s ease;
+        }
+        
+        .ticker-item:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+        
+        .match-teams {
+            font-weight: 600;
+            flex: 1;
+            min-width: 220px;
+        }
+        
+        .match-teams .team {
+            margin: 0.2rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .match-score {
+            font-weight: 800;
+            font-size: 1.3rem;
+            background: rgba(255,255,255,0.25);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .match-status {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .match-status.upcoming {
+            background: var(--primary);
+        }
+        
+        .match-status.completed {
+            background: var(--secondary);
+        }
+        
+        .match-time {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        /* Weather Widget */
+        .weather-widget {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .weather-widget::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .weather-widget > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .weather-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .weather-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+        
+        .weather-temp {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .weather-location {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        
+        .weather-description {
+            opacity: 0.95;
+            font-size: 1.1rem;
+        }
+        
+        .weather-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .weather-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .weather-detail:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
+        }
+        
+        .detail-icon {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        /* Hourly Forecast */
+        .hourly-forecast {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .hourly-forecast-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .hourly-forecast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+        }
+        
+        .hourly-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .hourly-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .hourly-time {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hourly-temp {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        
+        .hourly-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Quick Access */
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .quick-access-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .quick-access-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-access-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .icon-weather {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+        
+        .icon-sassa {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .icon-sports {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+        
+        .icon-guides {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+        
+        /* Upcoming Matches Section */
+        .upcoming-matches-container {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .section-header h2 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .badge {
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .badge-2026 {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .upcoming-matches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .upcoming-match-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .upcoming-match-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .match-header .status {
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+        
+        .status.upcoming {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .status.completed {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .match-time-display {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .match-teams-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .team-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .team-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--text);
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+        
+        .match-score {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text);
+            min-width: 100px;
+            text-align: center;
+        }
+        
+        .match-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .competition-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.75rem;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Standings Container */
+        .standings-container {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+        
+        .standings-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .standings-table th {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--text);
+            border-bottom: 2px solid var(--border);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .standings-table td {
+            padding: 0.9rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+        
+        .standings-table tr:hover td {
+            background: #f8fafc;
+        }
+        
+        .standings-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .position-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .position-1 { 
+            background: linear-gradient(135deg, #FFD700, #FFC400);
+            color: #333;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .position-2 { 
+            background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+            color: #333;
+            box-shadow: 0 4px 10px rgba(192, 192, 192, 0.3);
+        }
+        
+        .position-3 { 
+            background: linear-gradient(135deg, #CD7F32, #B56A1E);
+            color: white;
+            box-shadow: 0 4px 10px rgba(205, 127, 50, 0.3);
+        }
+        
+        .position-4-6 { 
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            color: var(--text);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.75rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #1e40af);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+        
+        /* Welcome Section */
+        .welcome-section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin: 2rem 0;
+        }
+        
+        .welcome-header {
+            margin-bottom: 1.5rem;
+        }
+        
+        .welcome-header h1 {
+            margin: 0 0 1rem 0;
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+        
+        .welcome-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .info-card {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+        }
+        
+        .info-card:nth-child(2) {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+        }
+        
+        .info-card:nth-child(3) {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+        }
+        
+        .info-card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .info-card-icon.weather {
+            background: var(--primary);
+        }
+        
+        .info-card-icon.sports {
+            background: var(--secondary);
+        }
+        
+        .info-card-icon.data {
+            background: var(--accent);
+        }
+        
+        .info-card-content h3 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0 0 0.25rem 0;
+        }
+        
+        .info-card-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-social a {
+            color: #9ca3af;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+        
+        .footer-social a:hover {
+            color: white;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact i {
+            width: 20px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+        }
+        
+        .footer-disclaimer {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .compliance-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .compliance-badge {
+            padding: 0.35rem 0.75rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Loading States */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #e5e7eb;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1.5rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* No Data States */
+        .no-data {
+            grid-column: 1 / -1;
+            padding: 3rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+        
+        .no-data i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+        
+        .no-data h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .no-data p {
+            font-size: 0.95rem;
+            color: #9ca3af;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        /* AdSense */
+        .adsense-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .ad-label {
+            color: #9ca3af;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .ad-unit {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ad-unit-header {
+            margin: 1rem 0;
+        }
+        
+        .ad-unit-content {
+            margin: 1.5rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .weather-main {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .weather-temp {
+                font-size: 3.5rem;
+            }
+            
+            .sports-ticker {
+                animation: ticker-scroll-mobile 25s linear infinite;
+            }
+            
+            @keyframes ticker-scroll-mobile {
+                0% { transform: translateX(100%); }
+                100% { transform: translateX(-200%); }
+            }
+            
+            .ticker-item {
+                min-width: 320px;
+                gap: 1rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .hourly-forecast-grid {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 0.75rem;
+            }
+            
+            .quick-access-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .upcoming-matches-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .match-teams-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .match-score {
+                font-size: 2rem;
+                min-width: auto;
+                order: -1;
+            }
+            
+            .team-container {
+                width: 100%;
+            }
+            
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .weather-temp {
+                font-size: 3rem;
+            }
+            
+            .weather-location {
+                font-size: 1.2rem;
+            }
+            
+            .ticker-item {
+                min-width: 280px;
+            }
+            
+            .welcome-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            
+            .section-header h2 {
+                font-size: 1.3rem;
+            }
+            
+            .hourly-forecast-grid {
+                grid-template-columns: repeat(4, 1fr);
+                overflow-x: auto;
+            }
+        }
+    </style>
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1F72BXHBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-S1F72BXHBV');
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-flag"></i>
+                </div>
+                <span>SA Daily Portal <span class="badge badge-2026">2026</span></span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="/" class="nav-link active">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/weather" class="nav-link">
+                    <i class="fas fa-sun"></i> Weather
+                </a>
+                <a href="/sassa" class="nav-link">
+                    <i class="fas fa-hand-holding-heart"></i> SASSA
+                </a>
+                <a href="/sports" class="nav-link">
+                    <i class="fas fa-futbol"></i> Football
+                </a>
+                <a href="/howto" class="nav-link">
+                    <i class="fas fa-book"></i> How-To
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sports Ticker -->
+    <div class="sports-ticker-container">
+        <div class="container">
+            <div class="sports-ticker" id="sportsTicker">
+                <div class="ticker-header">
+                    <i class="fas fa-futbol"></i>
+                    <span>⚽ Upcoming European Football 2026</span>
+                </div>
+                <!-- Ticker items will be loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-header">
+                <h1>SA Daily Portal 2026</h1>
+                <p>Your real-time South African information hub for 2026. Live weather updates, SASSA information, European football scores, and helpful guides.</p>
+                
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-card-icon weather">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <div class="info-card-content">
+                            <h3>Live Weather</h3>
+                            <p id="currentLocation">Detecting your location...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-card-icon sports">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <div class="info-card-content">
+                            <h3>European Football</h3>
+                            <p>Upcoming Matches & Standings</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-card-icon data">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="info-card-content">
+                            <h3>Real-time Data</h3>
+                            <p>Updated Every 2 Minutes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Unit -->
+        <div class="adsense-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-unit ad-unit-header">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9750885759333419"
+                     data-ad-slot="1234567890"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
+        <!-- Weather Widget -->
+        <section class="weather-widget">
+            <div class="weather-header">
+                <h2 style="margin: 0; font-size: 1.4rem; font-weight: 700;">
+                    <i class="fas fa-map-marker-alt"></i> Current Weather
+                </h2>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span id="weatherFreshness" style="font-size: 0.9rem; background: rgba(255,255,255,0.25); padding: 0.4rem 1rem; border-radius: 20px; font-weight: 600;">
+                        <i class="fas fa-sync-alt fa-spin"></i> Detecting...
+                    </span>
+                </div>
+            </div>
+            
+            <div id="weatherWidget">
+                <div class="weather-main">
+                    <div>
+                        <div class="weather-temp" id="currentTemp">--°C</div>
+                        <div class="weather-location" id="weatherLocation">Getting your location...</div>
+                        <div class="weather-description" id="weatherDescription">--</div>
+                        <div style="margin-top: 0.75rem; font-size: 1rem; opacity: 0.95; font-weight: 500;">
+                            Feels like <span id="feelsLike" style="font-weight: 700;">--°C</span>
+                        </div>
+                    </div>
+                    <div id="weatherIcon" style="font-size: 5rem;">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                </div>
+                
+                <div class="weather-details" id="weatherDetails">
+                    <div class="weather-detail">
+                        <div class="detail-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 1.1rem;" id="windSpeed">-- km/h</div>
+                            <div style="font-size: 0.9rem; opacity: 0.9;">Wind Speed</div>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-detail">
+                        <div class="detail-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 1.1rem;" id="humidity">--%</div>
+                            <div style="font-size: 0.9rem; opacity: 0.9;">Humidity</div>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-detail">
+                        <div class="detail-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 1.1rem;" id="visibility">-- km</div>
+                            <div style="font-size: 0.9rem; opacity: 0.9;">Visibility</div>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-detail">
+                        <div class="detail-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 1.1rem;" id="clouds">--%</div>
+                            <div style="font-size: 0.9rem; opacity: 0.9;">Cloud Cover</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hourly Forecast Section -->
+                <div class="hourly-forecast" id="hourlyForecastSection">
+                    <div class="hourly-forecast-header">
+                        <i class="fas fa-clock"></i>
+                        <span>Hourly Forecast</span>
+                    </div>
+                    <div class="hourly-forecast-grid" id="hourlyForecast">
+                        <!-- Hourly forecast will be loaded here -->
+                        <div class="hourly-item">
+                            <div class="hourly-time">--:--</div>
+                            <div class="hourly-icon"><i class="fas fa-cloud"></i></div>
+                            <div class="hourly-temp">--°</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button onclick="loadWeatherForCurrentLocation()" class="btn btn-primary">
+                        <i class="fas fa-location-crosshairs"></i> Use My Location
+                    </button>
+                    <button onclick="refreshWeather()" class="btn btn-secondary">
+                        <i class="fas fa-sync-alt"></i> Refresh Weather
+                    </button>
+                    <a href="/weather" class="btn btn-secondary">
+                        <i class="fas fa-search-location"></i> Search City
+                    </a>
+                </div>
+                
+                <div style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-info-circle"></i>
+                    Real-time weather data. Updates automatically every 5 minutes.
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Unit -->
+        <div class="adsense-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-unit ad-unit-content">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9750885759333419"
+                     data-ad-slot="2345678901"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
+        <!-- Upcoming Matches Section -->
+        <div class="upcoming-matches-container">
+            <div class="section-header">
+                <h2>
+                    <i class="fas fa-calendar-alt"></i> Upcoming European Matches
+                </h2>
+                <span class="badge badge-2026">Live 2026</span>
+            </div>
+            
+            <div class="upcoming-matches-grid" id="upcomingMatchesGrid">
+                <!-- Upcoming matches will be loaded here -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading upcoming European matches...</p>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <a href="/sports" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> View All Matches
+                </a>
+                <button onclick="loadUpcomingMatches()" class="btn btn-secondary">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+            </div>
+        </div>
+
+        <!-- European Standings -->
+        <div class="standings-container">
+            <div class="section-header">
+                <div>
+                    <h2>
+                        <i class="fas fa-trophy"></i> Premier League Standings 2026
+                    </h2>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0.25rem 0 0 0;">
+                        Updated: <span id="standingsUpdateTime" style="font-weight: 600;">Just now</span>
+                    </p>
+                </div>
+                <span class="badge badge-2026">Top 5</span>
+            </div>
+            
+            <div style="overflow-x: auto;">
+                <table class="standings-table" id="standingsTable">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Team</th>
+                            <th>P</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GD</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standingsBody">
+                        <!-- Standings will be loaded here -->
+                        <tr>
+                            <td colspan="8" style="text-align: center; padding: 2rem;">
+                                <div class="loading-spinner" style="margin: 0 auto 1rem;"></div>
+                                <p>Loading European standings...</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="actions">
+                <a href="/sports" class="btn btn-primary">
+                    <i class="fas fa-chart-line"></i> View Full Standings
+                </a>
+                <button onclick="refreshStandings()" class="btn btn-secondary">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+            </div>
+        </div>
+
+        <!-- Ad Unit -->
+        <div class="adsense-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-unit ad-unit-content">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9750885759333419"
+                     data-ad-slot="3456789012"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
+        <!-- Quick Access -->
+        <section>
+            <div class="section-header">
+                <h2>
+                    <i class="fas fa-bolt"></i> Quick Access
+                </h2>
+            </div>
+            <div class="quick-access-grid">
+                <a href="/weather" class="quick-access-card">
+                    <div class="card-icon icon-weather">
+                        <i class="fas fa-cloud-sun-rain"></i>
+                    </div>
+                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.3rem;">Detailed Weather</h3>
+                    <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">
+                        5-day forecast, hourly updates, and weather alerts
+                    </p>
+                    <div style="margin-top: 1.5rem; color: var(--primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="/sassa" class="quick-access-card">
+                    <div class="card-icon icon-sassa">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.3rem;">SASSA 2026</h3>
+                    <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">
+                        2026 payment dates, official contacts, and grant information
+                    </p>
+                    <div style="margin-top: 1.5rem; color: var(--primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                        View Schedule <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="/sports" class="quick-access-card">
+                    <div class="card-icon icon-sports">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.3rem;">European Football</h3>
+                    <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">
+                        Upcoming matches, standings, fixtures and match predictions
+                    </p>
+                    <div style="margin-top: 1.5rem; color: var(--primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                        View Fixtures <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="/howto" class="quick-access-card">
+                    <div class="card-icon icon-guides">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.3rem;">How-To Guides</h3>
+                    <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">
+                        Step-by-step guides for SA services, applications, and more
+                    </p>
+                    <div style="margin-top: 1.5rem; color: var(--primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>SA Daily Portal</h4>
+                    <p>Your trusted source for South African information, weather updates, and helpful guides.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/weather">Weather</a></li>
+                        <li><a href="/sassa">SASSA Center</a></li>
+                        <li><a href="/sports">Sports Hub</a></li>
+                        <li><a href="/howto">How-To Guides</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-user"></i> Developer: Nompumelelo</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ermelo, South Africa</li>
+                        <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 072 472 8166</li>
+                        <li><i class="fas fa-clock"></i> Business Hours: 9am-5pm</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 SA Daily Portal. All rights reserved. Unofficial information site - Not affiliated with any government department.</p>
+                <p class="footer-disclaimer">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Always verify information with official sources. This site uses cookies for analytics and advertising.
+                </p>
+                <div class="compliance-badges">
+                    <span class="compliance-badge">
+                        <i class="fas fa-shield-alt"></i> AdSense Compliant
+                    </span>
+                    <span class="compliance-badge">
+                        <i class="fas fa-user-shield"></i> GDPR Ready
+                    </span>
+                    <span class="compliance-badge">
+                        <i class="fas fa-mobile-alt"></i> Mobile Friendly
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('SA Daily Portal 2026 - Loading data...');
+            
+            // Load weather data FIRST (user location)
+            await loadWeatherForCurrentLocation();
+            
+            // Then load sports data in parallel
+            await Promise.all([
+                loadSportsTicker(),
+                loadUpcomingMatches(),
+                loadStandings()
+            ]);
+            
+            // Set up auto-refresh
+            setInterval(loadSportsTicker, 120000); // 2 minutes
+            setInterval(loadUpcomingMatches, 60000); // 1 minute
+            setInterval(loadStandings, 300000); // 5 minutes
+            setInterval(loadWeatherForCurrentLocation, 300000); // 5 minutes
+            
+            // Initial update of current location in welcome section
+            updateCurrentLocation();
+        });
+        
+        // Weather Functions
+        async function loadWeatherForCurrentLocation() {
+            const weatherWidget = document.getElementById('weatherWidget');
+            const freshnessElement = document.getElementById('weatherFreshness');
+            
+            // Show loading state
+            freshnessElement.innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Detecting location...';
+            
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    async (position) => {
+                        try {
+                            const lat = position.coords.latitude;
+                            const lon = position.coords.longitude;
+                            
+                            const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
+                            const data = await response.json();
+                            
+                            if (data.success) {
+                                updateWeatherDisplay(data);
+                                updateCurrentLocationDisplay(data.location);
+                                updateHourlyForecast(data.hourly);
+                                freshnessElement.innerHTML = `<i class="fas fa-check-circle"></i> ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
+                            } else {
+                                throw new Error('Weather data not available');
+                            }
+                        } catch (error) {
+                            console.error('Weather error:', error);
+                            document.getElementById('weatherLocation').textContent = 'Location access required';
+                            document.getElementById('currentTemp').textContent = '--°C';
+                            freshnessElement.innerHTML = `<i class="fas fa-exclamation-circle"></i> Location required`;
+                        }
+                    },
+                    (error) => {
+                        console.log('Location access denied');
+                        document.getElementById('weatherLocation').textContent = 'Enable location for weather';
+                        document.getElementById('currentLocation').textContent = 'Enable location access';
+                        freshnessElement.innerHTML = `<i class="fas fa-location-slash"></i> Location denied`;
+                    },
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 10000,
+                        maximumAge: 0
+                    }
+                );
+            } else {
+                document.getElementById('weatherLocation').textContent = 'Location not supported';
+                document.getElementById('currentLocation').textContent = 'Browser not supported';
+                freshnessElement.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Not supported`;
+            }
+        }
+        
+        function updateWeatherDisplay(data) {
+            const weather = data.current;
+            
+            // Update main weather info
+            document.getElementById('currentTemp').textContent = `${weather.temp}°C`;
+            document.getElementById('weatherLocation').textContent = data.location;
+            document.getElementById('weatherDescription').textContent = weather.description;
+            document.getElementById('feelsLike').textContent = `${weather.feels_like}°C`;
+            document.getElementById('windSpeed').textContent = `${weather.wind_speed} km/h`;
+            document.getElementById('humidity').textContent = `${weather.humidity}%`;
+            document.getElementById('visibility').textContent = `${weather.visibility} km`;
+            document.getElementById('clouds').textContent = `${weather.clouds}%`;
+            
+            // Update weather icon
+            const iconElement = document.getElementById('weatherIcon');
+            const iconCode = weather.icon;
+            
+            const iconMap = {
+                '01d': 'fas fa-sun',
+                '01n': 'fas fa-moon',
+                '02d': 'fas fa-cloud-sun',
+                '02n': 'fas fa-cloud-moon',
+                '03d': 'fas fa-cloud',
+                '03n': 'fas fa-cloud',
+                '04d': 'fas fa-cloud',
+                '04n': 'fas fa-cloud',
+                '09d': 'fas fa-cloud-rain',
+                '09n': 'fas fa-cloud-rain',
+                '10d': 'fas fa-cloud-sun-rain',
+                '10n': 'fas fa-cloud-moon-rain',
+                '11d': 'fas fa-bolt',
+                '11n': 'fas fa-bolt',
+                '13d': 'fas fa-snowflake',
+                '13n': 'fas fa-snowflake',
+                '50d': 'fas fa-smog',
+                '50n': 'fas fa-smog'
+            };
+            
+            const iconClass = iconMap[iconCode] || 'fas fa-cloud-sun';
+            iconElement.innerHTML = `<i class="${iconClass}"></i>`;
+        }
+        
+        function updateHourlyForecast(hourlyData) {
+            const container = document.getElementById('hourlyForecast');
+            
+            if (!hourlyData || hourlyData.length === 0) {
+                container.innerHTML = `
+                    <div class="hourly-item">
+                        <div class="hourly-time">--:--</div>
+                        <div class="hourly-icon"><i class="fas fa-cloud"></i></div>
+                        <div class="hourly-temp">--°</div>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            
+            hourlyData.forEach(hour => {
+                const iconMap = {
+                    '01d': 'fas fa-sun',
+                    '01n': 'fas fa-moon',
+                    '02d': 'fas fa-cloud-sun',
+                    '02n': 'fas fa-cloud-moon',
+                    '03d': 'fas fa-cloud',
+                    '03n': 'fas fa-cloud',
+                    '04d': 'fas fa-cloud',
+                    '04n': 'fas fa-cloud',
+                    '09d': 'fas fa-cloud-rain',
+                    '09n': 'fas fa-cloud-rain',
+                    '10d': 'fas fa-cloud-sun-rain',
+                    '10n': 'fas fa-cloud-moon-rain',
+                    '11d': 'fas fa-bolt',
+                    '11n': 'fas fa-bolt',
+                    '13d': 'fas fa-snowflake',
+                    '13n': 'fas fa-snowflake',
+                    '50d': 'fas fa-smog',
+                    '50n': 'fas fa-smog'
+                };
+                
+                const iconClass = iconMap[hour.icon] || 'fas fa-cloud';
+                
+                html += `
+                    <div class="hourly-item">
+                        <div class="hourly-time">${hour.time}</div>
+                        <div class="hourly-icon"><i class="${iconClass}"></i></div>
+                        <div class="hourly-temp">${hour.temp}°</div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        function updateCurrentLocationDisplay(location) {
+            let cityName = location;
+            if (location.includes(',')) {
+                cityName = location.split(',')[0];
+            }
+            document.getElementById('currentLocation').textContent = cityName;
+        }
+        
+        async function updateCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    async (position) => {
+                        try {
+                            const lat = position.coords.latitude;
+                            const lon = position.coords.longitude;
+                            
+                            const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
+                            const data = await response.json();
+                            
+                            if (data.success) {
+                                updateCurrentLocationDisplay(data.location);
+                            }
+                        } catch (error) {
+                            console.error('Location update error:', error);
+                        }
+                    },
+                    (error) => {
+                        console.log('Location access denied for welcome section');
+                    }
+                );
+            }
+        }
+        
+        function refreshWeather() {
+            document.getElementById('weatherFreshness').innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Refreshing...';
+            loadWeatherForCurrentLocation();
+        }
+        
+        // Sports Functions
+        async function loadSportsTicker() {
+            try {
+                const response = await fetch('/api/sports/upcoming');
+                const data = await response.json();
+                
+                const ticker = document.getElementById('sportsTicker');
+                let html = `
+                    <div class="ticker-header">
+                        <i class="fas fa-futbol"></i>
+                        <span>⚽ Upcoming European Football 2026</span>
+                    </div>
+                `;
+                
+                if (data.success && data.matches && data.matches.length > 0) {
+                    const upcomingMatches = data.matches.filter(match => 
+                        match.status === 'UPCOMING' || match.status === 'SCHEDULED'
+                    );
+                    
+                    if (upcomingMatches.length > 0) {
+                        upcomingMatches.slice(0, 5).forEach(match => {
+                            const statusClass = 'upcoming';
+                            
+                            let timeDisplay = '';
+                            let dateDisplay = '';
+                            
+                            if (match.date) {
+                                try {
+                                    const matchDate = new Date(match.date);
+                                    const today = new Date();
+                                    const tomorrow = new Date(today);
+                                    tomorrow.setDate(tomorrow.getDate() + 1);
+                                    
+                                    if (matchDate.toDateString() === today.toDateString()) {
+                                        dateDisplay = 'Today';
+                                    } else if (matchDate.toDateString() === tomorrow.toDateString()) {
+                                        dateDisplay = 'Tomorrow';
+                                    } else {
+                                        dateDisplay = matchDate.toLocaleDateString('en-US', { 
+                                            weekday: 'short', 
+                                            month: 'short', 
+                                            day: 'numeric' 
+                                        });
+                                    }
+                                    
+                                    if (match.time) {
+                                        const [hours, minutes] = match.time.split(':');
+                                        const hour = parseInt(hours);
+                                        const ampm = hour >= 12 ? 'PM' : 'AM';
+                                        const displayHour = hour % 12 || 12;
+                                        timeDisplay = `${displayHour}:${minutes} ${ampm}`;
+                                    } else {
+                                        timeDisplay = 'TBC';
+                                    }
+                                } catch (e) {
+                                    dateDisplay = 'Soon';
+                                    timeDisplay = 'TBC';
+                                }
+                            } else {
+                                dateDisplay = 'Date TBC';
+                                timeDisplay = 'Time TBC';
+                            }
+                            
+                            html += `
+                                <div class="ticker-item">
+                                    <div class="match-teams">
+                                        <div class="team">${match.home_team}</div>
+                                        <div class="match-score">vs</div>
+                                        <div class="team">${match.away_team}</div>
+                                    </div>
+                                    <span class="match-status ${statusClass}">UPCOMING</span>
+                                    <span class="match-time">${dateDisplay}<br>${timeDisplay}</span>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        html += `
+                            <div class="ticker-item" style="background: rgba(255,255,255,0.2); min-width: 280px;">
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>Check European fixtures</span>
+                                </div>
+                            </div>
+                        `;
+                    }
+                } else {
+                    html += `
+                        <div class="ticker-item" style="background: rgba(255,255,255,0.2); min-width: 280px;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-calendar"></i>
+                                <span>No upcoming European matches</span>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                ticker.innerHTML = html;
+                
+            } catch (error) {
+                console.error('Sports ticker error:', error);
+                const ticker = document.getElementById('sportsTicker');
+                ticker.innerHTML = `
+                    <div class="ticker-header">
+                        <i class="fas fa-futbol"></i>
+                        <span>European Football Data</span>
+                    </div>
+                    <div class="ticker-item" style="background: rgba(255,255,255,0.2);">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-sync-alt fa-spin"></i>
+                            <span>Loading football data...</span>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        async function loadUpcomingMatches() {
+            try {
+                const response = await fetch('/api/sports/upcoming');
+                const data = await response.json();
+                
+                const container = document.getElementById('upcomingMatchesGrid');
+                
+                if (data.success && data.matches && data.matches.length > 0) {
+                    const upcomingMatches = data.matches.filter(match => 
+                        match.status === 'UPCOMING' || match.status === 'SCHEDULED'
+                    );
+                    
+                    if (upcomingMatches.length > 0) {
+                        let html = '';
+                        
+                        upcomingMatches.slice(0, 3).forEach(match => {
+                            const homeInitials = match.home_team.split(' ').map(word => word[0]).join('').substring(0, 2);
+                            const awayInitials = match.away_team.split(' ').map(word => word[0]).join('').substring(0, 2);
+                            
+                            let timeDisplay = '';
+                            let dateDisplay = '';
+                            
+                            if (match.date) {
+                                try {
+                                    const matchDate = new Date(match.date);
+                                    const today = new Date();
+                                    const tomorrow = new Date(today);
+                                    tomorrow.setDate(tomorrow.getDate() + 1);
+                                    
+                                    if (matchDate.toDateString() === today.toDateString()) {
+                                        dateDisplay = 'Today';
+                                    } else if (matchDate.toDateString() === tomorrow.toDateString()) {
+                                        dateDisplay = 'Tomorrow';
+                                    } else {
+                                        dateDisplay = matchDate.toLocaleDateString('en-US', { 
+                                            weekday: 'short', 
+                                            month: 'short', 
+                                            day: 'numeric' 
+                                        });
+                                    }
+                                    
+                                    if (match.time) {
+                                        const [hours, minutes] = match.time.split(':');
+                                        const hour = parseInt(hours);
+                                        const ampm = hour >= 12 ? 'PM' : 'AM';
+                                        const displayHour = hour % 12 || 12;
+                                        timeDisplay = `${displayHour}:${minutes} ${ampm}`;
+                                    } else {
+                                        timeDisplay = 'Time TBC';
+                                    }
+                                } catch (e) {
+                                    dateDisplay = 'Date TBC';
+                                    timeDisplay = 'Time TBC';
+                                }
+                            } else {
+                                dateDisplay = 'Date TBC';
+                                timeDisplay = 'Time TBC';
+                            }
+                            
+                            html += `
+                                <div class="upcoming-match-card upcoming">
+                                    <div class="match-header">
+                                        <span class="status upcoming">
+                                            UPCOMING
+                                        </span>
+                                        <span class="match-time-display">${dateDisplay} • ${timeDisplay}</span>
+                                    </div>
+                                    
+                                    <div class="match-teams-container">
+                                        <div class="team-container">
+                                            <div class="team-logo">${homeInitials}</div>
+                                            <div class="team-name">${match.home_team}</div>
+                                        </div>
+                                        
+                                        <div class="match-score">vs</div>
+                                        
+                                        <div class="team-container">
+                                            <div class="team-logo">${awayInitials}</div>
+                                            <div class="team-name">${match.away_team}</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="match-info">
+                                        <div>
+                                            <span class="competition-badge">
+                                                <i class="fas fa-trophy"></i> ${match.competition || 'European Football'}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-map-marker-alt"></i> ${match.venue || 'Football Stadium'}
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        
+                        container.innerHTML = html;
+                    } else {
+                        container.innerHTML = `
+                            <div class="no-data">
+                                <i class="fas fa-calendar"></i>
+                                <h3>No Upcoming European Matches</h3>
+                                <p>European matches are typically played on weekends and evenings. Check back later for upcoming fixtures.</p>
+                                <div style="margin-top: 1.5rem;">
+                                    <a href="/sports" class="btn btn-primary">
+                                        <i class="fas fa-calendar-alt"></i> View Full Schedule
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                    }
+                } else {
+                    container.innerHTML = `
+                        <div class="no-data">
+                            <i class="fas fa-futbol"></i>
+                            <h3>European Football Schedule</h3>
+                            <p>Upcoming European football matches will appear here when scheduled.</p>
+                            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center;">
+                                <a href="/sports" class="btn btn-primary">
+                                    <i class="fas fa-external-link-alt"></i> View Football Section
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+            } catch (error) {
+                console.error('Upcoming matches error:', error);
+                const container = document.getElementById('upcomingMatchesGrid');
+                container.innerHTML = `
+                    <div class="no-data">
+                        <i class="fas fa-wifi-slash"></i>
+                        <h3>Football Schedule Unavailable</h3>
+                        <p>Unable to load European football schedule. Weather and SASSA information remain fully functional.</p>
+                        <div style="margin-top: 1.5rem;">
+                            <button class="btn btn-secondary" onclick="loadUpcomingMatches()">
+                                <i class="fas fa-sync-alt"></i> Try Again
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        async function loadStandings() {
+            try {
+                const response = await fetch('/api/sports/standings');
+                const data = await response.json();
+                
+                if (data.success && data.standings && data.standings.length > 0) {
+                    updateStandingsTable(data.standings.slice(0, 5));
+                    document.getElementById('standingsUpdateTime').textContent = 
+                        new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                } else {
+                    const tableBody = document.getElementById('standingsBody');
+                    tableBody.innerHTML = `
+                        <tr>
+                            <td colspan="8" style="text-align: center; padding: 2rem; color: var(--text-light);">
+                                <i class="fas fa-database"></i>
+                                <p>European standings currently unavailable</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Check back soon for updated standings</p>
+                            </td>
+                        </tr>
+                    `;
+                }
+            } catch (error) {
+                console.error('Standings error:', error);
+                const tableBody = document.getElementById('standingsBody');
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="8" style="text-align: center; padding: 2rem; color: var(--text-light);">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>Unable to load European standings</p>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Check back soon</p>
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+        
+        function updateStandingsTable(standings) {
+            const tableBody = document.getElementById('standingsBody');
+            
+            if (!standings || standings.length === 0) {
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="8" style="text-align: center; padding: 2rem; color: var(--text-light);">
+                            <i class="fas fa-trophy"></i>
+                            <p>No European standings available</p>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Check back for Premier League data</p>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            let html = '';
+            
+            standings.forEach(team => {
+                let positionClass = '';
+                if (team.position === 1) positionClass = 'position-1';
+                else if (team.position === 2) positionClass = 'position-2';
+                else if (team.position === 3) positionClass = 'position-3';
+                else if (team.position >= 4 && team.position <= 5) positionClass = 'position-4-6';
+                
+                const goalDiff = team.goal_difference;
+                const goalDiffText = goalDiff > 0 ? `+${goalDiff}` : goalDiff;
+                
+                html += `
+                    <tr>
+                        <td>
+                            <span class="position-badge ${positionClass}">${team.position}</span>
+                        </td>
+                        <td style="font-weight: 600;">${team.team}</td>
+                        <td>${team.played}</td>
+                        <td style="color: var(--secondary); font-weight: 600;">${team.won}</td>
+                        <td style="color: var(--accent); font-weight: 600;">${team.drawn}</td>
+                        <td style="color: var(--danger); font-weight: 600;">${team.lost}</td>
+                        <td style="font-weight: 700; ${goalDiff > 0 ? 'color: var(--secondary);' : goalDiff < 0 ? 'color: var(--danger);' : ''}">
+                            ${goalDiffText}
+                        </td>
+                        <td style="font-weight: 800; color: var(--primary);">${team.points}</td>
+                    </tr>
+                `;
+            });
+            
+            tableBody.innerHTML = html;
+        }
+        
+        function refreshStandings() {
+            document.getElementById('standingsBody').innerHTML = `
+                <tr>
+                    <td colspan="8" style="text-align: center; padding: 2rem;">
+                        <div class="loading-spinner" style="margin: 0 auto 1rem;"></div>
+                        <p>Refreshing European standings...</p>
+                    </td>
+                </tr>
+            `;
+            loadStandings();
+        }
+    </script>
+</body>
+</html>

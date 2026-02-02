@@ -1,0 +1,683 @@
+<!-- privacy.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | SA Daily Portal</title>
+    <meta name="description" content="Privacy policy for SA Daily Portal - Learn how we collect, use, and protect your information.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="privacy policy, data protection, cookies, user information, GDPR">
+    <meta name="author" content="SA Daily Portal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9750885759333419"
+     crossorigin="anonymous"></script>
+    
+    <!-- Styles -->
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --background: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 2rem 0;
+            min-height: calc(100vh - 300px);
+        }
+        
+        /* Hero Section */
+        .privacy-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .privacy-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .privacy-hero > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .privacy-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+        
+        .privacy-hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Content Section */
+        .content-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border);
+            font-size: 1.8rem;
+        }
+        
+        .content-section h3 {
+            color: var(--text);
+            margin: 1.5rem 0 0.75rem 0;
+            font-size: 1.3rem;
+        }
+        
+        .content-section p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+        
+        .content-section ul, .content-section ol {
+            margin: 1rem 0 1rem 2rem;
+            color: var(--text-light);
+        }
+        
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--primary);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .info-card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .info-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* AdSense */
+        .adsense-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .ad-label {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .ad-unit {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ad-unit-content {
+            margin: 1.5rem 0;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-social a {
+            color: #9ca3af;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+        
+        .footer-social a:hover {
+            color: white;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact i {
+            width: 20px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+        }
+        
+        .footer-disclaimer {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .compliance-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .compliance-badge {
+            padding: 0.35rem 0.75rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-menu {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .privacy-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-flag"></i>
+                </div>
+                <span>SA Daily Portal</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/weather" class="nav-link">
+                    <i class="fas fa-cloud-sun"></i> Weather
+                </a>
+                <a href="/sassa" class="nav-link">
+                    <i class="fas fa-hand-holding-heart"></i> SASSA
+                </a>
+                <a href="/sports" class="nav-link">
+                    <i class="fas fa-futbol"></i> Football
+                </a>
+                <a href="/howto" class="nav-link">
+                    <i class="fas fa-book"></i> Guides
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="privacy-hero">
+                <h1><i class="fas fa-shield-alt"></i> Privacy Policy</h1>
+                <p>Your privacy is important to us. Learn how we collect, use, and protect your information.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.9;">Last Updated: January 2024</p>
+            </div>
+
+            <!-- Ad Unit -->
+            <div class="adsense-container">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-unit ad-unit-content">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9750885759333419"
+                         data-ad-slot="1234567890"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="content-section">
+                <h2>Privacy Policy for SA Daily Portal</h2>
+                
+                <div class="highlight-box">
+                    <strong>Important Notice:</strong> SA Daily Portal is an informational website. We do not collect personal identification information without your consent. This policy explains our data practices.
+                </div>
+                
+                <h3>1. Information We Collect</h3>
+                <p>We collect the following types of information:</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4><i class="fas fa-location-dot"></i> Location Data</h4>
+                        <p>When you use our weather service, we may request access to your location to provide accurate weather information. This is optional and requires your explicit permission.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4><i class="fas fa-cookie-bite"></i> Cookies & Analytics</h4>
+                        <p>We use cookies and similar technologies to analyze website traffic, understand user behavior, and improve our services.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4><i class="fas fa-chart-line"></i> Usage Data</h4>
+                        <p>We collect anonymous usage statistics including page views, time spent on pages, and browser information to improve user experience.</p>
+                    </div>
+                </div>
+                
+                <h3>2. How We Use Your Information</h3>
+                <p>We use collected information for the following purposes:</p>
+                <ul>
+                    <li><strong>Service Provision:</strong> To provide accurate weather forecasts and sports information</li>
+                    <li><strong>Improvement:</strong> To enhance and optimize our website and services</li>
+                    <li><strong>Analytics:</strong> To understand how users interact with our content</li>
+                    <li><strong>Personalization:</strong> To remember your preferences and location settings</li>
+                    <li><strong>Advertising:</strong> To display relevant advertisements through Google AdSense</li>
+                </ul>
+                
+                <h3>3. Google AdSense & Third-Party Services</h3>
+                <p>We use Google AdSense to display advertisements. Google uses cookies to serve ads based on your prior visits to our website or other websites.</p>
+                <ul>
+                    <li>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our sites and/or other sites on the Internet</li>
+                    <li>You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank">Google Ads Settings</a></li>
+                    <li>For more information about how Google uses data, visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank">Google's Privacy & Terms</a></li>
+                </ul>
+                
+                <h3>4. Data Security</h3>
+                <p>We implement appropriate security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information.</p>
+                <ul>
+                    <li>We use HTTPS encryption for all data transmission</li>
+                    <li>Regular security updates and monitoring</li>
+                    <li>Limited access to data by authorized personnel only</li>
+                </ul>
+                
+                <h3>5. Your Rights & Choices</h3>
+                <p>You have the following rights regarding your data:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request information about what data we have collected</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate data</li>
+                    <li><strong>Deletion:</strong> Request deletion of your data</li>
+                    <li><strong>Opt-Out:</strong> Opt out of data collection and personalized advertising</li>
+                    <li><strong>Cookies:</strong> Control cookie settings through your browser</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <strong>Cookie Control:</strong> Most web browsers allow you to control cookies through their settings. You can usually find these settings in the "Options" or "Preferences" menu of your browser.
+                </div>
+                
+                <h3>6. Data Retention</h3>
+                <p>We retain different types of information for different periods:</p>
+                <ul>
+                    <li><strong>Analytics Data:</strong> Up to 26 months</li>
+                    <li><strong>Location Data:</strong> Only during your current session</li>
+                    <li><strong>Cookie Data:</strong> As specified in cookie settings (usually 30-365 days)</li>
+                </ul>
+                
+                <h3>7. Children's Privacy</h3>
+                <p>Our services are not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+                
+                <h3>8. Changes to This Policy</h3>
+                <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the "Last Updated" date.</p>
+                
+                <h3>9. Contact Information</h3>
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> sibiyan4444@gmail.com</li>
+                    <li><strong>Phone:</strong> 072 472 8166</li>
+                    <li><strong>Address:</strong> Ermelo, South Africa</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <strong>GDPR Compliance:</strong> While SA Daily Portal is based in South Africa, we strive to comply with international data protection standards including GDPR principles for any international users.
+                </div>
+            </div>
+
+            <!-- Ad Unit -->
+            <div class="adsense-container">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-unit ad-unit-content">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9750885759333419"
+                         data-ad-slot="2345678901"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>SA Daily Portal</h4>
+                    <p>Your trusted source for South African information, weather updates, and helpful guides.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/weather">Weather</a></li>
+                        <li><a href="/sassa">SASSA Center</a></li>
+                        <li><a href="/sports">Sports Hub</a></li>
+                        <li><a href="/howto">How-To Guides</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy" class="active">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-user"></i> Developer: Nompumelelo</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ermelo, South Africa</li>
+                        <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 072 472 8166</li>
+                        <li><i class="fas fa-clock"></i> Business Hours: 9am-5pm</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 SA Daily Portal. All rights reserved. Unofficial information site - Not affiliated with any government department.</p>
+                <p class="footer-disclaimer">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Always verify information with official sources. This site uses cookies for analytics and advertising.
+                </p>
+                <div class="compliance-badges">
+                    <span class="compliance-badge">
+                        <i class="fas fa-shield-alt"></i> Privacy Compliant
+                    </span>
+                    <span class="compliance-badge">
+                        <i class="fas fa-user-shield"></i> GDPR Ready
+                    </span>
+                    <span class="compliance-badge">
+                        <i class="fas fa-mobile-alt"></i> Mobile Friendly
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize AdSense
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        
+        // Add active class to current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

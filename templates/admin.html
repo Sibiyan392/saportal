@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | SA Daily Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1f2937;
+            --light: #f9fafb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f3f4f6;
+            color: var(--dark);
+        }
+        
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .admin-header {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .admin-header h1 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+        }
+        
+        .logout-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--danger);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            background: #dc2626;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .status-item:last-child {
+            border-bottom: none;
+        }
+        
+        .status-good {
+            color: var(--success);
+            font-weight: 600;
+        }
+        
+        .status-bad {
+            color: var(--danger);
+            font-weight: 600;
+        }
+        
+        .sassa-dates-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .dates-form {
+            margin-top: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .date-input-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .date-input-group input {
+            flex: 1;
+        }
+        
+        .remove-date {
+            padding: 0.75rem;
+            background: var(--danger);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 40px;
+        }
+        
+        .add-date-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--success);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .add-date-btn:hover {
+            background: #059669;
+        }
+        
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: #1d4ed8;
+        }
+        
+        .message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: none;
+        }
+        
+        .message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 2px solid #10b981;
+            display: block;
+        }
+        
+        .message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 2px solid var(--danger);
+            display: block;
+        }
+        
+        .current-dates {
+            background: #f3f4f6;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .date-list {
+            margin-top: 0.5rem;
+        }
+        
+        .date-item {
+            padding: 0.5rem;
+            background: white;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .no-dates {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+        }
+        
+        .system-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .info-item {
+            padding: 1rem;
+            background: #f3f4f6;
+            border-radius: 8px;
+        }
+        
+        .info-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 0.25rem;
+        }
+        
+        .info-value {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1><i class="fas fa-cogs"></i> Admin Panel</h1>
+            <button class="logout-btn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </header>
+        
+        <!-- Stats Overview -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3><i class="fas fa-key"></i> API Status</h3>
+                <div class="status-list">
+                    {% for service, status in stats.api_keys_status.items() %}
+                    <div class="status-item">
+                        <span>{{ service|title }}</span>
+                        <span class="{% if 'Active' in status %}status-good{% else %}status-bad{% endif %}">
+                            {{ status }}
+                        </span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <h3><i class="fas fa-database"></i> System Status</h3>
+                <div class="status-list">
+                    <div class="status-item">
+                        <span>Firebase</span>
+                        <span class="{% if stats.firebase_status == '✅ Active' %}status-good{% else %}status-bad{% endif %}">
+                            {{ stats.firebase_status }}
+                        </span>
+                    </div>
+                    <div class="status-item">
+                        <span>Cache Size</span>
+                        <span>{{ stats.cache_size }} items</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Last Updated</span>
+                        <span>{{ stats.last_updated }}</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SASSA Dates Management -->
+        <section class="sassa-dates-section">
+            <h2><i class="fas fa-calendar-alt"></i> Manage SASSA Payment Dates</h2>
+            
+            <div class="current-dates">
+                <h4>Current Dates</h4>
+                {% if sassa_dates.upcoming_dates %}
+                <div class="date-list">
+                    {% for date in sassa_dates.upcoming_dates %}
+                    <div class="date-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>{{ date }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="no-dates">
+                    <i class="fas fa-calendar-times"></i>
+                    <p>No dates set. Will show "Upcoming dates coming soon" message.</p>
+                </div>
+                {% endif %}
+                <p class="status-note">Status: {{ sassa_dates.status }} - {{ sassa_dates.message }}</p>
+            </div>
+            
+            <form id="datesForm" class="dates-form">
+                <div class="form-group">
+                    <label>Add Payment Dates</label>
+                    <div id="datesContainer">
+                        <div class="date-input-group">
+                            <input type="text" class="form-control date-input" 
+                                   placeholder="Enter date (e.g., 15 January 2024 - SRD Grants)">
+                            <button type="button" class="remove-date" onclick="removeDateField(this)">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="add-date-btn" onclick="addDateField()">
+                        <i class="fas fa-plus"></i> Add Another Date
+                    </button>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-save"></i> Save Dates
+                </button>
+            </form>
+            
+            <div id="message" class="message"></div>
+        </section>
+        
+        <!-- System Information -->
+        <section class="system-info">
+            <h2><i class="fas fa-info-circle"></i> System Information</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">System Time</div>
+                    <div class="info-value" id="systemTime">Loading...</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Server Uptime</div>
+                    <div class="info-value" id="uptime">--</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Memory Usage</div>
+                    <div class="info-value" id="memory">--</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">API Requests</div>
+                    <div class="info-value" id="requests">--</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        let startTime = new Date();
+        
+        // System time updater
+        function updateSystemTime() {
+            const now = new Date();
+            document.getElementById('systemTime').textContent = 
+                now.toLocaleString('en-ZA', { 
+                    timeZone: 'Africa/Johannesburg',
+                    dateStyle: 'medium',
+                    timeStyle: 'medium'
+                });
+            
+            // Calculate uptime
+            const uptimeMs = now - startTime;
+            const hours = Math.floor(uptimeMs / 3600000);
+            const minutes = Math.floor((uptimeMs % 3600000) / 60000);
+            const seconds = Math.floor((uptimeMs % 60000) / 1000);
+            
+            document.getElementById('uptime').textContent = 
+                `${hours}h ${minutes}m ${seconds}s`;
+        }
+        
+        // Update every second
+        setInterval(updateSystemTime, 1000);
+        updateSystemTime();
+        
+        // Date management
+        function addDateField() {
+            const container = document.getElementById('datesContainer');
+            const div = document.createElement('div');
+            div.className = 'date-input-group';
+            div.innerHTML = `
+                <input type="text" class="form-control date-input" 
+                       placeholder="Enter date (e.g., 15 January 2024 - SRD Grants)">
+                <button type="button" class="remove-date" onclick="removeDateField(this)">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            container.appendChild(div);
+        }
+        
+        function removeDateField(button) {
+            if (document.querySelectorAll('.date-input-group').length > 1) {
+                button.closest('.date-input-group').remove();
+            }
+        }
+        
+        // Form submission
+        document.getElementById('datesForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const dateInputs = document.querySelectorAll('.date-input');
+            const dates = Array.from(dateInputs)
+                .map(input => input.value.trim())
+                .filter(date => date.length > 0);
+            
+            if (dates.length === 0) {
+                showMessage('Please enter at least one date', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/admin/sassa/dates', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ dates })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showMessage(data.message, 'success');
+                    setTimeout(() => location.reload(), 2000);
+                } else {
+                    showMessage(data.error || 'Failed to save dates', 'error');
+                }
+            } catch (error) {
+                showMessage('Network error. Please try again.', 'error');
+                console.error('Error:', error);
+            }
+        });
+        
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.className = `message ${type}`;
+            messageDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+        
+        function logout() {
+            fetch('/admin/logout', { method: 'POST' })
+                .then(() => {
+                    window.location.href = '/admin';
+                });
+        }
+        
+        // Initialize with one date field
+        window.onload = function() {
+            addDateField();
+        };
+    </script>
+</body>
+</html>

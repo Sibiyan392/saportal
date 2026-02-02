@@ -1,0 +1,528 @@
+/* Mobile-First Responsive Styles */
+
+/* Base Mobile Styles */
+@media (max-width: 767px) {
+    /* Header adjustments */
+    .header {
+        padding: 10px 0;
+        position: relative;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+    
+    /* Mobile menu */
+    .mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 24px;
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--bg-primary);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        color: var(--text-primary);
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    /* Main content adjustments */
+    .main-content {
+        padding: 15px 0;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Weather page mobile optimizations */
+    .weather-container {
+        padding: 15px;
+    }
+    
+    .weather-search-section {
+        padding: 20px 15px;
+    }
+    
+    .location-input-group {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .current-weather-card {
+        padding: 20px 15px;
+    }
+    
+    .current-weather-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .current-temp {
+        font-size: 3rem;
+    }
+    
+    .weather-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .weather-stat {
+        padding: 10px;
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .forecast-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .forecast-card {
+        padding: 15px 10px;
+    }
+    
+    /* SASSA page mobile optimizations */
+    .sassa-container {
+        padding: 15px;
+    }
+    
+    .sassa-form-card {
+        padding: 20px 15px;
+    }
+    
+    .id-input-group {
+        flex-direction: column;
+    }
+    
+    .result-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .sassa-guides {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Sports page mobile optimizations */
+    .sports-container {
+        padding: 15px;
+    }
+    
+    .standings-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .match-fixtures {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .calculator-form {
+        grid-template-columns: 1fr;
+    }
+    
+    /* How-to page mobile optimizations */
+    .howto-container {
+        padding: 15px;
+    }
+    
+    .interactive-guide {
+        padding: 20px 15px;
+    }
+    
+    .step-actions {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .guide-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Account page mobile optimizations */
+    .account-container {
+        padding: 15px;
+    }
+    
+    .account-sections {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .data-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Forms */
+    .form-control {
+        padding: 12px;
+        font-size: 16px; /* Prevents iOS zoom */
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 12px 20px;
+        font-size: 16px;
+        min-height: 44px; /* Minimum touch target size */
+    }
+    
+    .btn-block {
+        width: 100%;
+    }
+    
+    /* Cards */
+    .card {
+        padding: 20px 15px;
+        margin-bottom: 15px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 30px 0 20px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-links {
+        margin-bottom: 20px;
+    }
+    
+    /* GDPR Banner */
+    .gdpr-banner {
+        padding: 15px;
+    }
+    
+    .gdpr-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .gdpr-buttons {
+        width: 100%;
+    }
+    
+    .gdpr-buttons button {
+        width: 100%;
+    }
+    
+    /* Auth Modal */
+    .auth-modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    /* Ad units */
+    .adsense-container {
+        margin: 15px 0;
+    }
+    
+    .ad-unit {
+        margin: 10px auto;
+    }
+    
+    /* Sports ticker */
+    .sports-ticker-container {
+        font-size: 0.8rem;
+        padding: 8px 0;
+    }
+    
+    /* Weather loading overlay */
+    .weather-loading-overlay {
+        padding: 20px;
+    }
+    
+    .weather-loading-content {
+        padding: 20px;
+    }
+    
+    /* Utility classes */
+    .hide-on-mobile {
+        display: none !important;
+    }
+    
+    .show-on-mobile {
+        display: block !important;
+    }
+}
+
+/* Small phones */
+@media (max-width: 375px) {
+    .weather-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .forecast-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .guide-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .step-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .step-number {
+        margin-right: 0;
+    }
+    
+    .team-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+}
+
+/* Tablet devices */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .weather-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .forecast-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .sassa-guides {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .match-fixtures {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .guide-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .account-sections {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Landscape orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+    .header {
+        position: static;
+    }
+    
+    .main-content {
+        min-height: auto;
+        padding: 20px 0;
+    }
+    
+    .auth-modal-content {
+        max-height: 80vh;
+    }
+    
+    .weather-loading-overlay {
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+}
+
+/* High-resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Crisper borders and shadows */
+    .card,
+    .weather-container,
+    .sassa-form-card,
+    .interactive-guide {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Better text rendering */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark mode adjustments for mobile */
+@media (prefers-color-scheme: dark) and (max-width: 767px) {
+    .nav-menu {
+        background: #1a1a1a;
+    }
+    
+    .nav-link {
+        color: #e0e0e0;
+        border-bottom-color: #333;
+    }
+    
+    .sports-ticker-container {
+        background: #2d2d2d;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .nav-link {
+        padding: 18px 15px;
+    }
+    
+    .btn {
+        min-height: 48px;
+        padding: 14px 24px;
+    }
+    
+    .form-check-label {
+        padding-left: 10px;
+    }
+    
+    /* Remove hover effects */
+    .card:hover {
+        transform: none;
+        box-shadow: var(--shadow-md);
+    }
+    
+    .forecast-card:hover {
+        transform: none;
+        box-shadow: var(--shadow-md);
+    }
+    
+    .guide-tile:hover {
+        transform: none;
+        box-shadow: var(--shadow-md);
+    }
+    
+    /* Improve button feedback */
+    .btn:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+    
+    /* Better scrolling */
+    .weather-loading-content,
+    .auth-modal-content {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Print styles for mobile */
+@media print and (max-width: 767px) {
+    .header,
+    .footer,
+    .nav-menu,
+    .user-actions,
+    .gdpr-banner,
+    .adsense-container {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 10pt;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .main-content {
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+}

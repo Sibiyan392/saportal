@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚽ European Football 2026 | Live Scores & Standings | SA Daily Portal</title>
+    <meta name="description" content="Live European football scores, standings, and fixtures for 2026. Real-time data from Football-Data.org.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="European football 2026, Premier League, La Liga, Bundesliga, Serie A, live scores, football standings">
+    <meta name="author" content="SA Daily Portal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9750885759333419"
+     crossorigin="anonymous"></script>
+    
+    <!-- Styles -->
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --background: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 2rem 0;
+            min-height: calc(100vh - 300px);
+        }
+        
+        /* Hero Section */
+        .sports-hero {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sports-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .sports-hero > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .sports-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+        
+        .sports-hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0 0.25rem;
+        }
+        
+        .badge-primary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        
+        .badge-2026 {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .badge-live {
+            background: var(--danger);
+            color: white;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        /* AdSense */
+        .adsense-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .ad-label {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .ad-unit {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ad-unit-header {
+            margin: 1rem 0;
+        }
+        
+        .ad-unit-content {
+            margin: 1.5rem 0;
+        }
+        
+        /* Sports Tabs */
+        .sports-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 0.85rem 1.75rem;
+            background: #f3f4f6;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+        
+        .tab-btn:hover {
+            background: #e5e7eb;
+            transform: translateY(-2px);
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .section-header h2 {
+            font-size: 1.5rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+        }
+        
+        .refresh-btn {
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .refresh-btn:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #1e40af);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+        
+        /* Matches Grid */
+        .matches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .match-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .match-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .match-card.live {
+            border-left: 4px solid var(--danger);
+            box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.1);
+        }
+        
+        .match-card.upcoming {
+            border-left: 4px solid var(--primary);
+        }
+        
+        .match-card.completed {
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+        
+        .match-status {
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .match-status.live {
+            background: var(--danger);
+            color: white;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .match-status.upcoming {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .match-status.completed {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .match-time {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: right;
+            min-width: 120px;
+        }
+        
+        .match-teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+        
+        .team {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            flex: 1;
+        }
+        
+        .team:last-child {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+        
+        .team-logo {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            flex-shrink: 0;
+        }
+        
+        .match-score {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--text);
+            margin: 0 1rem;
+            min-width: 100px;
+            text-align: center;
+        }
+        
+        .match-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Standings Table */
+        .standings-container {
+            overflow-x: auto;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+        }
+        
+        .standings-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            min-width: 800px;
+        }
+        
+        .standings-table th {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--text);
+            border-bottom: 2px solid var(--border);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        
+        .standings-table td {
+            padding: 0.9rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        
+        .standings-table tr:hover td {
+            background: #f8fafc;
+        }
+        
+        .standings-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .position-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .position-1 { 
+            background: linear-gradient(135deg, #FFD700, #FFC400);
+            color: #333;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .position-2 { 
+            background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+            color: #333;
+            box-shadow: 0 4px 10px rgba(192, 192, 192, 0.3);
+        }
+        
+        .position-3 { 
+            background: linear-gradient(135deg, #CD7F32, #B56A1E);
+            color: white;
+            box-shadow: 0 4px 10px rgba(205, 127, 50, 0.3);
+        }
+        
+        .position-4-6 { 
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            color: var(--text);
+        }
+        
+        .form-indicator {
+            display: flex;
+            gap: 3px;
+        }
+        
+        .form-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .form-win { background: var(--secondary); color: white; }
+        .form-draw { background: var(--accent); color: white; }
+        .form-loss { background: var(--danger); color: white; }
+        
+        /* No Data States */
+        .no-data {
+            grid-column: 1 / -1;
+            padding: 3rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+        
+        .no-data i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+        
+        .no-data h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .no-data p {
+            font-size: 0.95rem;
+            color: #9ca3af;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        /* Loading States */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1.5rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Matchday Indicator */
+        .matchday-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-left: 1rem;
+        }
+        
+        /* Time Badge */
+        .time-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.75rem;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Competition Badge */
+        .competition-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.75rem;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #92400e;
+        }
+        
+        /* Competition Flag */
+        .competition-flag {
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+        }
+        
+        /* Time Display */
+        .time-display {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.25rem;
+        }
+        
+        .match-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        .kickoff-time {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-social a {
+            color: #9ca3af;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+        
+        .footer-social a:hover {
+            color: white;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact i {
+            width: 20px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+        }
+        
+        .footer-disclaimer {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .compliance-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .compliance-badge {
+            padding: 0.35rem 0.75rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-menu {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .sports-tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .matches-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .match-teams {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .team, .team:last-child {
+                flex-direction: row;
+                text-align: left;
+            }
+            
+            .match-score {
+                margin: 0.5rem 0;
+            }
+            
+            .match-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+            
+            .match-time {
+                text-align: left;
+                min-width: auto;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .sports-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .team-logo {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            
+            .match-score {
+                font-size: 1.75rem;
+            }
+            
+            .tab-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-flag"></i>
+                </div>
+                <span>SA Daily Portal <span class="badge badge-2026">2026</span></span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/weather" class="nav-link">
+                    <i class="fas fa-cloud-sun"></i> Weather
+                </a>
+                <a href="/sassa" class="nav-link">
+                    <i class="fas fa-hand-holding-heart"></i> SASSA
+                </a>
+                <a href="/sports" class="nav-link active">
+                    <i class="fas fa-futbol"></i> Football
+                </a>
+                <a href="/howto" class="nav-link">
+                    <i class="fas fa-book"></i> Guides
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="sports-hero">
+                <h1>⚽ European Football 2026</h1>
+                <p>Live scores, standings, and fixtures from the 2026 European football season</p>
+                <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+                    <span class="badge badge-primary">
+                        <i class="fas fa-database"></i> Real 2026 Data
+                    </span>
+                    <span class="badge badge-primary">
+                        <i class="fas fa-globe-europe"></i> European Leagues
+                    </span>
+                    <span class="badge badge-primary">
+                        <i class="fas fa-sync-alt"></i> Live Updates
+                    </span>
+                </div>
+            </section>
+
+            <!-- Ad Unit -->
+            <div class="adsense-container">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-unit ad-unit-header">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9750885759333419"
+                         data-ad-slot="1234567890"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+
+            <!-- Sports Tabs -->
+            <div class="sports-tabs">
+                <button class="tab-btn active" data-tab="matches">
+                    <i class="fas fa-futbol"></i> Today's Matches
+                </button>
+                <button class="tab-btn" data-tab="standings">
+                    <i class="fas fa-trophy"></i> League Standings
+                </button>
+                <button class="tab-btn" data-tab="fixtures">
+                    <i class="fas fa-calendar-alt"></i> Upcoming Fixtures
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-content active" id="matches-tab">
+                <div class="section-header">
+                    <h2><i class="fas fa-futbol"></i> Today's European Matches</h2>
+                    <div style="font-size: 0.9rem; color: var(--text-light);">
+                        <span id="todaysDate">Loading date...</span>
+                        <button class="refresh-btn" id="refreshMatches">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="matches-grid" id="matchesGrid">
+                    <!-- Matches will be loaded here -->
+                    <div class="loading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading today's European matches...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standings Tab -->
+            <div class="tab-content" id="standings-tab">
+                <div class="section-header">
+                    <h2><i class="fas fa-trophy"></i> Premier League Standings 2026</h2>
+                    <div style="font-size: 0.9rem; color: var(--text-light);">
+                        Updated: <span id="standingsUpdateTime">Just now</span>
+                    </div>
+                </div>
+                
+                <div class="adsense-container">
+                    <div class="ad-label">Advertisement</div>
+                    <div class="ad-unit ad-unit-content">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-9750885759333419"
+                             data-ad-slot="2345678901"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+                
+                <div class="standings-container">
+                    <table class="standings-table" id="standingsTable">
+                        <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th>Team</th>
+                                <th>P</th>
+                                <th>W</th>
+                                <th>D</th>
+                                <th>L</th>
+                                <th>GF</th>
+                                <th>GA</th>
+                                <th>GD</th>
+                                <th>Pts</th>
+                                <th>Form</th>
+                            </tr>
+                        </thead>
+                        <tbody id="standingsBody">
+                            <!-- Standings will be loaded here -->
+                            <tr>
+                                <td colspan="11" style="text-align: center; padding: 2rem;">
+                                    <div class="loading-spinner" style="margin: 0 auto 1rem;"></div>
+                                    <p>Loading European standings...</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Fixtures Tab -->
+            <div class="tab-content" id="fixtures-tab">
+                <div class="section-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Upcoming European Fixtures</h2>
+                    <div style="font-size: 0.9rem; color: var(--text-light);">
+                        Next 7 days
+                    </div>
+                </div>
+                
+                <div class="adsense-container">
+                    <div class="ad-label">Advertisement</div>
+                    <div class="ad-unit ad-unit-content">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-9750885759333419"
+                             data-ad-slot="3456789012"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+                
+                <div class="matches-grid" id="fixturesGrid">
+                    <!-- Fixtures will be loaded here -->
+                    <div class="loading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading upcoming European fixtures...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ad Unit -->
+            <div class="adsense-container">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-unit ad-unit-content">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9750885759333419"
+                         data-ad-slot="4567890123"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>SA Daily Portal</h4>
+                    <p>Your trusted source for South African information, weather updates, and helpful guides.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/weather">Weather</a></li>
+                        <li><a href="/sassa">SASSA Center</a></li>
+                        <li><a href="/sports">Sports Hub</a></li>
+                        <li><a href="/howto">How-To Guides</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-user"></i> Developer: Nompumelelo</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ermelo, South Africa</li>
+                        <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 072 472 8166</li>
+                        <li><i class="fas fa-clock"></i> Business Hours: 9am-5pm</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 SA Daily Portal. All rights reserved. Unofficial information site - Not affiliated with any government department.</p>
+                <p class="footer-disclaimer">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Always verify information with official sources. This site uses cookies for analytics and advertising.
+                </p>
+                <div class="compliance-badges">
+                    <span class="compliance-badge">
+                        <i class="fas fa-shield-alt"></i> AdSense Compliant
+                    </span>
+                    <span class="compliance-badge">
+                        <i class="fas fa-user-shield"></i> GDPR Ready
+                    </span>
+                    <span class="compliance-badge">
+                        <i class="fas fa-mobile-alt"></i> Mobile Friendly
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        class SportsApp {
+            constructor() {
+                this.matchesData = null;
+                this.standingsData = null;
+                this.fixturesData = null;
+                this.isLoading = false;
+                
+                this.init();
+            }
+            
+            init() {
+                this.bindEvents();
+                this.loadTodayMatches();
+                
+                // Auto-refresh every 2 minutes
+                setInterval(() => this.loadTodayMatches(), 120000);
+                
+                // Initialize AdSense
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            }
+            
+            bindEvents() {
+                // Tab switching
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const tabId = e.target.dataset.tab;
+                        this.switchTab(tabId);
+                    });
+                });
+                
+                // Refresh matches
+                document.getElementById('refreshMatches').addEventListener('click', () => {
+                    this.loadTodayMatches();
+                });
+            }
+            
+            switchTab(tabId) {
+                // Update active tab button
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+                
+                // Update active tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+                
+                // Load data for tab if not already loaded
+                if (tabId === 'fixtures' && !this.fixturesData) {
+                    this.loadFixtures();
+                } else if (tabId === 'standings' && !this.standingsData) {
+                    this.loadStandings();
+                }
+            }
+            
+            async loadTodayMatches() {
+                this.showLoading('Loading today\'s European matches...');
+                
+                try {
+                    // Load today's matches
+                    const matchesResponse = await fetch('/api/sports/matches');
+                    const matchesData = await matchesResponse.json();
+                    
+                    if (matchesData.success) {
+                        this.matchesData = matchesData;
+                        this.displayTodayMatches();
+                        this.updateTodayDate();
+                    }
+                    
+                    this.hideLoading();
+                } catch (error) {
+                    console.error('Error loading sports data:', error);
+                    this.showError('Unable to load European football data. Please try again.');
+                    this.hideLoading();
+                }
+            }
+            
+            async loadStandings() {
+                try {
+                    this.showLoading('Loading European standings...');
+                    const response = await fetch('/api/sports/standings');
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.standingsData = data;
+                        this.displayStandings();
+                    }
+                    this.hideLoading();
+                } catch (error) {
+                    console.error('Error loading standings:', error);
+                    this.hideLoading();
+                }
+            }
+            
+            async loadFixtures() {
+                try {
+                    this.showLoading('Loading European fixtures...');
+                    const response = await fetch('/api/sports/fixtures');
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.fixturesData = data;
+                        this.displayFixtures();
+                    }
+                    this.hideLoading();
+                } catch (error) {
+                    console.error('Error loading fixtures:', error);
+                    this.hideLoading();
+                }
+            }
+            
+            updateTodayDate() {
+                const today = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const formattedDate = today.toLocaleDateString('en-ZA', options);
+                document.getElementById('todaysDate').textContent = formattedDate;
+            }
+            
+            displayTodayMatches() {
+                if (!this.matchesData || !this.matchesData.matches) return;
+                
+                const container = document.getElementById('matchesGrid');
+                const matches = this.matchesData.matches;
+                
+                if (matches.length === 0) {
+                    container.innerHTML = `
+                        <div class="no-data">
+                            <i class="fas fa-calendar-day"></i>
+                            <h3>No European Matches Today</h3>
+                            <p>Check the fixtures tab for upcoming European matches or come back during European match hours.</p>
+                            <div style="margin-top: 1.5rem;">
+                                <button class="refresh-btn" onclick="window.sportsApp.loadTodayMatches()">
+                                    <i class="fas fa-sync-alt"></i> Refresh
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                let html = '';
+                
+                matches.forEach(match => {
+                    const status = match.status || 'UPCOMING';
+                    const statusClass = status.toLowerCase();
+                    const isLive = match.is_live || false;
+                    
+                    // Get team logos (using initials)
+                    const homeInitials = this.getTeamInitials(match.home_team);
+                    const awayInitials = this.getTeamInitials(match.away_team);
+                    
+                    // Format date and time properly
+                    let timeDisplay = '';
+                    let dateDisplay = '';
+                    let kickoffTime = '';
+                    
+                    if (match.time) {
+                        try {
+                            // API returns time in 24-hour format (e.g., "15:00")
+                            const [hours, minutes] = match.time.split(':');
+                            const hour = parseInt(hours);
+                            const ampm = hour >= 12 ? 'PM' : 'AM';
+                            const displayHour = hour % 12 || 12;
+                            kickoffTime = `${displayHour}:${minutes} ${ampm}`;
+                        } catch (e) {
+                            kickoffTime = match.time;
+                        }
+                    } else {
+                        kickoffTime = 'TBC';
+                    }
+                    
+                    if (match.date) {
+                        try {
+                            const matchDate = new Date(match.date);
+                            dateDisplay = matchDate.toLocaleDateString('en-ZA', {
+                                weekday: 'short',
+                                month: 'short',
+                                day: 'numeric'
+                            });
+                        } catch (e) {
+                            dateDisplay = 'Today';
+                        }
+                    }
+                    
+                    timeDisplay = dateDisplay ? `${dateDisplay} • ${kickoffTime}` : kickoffTime;
+                    
+                    // Determine score display
+                    let scoreDisplay = 'vs';
+                    if (status === 'LIVE' || status === 'COMPLETED') {
+                        scoreDisplay = match.score || '0-0';
+                    }
+                    
+                    // Matchday information
+                    const matchday = match.matchday ? `Matchday ${match.matchday}` : '';
+                    
+                    // Competition flag
+                    const flag = this.getCompetitionFlag(match.competition);
+                    
+                    html += `
+                        <div class="match-card ${statusClass}">
+                            <div class="match-header">
+                                <span class="match-status ${statusClass}">
+                                    ${isLive ? 'LIVE' : status}
+                                    ${isLive && match.minute ? ` • ${match.minute}'` : ''}
+                                    ${flag}
+                                </span>
+                                <div class="time-display">
+                                    <span class="match-date">${dateDisplay}</span>
+                                    <span class="kickoff-time">${kickoffTime}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="match-teams">
+                                <div class="team">
+                                    <div class="team-logo">${homeInitials}</div>
+                                    <span>${match.home_team}</span>
+                                </div>
+                                
+                                <div class="match-score">${scoreDisplay}</div>
+                                
+                                <div class="team">
+                                    <div class="team-logo">${awayInitials}</div>
+                                    <span>${match.away_team}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="match-details">
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-map-marker-alt"></i> 
+                                    <span>${match.venue || 'Football Stadium'}</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span class="competition-badge">
+                                        <i class="fas fa-trophy"></i> ${match.competition || 'European Football'}
+                                    </span>
+                                    ${matchday ? `<span class="time-badge">${matchday}</span>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+            }
+            
+            getTeamInitials(teamName) {
+                if (!teamName) return 'TM';
+                
+                // Get first letters of first two words
+                const words = teamName.split(' ');
+                if (words.length >= 2) {
+                    return (words[0][0] + words[1][0]).toUpperCase();
+                } else if (teamName.length >= 2) {
+                    return teamName.substring(0, 2).toUpperCase();
+                }
+                return teamName.substring(0, 1).toUpperCase();
+            }
+            
+            getCompetitionFlag(competition) {
+                if (!competition) return '';
+                
+                const flagMap = {
+                    'Premier League': '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+                    'La Liga': '🇪🇸',
+                    'Primera Division': '🇪🇸',
+                    'Bundesliga': '🇩🇪',
+                    'Serie A': '🇮🇹',
+                    'Ligue 1': '🇫🇷',
+                    'Eredivisie': '🇳🇱',
+                    'Primeira Liga': '🇵🇹',
+                    'Champions League': '🏆',
+                    'Europa League': '🇪🇺',
+                    'FA Cup': '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+                    'Copa del Rey': '🇪🇸',
+                    'DFB Pokal': '🇩🇪'
+                };
+                
+                return flagMap[competition] || '🇪🇺';
+            }
+            
+            displayStandings() {
+                if (!this.standingsData || !this.standingsData.standings) return;
+                
+                const container = document.getElementById('standingsBody');
+                const standings = this.standingsData.standings;
+                const updateTime = document.getElementById('standingsUpdateTime');
+                
+                // Update timestamp
+                if (this.standingsData.last_updated) {
+                    const date = new Date(this.standingsData.last_updated);
+                    updateTime.textContent = date.toLocaleTimeString('en-ZA', { 
+                        hour: '2-digit', 
+                        minute: '2-digit' 
+                    });
+                }
+                
+                if (standings.length === 0) {
+                    container.innerHTML = `
+                        <tr>
+                            <td colspan="11" style="text-align: center; padding: 2rem; color: var(--text-light);">
+                                <i class="fas fa-trophy" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.3;"></i>
+                                <p>European standings currently unavailable</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Check back soon for updated standings</p>
+                            </td>
+                        </tr>
+                    `;
+                    return;
+                }
+                
+                let html = '';
+                
+                standings.forEach(team => {
+                    let positionClass = '';
+                    if (team.position === 1) positionClass = 'position-1';
+                    else if (team.position === 2) positionClass = 'position-2';
+                    else if (team.position === 3) positionClass = 'position-3';
+                    else if (team.position >= 4 && team.position <= 6) positionClass = 'position-4-6';
+                    
+                    const goalDiff = team.goal_difference;
+                    const goalDiffClass = goalDiff > 0 ? 'color: var(--secondary);' : goalDiff < 0 ? 'color: var(--danger);' : '';
+                    const goalDiffText = goalDiff > 0 ? `+${goalDiff}` : goalDiff;
+                    
+                    // Format form indicator
+                    let formHtml = '<div class="form-indicator">';
+                    const form = team.form || '-----';
+                    for (let i = 0; i < Math.min(5, form.length); i++) {
+                        const result = form[i];
+                        let formClass = 'form-draw';
+                        if (result === 'W') formClass = 'form-win';
+                        if (result === 'L') formClass = 'form-loss';
+                        formHtml += `<span class="${formClass}">${result}</span>`;
+                    }
+                    formHtml += '</div>';
+                    
+                    html += `
+                        <tr>
+                            <td>
+                                <span class="position-badge ${positionClass}">${team.position}</span>
+                            </td>
+                            <td style="font-weight: 500;">${team.team}</td>
+                            <td>${team.played}</td>
+                            <td style="color: var(--secondary); font-weight: 600;">${team.won}</td>
+                            <td style="color: var(--accent); font-weight: 600;">${team.drawn}</td>
+                            <td style="color: var(--danger); font-weight: 600;">${team.lost}</td>
+                            <td>${team.goals_for}</td>
+                            <td>${team.goals_against}</td>
+                            <td style="${goalDiffClass} font-weight: 600;">${goalDiffText}</td>
+                            <td style="font-weight: 700; color: var(--primary);">${team.points}</td>
+                            <td>${formHtml}</td>
+                        </tr>
+                    `;
+                });
+                
+                container.innerHTML = html;
+            }
+            
+            displayFixtures() {
+                if (!this.fixturesData || !this.fixturesData.matches) return;
+                
+                const container = document.getElementById('fixturesGrid');
+                const matches = this.fixturesData.matches;
+                
+                if (matches.length === 0) {
+                    container.innerHTML = `
+                        <div class="no-data">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h3>No Upcoming European Fixtures</h3>
+                            <p>Check back later for upcoming European league fixtures or visit during the football season.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                let html = '';
+                
+                matches.forEach(match => {
+                    const status = match.status || 'UPCOMING';
+                    const statusClass = status.toLowerCase();
+                    const isLive = match.is_live || false;
+                    
+                    // Get team logos (using initials)
+                    const homeInitials = this.getTeamInitials(match.home_team);
+                    const awayInitials = this.getTeamInitials(match.away_team);
+                    
+                    // Format date and time properly
+                    let timeDisplay = '';
+                    let dateDisplay = '';
+                    let kickoffTime = '';
+                    
+                    if (match.time) {
+                        try {
+                            // API returns time in 24-hour format
+                            const [hours, minutes] = match.time.split(':');
+                            const hour = parseInt(hours);
+                            const ampm = hour >= 12 ? 'PM' : 'AM';
+                            const displayHour = hour % 12 || 12;
+                            kickoffTime = `${displayHour}:${minutes} ${ampm}`;
+                        } catch (e) {
+                            kickoffTime = match.time;
+                        }
+                    } else {
+                        kickoffTime = 'TBC';
+                    }
+                    
+                    if (match.date) {
+                        try {
+                            const matchDate = new Date(match.date);
+                            dateDisplay = matchDate.toLocaleDateString('en-ZA', {
+                                weekday: 'short',
+                                month: 'short',
+                                day: 'numeric'
+                            });
+                        } catch (e) {
+                            dateDisplay = 'TBD';
+                        }
+                    }
+                    
+                    timeDisplay = dateDisplay ? `${dateDisplay} • ${kickoffTime}` : kickoffTime;
+                    
+                    // Matchday information
+                    const matchday = match.matchday ? `Matchday ${match.matchday}` : '';
+                    
+                    // Competition flag
+                    const flag = this.getCompetitionFlag(match.competition);
+                    
+                    html += `
+                        <div class="match-card upcoming">
+                            <div class="match-header">
+                                <span class="match-status upcoming">
+                                    UPCOMING
+                                    ${flag}
+                                </span>
+                                <div class="time-display">
+                                    <span class="match-date">${dateDisplay}</span>
+                                    <span class="kickoff-time">${kickoffTime}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="match-teams">
+                                <div class="team">
+                                    <div class="team-logo">${homeInitials}</div>
+                                    <span>${match.home_team}</span>
+                                </div>
+                                
+                                <div class="match-score">vs</div>
+                                
+                                <div class="team">
+                                    <div class="team-logo">${awayInitials}</div>
+                                    <span>${match.away_team}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="match-details">
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-map-marker-alt"></i> 
+                                    <span>${match.venue || 'Football Stadium'}</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span class="competition-badge">
+                                        <i class="fas fa-trophy"></i> ${match.competition || 'European Football'}
+                                    </span>
+                                    ${matchday ? `<span class="time-badge">${matchday}</span>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+            }
+            
+            showLoading(message = 'Loading...') {
+                this.isLoading = true;
+                
+                // Show loading in the current active tab
+                const activeTab = document.querySelector('.tab-content.active').id;
+                const container = document.getElementById(activeTab.replace('-tab', 'Grid'));
+                
+                if (container) {
+                    container.innerHTML = `
+                        <div class="loading">
+                            <div class="loading-spinner"></div>
+                            <p>${message}</p>
+                        </div>
+                    `;
+                }
+            }
+            
+            hideLoading() {
+                this.isLoading = false;
+            }
+            
+            showError(message) {
+                // Show error in the current active tab
+                const activeTab = document.querySelector('.tab-content.active').id;
+                const container = document.getElementById(activeTab.replace('-tab', 'Grid'));
+                
+                if (container) {
+                    container.innerHTML = `
+                        <div class="no-data">
+                            <i class="fas fa-wifi-slash"></i>
+                            <h3>Unable to Load Data</h3>
+                            <p>${message}</p>
+                            <div style="margin-top: 1.5rem;">
+                                <button class="refresh-btn" onclick="window.sportsApp.loadTodayMatches()">
+                                    <i class="fas fa-sync-alt"></i> Try Again
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        // Initialize sports app when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            window.sportsApp = new SportsApp();
+        });
+    </script>
+</body>
+</html>
