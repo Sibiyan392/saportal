@@ -368,7 +368,7 @@ class LocationService:
     
     @staticmethod
     def reverse_geocode(lat: float, lon: float):
-        cache_key = f"reverse_{lat}_{lon}"
+        cache_key = f"reverse_{lat:.6f}_{lon:.6f}"
         cached = cache.get(cache_key, 86400)
         if cached:
             return cached
@@ -378,7 +378,9 @@ class LocationService:
             params = {
                 'latlng': f"{lat},{lon}",
                 'key': API_KEYS['google_maps'],
-                'region': 'za'
+                'region': 'za',
+                'language': 'en',
+                'result_type': ['street_address', 'route', 'locality', 'sublocality', 'neighborhood']
             }
             
             response = requests.get(url, params=params, timeout=5, verify=False)
@@ -386,14 +388,16 @@ class LocationService:
             if response.status_code == 200:
                 data = response.json()
                 if data['status'] == 'OK' and data['results']:
-                    result = data['results'][0]
+                    # Try to get the best possible location name
+                    location_name = LocationService._extract_best_location_name(data['results'], lat, lon)
                     
                     location_data = {
-                        'name': result['formatted_address'],
-                        'formatted_address': result['formatted_address'],
+                        'name': location_name,
+                        'formatted_address': data['results'][0]['formatted_address'],
                         'latitude': lat,
                         'longitude': lon,
-                        'success': True
+                        'success': True,
+                        'accuracy': LocationService._determine_accuracy(data['results'])
                     }
                     
                     cache.set(cache_key, location_data)
@@ -402,7 +406,114 @@ class LocationService:
         except Exception as e:
             logger.error(f"Reverse geocoding error: {str(e)}")
         
-        return None
+        # Fallback to coordinates if geocoding fails
+        return {
+            'name': f"Location ({lat:.4f}, {lon:.4f})",
+            'formatted_address': f"Latitude: {lat:.4f}, Longitude: {lon:.4f}",
+            'latitude': lat,
+            'longitude': lon,
+            'success': False,
+            'accuracy': 'coordinates'
+        }
+    
+    @staticmethod
+    def _extract_best_location_name(results, lat, lon):
+        """
+        Extract the best possible location name from geocoding results.
+        Priority order:
+        1. Street name with number
+        2. Street/Route name
+        3. Neighborhood
+        4. Sublocality (suburb)
+        5. Locality (town/city)
+        6. Administrative area level 2 (municipality)
+        7. Fallback to coordinates
+        """
+        
+        # First, try to find street address
+        for result in results:
+            address_components = result.get('address_components', [])
+            types = result.get('types', [])
+            
+            # Check for street address or route
+            if 'street_address' in types or 'route' in types:
+                for component in address_components:
+                    if 'route' in component.get('types', []):
+                        street_name = component.get('long_name', '')
+                        # Try to get street number
+                        street_number = ''
+                        for comp in address_components:
+                            if 'street_number' in comp.get('types', []):
+                                street_number = comp.get('long_name', '')
+                                break
+                        
+                        if street_number:
+                            return f"{street_number} {street_name}"
+                        return street_name
+            
+            # Check for neighborhood
+            if 'neighborhood' in types:
+                for component in address_components:
+                    if 'neighborhood' in component.get('types', []):
+                        return component.get('long_name', '')
+            
+            # Check for sublocality (suburb)
+            if 'sublocality' in types or 'sublocality_level_1' in types:
+                for component in address_components:
+                    if 'sublocality' in component.get('types', []) or 'sublocality_level_1' in component.get('types', []):
+                        return component.get('long_name', '')
+            
+            # Check for locality (town/city)
+            if 'locality' in types:
+                for component in address_components:
+                    if 'locality' in component.get('types', []):
+                        return component.get('long_name', '')
+            
+            # Check for administrative area level 2 (municipality)
+            if 'administrative_area_level_2' in types:
+                for component in address_components:
+                    if 'administrative_area_level_2' in component.get('types', []):
+                        return component.get('long_name', '')
+        
+        # If no good name found in address components, use the first formatted address
+        # but extract just the first part (before first comma)
+        first_result = results[0]
+        formatted_address = first_result.get('formatted_address', '')
+        
+        # Try to get a meaningful part of the address
+        parts = formatted_address.split(',')
+        if len(parts) > 0:
+            # Return first part (usually the most specific)
+            return parts[0].strip()
+        
+        # Ultimate fallback
+        return f"Location ({lat:.4f}, {lon:.4f})"
+    
+    @staticmethod
+    def _determine_accuracy(results):
+        """
+        Determine the accuracy level of the geocoding result.
+        """
+        if not results:
+            return 'coordinates'
+        
+        first_result = results[0]
+        types = first_result.get('types', [])
+        
+        if 'street_address' in types:
+            return 'street_address'
+        elif 'route' in types:
+            return 'route'
+        elif 'neighborhood' in types:
+            return 'neighborhood'
+        elif 'sublocality' in types:
+            return 'sublocality'
+        elif 'locality' in types:
+            return 'locality'
+        elif 'administrative_area_level_2' in types:
+            return 'municipality'
+        else:
+            return 'general'
 
 # =========== WEATHER SERVICE WITH HOURLY FORECAST ===========
 class WeatherService:
@@ -791,6 +902,77 @@ def api_sports_upcoming():
         return jsonify({
             'success': False,
             'error': 'Upcoming matches service updating',
+            'timestamp': datetime.now().isoformat()
+        }), 503@app.route('/api/weather', methods=['GET'])
+def api_weather():
+    """Weather API endpoint WITH HOURLY FORECAST"""
+    location = request.args.get('location', '').strip()
+    lat = request.args.get('lat')
+    lon = request.args.get('lon')
+    
+    try:
+        weather_service = WeatherService()
+        location_service = LocationService()
+        
+        coordinates = None
+        location_name = 'Your Location'
+        location_accuracy = 'unknown'
+        
+        if lat and lon:
+            try:
+                lat_float = float(lat)
+                lon_float = float(lon)
+                coordinates = (lat_float, lon_float)
+                
+                # Get location data with improved reverse geocoding
+                location_data = location_service.reverse_geocode(lat_float, lon_float)
+                
+                if location_data and location_data.get('success', False):
+                    location_name = location_data.get('name', f"Location ({lat_float:.4f}, {lon_float:.4f})")
+                    location_accuracy = location_data.get('accuracy', 'coordinates')
+                else:
+                    # Fallback if reverse geocoding fails
+                    location_name = f"Location ({lat_float:.4f}, {lon_float:.4f})"
+                    location_accuracy = 'coordinates'
+                    
+            except ValueError:
+                return jsonify({'success': False, 'error': 'Invalid coordinates'}), 400
+        elif location:
+            # Location search by name (simplified - could be enhanced)
+            location_name = location
+            coordinates = (-26.2041, 28.0473)  # Default to Johannesburg
+            location_accuracy = 'search'
+        else:
+            return jsonify({'success': False, 'error': 'Location required'}), 400
+        
+        lat, lon = coordinates
+        weather_data = weather_service.get_weather_with_forecast(lat, lon)
+        
+        if weather_data:
+            response_data = {
+                'success': weather_data.get('success', False),
+                'location': location_name,
+                'location_accuracy': location_accuracy,
+                'coordinates': {'lat': lat, 'lon': lon},
+                'current': weather_data.get('current', {}),
+                'hourly': weather_data.get('hourly', []),
+                'forecast': weather_data.get('forecast', []),
+                'timestamp': datetime.now().isoformat(),
+                'cached': weather_data.get('cached', False)
+            }
+            return jsonify(response_data)
+        else:
+            return jsonify({
+                'success': False,
+                'error': 'Weather service temporarily unavailable',
+                'timestamp': datetime.now().isoformat()
+            }), 503
+        
+    except Exception as e:
+        logger.error(f"Weather API error: {str(e)}")
+        return jsonify({
+            'success': False,
+            'error': 'Weather service temporarily unavailable',
             'timestamp': datetime.now().isoformat()
         }), 503
 
