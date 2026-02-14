@@ -3,38 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📞 Contact Developer - SA Daily Portal 2026 | Based in Mpumalanga, South Africa</title>
-    <meta name="description" content="Contact the developer of SA Daily Portal 2026 for support, feedback, or business inquiries. Based in Mpumalanga, South Africa. Real-time SA information hub.">
+    <title>Contact Developer - SA Daily Portal 2026</title>
+    <meta name="description" content="Get in touch with the developer of SA Daily Portal for questions, suggestions, or feedback.">
     
-    <!-- SEO Meta -->
-    <meta name="keywords" content="contact SA Daily Portal, developer contact, South African portal support, website feedback, business inquiries, Mpumalanga South Africa">
-    <meta name="author" content="Nompumelelo, Mpumalanga">
-    <meta name="robots" content="index, follow">
-    
-    <!-- OG Meta -->
-    <meta property="og:title" content="📞 Contact Developer - SA Daily Portal 2026">
-    <meta property="og:description" content="Contact the developer for support, feedback, or business inquiries. Based in Mpumalanga, South Africa.">
-    <meta property="og:image" content="/static/images/contact-og.jpg">
-    <meta property="og:url" content="https://sadailyportal.co.za/contact">
-    <meta property="og:type" content="website">
-    
-    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9621668436424790" crossorigin="anonymous"></script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-Z2ZSZKQ5F7');
-    </script>
-    
-    <!-- Core Styles -->
     <style>
         :root {
             --primary: #2563eb;
@@ -59,12 +33,11 @@
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 2rem 1rem;
         }
         
-        /* Header */
         .header {
             background: var(--card-bg);
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -78,6 +51,8 @@
             align-items: center;
             justify-content: space-between;
             padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .logo {
@@ -101,7 +76,17 @@
             color: white;
         }
         
-        /* Navigation */
+        .badge-2026 {
+            background: var(--accent);
+            color: white;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
         .nav-menu {
             display: flex;
             gap: 1.5rem;
@@ -112,167 +97,110 @@
             text-decoration: none;
             font-weight: 500;
             padding: 0.5rem 0;
-            position: relative;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            transition: color 0.2s;
         }
         
         .nav-link:hover {
             color: var(--primary);
         }
         
-        .nav-link.active {
-            color: var(--primary);
-        }
-        
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--primary);
-        }
-        
-        /* Main Content */
-        .main-content {
-            padding: 2rem 0;
-            min-height: calc(100vh - 200px);
-        }
-        
         .contact-hero {
-            background: linear-gradient(135deg, #1A73E8, #34A853);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            border-radius: 20px;
+            padding: 3rem 2rem;
+            border-radius: 16px;
             margin-bottom: 2rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            opacity: 0.3;
-            z-index: 0;
+            text-align: center;
         }
         
         .contact-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
         }
         
         .contact-hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
+            font-size: 1.1rem;
             opacity: 0.9;
-            position: relative;
-            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            margin: 2rem 0;
+            margin-bottom: 2rem;
         }
         
-        .contact-card {
+        .contact-info {
             background: var(--card-bg);
+            padding: 2rem;
             border-radius: 16px;
-            padding: 2.5rem 2rem;
-            text-align: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
         }
         
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border-color: var(--primary);
-        }
-        
-        .contact-icon {
-            font-size: 3rem;
+        .contact-info h2 {
             color: var(--primary);
+            margin: 0 0 1.5rem 0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
             margin-bottom: 1.5rem;
-            height: 80px;
-            width: 80px;
+        }
+        
+        .info-icon {
+            width: 40px;
+            height: 40px;
             background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-            border-radius: 50%;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            color: var(--primary);
+            font-size: 1.2rem;
         }
         
-        .contact-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            color: var(--text);
+        .info-content h3 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1.1rem;
         }
         
-        .contact-card p {
-            margin: 0.75rem 0;
+        .info-content p {
+            margin: 0;
             color: var(--text-light);
         }
         
-        .contact-card strong {
-            color: var(--text);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-        
-        .contact-card a {
+        .info-content a {
             color: var(--primary);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-            display: inline-block;
-            margin: 0.5rem 0;
         }
         
-        .contact-card a:hover {
-            color: var(--primary-dark);
+        .info-content a:hover {
             text-decoration: underline;
         }
         
-        /* Contact Form */
-        .contact-form-container {
+        .contact-form {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 3rem 0;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             border: 1px solid var(--border);
         }
         
-        .contact-form-container h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+        .contact-form h2 {
             color: var(--primary);
-        }
-        
-        .contact-form-container > p {
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
+            margin: 0 0 1.5rem 0;
+            font-size: 1.5rem;
         }
         
         .form-group {
@@ -288,14 +216,12 @@
         
         .form-control {
             width: 100%;
-            padding: 1rem 1.25rem;
-            border: 2px solid var(--border);
-            border-radius: 10px;
+            padding: 0.85rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
             font-size: 1rem;
             font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-            background: var(--card-bg);
-            color: var(--text);
+            transition: border-color 0.3s;
         }
         
         .form-control:focus {
@@ -304,43 +230,26 @@
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
         
-        .form-control:invalid {
-            border-color: var(--danger);
-        }
-        
         textarea.form-control {
-            min-height: 150px;
             resize: vertical;
-        }
-        
-        select.form-control {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 16px;
-            padding-right: 3rem;
-        }
-        
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.85rem 1.75rem;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            min-height: 120px;
         }
         
         .btn-primary {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
+            padding: 0.85rem 1.75rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            width: 100%;
+            justify-content: center;
         }
         
         .btn-primary:hover {
@@ -349,229 +258,82 @@
             box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
         }
         
-        /* Developer Info */
-        .developer-info {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin: 2rem 0;
-            border: 1px solid var(--border);
+        .btn-primary:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
         
-        .developer-header {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .developer-avatar {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-        
-        .developer-details h3 {
-            font-size: 1.8rem;
-            margin: 0 0 0.5rem 0;
-            color: var(--text);
-        }
-        
-        .developer-details p {
-            margin: 0;
-            color: var(--text-light);
-        }
-        
-        .developer-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .developer-tag {
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        
-        /* Response Time Info */
-        .response-info {
-            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-            border-left: 4px solid var(--secondary);
-            padding: 1.5rem;
-            border-radius: 0 10px 10px 0;
-            margin: 2rem 0;
-        }
-        
-        .response-info h4 {
-            margin: 0 0 0.5rem 0;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .response-info ul {
-            margin: 0.5rem 0 0 0;
-            padding-left: 1.5rem;
-            color: var(--text-light);
-        }
-        
-        .response-info li {
-            margin: 0.25rem 0;
-        }
-        
-        /* AdSense */
-        .adsense-container {
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .ad-label {
-            color: #9ca3af;
-            font-size: 0.8rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .ad-unit {
-            background: white;
+        .alert {
             padding: 1rem;
             border-radius: 8px;
-            border: 1px solid var(--border);
-            min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: 1.5rem;
         }
         
-        /* Footer */
+        .alert-success {
+            background: #d1fae5;
+            border: 1px solid #10b981;
+            color: #065f46;
+        }
+        
+        .alert-error {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #991b1b;
+        }
+        
+        .faq-preview {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        .faq-preview h2 {
+            color: var(--primary);
+            margin: 0 0 1.5rem 0;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .faq-answer {
+            color: var(--text-light);
+            padding-left: 2rem;
+        }
+        
         .footer {
             background: #1f2937;
             color: white;
-            padding: 3rem 0 2rem;
+            padding: 2rem 0;
             margin-top: 3rem;
+            text-align: center;
         }
         
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h4 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-links a {
+        .footer a {
             color: #9ca3af;
             text-decoration: none;
-            transition: color 0.2s;
         }
         
-        .footer-links a:hover {
+        .footer a:hover {
             color: white;
         }
         
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .footer-social a {
-            color: #9ca3af;
-            font-size: 1.2rem;
-            transition: color 0.2s;
-        }
-        
-        .footer-social a:hover {
-            color: white;
-        }
-        
-        .footer-contact {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .footer-contact li {
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .footer-contact i {
-            width: 20px;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #374151;
-        }
-        
-        .footer-bottom p {
-            margin: 0.5rem 0;
-            color: #9ca3af;
-        }
-        
-        .footer-disclaimer {
-            color: #9ca3af;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        
-        .compliance-badges {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .compliance-badge {
-            padding: 0.35rem 0.75rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            font-size: 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -581,77 +343,27 @@
             .nav-menu {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 1rem;
-            }
-            
-            .contact-hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .contact-hero p {
-                font-size: 1rem;
             }
             
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .contact-form-container {
-                padding: 2rem;
-            }
-            
-            .developer-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .contact-hero {
-                padding: 3rem 1.5rem;
-            }
-            
-            .contact-hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .contact-form-container {
-                padding: 1.5rem;
-            }
         }
     </style>
-    
-    <!-- Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1F72BXHBV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-S1F72BXHBV');
-    </script>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
-        <div class="container header-container">
+        <div class="header-container">
             <a href="/" class="logo">
                 <div class="logo-icon">
                     <i class="fas fa-flag"></i>
                 </div>
-                <span>SA Daily Portal <span style="background: #f59e0b; color: white; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; margin-left: 0.25rem;">2026</span></span>
+                <span>SA Daily Portal <span class="badge-2026">2026</span></span>
             </a>
             
             <nav class="nav-menu">
                 <a href="/" class="nav-link">
                     <i class="fas fa-home"></i> Home
-                </a>
-                <a href="/about" class="nav-link">
-                    <i class="fas fa-info-circle"></i> About
                 </a>
                 <a href="/weather" class="nav-link">
                     <i class="fas fa-sun"></i> Weather
@@ -663,302 +375,225 @@
                     <i class="fas fa-futbol"></i> Football
                 </a>
                 <a href="/howto" class="nav-link">
-                    <i class="fas fa-book"></i> Smart Guides
-                </a>
-                <a href="/contact" class="nav-link active">
-                    <i class="fas fa-phone"></i> Contact
+                    <i class="fas fa-book"></i> Guides
                 </a>
             </nav>
         </div>
     </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <!-- Hero Section -->
-            <section class="contact-hero">
-                <h1>📞 Contact the Developer</h1>
-                <p>Get in touch with Nompumelelo, the developer behind SA Daily Portal 2026</p>
-            </section>
-
-            <!-- Ad Unit -->
-            <div class="adsense-container">
-                <div class="ad-label">Advertisement</div>
-                <div class="ad-unit">
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-9621668436424790"
-                         data-ad-slot="1234567890"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-            </div>
-
-            <!-- Contact Cards -->
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">
+    
+    <main class="container">
+        <div class="contact-hero">
+            <h1><i class="fas fa-paper-plane"></i> Contact Developer</h1>
+            <p>Have questions, suggestions, or feedback? I'd love to hear from you! Get in touch with the developer of SA Daily Portal 2026.</p>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2><i class="fas fa-user"></i> Developer Info</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon">
                         <i class="fas fa-user"></i>
                     </div>
-                    <h3>Developer Info</h3>
-                    <p><strong>Name:</strong> Nompumelelo</p>
-                    <p><strong>Location:</strong> Mpumalanga, South Africa</p>
-                    <p><strong>Role:</strong> Full Stack Developer</p>
-                    <p><strong>Specialization:</strong> SA Information Portals</p>
+                    <div class="info-content">
+                        <h3>Name</h3>
+                        <p>Nompumelelo</p>
+                    </div>
                 </div>
                 
-                <div class="contact-card">
-                    <div class="contact-icon">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Location</h3>
+                        <p>Ermelo, Mpumalanga, South Africa</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <h3>Email Contact</h3>
-                    <p><strong>Primary Email:</strong></p>
-                    <a href="mailto:sibiyan4444@gmail.com">sibiyan4444@gmail.com</a>
-                    <p><strong>Business Email:</strong></p>
-                    <a href="mailto:dev@sadailyportal.co.za">dev@sadailyportal.co.za</a>
-                    <p><strong>Response Time:</strong> 24-48 hours</p>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:sibiyan4444@gmail.com">sibiyan4444@gmail.com</a></p>
+                    </div>
                 </div>
                 
-                <div class="contact-card">
-                    <div class="contact-icon">
+                <div class="info-item">
+                    <div class="info-icon">
                         <i class="fas fa-phone"></i>
                     </div>
-                    <h3>Phone Contact</h3>
-                    <p><strong>Phone Number:</strong></p>
-                    <a href="tel:+27724728166">+27 72 472 8166</a>
-                    <p><strong>WhatsApp:</strong></p>
-                    <a href="https://wa.me/27724728166">+27 72 472 8166</a>
-                    <p><strong>Hours:</strong> 9am - 5pm Weekdays</p>
-                </div>
-            </div>
-
-            <!-- Developer Info Section -->
-            <div class="developer-info">
-                <div class="developer-header">
-                    <div class="developer-avatar">
-                        N
-                    </div>
-                    <div class="developer-details">
-                        <h3>Nompumelelo - Portal Developer</h3>
-                        <p>Mpumalanga, South Africa • Full Stack Developer</p>
-                        <div class="developer-tags">
-                            <span class="developer-tag">Web Development</span>
-                            <span class="developer-tag">SA Information</span>
-                            <span class="developer-tag">Real-time Data</span>
-                            <span class="developer-tag">AdSense Certified</span>
-                        </div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+27724728166">072 472 8166</a></p>
                     </div>
                 </div>
                 
-                <p style="color: var(--text-light); line-height: 1.8;">
-                    I'm a South African developer passionate about creating useful information portals for fellow South Africans. 
-                    SA Daily Portal 2026 was built to provide real-time, accurate information about weather, SASSA, European football, 
-                    and helpful guides all in one place. I focus on user-friendly design, fast performance, and reliable data.
-                </p>
-                
-                <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem;">
-                    <div style="flex: 1; min-width: 200px;">
-                        <h4 style="margin-bottom: 0.5rem; color: var(--text); font-size: 1rem;">Development Skills:</h4>
-                        <ul style="color: var(--text-light); margin: 0; padding-left: 1.5rem;">
-                            <li>Python Flask Backend</li>
-                            <li>JavaScript Frontend</li>
-                            <li>API Integration</li>
-                            <li>Responsive Design</li>
-                        </ul>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <div style="flex: 1; min-width: 200px;">
-                        <h4 style="margin-bottom: 0.5rem; color: var(--text); font-size: 1rem;">Focus Areas:</h4>
-                        <ul style="color: var(--text-light); margin: 0; padding-left: 1.5rem;">
-                            <li>Real-time Weather Data</li>
-                            <li>Sports API Integration</li>
-                            <li>Government Information</li>
-                            <li>User Experience</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Response Time Info -->
-            <div class="response-info">
-                <h4><i class="fas fa-clock"></i> Response Time Information</h4>
-                <p style="color: var(--text-light); margin: 0 0 0.5rem 0;">
-                    To ensure you get the best service, here's what to expect:
-                </p>
-                <ul>
-                    <li><strong>Email Responses:</strong> 24-48 hours during weekdays</li>
-                    <li><strong>Urgent Issues:</strong> Use WhatsApp for faster response</li>
-                    <li><strong>Business Hours:</strong> Monday to Friday, 9am - 5pm SAST</li>
-                    <li><strong>Weekend Support:</strong> Limited availability</li>
-                </ul>
-            </div>
-
-            
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h4>SA Daily Portal 2026</h4>
-                    <p>Your trusted source for South African information, weather updates, and helpful guides.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/27724728166" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:sibiyan4444@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <div class="info-content">
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 9am - 5pm<br>Saturday: 9am - 1pm<br>Sunday: Closed</p>
                     </div>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/weather">Weather</a></li>
-                        <li><a href="/sassa">SASSA Center</a></li>
-                        <li><a href="/sports">Sports Hub</a></li>
-                        <li><a href="/howto">Smart Guides</a></li>
-                        <li><a href="/contact">Contact Developer</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="/privacy">Privacy Policy</a></li>
-                        <li><a href="/terms">Terms of Service</a></li>
-                        <li><a href="/disclaimer">Disclaimer</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-user"></i> Developer: Nompumelelo</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Mpumalanga, South Africa</li>
-                        <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +27 72 472 8166</li>
-                        <li><i class="fab fa-whatsapp"></i> WhatsApp: +27 72 472 8166</li>
-                        <li><i class="fas fa-clock"></i> Business Hours: 9am-5pm</li>
-                    </ul>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/27724728166" target="_blank">Chat on WhatsApp</a></p>
+                    </div>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2026 SA Daily Portal. All rights reserved. Unofficial information site - Not affiliated with any government department.</p>
-                <p class="footer-disclaimer">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    Always verify information with official sources. This site uses cookies for analytics and advertising.
+            <div class="contact-form">
+                <h2><i class="fas fa-pencil-alt"></i> Send Message</h2>
+                
+                <div id="alertMessage" style="display: none;"></div>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name <span style="color: var(--danger);">*</span></label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address <span style="color: var(--danger);">*</span></label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject <span style="color: var(--danger);">*</span></label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message <span style="color: var(--danger);">*</span></label>
+                        <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+                
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light); text-align: center;">
+                    <i class="fas fa-shield-alt"></i> Your information is private and will only be used to respond to your message.
                 </p>
-                <div class="compliance-badges">
-                    <span class="compliance-badge">
-                        <i class="fas fa-shield-alt"></i> AdSense Compliant
-                    </span>
-                    <span class="compliance-badge">
-                        <i class="fas fa-user-shield"></i> GDPR Ready
-                    </span>
-                    <span class="compliance-badge">
-                        <i class="fas fa-mobile-alt"></i> Mobile Friendly
-                    </span>
-                </div>
             </div>
         </div>
+        
+        <div class="faq-preview">
+            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-chevron-right" style="color: var(--primary);"></i>
+                    How quickly will I get a response?
+                </div>
+                <div class="faq-answer">
+                    I aim to respond to all messages within 24-48 hours during business days. If you need urgent assistance, please WhatsApp me directly.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-chevron-right" style="color: var(--primary);"></i>
+                    Can you help with my SASSA application?
+                </div>
+                <div class="faq-answer">
+                    I can provide guidance based on publicly available information, but for official SASSA assistance, please contact SASSA directly at 0800 60 10 11 or visit your local SASSA office.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-chevron-right" style="color: var(--primary);"></i>
+                    Do you offer paid services?
+                </div>
+                <div class="faq-answer">
+                    No, SA Daily Portal is completely free. I don't charge for information or assistance. If you need help with the website, feel free to reach out.
+                </div>
+            </div>
+            
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <a href="/faq" style="color: var(--primary); text-decoration: none; font-weight: 600;">
+                    View All FAQs <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 SA Daily Portal. All rights reserved.</p>
+            <p>
+                <a href="/privacy-policy">Privacy Policy</a> | 
+                <a href="/terms">Terms of Service</a> | 
+                <a href="/disclaimer">Disclaimer</a> | 
+                <a href="/about">About Us</a>
+            </p>
+        </div>
     </footer>
-
-    <!-- JavaScript -->
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contactForm');
-            const formMessage = document.getElementById('formMessage');
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
             
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const alertDiv = document.getElementById('alertMessage');
+            
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            try {
+                const response = await fetch('/api/contact/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams(formData)
+                });
                 
-                const submitButton = contactForm.querySelector('button[type="submit"]');
-                const originalText = submitButton.innerHTML;
+                const data = await response.json();
                 
-                // Disable button and show loading
-                submitButton.disabled = true;
-                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                
-                // Collect form data
-                const formData = new FormData(contactForm);
-                const data = Object.fromEntries(formData);
-                
-                try {
-                    // Simulate form submission (in production, this would be a real API call)
-                    await new Promise(resolve => setTimeout(resolve, 1000));
+                if (data.success) {
+                    alertDiv.style.display = 'block';
+                    alertDiv.className = 'alert alert-success';
+                    alertDiv.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! I\'ll respond within 24-48 hours.';
                     
-                    // Show success message
-                    formMessage.style.display = 'block';
-                    formMessage.style.color = '#10b981';
-                    formMessage.style.padding = '1rem';
-                    formMessage.style.background = '#f0fdf4';
-                    formMessage.style.borderRadius = '8px';
-                    formMessage.style.border = '1px solid #10b981';
-                    formMessage.innerHTML = `
-                        <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
-                            <i class="fas fa-check-circle" style="color: #10b981; font-size: 1.2rem;"></i>
-                            <div>
-                                <strong style="color: #10b981;">Message Sent Successfully!</strong>
-                                <p style="margin: 0.25rem 0 0 0; color: #065f46;">
-                                    Thank you for your message. I'll respond within 24-48 hours during business days.
-                                    For urgent matters, please contact me via WhatsApp at 072 472 8166.
-                                </p>
-                            </div>
-                        </div>
-                    `;
+                    document.getElementById('contactForm').reset();
                     
-                    // Reset form
-                    contactForm.reset();
-                    
-                    // Scroll to message
-                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                } catch (error) {
-                    // Show error message
-                    formMessage.style.display = 'block';
-                    formMessage.style.color = '#ef4444';
-                    formMessage.style.padding = '1rem';
-                    formMessage.style.background = '#fef2f2';
-                    formMessage.style.borderRadius = '8px';
-                    formMessage.style.border = '1px solid #ef4444';
-                    formMessage.innerHTML = `
-                        <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
-                            <i class="fas fa-exclamation-circle" style="color: #ef4444; font-size: 1.2rem;"></i>
-                            <div>
-                                <strong style="color: #ef4444;">Message Not Sent</strong>
-                                <p style="margin: 0.25rem 0 0 0; color: #7f1d1d;">
-                                    There was an error sending your message. Please try again or contact me directly at sibiyan4444@gmail.com
-                                </p>
-                            </div>
-                        </div>
-                    `;
-                } finally {
-                    // Re-enable button
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = originalText;
-                    
-                    // Auto-hide message after 10 seconds
+                    // Hide alert after 5 seconds
                     setTimeout(() => {
-                        formMessage.style.display = 'none';
-                    }, 10000);
+                        alertDiv.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error(data.error || 'Failed to send message');
                 }
-            });
-            
-            // Initialize AdSense
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            
-            // Auto-load AdSense after page load
-            setTimeout(() => {
-                if (window.adsbygoogle && window.adsbygoogle.loaded) {
-                    window.adsbygoogle = window.adsbygoogle || [];
-                    window.adsbygoogle.push({});
-                }
-            }, 1000);
+            } catch (error) {
+                alertDiv.style.display = 'block';
+                alertDiv.className = 'alert alert-error';
+                alertDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + error.message + ' Please try again or email directly.';
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+            }
         });
     </script>
 </body>

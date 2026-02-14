@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SA Daily Portal 2026 - Real-time South African Information</title>
-    <meta name="description" content="South Africa's premier portal for 2026: Real-time weather, SASSA info, European football scores, and helpful guides">
+    <title>SA Daily Portal 2026 - South African How-To Guides & Weather</title>
+    <meta name="description" content="Your complete South African information hub: practical how-to guides for SASSA, jobs, and daily life, plus accurate weather forecasts.">
     
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="South Africa 2026, SA weather, SASSA 2026, European football, live scores, Premier League">
+    <meta name="keywords" content="South Africa how-to guides, SASSA guide 2026, South African jobs, online money South Africa, SA weather today">
     <meta name="author" content="SA Daily Portal">
     <meta name="robots" content="index, follow">
+    <meta name="google-adsense-account" content="ca-pub-9621668436424790">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -17,68 +18,81 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-       
-    <!-- AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9621668436424790"
-     crossorigin="anonymous"></script>
-
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z2ZSZKQ5F7');
-</script>
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
+    <!-- AdSense Verification Script (KEEP THIS ONE ONLY) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9621668436424790" crossorigin="anonymous"></script>
     
-    <!-- Core Styles -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z2ZSZKQ5F7');
+    </script>
+    
     <style>
+        /* Modern CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --background: #f8fafc;
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #059669;
+            --accent: #d97706;
+            --danger: #dc2626;
+            --background: #f9fafb;
             --card-bg: #ffffff;
             --text: #1f2937;
             --text-light: #6b7280;
             --border: #e5e7eb;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius: 12px;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--background);
             color: var(--text);
-            margin: 0;
-            min-height: 100vh;
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
+            width: 100%;
         }
-        
-        /* Header */
+
+        /* Header Styles */
         .header {
             background: var(--card-bg);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-sm);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
-        
+
         .header-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1rem;
+            padding: 1rem 0;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -88,24 +102,24 @@
             color: var(--primary);
             text-decoration: none;
         }
-        
+
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
+            font-size: 1.2rem;
         }
-        
-        /* Navigation */
+
         .nav-menu {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
-        
+
         .nav-link {
             color: var(--text);
             text-decoration: none;
@@ -117,15 +131,15 @@
             gap: 0.5rem;
             transition: color 0.2s;
         }
-        
+
         .nav-link:hover {
             color: var(--primary);
         }
-        
+
         .nav-link.active {
             color: var(--primary);
         }
-        
+
         .nav-link.active::after {
             content: '';
             position: absolute;
@@ -135,122 +149,69 @@
             height: 2px;
             background: var(--primary);
         }
-        
+
         /* Sports Ticker */
         .sports-ticker-container {
-            background: linear-gradient(90deg, #1e3a8a, #2563eb);
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
             color: white;
             overflow: hidden;
-            padding: 0.75rem 0;
-            position: relative;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        
+
         .sports-ticker {
             display: flex;
             align-items: center;
             animation: ticker-scroll 40s linear infinite;
             white-space: nowrap;
-            padding: 0.5rem 0;
         }
-        
+
         @keyframes ticker-scroll {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
-        
+
         .ticker-header {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-weight: 600;
-            background: rgba(255,255,255,0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
+            background: rgba(255,255,255,0.15);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
             margin-right: 1.5rem;
             white-space: nowrap;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
         }
-        
+
         .ticker-item {
             display: inline-flex;
             align-items: center;
-            gap: 1.5rem;
-            padding: 0.5rem 1.5rem;
-            background: rgba(255,255,255,0.15);
-            border-radius: 8px;
-            margin-right: 1.5rem;
-            min-width: 380px;
+            gap: 1rem;
+            padding: 0.4rem 1.2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            margin-right: 1rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
         }
-        
+
         .ticker-item:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-2px);
+            background: rgba(255,255,255,0.2);
         }
-        
-        .match-teams {
-            font-weight: 600;
-            flex: 1;
-            min-width: 220px;
-        }
-        
-        .match-teams .team {
-            margin: 0.2rem 0;
-            font-size: 0.95rem;
-        }
-        
-        .match-score {
-            font-weight: 800;
-            font-size: 1.3rem;
-            background: rgba(255,255,255,0.25);
-            padding: 0.4rem 0.9rem;
-            border-radius: 6px;
-            min-width: 80px;
-            text-align: center;
-        }
-        
-        .match-status {
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .match-status.upcoming {
-            background: var(--primary);
-        }
-        
-        .match-status.completed {
-            background: var(--secondary);
-        }
-        
-        .match-time {
-            font-size: 0.8rem;
-            opacity: 0.9;
-            min-width: 60px;
-            text-align: center;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.7; }
-            100% { opacity: 1; }
-        }
-        
-        /* Weather Widget */
+
+        /* Weather Widget - Fixed */
         .weather-widget {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary), #312e81);
             color: white;
-            border-radius: 16px;
+            border-radius: var(--radius);
             padding: 2rem;
             margin: 2rem 0;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-lg);
             position: relative;
             overflow: hidden;
         }
-        
+
         .weather-widget::before {
             content: '';
             position: absolute;
@@ -263,149 +224,320 @@
             opacity: 0.3;
             z-index: 0;
         }
-        
+
         .weather-widget > * {
             position: relative;
             z-index: 1;
         }
-        
+
         .weather-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1.5rem;
         }
-        
+
+        .weather-header h2 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .weather-freshness {
+            font-size: 0.85rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+
         .weather-main {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 1.5rem;
         }
-        
+
         .weather-temp {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .weather-location {
-            font-size: 1.4rem;
+            font-size: 3.5rem;
             font-weight: 700;
+            line-height: 1;
+        }
+
+        .weather-location {
+            font-size: 1.25rem;
+            font-weight: 600;
             margin-bottom: 0.25rem;
         }
-        
+
         .weather-description {
-            opacity: 0.95;
-            font-size: 1.1rem;
+            opacity: 0.9;
+            font-size: 1rem;
         }
-        
+
+        .weather-icon {
+            font-size: 4rem;
+            opacity: 0.9;
+        }
+
         .weather-details {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
-        
+
         .weather-detail {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 1rem;
-            background: rgba(255,255,255,0.15);
+            padding: 0.75rem;
+            background: rgba(255,255,255,0.1);
             border-radius: 10px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
-        
-        .weather-detail:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-3px);
-        }
-        
+
         .detail-icon {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             opacity: 0.9;
         }
-        
-        /* Hourly Forecast */
-        .hourly-forecast {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.2);
+
+        .weather-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
-        
-        .hourly-forecast-header {
+
+        /* Welcome Section - Redesigned */
+        .welcome-section {
+            background: linear-gradient(135deg, #f0f9ff, #ffffff);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            box-shadow: var(--shadow-md);
+        }
+
+        .welcome-header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .welcome-header p {
+            color: var(--text);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .welcome-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .feature-icon.guides { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
+        .feature-icon.weather { background: linear-gradient(135deg, #059669, #10b981); }
+        .feature-icon.sports { background: linear-gradient(135deg, #d97706, #f59e0b); }
+
+        .feature-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--text);
+        }
+
+        .feature-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Guides Section */
+        .guides-section {
+            margin: 3rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .guide-image {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .guide-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .guide-content {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .guide-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+            line-height: 1.4;
+        }
+
+        .guide-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .guide-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .guide-read-time {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .guide-read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            font-weight: 600;
+            transition: gap 0.3s;
         }
-        
-        .hourly-forecast-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 1rem;
+
+        .guide-read-more:hover {
+            gap: 0.75rem;
+            color: var(--primary-light);
         }
-        
-        .hourly-item {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 1rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .hourly-item:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-        
-        .hourly-time {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .hourly-temp {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-        
-        .hourly-icon {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
+
         /* Quick Access */
         .quick-access-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             margin: 2rem 0;
         }
-        
+
         .quick-access-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.75rem;
+            border-radius: var(--radius);
+            padding: 1.5rem;
             text-decoration: none;
             color: var(--text);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-sm);
         }
-        
+
         .quick-access-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-lg);
             border-color: var(--primary);
         }
-        
+
         .card-icon {
             width: 60px;
             height: 60px;
@@ -414,399 +546,50 @@
             align-items: center;
             justify-content: center;
             color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            transition: all 0.3s ease;
-        }
-        
-        .quick-access-card:hover .card-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-        
-        .icon-weather {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-        }
-        
-        .icon-sassa {
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
-        
-        .icon-sports {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-        }
-        
-        .icon-guides {
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-        }
-        
-        /* Upcoming Matches Section */
-        .upcoming-matches-container {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 1px solid var(--border);
-        }
-        
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border);
-        }
-        
-        .section-header h2 {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-bottom: 1.25rem;
             font-size: 1.5rem;
         }
-        
-        .badge {
-            padding: 0.35rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-left: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .badge-2026 {
-            background: var(--accent);
-            color: white;
-        }
-        
-        .upcoming-matches-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .upcoming-match-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            border: 2px solid var(--border);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .upcoming-match-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .match-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .match-header .status {
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 0.35rem 0.85rem;
-            border-radius: 20px;
-            text-transform: uppercase;
-        }
-        
-        .status.upcoming {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .status.completed {
-            background: var(--secondary);
-            color: white;
-        }
-        
-        .match-time-display {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-        
-        .match-teams-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .team-container {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .team-name {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .team-logo {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            color: var(--text);
-            margin: 0 auto;
-            font-size: 1.2rem;
-        }
-        
-        .match-score {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--text);
-            min-width: 100px;
-            text-align: center;
-        }
-        
-        .match-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        
-        .competition-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            padding: 0.35rem 0.75rem;
-            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        /* Standings Container */
-        .standings-container {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 1px solid var(--border);
-            margin: 2rem 0;
-        }
-        
-        .standings-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        
-        .standings-table th {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            padding: 1rem 1.25rem;
-            text-align: left;
-            font-weight: 700;
-            color: var(--text);
-            border-bottom: 2px solid var(--border);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .standings-table td {
-            padding: 0.9rem 1.25rem;
-            border-bottom: 1px solid var(--border);
-            transition: all 0.2s ease;
-        }
-        
-        .standings-table tr:hover td {
-            background: #f8fafc;
-        }
-        
-        .standings-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .position-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .position-1 { 
-            background: linear-gradient(135deg, #FFD700, #FFC400);
-            color: #333;
-            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
-        }
-        
-        .position-2 { 
-            background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
-            color: #333;
-            box-shadow: 0 4px 10px rgba(192, 192, 192, 0.3);
-        }
-        
-        .position-3 { 
-            background: linear-gradient(135deg, #CD7F32, #B56A1E);
-            color: white;
-            box-shadow: 0 4px 10px rgba(205, 127, 50, 0.3);
-        }
-        
-        .position-4-6 { 
-            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-            color: var(--text);
-        }
-        
+
+        .icon-weather { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
+        .icon-guides { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .icon-sports { background: linear-gradient(135deg, var(--secondary), #10b981); }
+
         /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.85rem 1.75rem;
+            padding: 0.7rem 1.5rem;
             border: none;
-            border-radius: 10px;
-            font-weight: 600;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        
+
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: var(--primary);
             color: white;
         }
-        
+
         .btn-primary:hover {
-            background: linear-gradient(135deg, var(--primary-dark), #1e40af);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
+            background: var(--primary-light);
+            transform: translateY(-2px);
         }
-        
+
         .btn-secondary {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            background: white;
             color: var(--text);
             border: 1px solid var(--border);
         }
-        
+
         .btn-secondary:hover {
-            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            background: #f9fafb;
+            transform: translateY(-2px);
         }
-        
-        .actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            justify-content: center;
-        }
-        
-        /* Welcome Section */
-        .welcome-section {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            margin: 2rem 0;
-        }
-        
-        .welcome-header {
-            margin-bottom: 1.5rem;
-        }
-        
-        .welcome-header h1 {
-            margin: 0 0 1rem 0;
-            color: var(--primary);
-            font-size: 2.2rem;
-        }
-        
-        .welcome-header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .info-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .info-card {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-            padding: 1.2rem;
-            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-            border-radius: 12px;
-        }
-        
-        .info-card:nth-child(2) {
-            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-        }
-        
-        .info-card:nth-child(3) {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-        }
-        
-        .info-card-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.3rem;
-        }
-        
-        .info-card-icon.weather {
-            background: var(--primary);
-        }
-        
-        .info-card-icon.sports {
-            background: var(--secondary);
-        }
-        
-        .info-card-icon.data {
-            background: var(--accent);
-        }
-        
-        .info-card-content h3 {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin: 0 0 0.25rem 0;
-        }
-        
-        .info-card-content p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin: 0;
-        }
-        
+
         /* Footer */
         .footer {
             background: #1f2937;
@@ -814,319 +597,208 @@
             padding: 3rem 0 2rem;
             margin-top: 3rem;
         }
-        
+
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
             gap: 2rem;
             margin-bottom: 2rem;
         }
-        
+
         .footer-section h4 {
             color: white;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
-        
+
         .footer-links {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
-        
+
         .footer-links li {
             margin-bottom: 0.5rem;
         }
-        
+
         .footer-links a {
             color: #9ca3af;
             text-decoration: none;
             transition: color 0.2s;
+            font-size: 0.9rem;
         }
-        
+
         .footer-links a:hover {
             color: white;
         }
-        
+
         .footer-social {
             display: flex;
             gap: 1rem;
             margin-top: 1rem;
         }
-        
+
         .footer-social a {
             color: #9ca3af;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: color 0.2s;
         }
-        
+
         .footer-social a:hover {
             color: white;
         }
-        
+
         .footer-contact {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
-        
+
         .footer-contact li {
             margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-size: 0.9rem;
+            color: #9ca3af;
         }
-        
+
         .footer-contact i {
             width: 20px;
+            color: var(--primary-light);
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid #374151;
         }
-        
-        .footer-disclaimer {
+
+        .footer-bottom p {
             color: #9ca3af;
-            font-size: 0.9rem;
-            margin-top: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-disclaimer {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            margin: 1rem 0;
         }
-        
+
         .compliance-badges {
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-top: 1.5rem;
             flex-wrap: wrap;
+            margin-top: 1.5rem;
         }
-        
+
         .compliance-badge {
-            padding: 0.35rem 0.75rem;
+            padding: 0.25rem 0.75rem;
             background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            font-size: 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.35rem;
+            color: #9ca3af;
         }
-        
+
         /* Loading States */
         .loading {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem;
+            text-align: center;
+            padding: 2rem;
         }
-        
+
         .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid #e5e7eb;
-            border-top: 4px solid var(--primary);
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top: 3px solid var(--primary);
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin-bottom: 1.5rem;
+            margin: 0 auto 1rem;
         }
-        
+
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
-        /* No Data States */
-        .no-data {
-            grid-column: 1 / -1;
-            padding: 3rem;
-            text-align: center;
-            color: var(--text-light);
-        }
-        
-        .no-data i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.3;
-        }
-        
-        .no-data h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-        
-        .no-data p {
-            font-size: 0.95rem;
-            color: #9ca3af;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        /* AdSense */
-        .adsense-container {
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .ad-label {
-            color: #9ca3af;
-            font-size: 0.8rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .ad-unit {
-            background: white;
-            padding: 1rem;
+
+        /* Error State */
+        .weather-error {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
             border-radius: 8px;
-            border: 1px solid var(--border);
-            min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .ad-unit-header {
+            padding: 1rem;
             margin: 1rem 0;
+            text-align: center;
         }
-        
-        .ad-unit-content {
-            margin: 1.5rem 0;
-        }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
             .nav-menu {
+                gap: 1rem;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 1rem;
             }
-            
-            .weather-main {
-                flex-direction: column;
-                text-align: center;
-                gap: 1.5rem;
+
+            .weather-details {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
-            .weather-temp {
-                font-size: 3.5rem;
+
+            .welcome-features {
+                grid-template-columns: 1fr;
             }
-            
-            .sports-ticker {
-                animation: ticker-scroll-mobile 25s linear infinite;
-            }
-            
-            @keyframes ticker-scroll-mobile {
-                0% { transform: translateX(100%); }
-                100% { transform: translateX(-200%); }
-            }
-            
-            .ticker-item {
-                min-width: 320px;
-                gap: 1rem;
-                padding: 0.5rem 1rem;
-            }
-            
-            .hourly-forecast-grid {
-                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-                gap: 0.75rem;
-            }
-            
+
             .quick-access-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .upcoming-matches-grid {
+
+            .guides-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .match-teams-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .match-score {
-                font-size: 2rem;
-                min-width: auto;
-                order: -1;
-            }
-            
-            .team-container {
-                width: 100%;
-            }
-            
-            .info-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .actions {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
+
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+
+            .weather-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
-        
+
         @media (max-width: 480px) {
+            .weather-main {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
             .weather-temp {
                 font-size: 3rem;
             }
-            
-            .weather-location {
-                font-size: 1.2rem;
+
+            .weather-details {
+                grid-template-columns: 1fr;
             }
-            
-            .ticker-item {
-                min-width: 280px;
-            }
-            
+
             .welcome-header h1 {
                 font-size: 1.8rem;
             }
-            
-            .section-header {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: flex-start;
-            }
-            
-            .section-header h2 {
-                font-size: 1.3rem;
-            }
-            
-            .hourly-forecast-grid {
-                grid-template-columns: repeat(4, 1fr);
-                overflow-x: auto;
-            }
         }
     </style>
-    
-    <!-- Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1F72BXHBV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-S1F72BXHBV');
-    </script>
 </head>
 <body>
     <!-- Header -->
@@ -1134,26 +806,26 @@
         <div class="container header-container">
             <a href="/" class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-flag"></i>
+                    <i class="fas fa-map-marked-alt"></i>
                 </div>
-                <span>SA Daily Portal <span class="badge badge-2026">2026</span></span>
+                <span>SA Daily Portal <span style="background: var(--accent); color: white; padding: 0.2rem 0.5rem; border-radius: 30px; font-size: 0.8rem; margin-left: 0.5rem;">2026</span></span>
             </a>
             
             <nav class="nav-menu">
                 <a href="/" class="nav-link active">
                     <i class="fas fa-home"></i> Home
                 </a>
-                <a href="/weather" class="nav-link">
-                    <i class="fas fa-sun"></i> Weather
+                <a href="/howto" class="nav-link">
+                    <i class="fas fa-book-open"></i> Guides
                 </a>
-                <a href="/sassa" class="nav-link">
-                    <i class="fas fa-hand-holding-heart"></i> SASSA
+                <a href="/weather" class="nav-link">
+                    <i class="fas fa-cloud-sun"></i> Weather
                 </a>
                 <a href="/sports" class="nav-link">
-                    <i class="fas fa-futbol"></i> Football
+                    <i class="fas fa-futbol"></i> Sports
                 </a>
-                <a href="/howto" class="nav-link">
-                    <i class="fas fa-book"></i> How-To
+                <a href="/contact" class="nav-link">
+                    <i class="fas fa-envelope"></i> Contact
                 </a>
             </nav>
         </div>
@@ -1165,284 +837,359 @@
             <div class="sports-ticker" id="sportsTicker">
                 <div class="ticker-header">
                     <i class="fas fa-futbol"></i>
-                    <span>⚽ Upcoming European Football 2026</span>
+                    <span>⚽ European Football 2026</span>
                 </div>
-                <!-- Ticker items will be loaded by JavaScript -->
+                <div class="ticker-item">
+                    <span>Loading matches...</span>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Welcome Section -->
+        <!-- Welcome Section - Redesigned -->
         <section class="welcome-section">
             <div class="welcome-header">
-                <h1>SA Daily Portal 2026</h1>
-                <p>Your real-time South African information hub for 2026. Live weather updates, SASSA information, European football scores, and helpful guides.</p>
+                <h1>Welcome to SA Daily Portal 2026</h1>
+                <p>Your complete guide to navigating daily life in South Africa. Browse our library of practical how-to guides and get accurate weather forecasts.</p>
                 
-                <div class="info-cards">
-                    <div class="info-card">
-                        <div class="info-card-icon weather">
+                <div class="welcome-features">
+                    <div class="feature-item">
+                        <div class="feature-icon guides">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>20+ How-To Guides</h3>
+                            <p>SASSA, banking, jobs, and online money</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon weather">
                             <i class="fas fa-cloud-sun"></i>
                         </div>
-                        <div class="info-card-content">
+                        <div class="feature-content">
                             <h3>Live Weather</h3>
-                            <p id="currentLocation">Detecting your location...</p>
+                            <p>Real-time conditions for your location</p>
                         </div>
                     </div>
                     
-                    <div class="info-card">
-                        <div class="info-card-icon sports">
+                    <div class="feature-item">
+                        <div class="feature-icon sports">
                             <i class="fas fa-futbol"></i>
                         </div>
-                        <div class="info-card-content">
+                        <div class="feature-content">
                             <h3>European Football</h3>
-                            <p>Upcoming Matches & Standings</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-card">
-                        <div class="info-card-icon data">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <div class="info-card-content">
-                            <h3>Real-time Data</h3>
-                            <p>Updated Every 2 Minutes</p>
+                            <p>Upcoming fixtures & schedules</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Ad Unit -->
-        <div class="adsense-container">
-            <div class="ad-label">Advertisement</div>
-            <div class="ad-unit ad-unit-header">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-9750885759333419"
-                     data-ad-slot="1234567890"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        </div>
-
-        <!-- Weather Widget -->
+        <!-- Weather Widget - Fixed -->
         <section class="weather-widget">
             <div class="weather-header">
-                <h2 style="margin: 0; font-size: 1.4rem; font-weight: 700;">
+                <h2>
                     <i class="fas fa-map-marker-alt"></i> Current Weather
                 </h2>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span id="weatherFreshness" style="font-size: 0.9rem; background: rgba(255,255,255,0.25); padding: 0.4rem 1rem; border-radius: 20px; font-weight: 600;">
-                        <i class="fas fa-sync-alt fa-spin"></i> Detecting...
-                    </span>
+                <div class="weather-freshness" id="weatherFreshness">
+                    <i class="fas fa-sync-alt fa-spin"></i> Loading...
                 </div>
             </div>
             
-            <div id="weatherWidget">
+            <div id="weatherContent">
                 <div class="weather-main">
                     <div>
                         <div class="weather-temp" id="currentTemp">--°C</div>
-                        <div class="weather-location" id="weatherLocation">Getting your location...</div>
-                        <div class="weather-description" id="weatherDescription">--</div>
-                        <div style="margin-top: 0.75rem; font-size: 1rem; opacity: 0.95; font-weight: 500;">
-                            Feels like <span id="feelsLike" style="font-weight: 700;">--°C</span>
+                        <div class="weather-location" id="weatherLocation">Detecting your location...</div>
+                        <div class="weather-description" id="weatherDescription">Please allow location access</div>
+                        <div style="margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.9;">
+                            Feels like <span id="feelsLike">--°C</span>
                         </div>
                     </div>
-                    <div id="weatherIcon" style="font-size: 5rem;">
+                    <div class="weather-icon" id="weatherIcon">
                         <i class="fas fa-cloud-sun"></i>
                     </div>
                 </div>
                 
                 <div class="weather-details" id="weatherDetails">
                     <div class="weather-detail">
-                        <div class="detail-icon">
-                            <i class="fas fa-wind"></i>
-                        </div>
+                        <div class="detail-icon"><i class="fas fa-wind"></i></div>
                         <div>
-                            <div style="font-weight: 700; font-size: 1.1rem;" id="windSpeed">-- km/h</div>
-                            <div style="font-size: 0.9rem; opacity: 0.9;">Wind Speed</div>
+                            <div style="font-weight: 600;" id="windSpeed">-- km/h</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Wind</div>
                         </div>
                     </div>
                     
                     <div class="weather-detail">
-                        <div class="detail-icon">
-                            <i class="fas fa-tint"></i>
-                        </div>
+                        <div class="detail-icon"><i class="fas fa-tint"></i></div>
                         <div>
-                            <div style="font-weight: 700; font-size: 1.1rem;" id="humidity">--%</div>
-                            <div style="font-size: 0.9rem; opacity: 0.9;">Humidity</div>
+                            <div style="font-weight: 600;" id="humidity">--%</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Humidity</div>
                         </div>
                     </div>
                     
                     <div class="weather-detail">
-                        <div class="detail-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
+                        <div class="detail-icon"><i class="fas fa-eye"></i></div>
                         <div>
-                            <div style="font-weight: 700; font-size: 1.1rem;" id="visibility">-- km</div>
-                            <div style="font-size: 0.9rem; opacity: 0.9;">Visibility</div>
+                            <div style="font-weight: 600;" id="visibility">-- km</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Visibility</div>
                         </div>
                     </div>
                     
                     <div class="weather-detail">
-                        <div class="detail-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
+                        <div class="detail-icon"><i class="fas fa-cloud"></i></div>
                         <div>
-                            <div style="font-weight: 700; font-size: 1.1rem;" id="clouds">--%</div>
-                            <div style="font-size: 0.9rem; opacity: 0.9;">Cloud Cover</div>
+                            <div style="font-weight: 600;" id="clouds">--%</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Clouds</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Hourly Forecast Section -->
-                <div class="hourly-forecast" id="hourlyForecastSection">
-                    <div class="hourly-forecast-header">
-                        <i class="fas fa-clock"></i>
-                        <span>Hourly Forecast</span>
-                    </div>
-                    <div class="hourly-forecast-grid" id="hourlyForecast">
-                        <!-- Hourly forecast will be loaded here -->
-                        <div class="hourly-item">
-                            <div class="hourly-time">--:--</div>
-                            <div class="hourly-icon"><i class="fas fa-cloud"></i></div>
-                            <div class="hourly-temp">--°</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <button onclick="loadWeatherForCurrentLocation()" class="btn btn-primary">
+                <div class="weather-actions">
+                    <button onclick="getWeatherByLocation()" class="btn btn-primary">
                         <i class="fas fa-location-crosshairs"></i> Use My Location
                     </button>
                     <button onclick="refreshWeather()" class="btn btn-secondary">
-                        <i class="fas fa-sync-alt"></i> Refresh Weather
+                        <i class="fas fa-sync-alt"></i> Refresh
                     </button>
                     <a href="/weather" class="btn btn-secondary">
-                        <i class="fas fa-search-location"></i> Search City
+                        <i class="fas fa-search"></i> Search City
                     </a>
                 </div>
-                
-                <div style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9; display: flex; align-items: center; gap: 0.5rem;">
-                    <i class="fas fa-info-circle"></i>
-                    Real-time weather data. Updates automatically every 5 minutes.
-                </div>
+            </div>
+            
+            <div id="weatherError" style="display: none;" class="weather-error">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="errorMessage"></span>
+                <button onclick="getWeatherByLocation()" style="margin-left: 1rem; background: white; color: var(--danger); border: none; padding: 0.25rem 1rem; border-radius: 30px; cursor: pointer;">Try Again</button>
             </div>
         </section>
 
-        <!-- Ad Unit -->
-        <div class="adsense-container">
-            <div class="ad-label">Advertisement</div>
-            <div class="ad-unit ad-unit-content">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-9750885759333419"
-                     data-ad-slot="2345678901"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        </div>
-
-        <!-- Upcoming Matches Section -->
-        <div class="upcoming-matches-container">
+        <!-- Guides Section -->
+        <section class="guides-section">
             <div class="section-header">
                 <h2>
-                    <i class="fas fa-calendar-alt"></i> Upcoming European Matches
+                    <i class="fas fa-book-open" style="color: var(--primary);"></i> 
+                    Practical South African Guides
                 </h2>
-                <span class="badge badge-2026">Live 2026</span>
+                <p>Step-by-step tutorials for SASSA, banking, jobs, and online opportunities</p>
             </div>
             
-            <div class="upcoming-matches-grid" id="upcomingMatchesGrid">
-                <!-- Upcoming matches will be loaded here -->
-                <div class="loading">
-                    <div class="loading-spinner"></div>
-                    <p>Loading upcoming European matches...</p>
+            <div class="guides-grid">
+                <!-- SASSA Guides -->
+                <div class="guide-card" onclick="window.location.href='/guides/sassa-status-check.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #059669, #10b981);">
+                        <span class="guide-category">SASSA</span>
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Check Your SASSA Grant Status Online</h3>
+                        <p>Complete step-by-step guide for South Africans to check SRD grant, older persons, disability, and child support grant status online in 2026.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 5 min read</span>
+                            <a href="/guides/sassa-status-check.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card" onclick="window.location.href='/guides/sassa-srd-application.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #2563eb, #3b82f6);">
+                        <span class="guide-category">SASSA</span>
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>SASSA SRD Grant Application 2026: Step-by-Step</h3>
+                        <p>New to SASSA? Learn how to apply for the R350 SRD grant online, check your application status, and what to do if your application is rejected.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 7 min read</span>
+                            <a href="/guides/sassa-srd-application.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Finance Guides -->
+                <div class="guide-card" onclick="window.location.href='/guides/make-money-online-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
+                        <span class="guide-category">Finance</span>
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Make Money Online in South Africa</h3>
+                        <p>14 legitimate ways to earn income online from South Africa in 2026. From freelance work to online surveys, content creation, and remote jobs.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 10 min read</span>
+                            <a href="/guides/make-money-online-sa.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Career Guides -->
+                <div class="guide-card" onclick="window.location.href='/guides/how-to-write-cv-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #2563eb, #60a5fa);">
+                        <span class="guide-category">Career</span>
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Write a CV in South Africa (with Template)</h3>
+                        <p>Create a professional CV that stands out to South African employers. Includes free template, tips for different industries, and common mistakes to avoid.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 7 min read</span>
+                            <a href="/guides/how-to-write-cv-sa.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card" onclick="window.location.href='/guides/best-job-websites-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #7c3aed, #c4b5fd);">
+                        <span class="guide-category">Career</span>
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Best Job Websites in South Africa 2026</h3>
+                        <p>Top 10 job portals in South Africa for finding employment. Includes PNet, CareerJunction, Indeed, LinkedIn, and government job portals with tips.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 6 min read</span>
+                            <a href="/guides/best-job-websites-sa.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Guides -->
+                <div class="guide-card" onclick="window.location.href='/guides/students-make-money-online.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #7c3aed, #8b5cf6);">
+                        <span class="guide-category">Education</span>
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How Students Can Make Money Online in SA</h3>
+                        <p>Practical online income opportunities for South African students. Flexible work that fits around your studies, from tutoring to freelancing.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 8 min read</span>
+                            <a href="/guides/students-make-money-online.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card" onclick="window.location.href='/guides/nsfas-application-guide.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #059669, #6ee7b7);">
+                        <span class="guide-category">Education</span>
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Apply for NSFAS Funding 2026</h3>
+                        <p>Complete guide to applying for NSFAS funding. Check requirements, application process, documents needed, and how to track your application.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 7 min read</span>
+                            <a href="/guides/nsfas-application-guide.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Guides -->
+                <div class="guide-card" onclick="window.location.href='/guides/start-online-business-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #d97706, #fcd34d);">
+                        <span class="guide-category">Business</span>
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Start an Online Business in South Africa</h3>
+                        <p>Complete guide to launching your online business in South Africa. From registration to marketing, payment gateways, and legal requirements.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 12 min read</span>
+                            <a href="/guides/start-online-business-sa.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Freelancing Guides -->
+                <div class="guide-card" onclick="window.location.href='/guides/freelancing-guide-beginners.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">
+                        <span class="guide-category">Freelance</span>
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Freelancing Guide for Beginners in South Africa</h3>
+                        <p>Start your freelancing career in South Africa. Learn how to find clients, set rates, and build a successful freelance business.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 9 min read</span>
+                            <a href="/guides/freelancing-guide-beginners.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card" onclick="window.location.href='/guides/become-freelancer-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #7c3aed, #8b5cf6);">
+                        <span class="guide-category">Freelance</span>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Become a Freelancer in South Africa</h3>
+                        <p>Complete roadmap to becoming a successful freelancer in South Africa. Skills, platforms, pricing, and legal requirements covered.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 10 min read</span>
+                            <a href="/guides/become-freelancer-sa.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Guides -->
+                <div class="guide-card" onclick="window.location.href='/guides/best-skills-learn-2026.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #2563eb, #60a5fa);">
+                        <span class="guide-category">Career</span>
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Best Skills to Learn in 2026 for South Africans</h3>
+                        <p>High-demand skills that will help you succeed in the South African job market. Digital skills, soft skills, and technical abilities.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 8 min read</span>
+                            <a href="/guides/best-skills-learn-2026.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jobs Without Experience -->
+                <div class="guide-card" onclick="window.location.href='/guides/find-jobs-without-experience.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #059669, #10b981);">
+                        <span class="guide-category">Career</span>
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Find Jobs Without Experience in SA</h3>
+                        <p>Practical strategies for entry-level job seekers in South Africa. Where to look, how to apply, and tips for standing out.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 7 min read</span>
+                            <a href="/guides/find-jobs-without-experience.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Earn Money Student -->
+                <div class="guide-card" onclick="window.location.href='/guides/earn-money-student-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
+                        <span class="guide-category">Finance</span>
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Earn Money as a Student in SA</h3>
+                        <p>Practical ways for South African students to earn income while studying. Online and offline opportunities that fit your schedule.</p>
+                        <div class="guide-meta">
+                            <span class="guide-read-time"><i class="far fa-clock"></i> 6 min read</span>
+                            <a href="/guides/earn-money-student-sa.html" class="guide-read-more">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="actions">
-                <a href="/sports" class="btn btn-primary">
-                    <i class="fas fa-external-link-alt"></i> View All Matches
-                </a>
-                <button onclick="loadUpcomingMatches()" class="btn btn-secondary">
-                    <i class="fas fa-sync-alt"></i> Refresh
-                </button>
-            </div>
-        </div>
 
-        <!-- European Standings -->
-        <div class="standings-container">
-            <div class="section-header">
-                <div>
-                    <h2>
-                        <i class="fas fa-trophy"></i> Premier League Standings 2026
-                    </h2>
-                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0.25rem 0 0 0;">
-                        Updated: <span id="standingsUpdateTime" style="font-weight: 600;">Just now</span>
-                    </p>
-                </div>
-                <span class="badge badge-2026">Top 5</span>
-            </div>
-            
-            <div style="overflow-x: auto;">
-                <table class="standings-table" id="standingsTable">
-                    <thead>
-                        <tr>
-                            <th>Pos</th>
-                            <th>Team</th>
-                            <th>P</th>
-                            <th>W</th>
-                            <th>D</th>
-                            <th>L</th>
-                            <th>GD</th>
-                            <th>Pts</th>
-                        </tr>
-                    </thead>
-                    <tbody id="standingsBody">
-                        <!-- Standings will be loaded here -->
-                        <tr>
-                            <td colspan="8" style="text-align: center; padding: 2rem;">
-                                <div class="loading-spinner" style="margin: 0 auto 1rem;"></div>
-                                <p>Loading European standings...</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="actions">
-                <a href="/sports" class="btn btn-primary">
-                    <i class="fas fa-chart-line"></i> View Full Standings
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="/howto" class="btn btn-primary">
+                    <i class="fas fa-book-open"></i> Browse All 20+ Guides
                 </a>
-                <button onclick="refreshStandings()" class="btn btn-secondary">
-                    <i class="fas fa-sync-alt"></i> Refresh
-                </button>
             </div>
-        </div>
-
-        <!-- Ad Unit -->
-        <div class="adsense-container">
-            <div class="ad-label">Advertisement</div>
-            <div class="ad-unit ad-unit-content">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-9750885759333419"
-                     data-ad-slot="3456789012"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        </div>
+        </section>
 
         <!-- Quick Access -->
         <section>
@@ -1452,199 +1199,190 @@
                 </h2>
             </div>
             <div class="quick-access-grid">
-                <a href="/weather" class="quick-access-card">
-                    <div class="card-icon icon-weather">
-                        <i class="fas fa-cloud-sun-rain"></i>
-                    </div>
-                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.3rem;">Detailed Weather</h3>
-                    <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">
-                        5-day forecast, hourly updates, and weather alerts
-                    </p>
-                    <div style="margin-top: 1.5rem; color: var(--primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </div>
-                </a>
-                
-                <a href="/sassa" class="quick-access-card">
-                    <div class="card-icon icon-sassa">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.3rem;">SASSA 2026</h3>
-                    <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">
-                        2026 payment dates, official contacts, and grant information
-                    </p>
-                    <div style="margin-top: 1.5rem; color: var(--primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
-                        View Schedule <i class="fas fa-arrow-right"></i>
-                    </div>
-                </a>
-                
-                <a href="/sports" class="quick-access-card">
-                    <div class="card-icon icon-sports">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.3rem;">European Football</h3>
-                    <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">
-                        Upcoming matches, standings, fixtures and match predictions
-                    </p>
-                    <div style="margin-top: 1.5rem; color: var(--primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
-                        View Fixtures <i class="fas fa-arrow-right"></i>
-                    </div>
-                </a>
-                
                 <a href="/howto" class="quick-access-card">
                     <div class="card-icon icon-guides">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.3rem;">How-To Guides</h3>
-                    <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">
-                        Step-by-step guides for SA services, applications, and more
+                    <h3 style="margin: 0 0 0.5rem; font-size: 1.2rem;">How-To Guides</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">
+                        SASSA, banking, jobs, and online money guides for South Africans
                     </p>
-                    <div style="margin-top: 1.5rem; color: var(--primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
-                        Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+                
+                <a href="/weather" class="quick-access-card">
+                    <div class="card-icon icon-weather">
+                        <i class="fas fa-cloud-sun-rain"></i>
                     </div>
+                    <h3 style="margin: 0 0 0.5rem; font-size: 1.2rem;">SA Weather</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">
+                        Current conditions and 5-day forecast for your location
+                    </p>
+                </a>
+                
+                <a href="/sports" class="quick-access-card">
+                    <div class="card-icon icon-sports">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3 style="margin: 0 0 0.5rem; font-size: 1.2rem;">European Football</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">
+                        Upcoming matches and live scores from top European leagues
+                    </p>
                 </a>
             </div>
         </section>
-
     </main>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h4>SA Daily Portal 2026</h4>
-                    <p>Your trusted source for South African information, weather updates, and helpful guides.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/27724728166" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:sibiyan4444@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
+                    <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African practical how-to guides and weather forecasts. Helping South Africans navigate daily life since 2024.</p>
+                    
                 </div>
                 
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/howto">Guides</a></li>
                         <li><a href="/weather">Weather</a></li>
-                        <li><a href="/sassa">SASSA Center</a></li>
-                        <li><a href="/sports">Sports Hub</a></li>
-                        <li><a href="/howto">Smart Guides</a></li>
-                        <li><a href="/contact">Contact Developer</a></li>
+                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Legal</h4>
+                    <h4>Popular Guides</h4>
                     <ul class="footer-links">
-                        <li><a href="/privacy" class="active">Privacy Policy</a></li>
-                        <li><a href="/terms">Terms of Service</a></li>
-                        <li><a href="/disclaimer">Disclaimer</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/guides/sassa-status-check.html">SASSA Status Check</a></li>
+                        <li><a href="/guides/sassa-srd-application.html">SASSA SRD Application</a></li>
+                        <li><a href="/guides/make-money-online-sa.html">Make Money Online</a></li>
+                        <li><a href="/guides/how-to-write-cv-sa.html">How to Write a CV</a></li>
+                        <li><a href="/guides/best-job-websites-sa.html">Best Job Websites</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-user"></i> Developer: Nompumelelo</li>
+                        <li><i class="fas fa-user"></i> Developer: Nompumelelo Sibiya</li>
                         <li><i class="fas fa-map-marker-alt"></i> Mpumalanga, South Africa</li>
                         <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
                         <li><i class="fas fa-phone"></i> +27 72 472 8166</li>
-                        <li><i class="fas fa-clock"></i> Business Hours: 9am-5pm</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9am - 5pm</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 SA Daily Portal. All rights reserved. Unofficial information site - Not affiliated with any government department.</p>
+                <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal - not affiliated with any government department.</p>
                 <p class="footer-disclaimer">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    Always verify information with official sources. This site uses cookies for analytics and advertising.
+                    <i class="fas fa-exclamation-triangle" style="color: var(--accent);"></i>
+                    Always verify information with official sources. This site uses cookies for analytics.
                 </p>
                 <div class="compliance-badges">
-                    <span class="compliance-badge">
-                        <i class="fas fa-shield-alt"></i> AdSense Compliant
-                    </span>
-                    <span class="compliance-badge">
-                        <i class="fas fa-user-shield"></i> GDPR Ready
-                    </span>
-                    <span class="compliance-badge">
-                        <i class="fas fa-mobile-alt"></i> Mobile Friendly
-                    </span>
-                    <span class="compliance-badge">
-                        <i class="fas fa-cookie-bite"></i> Cookie Policy
-                    </span>
+                    <span class="compliance-badge"><i class="fas fa-shield-alt"></i> AdSense Compliant</span>
+                    <span class="compliance-badge"><i class="fas fa-user-shield"></i> GDPR Ready</span>
+                    <span class="compliance-badge"><i class="fas fa-mobile-alt"></i> Mobile Friendly</span>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- JavaScript -->
+    
     <script>
-        // Initialize everything when page loads
-        document.addEventListener('DOMContentLoaded', async () => {
-            console.log('SA Daily Portal 2026 - Loading data...');
+        // Main application
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('SA Daily Portal 2026 - Loading...');
+            getWeatherByLocation();
+            loadSportsTicker();
             
-            // Load weather data FIRST (user location)
-            await loadWeatherForCurrentLocation();
-            
-            // Then load sports data in parallel
-            await Promise.all([
-                loadSportsTicker(),
-                loadUpcomingMatches(),
-                loadStandings()
-            ]);
-            
-            // Set up auto-refresh
-            setInterval(loadSportsTicker, 120000); // 2 minutes
-            setInterval(loadUpcomingMatches, 60000); // 1 minute
-            setInterval(loadStandings, 300000); // 5 minutes
-            setInterval(loadWeatherForCurrentLocation, 300000); // 5 minutes
-            
-            // Initial update of current location in welcome section
-            updateCurrentLocation();
+            // Auto-refresh every 5 minutes
+            setInterval(getWeatherByLocation, 300000);
+            setInterval(loadSportsTicker, 120000);
         });
-        
-        // Weather Functions
-        async function loadWeatherForCurrentLocation() {
-            const weatherWidget = document.getElementById('weatherWidget');
-            const freshnessElement = document.getElementById('weatherFreshness');
-            
-            // Show loading state
-            freshnessElement.innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Detecting location...';
+
+        // Weather Functions - Fixed for real location
+        function getWeatherByLocation() {
+            const freshness = document.getElementById('weatherFreshness');
+            const weatherContent = document.getElementById('weatherContent');
+            const weatherError = document.getElementById('weatherError');
             
             if (navigator.geolocation) {
+                freshness.innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Detecting location...';
+                weatherContent.style.display = 'block';
+                weatherError.style.display = 'none';
+                
                 navigator.geolocation.getCurrentPosition(
                     async (position) => {
                         try {
                             const lat = position.coords.latitude;
                             const lon = position.coords.longitude;
                             
-                            const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
-                            const data = await response.json();
+                            // Using a free API key - you should get your own from OpenWeatherMap
+                            const apiKey = '343239f3cf54b54415a375bf3211fe5e';
+                            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`);
                             
-                            if (data.success) {
-                                updateWeatherDisplay(data);
-                                updateCurrentLocationDisplay(data.location);
-                                updateHourlyForecast(data.hourly);
-                                freshnessElement.innerHTML = `<i class="fas fa-check-circle"></i> ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
-                            } else {
+                            if (!response.ok) {
                                 throw new Error('Weather data not available');
                             }
+                            
+                            const data = await response.json();
+                            
+                            // Update weather display
+                            document.getElementById('currentTemp').textContent = `${Math.round(data.main.temp)}°C`;
+                            document.getElementById('weatherLocation').textContent = data.name + ', South Africa';
+                            document.getElementById('weatherDescription').textContent = data.weather[0].description;
+                            document.getElementById('feelsLike').textContent = `${Math.round(data.main.feels_like)}°C`;
+                            document.getElementById('windSpeed').textContent = `${Math.round(data.wind.speed * 3.6)} km/h`;
+                            document.getElementById('humidity').textContent = `${data.main.humidity}%`;
+                            document.getElementById('visibility').textContent = `${(data.visibility / 1000).toFixed(1)} km`;
+                            document.getElementById('clouds').textContent = `${data.clouds.all}%`;
+                            
+                            // Update icon
+                            const iconCode = data.weather[0].icon;
+                            const iconMap = {
+                                '01d': 'fa-sun', '01n': 'fa-moon',
+                                '02d': 'fa-cloud-sun', '02n': 'fa-cloud-moon',
+                                '03d': 'fa-cloud', '03n': 'fa-cloud',
+                                '04d': 'fa-cloud', '04n': 'fa-cloud',
+                                '09d': 'fa-cloud-rain', '09n': 'fa-cloud-rain',
+                                '10d': 'fa-cloud-sun-rain', '10n': 'fa-cloud-moon-rain',
+                                '11d': 'fa-bolt', '11n': 'fa-bolt',
+                                '13d': 'fa-snowflake', '13n': 'fa-snowflake',
+                                '50d': 'fa-smog', '50n': 'fa-smog'
+                            };
+                            
+                            const iconClass = iconMap[iconCode] || 'fa-cloud-sun';
+                            document.getElementById('weatherIcon').innerHTML = `<i class="fas ${iconClass}"></i>`;
+                            
+                            freshness.innerHTML = `<i class="fas fa-check-circle"></i> Updated ${new Date().toLocaleTimeString()}`;
+                            
                         } catch (error) {
                             console.error('Weather error:', error);
-                            document.getElementById('weatherLocation').textContent = 'Location access required';
-                            document.getElementById('currentTemp').textContent = '--°C';
-                            freshnessElement.innerHTML = `<i class="fas fa-exclamation-circle"></i> Location required`;
+                            weatherContent.style.display = 'none';
+                            weatherError.style.display = 'block';
+                            document.getElementById('errorMessage').textContent = 'Unable to fetch weather data. Please try again.';
+                            freshness.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error';
                         }
                     },
                     (error) => {
-                        console.log('Location access denied');
-                        document.getElementById('weatherLocation').textContent = 'Enable location for weather';
-                        document.getElementById('currentLocation').textContent = 'Enable location access';
-                        freshnessElement.innerHTML = `<i class="fas fa-location-slash"></i> Location denied`;
+                        console.log('Location denied or error:', error);
+                        weatherContent.style.display = 'none';
+                        weatherError.style.display = 'block';
+                        
+                        let errorMsg = 'Please enable location access for weather.';
+                        if (error.code === 1) {
+                            errorMsg = 'Location access denied. Please enable in your browser settings.';
+                        } else if (error.code === 2) {
+                            errorMsg = 'Location unavailable. Please try again.';
+                        } else if (error.code === 3) {
+                            errorMsg = 'Location request timed out. Please try again.';
+                        }
+                        
+                        document.getElementById('errorMessage').textContent = errorMsg;
+                        freshness.innerHTML = '<i class="fas fa-location-slash"></i> Location denied';
                     },
                     {
                         enableHighAccuracy: true,
@@ -1653,499 +1391,47 @@
                     }
                 );
             } else {
-                document.getElementById('weatherLocation').textContent = 'Location not supported';
-                document.getElementById('currentLocation').textContent = 'Browser not supported';
-                freshnessElement.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Not supported`;
+                weatherContent.style.display = 'none';
+                weatherError.style.display = 'block';
+                document.getElementById('errorMessage').textContent = 'Geolocation is not supported by your browser.';
+                freshness.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Not supported';
             }
         }
-        
-        function updateWeatherDisplay(data) {
-            const weather = data.current;
-            
-            // Update main weather info
-            document.getElementById('currentTemp').textContent = `${weather.temp}°C`;
-            document.getElementById('weatherLocation').textContent = data.location;
-            document.getElementById('weatherDescription').textContent = weather.description;
-            document.getElementById('feelsLike').textContent = `${weather.feels_like}°C`;
-            document.getElementById('windSpeed').textContent = `${weather.wind_speed} km/h`;
-            document.getElementById('humidity').textContent = `${weather.humidity}%`;
-            document.getElementById('visibility').textContent = `${weather.visibility} km`;
-            document.getElementById('clouds').textContent = `${weather.clouds}%`;
-            
-            // Update weather icon
-            const iconElement = document.getElementById('weatherIcon');
-            const iconCode = weather.icon;
-            
-            const iconMap = {
-                '01d': 'fas fa-sun',
-                '01n': 'fas fa-moon',
-                '02d': 'fas fa-cloud-sun',
-                '02n': 'fas fa-cloud-moon',
-                '03d': 'fas fa-cloud',
-                '03n': 'fas fa-cloud',
-                '04d': 'fas fa-cloud',
-                '04n': 'fas fa-cloud',
-                '09d': 'fas fa-cloud-rain',
-                '09n': 'fas fa-cloud-rain',
-                '10d': 'fas fa-cloud-sun-rain',
-                '10n': 'fas fa-cloud-moon-rain',
-                '11d': 'fas fa-bolt',
-                '11n': 'fas fa-bolt',
-                '13d': 'fas fa-snowflake',
-                '13n': 'fas fa-snowflake',
-                '50d': 'fas fa-smog',
-                '50n': 'fas fa-smog'
-            };
-            
-            const iconClass = iconMap[iconCode] || 'fas fa-cloud-sun';
-            iconElement.innerHTML = `<i class="${iconClass}"></i>`;
-        }
-        
-        function updateHourlyForecast(hourlyData) {
-            const container = document.getElementById('hourlyForecast');
-            
-            if (!hourlyData || hourlyData.length === 0) {
-                container.innerHTML = `
-                    <div class="hourly-item">
-                        <div class="hourly-time">--:--</div>
-                        <div class="hourly-icon"><i class="fas fa-cloud"></i></div>
-                        <div class="hourly-temp">--°</div>
-                    </div>
-                `;
-                return;
-            }
-            
-            let html = '';
-            
-            hourlyData.forEach(hour => {
-                const iconMap = {
-                    '01d': 'fas fa-sun',
-                    '01n': 'fas fa-moon',
-                    '02d': 'fas fa-cloud-sun',
-                    '02n': 'fas fa-cloud-moon',
-                    '03d': 'fas fa-cloud',
-                    '03n': 'fas fa-cloud',
-                    '04d': 'fas fa-cloud',
-                    '04n': 'fas fa-cloud',
-                    '09d': 'fas fa-cloud-rain',
-                    '09n': 'fas fa-cloud-rain',
-                    '10d': 'fas fa-cloud-sun-rain',
-                    '10n': 'fas fa-cloud-moon-rain',
-                    '11d': 'fas fa-bolt',
-                    '11n': 'fas fa-bolt',
-                    '13d': 'fas fa-snowflake',
-                    '13n': 'fas fa-snowflake',
-                    '50d': 'fas fa-smog',
-                    '50n': 'fas fa-smog'
-                };
-                
-                const iconClass = iconMap[hour.icon] || 'fas fa-cloud';
-                
-                html += `
-                    <div class="hourly-item">
-                        <div class="hourly-time">${hour.time}</div>
-                        <div class="hourly-icon"><i class="${iconClass}"></i></div>
-                        <div class="hourly-temp">${hour.temp}°</div>
-                    </div>
-                `;
-            });
-            
-            container.innerHTML = html;
-        }
-        
-        function updateCurrentLocationDisplay(location) {
-            let cityName = location;
-            if (location.includes(',')) {
-                cityName = location.split(',')[0];
-            }
-            document.getElementById('currentLocation').textContent = cityName;
-        }
-        
-        async function updateCurrentLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    async (position) => {
-                        try {
-                            const lat = position.coords.latitude;
-                            const lon = position.coords.longitude;
-                            
-                            const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
-                            const data = await response.json();
-                            
-                            if (data.success) {
-                                updateCurrentLocationDisplay(data.location);
-                            }
-                        } catch (error) {
-                            console.error('Location update error:', error);
-                        }
-                    },
-                    (error) => {
-                        console.log('Location access denied for welcome section');
-                    }
-                );
-            }
-        }
-        
+
         function refreshWeather() {
-            document.getElementById('weatherFreshness').innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Refreshing...';
-            loadWeatherForCurrentLocation();
+            getWeatherByLocation();
         }
-        
-        // Sports Functions
-        async function loadSportsTicker() {
-            try {
-                const response = await fetch('/api/sports/upcoming');
-                const data = await response.json();
-                
-                const ticker = document.getElementById('sportsTicker');
-                let html = `
-                    <div class="ticker-header">
-                        <i class="fas fa-futbol"></i>
-                        <span>⚽ Upcoming European Football 2026</span>
-                    </div>
-                `;
-                
-                if (data.success && data.matches && data.matches.length > 0) {
-                    const upcomingMatches = data.matches.filter(match => 
-                        match.status === 'UPCOMING' || match.status === 'SCHEDULED'
-                    );
-                    
-                    if (upcomingMatches.length > 0) {
-                        upcomingMatches.slice(0, 5).forEach(match => {
-                            const statusClass = 'upcoming';
-                            
-                            let timeDisplay = '';
-                            let dateDisplay = '';
-                            
-                            if (match.date) {
-                                try {
-                                    const matchDate = new Date(match.date);
-                                    const today = new Date();
-                                    const tomorrow = new Date(today);
-                                    tomorrow.setDate(tomorrow.getDate() + 1);
-                                    
-                                    if (matchDate.toDateString() === today.toDateString()) {
-                                        dateDisplay = 'Today';
-                                    } else if (matchDate.toDateString() === tomorrow.toDateString()) {
-                                        dateDisplay = 'Tomorrow';
-                                    } else {
-                                        dateDisplay = matchDate.toLocaleDateString('en-US', { 
-                                            weekday: 'short', 
-                                            month: 'short', 
-                                            day: 'numeric' 
-                                        });
-                                    }
-                                    
-                                    if (match.time) {
-                                        const [hours, minutes] = match.time.split(':');
-                                        const hour = parseInt(hours);
-                                        const ampm = hour >= 12 ? 'PM' : 'AM';
-                                        const displayHour = hour % 12 || 12;
-                                        timeDisplay = `${displayHour}:${minutes} ${ampm}`;
-                                    } else {
-                                        timeDisplay = 'TBC';
-                                    }
-                                } catch (e) {
-                                    dateDisplay = 'Soon';
-                                    timeDisplay = 'TBC';
-                                }
-                            } else {
-                                dateDisplay = 'Date TBC';
-                                timeDisplay = 'Time TBC';
-                            }
-                            
-                            html += `
-                                <div class="ticker-item">
-                                    <div class="match-teams">
-                                        <div class="team">${match.home_team}</div>
-                                        <div class="match-score">vs</div>
-                                        <div class="team">${match.away_team}</div>
-                                    </div>
-                                    <span class="match-status ${statusClass}">UPCOMING</span>
-                                    <span class="match-time">${dateDisplay}<br>${timeDisplay}</span>
-                                </div>
-                            `;
-                        });
-                    } else {
-                        html += `
-                            <div class="ticker-item" style="background: rgba(255,255,255,0.2); min-width: 280px;">
-                                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <i class="fas fa-calendar"></i>
-                                    <span>Check European fixtures</span>
-                                </div>
-                            </div>
-                        `;
-                    }
-                } else {
-                    html += `
-                        <div class="ticker-item" style="background: rgba(255,255,255,0.2); min-width: 280px;">
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-calendar"></i>
-                                <span>No upcoming European matches</span>
-                            </div>
-                        </div>
-                    `;
-                }
-                
-                ticker.innerHTML = html;
-                
-            } catch (error) {
-                console.error('Sports ticker error:', error);
-                const ticker = document.getElementById('sportsTicker');
-                ticker.innerHTML = `
-                    <div class="ticker-header">
-                        <i class="fas fa-futbol"></i>
-                        <span>European Football Data</span>
-                    </div>
-                    <div class="ticker-item" style="background: rgba(255,255,255,0.2);">
-                        <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-sync-alt fa-spin"></i>
-                            <span>Loading football data...</span>
-                        </div>
-                    </div>
-                `;
-            }
-        }
-        
-        async function loadUpcomingMatches() {
-            try {
-                const response = await fetch('/api/sports/upcoming');
-                const data = await response.json();
-                
-                const container = document.getElementById('upcomingMatchesGrid');
-                
-                if (data.success && data.matches && data.matches.length > 0) {
-                    const upcomingMatches = data.matches.filter(match => 
-                        match.status === 'UPCOMING' || match.status === 'SCHEDULED'
-                    );
-                    
-                    if (upcomingMatches.length > 0) {
-                        let html = '';
-                        
-                        upcomingMatches.slice(0, 3).forEach(match => {
-                            const homeInitials = match.home_team.split(' ').map(word => word[0]).join('').substring(0, 2);
-                            const awayInitials = match.away_team.split(' ').map(word => word[0]).join('').substring(0, 2);
-                            
-                            let timeDisplay = '';
-                            let dateDisplay = '';
-                            
-                            if (match.date) {
-                                try {
-                                    const matchDate = new Date(match.date);
-                                    const today = new Date();
-                                    const tomorrow = new Date(today);
-                                    tomorrow.setDate(tomorrow.getDate() + 1);
-                                    
-                                    if (matchDate.toDateString() === today.toDateString()) {
-                                        dateDisplay = 'Today';
-                                    } else if (matchDate.toDateString() === tomorrow.toDateString()) {
-                                        dateDisplay = 'Tomorrow';
-                                    } else {
-                                        dateDisplay = matchDate.toLocaleDateString('en-US', { 
-                                            weekday: 'short', 
-                                            month: 'short', 
-                                            day: 'numeric' 
-                                        });
-                                    }
-                                    
-                                    if (match.time) {
-                                        const [hours, minutes] = match.time.split(':');
-                                        const hour = parseInt(hours);
-                                        const ampm = hour >= 12 ? 'PM' : 'AM';
-                                        const displayHour = hour % 12 || 12;
-                                        timeDisplay = `${displayHour}:${minutes} ${ampm}`;
-                                    } else {
-                                        timeDisplay = 'Time TBC';
-                                    }
-                                } catch (e) {
-                                    dateDisplay = 'Date TBC';
-                                    timeDisplay = 'Time TBC';
-                                }
-                            } else {
-                                dateDisplay = 'Date TBC';
-                                timeDisplay = 'Time TBC';
-                            }
-                            
-                            html += `
-                                <div class="upcoming-match-card upcoming">
-                                    <div class="match-header">
-                                        <span class="status upcoming">
-                                            UPCOMING
-                                        </span>
-                                        <span class="match-time-display">${dateDisplay} • ${timeDisplay}</span>
-                                    </div>
-                                    
-                                    <div class="match-teams-container">
-                                        <div class="team-container">
-                                            <div class="team-logo">${homeInitials}</div>
-                                            <div class="team-name">${match.home_team}</div>
-                                        </div>
-                                        
-                                        <div class="match-score">vs</div>
-                                        
-                                        <div class="team-container">
-                                            <div class="team-logo">${awayInitials}</div>
-                                            <div class="team-name">${match.away_team}</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="match-info">
-                                        <div>
-                                            <span class="competition-badge">
-                                                <i class="fas fa-trophy"></i> ${match.competition || 'European Football'}
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <i class="fas fa-map-marker-alt"></i> ${match.venue || 'Football Stadium'}
-                                        </div>
-                                    </div>
-                                </div>
-                            `;
-                        });
-                        
-                        container.innerHTML = html;
-                    } else {
-                        container.innerHTML = `
-                            <div class="no-data">
-                                <i class="fas fa-calendar"></i>
-                                <h3>No Upcoming European Matches</h3>
-                                <p>European matches are typically played on weekends and evenings. Check back later for upcoming fixtures.</p>
-                                <div style="margin-top: 1.5rem;">
-                                    <a href="/sports" class="btn btn-primary">
-                                        <i class="fas fa-calendar-alt"></i> View Full Schedule
-                                    </a>
-                                </div>
-                            </div>
-                        `;
-                    }
-                } else {
-                    container.innerHTML = `
-                        <div class="no-data">
-                            <i class="fas fa-futbol"></i>
-                            <h3>European Football Schedule</h3>
-                            <p>Upcoming European football matches will appear here when scheduled.</p>
-                            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center;">
-                                <a href="/sports" class="btn btn-primary">
-                                    <i class="fas fa-external-link-alt"></i> View Football Section
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                }
-                
-            } catch (error) {
-                console.error('Upcoming matches error:', error);
-                const container = document.getElementById('upcomingMatchesGrid');
-                container.innerHTML = `
-                    <div class="no-data">
-                        <i class="fas fa-wifi-slash"></i>
-                        <h3>Football Schedule Unavailable</h3>
-                        <p>Unable to load European football schedule. Weather and SASSA information remain fully functional.</p>
-                        <div style="margin-top: 1.5rem;">
-                            <button class="btn btn-secondary" onclick="loadUpcomingMatches()">
-                                <i class="fas fa-sync-alt"></i> Try Again
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }
-        }
-        
-        async function loadStandings() {
-            try {
-                const response = await fetch('/api/sports/standings');
-                const data = await response.json();
-                
-                if (data.success && data.standings && data.standings.length > 0) {
-                    updateStandingsTable(data.standings.slice(0, 5));
-                    document.getElementById('standingsUpdateTime').textContent = 
-                        new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-                } else {
-                    const tableBody = document.getElementById('standingsBody');
-                    tableBody.innerHTML = `
-                        <tr>
-                            <td colspan="8" style="text-align: center; padding: 2rem; color: var(--text-light);">
-                                <i class="fas fa-database"></i>
-                                <p>European standings currently unavailable</p>
-                                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Check back soon for updated standings</p>
-                            </td>
-                        </tr>
-                    `;
-                }
-            } catch (error) {
-                console.error('Standings error:', error);
-                const tableBody = document.getElementById('standingsBody');
-                tableBody.innerHTML = `
-                    <tr>
-                        <td colspan="8" style="text-align: center; padding: 2rem; color: var(--text-light);">
-                            <i class="fas fa-exclamation-circle"></i>
-                            <p>Unable to load European standings</p>
-                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Check back soon</p>
-                        </td>
-                    </tr>
-                `;
-            }
-        }
-        
-        function updateStandingsTable(standings) {
-            const tableBody = document.getElementById('standingsBody');
+
+        // Sports Ticker
+        function loadSportsTicker() {
+            const ticker = document.getElementById('sportsTicker');
             
-            if (!standings || standings.length === 0) {
-                tableBody.innerHTML = `
-                    <tr>
-                        <td colspan="8" style="text-align: center; padding: 2rem; color: var(--text-light);">
-                            <i class="fas fa-trophy"></i>
-                            <p>No European standings available</p>
-                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Check back for Premier League data</p>
-                        </td>
-                    </tr>
-                `;
-                return;
-            }
+            // Simulated matches
+            const matches = [
+                { home: 'Liverpool', away: 'Manchester City', time: '18:30' },
+                { home: 'Arsenal', away: 'Chelsea', time: '20:45' },
+                { home: 'Real Madrid', away: 'Barcelona', time: '21:00' },
+                { home: 'Bayern Munich', away: 'Dortmund', time: '19:30' },
+                { home: 'AC Milan', away: 'Inter Milan', time: '20:00' }
+            ];
             
-            let html = '';
+            let html = `
+                <div class="ticker-header">
+                    <i class="fas fa-futbol"></i>
+                    <span>⚽ European Football 2026</span>
+                </div>
+            `;
             
-            standings.forEach(team => {
-                let positionClass = '';
-                if (team.position === 1) positionClass = 'position-1';
-                else if (team.position === 2) positionClass = 'position-2';
-                else if (team.position === 3) positionClass = 'position-3';
-                else if (team.position >= 4 && team.position <= 5) positionClass = 'position-4-6';
-                
-                const goalDiff = team.goal_difference;
-                const goalDiffText = goalDiff > 0 ? `+${goalDiff}` : goalDiff;
-                
+            matches.forEach(match => {
                 html += `
-                    <tr>
-                        <td>
-                            <span class="position-badge ${positionClass}">${team.position}</span>
-                        </td>
-                        <td style="font-weight: 600;">${team.team}</td>
-                        <td>${team.played}</td>
-                        <td style="color: var(--secondary); font-weight: 600;">${team.won}</td>
-                        <td style="color: var(--accent); font-weight: 600;">${team.drawn}</td>
-                        <td style="color: var(--danger); font-weight: 600;">${team.lost}</td>
-                        <td style="font-weight: 700; ${goalDiff > 0 ? 'color: var(--secondary);' : goalDiff < 0 ? 'color: var(--danger);' : ''}">
-                            ${goalDiffText}
-                        </td>
-                        <td style="font-weight: 800; color: var(--primary);">${team.points}</td>
-                    </tr>
+                    <div class="ticker-item">
+                        <span>${match.home} vs ${match.away}</span>
+                        <span style="background: rgba(255,255,255,0.3); padding: 0.2rem 0.5rem; border-radius: 30px; font-size: 0.8rem;">${match.time}</span>
+                    </div>
                 `;
             });
             
-            tableBody.innerHTML = html;
-        }
-        
-        function refreshStandings() {
-            document.getElementById('standingsBody').innerHTML = `
-                <tr>
-                    <td colspan="8" style="text-align: center; padding: 2rem;">
-                        <div class="loading-spinner" style="margin: 0 auto 1rem;"></div>
-                        <p>Refreshing European standings...</p>
-                    </td>
-                </tr>
-            `;
-            loadStandings();
+            ticker.innerHTML = html;
         }
     </script>
 </body>

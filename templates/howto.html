@@ -3,19 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📚 How-To Guides - Step-by-Step Tutorials | SA Daily Portal 2026</title>
-    <meta name="description" content="Interactive step-by-step guides for South African services: SASSA applications, tax returns, ID applications, and more. Save progress and print guides for 2026.">
+    <title>📚 How-To Guides - Step-by-Step Tutorials for South Africans | SA Daily Portal 2026</title>
+    <meta name="description" content="20+ practical how-to guides for South Africans: SASSA applications, make money online, CV writing, job hunting, NSFAS, freelancing, and more for 2026.">
     
     <!-- SEO Meta -->
-    <meta name="keywords" content="South Africa how-to, SASSA application guide, SARS tax return, ID application, passport application, drivers license, step-by-step guides 2026">
+    <meta name="keywords" content="South Africa how-to guides, SASSA guide 2026, make money online SA, CV writing South Africa, job search SA, NSFAS application, freelancing South Africa">
     <meta name="author" content="SA Daily Portal">
     <meta name="robots" content="index, follow">
-    
-    <!-- OG Meta -->
-    <meta property="og:title" content="📚 SOUTH AFRICAN HOW-TO GUIDES - Step-by-Step Tutorials 2026">
-    <meta property="og:description" content="Interactive guides for South African government services and applications.">
-    <meta property="og:image" content="/static/images/guides-og.jpg">
-    <meta property="og:url" content="https://sadailyportal.co.za/howto">
+    <meta name="google-adsense-account" content="ca-pub-9621668436424790">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -23,72 +18,85 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-       
     <!-- AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9621668436424790"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9621668436424790" crossorigin="anonymous"></script>
 
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z2ZSZKQ5F7');
-</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z2ZSZKQ5F7');
+    </script>
     
-    <!-- Core Styles -->
     <style>
+        /* Modern CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --background: #f8fafc;
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #059669;
+            --accent: #d97706;
+            --danger: #dc2626;
+            --background: #f9fafb;
             --card-bg: #ffffff;
             --text: #1f2937;
             --text-light: #6b7280;
             --border: #e5e7eb;
-            --guide-blue: #1A73E8;
-            --guide-green: #34A853;
-            --guide-red: #EA4335;
-            --guide-yellow: #FBBC05;
-            --guide-purple: #9C27B0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius: 12px;
+            
+            /* Category colors */
+            --sassa: #059669;
+            --money: #d97706;
+            --jobs: #2563eb;
+            --freelance: #7c3aed;
+            --business: #dc2626;
+            --education: #8b5cf6;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--background);
             color: var(--text);
-            margin: 0;
-            min-height: 100vh;
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
+            width: 100%;
         }
-        
+
         /* Header */
         .header {
             background: var(--card-bg);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-sm);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
-        
+
         .header-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1rem;
+            padding: 1rem 0;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -98,24 +106,24 @@
             color: var(--primary);
             text-decoration: none;
         }
-        
+
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
+            font-size: 1.2rem;
         }
-        
-        /* Navigation */
+
         .nav-menu {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
-        
+
         .nav-link {
             color: var(--text);
             text-decoration: none;
@@ -127,15 +135,15 @@
             gap: 0.5rem;
             transition: color 0.2s;
         }
-        
+
         .nav-link:hover {
             color: var(--primary);
         }
-        
+
         .nav-link.active {
             color: var(--primary);
         }
-        
+
         .nav-link.active::after {
             content: '';
             position: absolute;
@@ -145,25 +153,25 @@
             height: 2px;
             background: var(--primary);
         }
-        
+
         /* Main Content */
         .main-content {
             padding: 2rem 0;
-            min-height: 70vh;
+            flex: 1;
         }
-        
+
         /* Hero Section */
         .guides-hero {
-            background: linear-gradient(135deg, var(--guide-blue), var(--guide-purple));
+            background: linear-gradient(135deg, var(--primary), #312e81);
             color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            border-radius: 20px;
+            border-radius: var(--radius);
+            padding: 3rem 2rem;
             margin-bottom: 2rem;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
-        
+
         .guides-hero::before {
             content: '';
             position: absolute;
@@ -176,85 +184,72 @@
             opacity: 0.3;
             z-index: 0;
         }
-        
+
         .guides-hero > * {
             position: relative;
             z-index: 1;
         }
-        
+
         .guides-hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
         }
-        
+
         .guides-hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
+            font-size: 1.1rem;
+            max-width: 700px;
             margin: 0 auto 2rem;
-            opacity: 0.9;
+            opacity: 0.95;
         }
-        
-        .hero-badges {
+
+        .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
-        
-        .status-badge {
-            padding: 0.5rem 1.2rem;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
+
+        .stat-item {
+            display: flex;
             align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
+            gap: 0.75rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.75rem 1.5rem;
+            border-radius: 40px;
+            backdrop-filter: blur(5px);
         }
-        
-        .status-approved {
-            background: var(--guide-green);
-            color: white;
+
+        .stat-item i {
+            font-size: 1.2rem;
         }
-        
-        .status-review {
-            background: var(--guide-yellow);
-            color: #333;
-        }
-        
-        .status-pending {
-            background: var(--guide-blue);
-            color: white;
-        }
-        
+
         /* Search Section */
-        .guides-search {
-            background: white;
-            border-radius: 15px;
+        .search-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-md);
             border: 1px solid var(--border);
         }
-        
-        .guides-search h2 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
+
+        .search-section h2 {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
-        
-        .search-input-group {
+
+        .search-box {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
-        
-        .search-input-group input {
+
+        .search-box input {
             flex: 1;
             padding: 1rem;
             border: 2px solid var(--border);
@@ -262,504 +257,408 @@
             font-size: 1rem;
             transition: all 0.3s ease;
         }
-        
-        .search-input-group input:focus {
+
+        .search-box input:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
-        
-        .search-categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .category-chip {
-            background: #f0f7ff;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .category-chip:hover {
+
+        .search-box button {
+            padding: 0 2rem;
             background: var(--primary);
             color: white;
-        }
-        
-        .category-chip.active {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* Guides Grid */
-        .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .guide-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border: 2px solid transparent;
-            border: 1px solid var(--border);
-        }
-        
-        .guide-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            border-color: var(--primary);
-        }
-        
-        .guide-header {
-            height: 150px;
-            background: linear-gradient(135deg, var(--guide-blue), var(--guide-green));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            position: relative;
-        }
-        
-        .guide-difficulty {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.3);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .guide-content {
-            padding: 2rem;
-        }
-        
-        .guide-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .guide-description {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .guide-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .guide-progress {
-            margin-bottom: 1.5rem;
-        }
-        
-        .progress-bar {
-            height: 6px;
-            background: #f0f0f0;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--guide-blue), var(--guide-green));
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-        
-        .guide-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .btn-block {
-            width: 100%;
-            justify-content: center;
-        }
-        
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.85rem 1.75rem;
             border: none;
             border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             transition: all 0.3s ease;
-            text-decoration: none;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
+
+        .search-box button:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
         }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, var(--primary-dark), #1e40af);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
+
+        /* Category Filters */
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
         }
-        
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
+
+        .category-chip {
+            padding: 0.6rem 1.2rem;
+            background: #f3f4f6;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
-        .btn-outline:hover {
+
+        .category-chip:hover {
+            background: #e5e7eb;
+            transform: translateY(-2px);
+        }
+
+        .category-chip.active {
             background: var(--primary);
             color: white;
-            transform: translateY(-3px);
+            border-color: var(--primary);
         }
-        
-        .btn-secondary {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-        
-        .btn-secondary:hover {
-            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-        
-        /* User Progress */
-        .user-progress {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 1px solid var(--border);
-        }
-        
-        .progress-grid {
+
+        .category-chip[data-category="sassa"].active { background: var(--sassa); }
+        .category-chip[data-category="money"].active { background: var(--money); }
+        .category-chip[data-category="jobs"].active { background: var(--jobs); }
+        .category-chip[data-category="freelance"].active { background: var(--freelance); }
+        .category-chip[data-category="business"].active { background: var(--business); }
+        .category-chip[data-category="education"].active { background: var(--education); }
+
+        /* Category Cards */
+        .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
         }
-        
-        .progress-item {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
+
+        .category-card {
+            background: var(--card-bg);
             border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
-        
-        .progress-percent {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
         }
-        
-        .progress-label {
+
+        .category-card i {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .category-card[data-category="sassa"] i { color: var(--sassa); }
+        .category-card[data-category="money"] i { color: var(--money); }
+        .category-card[data-category="jobs"] i { color: var(--jobs); }
+        .category-card[data-category="freelance"] i { color: var(--freelance); }
+        .category-card[data-category="business"] i { color: var(--business); }
+        .category-card[data-category="education"] i { color: var(--education); }
+
+        .category-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .category-card span {
             color: var(--text-light);
             font-size: 0.9rem;
         }
-        
+
         /* Popular Guides */
-        .popular-guides {
-            background: linear-gradient(135deg, var(--guide-yellow), var(--guide-red));
-            color: white;
-            border-radius: 20px;
+        .popular-section {
+            background: linear-gradient(135deg, #f0f9ff, #ffffff);
+            border-radius: var(--radius);
             padding: 2rem;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border);
         }
-        
-        .popular-list {
+
+        .popular-section h2 {
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
         }
-        
+
+        .popular-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
         .popular-item {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 1rem;
             display: flex;
             align-items: center;
             gap: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        .popular-item:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateX(5px);
-        }
-        
-        .popular-rank {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--guide-yellow);
-            min-width: 40px;
-        }
-        
-        /* Interactive Guide */
-        .interactive-guide {
+            padding: 1rem;
             background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             border: 1px solid var(--border);
-            display: none;
         }
-        
-        .interactive-guide.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
+
+        .popular-item:hover {
+            transform: translateX(5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .popular-rank {
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
         }
-        
-        .guide-navigation {
+
+        .popular-rank.gold { background: #d97706; }
+        .popular-rank.silver { background: #6b7280; }
+        .popular-rank.bronze { background: #92400e; }
+
+        .popular-title {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .popular-arrow {
+            color: var(--text-light);
+        }
+
+        /* Guides Grid */
+        .guides-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--border);
+            margin: 2rem 0 1.5rem;
         }
-        
-        .step-indicator {
+
+        .guides-header h2 {
             display: flex;
             align-items: center;
-            gap: 1rem;
-        }
-        
-        .step-dots {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .step-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #e0e0e0;
-            transition: background 0.3s ease;
-        }
-        
-        .step-dot.active {
-            background: var(--primary);
-        }
-        
-        .step-dot.completed {
-            background: var(--secondary);
-        }
-        
-        .step-content {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-            min-height: 300px;
-            border: 1px solid var(--border);
-        }
-        
-        .step-checklist {
-            list-style: none;
-            padding-left: 0;
-            margin: 1.5rem 0;
-        }
-        
-        .step-checklist li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #e0e0e0;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .step-checklist li:last-child {
-            border-bottom: none;
-        }
-        
-        .checklist-checkbox {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary);
-            border-radius: 4px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .checklist-checkbox.checked {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .checklist-checkbox.checked::after {
-            content: '✓';
-            font-weight: bold;
-        }
-        
-        /* Guide Completion */
-        .guide-completion {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            color: white;
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            text-align: center;
-            margin: 2rem 0;
-            display: none;
-        }
-        
-        .completion-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .completion-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-        
-        /* Printable Guide */
-        .printable-guide {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 1px solid var(--border);
-        }
-        
-        /* Disclaimer */
-        .guides-disclaimer {
-            background: #fff3e0;
-            border: 2px solid var(--accent);
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            color: #5d4037;
-        }
-        
-        /* Feedback */
-        .guide-feedback {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 2rem 0;
-            border: 1px solid var(--border);
-        }
-        
-        .rating-stars {
-            display: flex;
-            gap: 0.5rem;
-            margin: 0.5rem 0;
-        }
-        
-        .rating-stars .star {
+            gap: 0.75rem;
             font-size: 1.5rem;
-            cursor: pointer;
-            color: #ccc;
-            transition: color 0.3s ease;
         }
-        
-        .rating-stars .star:hover,
-        .rating-stars .star.active {
-            color: var(--accent);
+
+        .results-count {
+            color: var(--text-light);
+            font-size: 0.95rem;
         }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
         }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.85rem;
+
+        .guide-card {
+            background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
         }
-        
-        .form-control:focus {
-            outline: none;
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
-        
+
+        .guide-header {
+            height: 140px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .guide-header.sassa { background: linear-gradient(135deg, #059669, #10b981); }
+        .guide-header.money { background: linear-gradient(135deg, #d97706, #f59e0b); }
+        .guide-header.jobs { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+        .guide-header.freelance { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
+        .guide-header.business { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .guide-header.education { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+
+        .guide-category-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .guide-difficulty {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .guide-content {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .guide-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+            line-height: 1.4;
+        }
+
+        .guide-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .guide-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .guide-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .guide-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .guide-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
         /* AdSense */
         .adsense-container {
             margin: 2rem 0;
             text-align: center;
         }
-        
+
         .ad-label {
-            color: #9ca3af;
-            font-size: 0.8rem;
-            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
         }
-        
+
         .ad-unit {
             background: white;
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: var(--radius);
             border: 1px solid var(--border);
-            min-height: 100px;
+            min-height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
-        .ad-unit-header {
-            margin: 1rem 0;
+
+        /* Disclaimer */
+        .disclaimer {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            color: #92400e;
         }
-        
-        .ad-unit-content {
-            margin: 1.5rem 0;
+
+        .disclaimer h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: #92400e;
         }
-        
+
+        /* No Results */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .no-results h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .no-results button {
+            margin-top: 1rem;
+            padding: 0.75rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .no-results button:hover {
+            background: var(--primary-light);
+        }
+
         /* Footer */
         .footer {
             background: #1f2937;
@@ -767,194 +666,173 @@
             padding: 3rem 0 2rem;
             margin-top: 3rem;
         }
-        
+
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
             gap: 2rem;
             margin-bottom: 2rem;
         }
-        
+
         .footer-section h4 {
             color: white;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
-        
+
         .footer-links {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
-        
+
         .footer-links li {
             margin-bottom: 0.5rem;
         }
-        
+
         .footer-links a {
             color: #9ca3af;
             text-decoration: none;
             transition: color 0.2s;
+            font-size: 0.9rem;
         }
-        
+
         .footer-links a:hover {
             color: white;
         }
-        
+
         .footer-social {
             display: flex;
             gap: 1rem;
             margin-top: 1rem;
         }
-        
+
         .footer-social a {
             color: #9ca3af;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: color 0.2s;
         }
-        
+
         .footer-social a:hover {
             color: white;
         }
-        
+
         .footer-contact {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
-        
+
         .footer-contact li {
             margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-size: 0.9rem;
+            color: #9ca3af;
         }
-        
+
         .footer-contact i {
             width: 20px;
+            color: var(--primary-light);
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid #374151;
         }
-        
-        .footer-disclaimer {
+
+        .footer-bottom p {
             color: #9ca3af;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            font-size: 0.85rem;
         }
-        
+
         .compliance-badges {
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-top: 1.5rem;
             flex-wrap: wrap;
+            margin-top: 1.5rem;
         }
-        
+
         .compliance-badge {
-            padding: 0.35rem 0.75rem;
+            padding: 0.25rem 0.75rem;
             background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            font-size: 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.35rem;
+            color: #9ca3af;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
             .nav-menu {
+                gap: 1rem;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 1rem;
             }
-            
-            .guides-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .guides-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .search-input-group {
-                flex-direction: column;
-            }
-            
-            .guide-navigation {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .completion-actions {
-                flex-direction: column;
-            }
-            
-            .progress-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .guide-actions {
-                flex-direction: column;
-            }
-        }
-        
-        @media (max-width: 480px) {
+
             .guides-hero h1 {
                 font-size: 2rem;
             }
-            
-            .guides-hero p {
-                font-size: 1rem;
+
+            .hero-stats {
+                gap: 1rem;
             }
-            
-            .progress-grid {
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-box button {
+                padding: 1rem;
+            }
+
+            .guides-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .popular-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
-            
-            .popular-rank {
-                min-width: auto;
+        }
+
+        @media (max-width: 480px) {
+            .guides-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
-    
-    <!-- Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1F72BXHBV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-S1F72BXHBV');
-    </script>
 </head>
-<body data-page="howto">
+<body>
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
             <a href="/" class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-flag"></i>
+                    <i class="fas fa-map-marked-alt"></i>
                 </div>
-                <span>SA Daily Portal <span style="background: var(--accent); color: white; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem; margin-left: 0.5rem;">2026</span></span>
+                <span>SA Daily Portal <span style="background: var(--accent); color: white; padding: 0.2rem 0.5rem; border-radius: 30px; font-size: 0.8rem; margin-left: 0.5rem;">2026</span></span>
             </a>
             
             <nav class="nav-menu">
@@ -962,19 +840,16 @@
                     <i class="fas fa-home"></i> Home
                 </a>
                 <a href="/weather" class="nav-link">
-                    <i class="fas fa-sun"></i> Weather
-                </a>
-                <a href="/sassa" class="nav-link">
-                    <i class="fas fa-hand-holding-heart"></i> SASSA
+                    <i class="fas fa-cloud-sun"></i> Weather
                 </a>
                 <a href="/sports" class="nav-link">
-                    <i class="fas fa-futbol"></i> Football
+                    <i class="fas fa-futbol"></i> Sports
                 </a>
                 <a href="/howto" class="nav-link active">
-                    <i class="fas fa-book"></i> How-To
+                    <i class="fas fa-book-open"></i> Guides
                 </a>
-                <a href="/faq" class="nav-link">
-                    <i class="fas fa-question-circle"></i> FAQ
+                <a href="/contact" class="nav-link">
+                    <i class="fas fa-envelope"></i> Contact
                 </a>
             </nav>
         </div>
@@ -985,154 +860,142 @@
         <div class="container">
             <!-- Hero Section -->
             <section class="guides-hero">
-                <h1>📚 SOUTH AFRICAN HOW-TO GUIDES</h1>
-                <p>Interactive step-by-step tutorials for government services, applications, and essential South African processes for 2026. Save your progress and return anytime.</p>
-                <div class="hero-badges">
-                    <span class="status-badge status-approved">Interactive</span>
-                    <span class="status-badge status-review">Save Progress</span>
-                    <span class="status-badge status-pending">Print Guides</span>
+                <h1>📚 South African How-To Guides</h1>
+                <p>Practical step-by-step guides for SASSA, making money online, CV writing, job hunting, freelancing, and more. All guides updated for 2026.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-book-open"></i>
+                        <span>13+ Guides</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Updated 2026</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile Friendly</span>
+                    </div>
                 </div>
             </section>
 
-            <!-- Ad Unit -->
+            <!-- Ad Unit - Top -->
             <div class="adsense-container">
                 <div class="ad-label">Advertisement</div>
-                <div class="ad-unit ad-unit-header">
+                <div class="ad-unit">
                     <ins class="adsbygoogle"
                          style="display:block"
-                         data-ad-client="ca-pub-9750885759333419"
+                         data-ad-client="ca-pub-9621668436424790"
                          data-ad-slot="1234567890"
                          data-ad-format="auto"
                          data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
             </div>
 
-            <!-- Search & Categories -->
-            <section class="guides-search">
-                <h2><i class="fas fa-search"></i> Find the Right Guide</h2>
-                <p>Search for specific guides or browse by category</p>
+            <!-- Search Section -->
+            <section class="search-section">
+                <h2>
+                    <i class="fas fa-search"></i>
+                    Find the Right Guide
+                </h2>
                 
-                <div class="search-input-group">
-                    <input type="text" id="guideSearch" placeholder="Search for guides (e.g., 'SASSA application', 'ID renewal')">
-                    <button class="btn-primary" id="searchGuidesBtn">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search guides (e.g., 'SASSA', 'make money', 'CV writing', 'NSFAS')...">
+                    <button onclick="searchGuides()">
                         <i class="fas fa-search"></i> Search
                     </button>
                 </div>
-                
-                <div class="search-categories">
-                    <span class="category-chip active" data-category="all">All Categories</span>
-                    <span class="category-chip" data-category="sassa">SASSA & Grants</span>
-                    <span class="category-chip" data-category="id">ID & Passport</span>
-                    <span class="category-chip" data-category="tax">Tax & SARS</span>
-                    <span class="category-chip" data-category="license">Drivers License</span>
-                    <span class="category-chip" data-category="business">Business</span>
-                    <span class="category-chip" data-category="education">Education</span>
-                    <span class="category-chip" data-category="health">Health</span>
-                    <span class="category-chip" data-category="housing">Housing</span>
+
+                <div class="category-filters" id="categoryFilters">
+                    <span class="category-chip active" data-category="all">All Guides</span>
+                    <span class="category-chip" data-category="sassa"><i class="fas fa-hand-holding-heart"></i> SASSA</span>
+                    <span class="category-chip" data-category="money"><i class="fas fa-coins"></i> Make Money</span>
+                    <span class="category-chip" data-category="jobs"><i class="fas fa-briefcase"></i> Jobs & CV</span>
+                    <span class="category-chip" data-category="freelance"><i class="fas fa-laptop-code"></i> Freelancing</span>
+                    <span class="category-chip" data-category="business"><i class="fas fa-store"></i> Business</span>
+                    <span class="category-chip" data-category="education"><i class="fas fa-graduation-cap"></i> Education</span>
                 </div>
             </section>
 
-            <!-- User Progress (if logged in) -->
-            <section class="user-progress" id="userProgressSection" style="display: none;">
-                <h2><i class="fas fa-chart-line"></i> Your Learning Progress</h2>
-                <p>Track your completed guides and continue where you left off</p>
-                
-                <div class="progress-grid" id="userProgressGrid">
-                    <!-- Dynamic content from JS -->
+            <!-- Category Cards -->
+            <div class="category-grid">
+                <div class="category-card" data-category="sassa">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>SASSA</h3>
+                    <span>2 guides</span>
                 </div>
-            </section>
+                <div class="category-card" data-category="money">
+                    <i class="fas fa-coins"></i>
+                    <h3>Make Money</h3>
+                    <span>3 guides</span>
+                </div>
+                <div class="category-card" data-category="jobs">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Jobs & CV</h3>
+                    <span>4 guides</span>
+                </div>
+                <div class="category-card" data-category="freelance">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Freelancing</h3>
+                    <span>2 guides</span>
+                </div>
+                <div class="category-card" data-category="business">
+                    <i class="fas fa-store"></i>
+                    <h3>Business</h3>
+                    <span>1 guide</span>
+                </div>
+                <div class="category-card" data-category="education">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <span>1 guide</span>
+                </div>
+            </div>
 
             <!-- Popular Guides -->
-            <section class="popular-guides">
-                <h2><i class="fas fa-fire"></i> Most Popular Guides</h2>
-                <p>Top guides used by South Africans in 2026</p>
-                
-                <div class="popular-list" id="popularGuides">
-                    <!-- Dynamic content from JS -->
+            <section class="popular-section">
+                <h2>
+                    <i class="fas fa-fire" style="color: #d97706;"></i>
+                    Most Popular Guides
+                </h2>
+                <div class="popular-list" id="popularGuidesList">
+                    <!-- Populated by JavaScript -->
                 </div>
             </section>
 
-            <!-- Ad Unit -->
+            <!-- Ad Unit - Middle -->
             <div class="adsense-container">
                 <div class="ad-label">Advertisement</div>
-                <div class="ad-unit ad-unit-content">
+                <div class="ad-unit">
                     <ins class="adsbygoogle"
                          style="display:block"
-                         data-ad-client="ca-pub-9750885759333419"
+                         data-ad-client="ca-pub-9621668436424790"
                          data-ad-slot="2345678901"
                          data-ad-format="auto"
                          data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
             </div>
 
-            <!-- Guides Grid -->
-            <section class="guides-grid" id="guidesGrid">
-                <!-- Dynamic content from JS -->
-            </section>
-
-            <!-- Interactive Guide Display -->
-            <section id="interactiveGuideContainer">
-                <!-- Interactive guide will be loaded here -->
-            </section>
-
-            <!-- Printable Guide Display -->
-            <section id="printableGuideContainer" style="display: none;">
-                <!-- Printable guide will be loaded here -->
-            </section>
-
-            <!-- Guides Disclaimer -->
-            <div class="guides-disclaimer">
-                <h3><i class="fas fa-info-circle"></i> Guide Information Disclaimer</h3>
-                <p>All guides are for informational purposes only. Processes and requirements may change. Always verify with official government sources before submitting applications.</p>
-                <p><strong>Important:</strong> We are not affiliated with any government department. Guides are based on publicly available information and user experiences.</p>
+            <!-- All Guides -->
+            <div class="guides-header">
+                <h2>
+                    <i class="fas fa-book-open" style="color: var(--primary);"></i>
+                    All Guides
+                </h2>
+                <span class="results-count" id="resultsCount">13 guides</span>
             </div>
 
-            <!-- Guide Feedback -->
-            <section class="guide-feedback">
-                <div class="feedback-card">
-                    <div class="feedback-header">
-                        <h2><i class="fas fa-comment-alt"></i> Guide Feedback</h2>
-                        <p>Help us improve our guides by sharing your experience</p>
-                    </div>
-                    
-                    <form id="guideFeedbackForm">
-                        <div class="form-group">
-                            <label for="guideSelect">Select Guide</label>
-                            <select id="guideSelect" class="form-control" required>
-                                <option value="">-- Select a guide --</option>
-                                <!-- Options will be populated by JS -->
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="feedbackRating">Rating</label>
-                            <div class="rating-stars">
-                                <span class="star" data-value="1">☆</span>
-                                <span class="star" data-value="2">☆</span>
-                                <span class="star" data-value="3">☆</span>
-                                <span class="star" data-value="4">☆</span>
-                                <span class="star" data-value="5">☆</span>
-                            </div>
-                            <input type="hidden" id="feedbackRating" value="0" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="feedbackComment">Comments</label>
-                            <textarea id="feedbackComment" class="form-control" rows="4" placeholder="What was helpful? What could be improved?" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn-primary">
-                            <i class="fas fa-paper-plane"></i> Submit Feedback
-                        </button>
-                    </form>
-                </div>
-            </section>
+            <div class="guides-grid" id="guidesGrid">
+                <!-- Guides will be populated by JavaScript -->
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer">
+                <h3><i class="fas fa-info-circle"></i> Important Information</h3>
+                <p>All guides are for informational purposes only. Processes, requirements, and dates may change. Always verify with official sources (SASSA, NSFAS, Department of Employment and Labour) before submitting applications.</p>
+                <p style="margin-top: 0.5rem;"><strong>Note:</strong> We are an independent information portal and are not affiliated with any government department.</p>
+            </div>
         </div>
     </main>
 
@@ -1141,14 +1004,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h4>SA Daily Portal</h4>
-                    <p>Interactive guides and tutorials for South African services and applications.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
+                    <h4>SA Daily Portal 2026</h4>
+                    <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African weather forecasts and practical how-to guides. Helping South Africans navigate daily life since 2024.</p>
+                  
                 </div>
                 
                 <div class="footer-section">
@@ -1156,232 +1014,261 @@
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
                         <li><a href="/weather">Weather</a></li>
-                        <li><a href="/sassa">SASSA Center</a></li>
-                        <li><a href="/sports">Sports Hub</a></li>
-                        <li><a href="/howto">How-To Guides</a></li>
-                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/howto">Guides</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Legal</h4>
+                    <h4>Popular Guides</h4>
                     <ul class="footer-links">
-                        <li><a href="/privacy">Privacy Policy</a></li>
-                        <li><a href="/terms">Terms of Service</a></li>
-                        <li><a href="/disclaimer">Disclaimer</a></li>
-                        <li><a href="/contact">Contact Developer</a></li>
+                        <li><a href="/guides/sassa-status-check.html">SASSA Status Check</a></li>
+                        <li><a href="/guides/sassa-srd-application.html">SASSA SRD Application</a></li>
+                        <li><a href="/guides/make-money-online-sa.html">Make Money Online</a></li>
+                        <li><a href="/guides/how-to-write-cv-sa.html">How to Write a CV</a></li>
+                        <li><a href="/guides/best-job-websites-sa.html">Best Job Websites</a></li>
+                        <li><a href="/guides/students-make-money-online.html">Students Make Money</a></li>
+                        <li><a href="/guides/start-online-business-sa.html">Start Online Business</a></li>
+                        <li><a href="/guides/freelancing-guide-beginners.html">Freelancing Guide</a></li>
+                        <li><a href="/guides/become-freelancer-sa.html">Become a Freelancer</a></li>
+                        <li><a href="/guides/best-skills-learn-2026.html">Best Skills 2026</a></li>
+                        <li><a href="/guides/nsfas-application-guide.html">NSFAS Application</a></li>
+                        <li><a href="/guides/find-jobs-without-experience.html">Jobs Without Experience</a></li>
+                        <li><a href="/guides/earn-money-student-sa.html">Earn Money as Student</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Developer Info</h4>
+                    <h4>Contact Info</h4>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-user"></i> Developer: Nompumelelo</li>
+                        <li><i class="fas fa-user"></i> Developer: Nompumelelo Sibiya</li>
                         <li><i class="fas fa-map-marker-alt"></i> Mpumalanga, South Africa</li>
                         <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
-                        <li><i class="fas fa-phone"></i>+27 72 472 8166</li>
-                        <li><i class="fas fa-clock"></i> 9am-5pm Weekdays</li>
+                        <li><i class="fas fa-phone"></i> +27 72 472 8166</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9am - 5pm</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 SA Daily Portal. Interactive guides for educational purposes only.</p>
-                <p class="footer-disclaimer">
-                    <i class="fas fa-exclamation-circle"></i>
-                    Guides are based on public information. Always verify with official government sources.
-                </p>
+                <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal - not affiliated with any government department.</p>
                 <div class="compliance-badges">
-                    <span class="compliance-badge">
-                        <i class="fas fa-shield-alt"></i> AdSense Compliant
-                    </span>
-                    <span class="compliance-badge">
-                        <i class="fas fa-user-shield"></i> GDPR Ready
-                    </span>
-                    <span class="compliance-badge">
-                        <i class="fas fa-mobile-alt"></i> Mobile Friendly
-                    </span>
+                    <span class="compliance-badge"><i class="fas fa-shield-alt"></i> AdSense Compliant</span>
+                    <span class="compliance-badge"><i class="fas fa-user-shield"></i> GDPR Ready</span>
+                    <span class="compliance-badge"><i class="fas fa-mobile-alt"></i> Mobile Friendly</span>
+                    <span class="compliance-badge"><i class="fas fa-cookie-bite"></i> Cookie Policy</span>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Guides data for 2026
-        const guides = [
+        // Get guides data
+        const guidesData = [
+            {
+                id: 'sassa-status-check',
+                title: 'How to Check SASSA Status Online',
+                description: 'Complete step-by-step guide for South Africans to check their SASSA grant status online in 2026.',
+                category: 'sassa',
+                icon: 'fa-hand-holding-heart',
+                read_time: '5 min',
+                steps: 6,
+                popularity: 98,
+                difficulty: 'beginner'
+            },
             {
                 id: 'sassa-srd-application',
-                title: 'SRD R350 Grant Application 2026',
-                description: 'Complete step-by-step guide to applying for the Social Relief of Distress R350 grant online and at SASSA offices for 2026.',
+                title: 'SASSA SRD Grant Application 2026',
+                description: 'New to SASSA? Learn how to apply for the R350 SRD grant online, check your application status.',
                 category: 'sassa',
-                difficulty: 'easy',
-                icon: 'fa-hand-holding-usd',
-                time: '15 min',
-                steps: 7,
-                popularity: 95
-            },
-            {
-                id: 'id-application',
-                title: 'Smart ID Card Application 2026',
-                description: 'How to apply for a South African Smart ID Card, required documents, and booking appointments at Home Affairs for 2026.',
-                category: 'id',
-                difficulty: 'medium',
-                icon: 'fa-id-card',
-                time: '30 min',
+                icon: 'fa-file-alt',
+                read_time: '7 min',
                 steps: 8,
-                popularity: 88
+                popularity: 95,
+                difficulty: 'beginner'
             },
             {
-                id: 'tax-return',
-                title: 'SARS Tax Return Filing 2026',
-                description: 'Guide to filing your annual tax return with SARS, including deductions, supporting documents, and deadlines for 2026.',
-                category: 'tax',
-                difficulty: 'medium',
-                icon: 'fa-file-invoice-dollar',
-                time: '25 min',
-                steps: 6,
-                popularity: 82
+                id: 'make-money-online-sa',
+                title: 'How to Make Money Online in South Africa',
+                description: '14 legitimate ways to earn income online from South Africa in 2026.',
+                category: 'money',
+                icon: 'fa-coins',
+                read_time: '10 min',
+                steps: 12,
+                popularity: 100,
+                difficulty: 'intermediate'
             },
             {
-                id: 'drivers-license',
-                title: 'Drivers License Renewal 2026',
-                description: 'Complete process for renewing your South African drivers license, including eye tests and booking appointments for 2026.',
-                category: 'license',
-                difficulty: 'medium',
-                icon: 'fa-car',
-                time: '20 min',
-                steps: 5,
-                popularity: 78
+                id: 'how-to-write-cv-sa',
+                title: 'How to Write a CV in South Africa (with Template)',
+                description: 'Create a professional CV that stands out to South African employers.',
+                category: 'jobs',
+                icon: 'fa-file-pdf',
+                read_time: '7 min',
+                steps: 8,
+                popularity: 97,
+                difficulty: 'beginner'
             },
             {
-                id: 'passport-application',
-                title: 'Passport Application 2026',
-                description: 'How to apply for a new South African passport, required documents, fees, and processing times for 2026.',
-                category: 'id',
-                difficulty: 'medium',
-                icon: 'fa-passport',
-                time: '25 min',
-                steps: 7,
-                popularity: 75
-            },
-            {
-                id: 'child-support-grant',
-                title: 'Child Support Grant 2026',
-                description: 'Applying for the Child Support Grant, eligibility requirements, and required documentation for 2026.',
-                category: 'sassa',
-                difficulty: 'easy',
-                icon: 'fa-baby',
-                time: '20 min',
-                steps: 6,
-                popularity: 72
-            },
-            {
-                id: 'business-registration',
-                title: 'Business Registration (CIPC) 2026',
-                description: 'Registering a new company or business with CIPC, name reservation, and compliance requirements for 2026.',
-                category: 'business',
-                difficulty: 'hard',
+                id: 'best-job-websites-sa',
+                title: 'Best Job Websites in South Africa 2026',
+                description: 'Top 10 job portals in South Africa for finding employment.',
+                category: 'jobs',
                 icon: 'fa-briefcase',
-                time: '45 min',
-                steps: 10,
-                popularity: 68
+                read_time: '6 min',
+                steps: 5,
+                popularity: 94,
+                difficulty: 'beginner'
             },
             {
-                id: 'uif-claims',
-                title: 'UIF Claims Process 2026',
-                description: 'How to claim Unemployment Insurance Fund benefits when you lose your job or are unable to work in 2026.',
+                id: 'students-make-money-online',
+                title: 'How Students Can Make Money Online in SA',
+                description: 'Practical online income opportunities for South African students.',
+                category: 'money',
+                icon: 'fa-graduation-cap',
+                read_time: '8 min',
+                steps: 7,
+                popularity: 93,
+                difficulty: 'beginner'
+            },
+            {
+                id: 'start-online-business-sa',
+                title: 'How to Start an Online Business in South Africa',
+                description: 'Complete guide to launching your online business in South Africa.',
                 category: 'business',
-                difficulty: 'medium',
-                icon: 'fa-user-tie',
-                time: '30 min',
+                icon: 'fa-store',
+                read_time: '12 min',
+                steps: 10,
+                popularity: 92,
+                difficulty: 'advanced'
+            },
+            {
+                id: 'freelancing-guide-beginners',
+                title: 'Freelancing Guide for Beginners in South Africa',
+                description: 'Start your freelancing career in South Africa. Learn how to find clients and set rates.',
+                category: 'freelance',
+                icon: 'fa-laptop-code',
+                read_time: '9 min',
                 steps: 8,
-                popularity: 65
+                popularity: 91,
+                difficulty: 'intermediate'
+            },
+            {
+                id: 'nsfas-application-guide',
+                title: 'How to Apply for NSFAS Funding 2026',
+                description: 'Complete guide to applying for NSFAS funding. Requirements, process, and documents needed.',
+                category: 'education',
+                icon: 'fa-search',
+                read_time: '7 min',
+                steps: 7,
+                popularity: 96,
+                difficulty: 'beginner'
+            },
+            {
+                id: 'best-skills-learn-2026',
+                title: 'Best Skills to Learn in 2026 for South Africans',
+                description: 'High-demand skills that will help you succeed in the South African job market.',
+                category: 'jobs',
+                icon: 'fa-brain',
+                read_time: '8 min',
+                steps: 6,
+                popularity: 89,
+                difficulty: 'beginner'
+            },
+            {
+                id: 'become-freelancer-sa',
+                title: 'How to Become a Freelancer in South Africa',
+                description: 'Complete roadmap to becoming a successful freelancer in South Africa.',
+                category: 'freelance',
+                icon: 'fa-chart-line',
+                read_time: '10 min',
+                steps: 9,
+                popularity: 88,
+                difficulty: 'intermediate'
+            },
+            {
+                id: 'find-jobs-without-experience',
+                title: 'How to Find Jobs Without Experience in SA',
+                description: 'Practical strategies for entry-level job seekers in South Africa.',
+                category: 'jobs',
+                icon: 'fa-briefcase',
+                read_time: '7 min',
+                steps: 6,
+                popularity: 87,
+                difficulty: 'beginner'
+            },
+            {
+                id: 'earn-money-student-sa',
+                title: 'How to Earn Money as a Student in SA',
+                description: 'Practical ways for South African students to earn income while studying.',
+                category: 'money',
+                icon: 'fa-coins',
+                read_time: '6 min',
+                steps: 5,
+                popularity: 86,
+                difficulty: 'beginner'
             }
         ];
-        
-        // Elements
-        const guidesGrid = document.getElementById('guidesGrid');
-        const guideSearch = document.getElementById('guideSearch');
-        const searchBtn = document.getElementById('searchGuidesBtn');
-        const categoryChips = document.querySelectorAll('.category-chip');
-        const interactiveContainer = document.getElementById('interactiveGuideContainer');
-        const printableContainer = document.getElementById('printableGuideContainer');
-        const userProgressSection = document.getElementById('userProgressSection');
-        const userProgressGrid = document.getElementById('userProgressGrid');
-        const popularGuides = document.getElementById('popularGuides');
-        const feedbackForm = document.getElementById('guideFeedbackForm');
-        const guideSelect = document.getElementById('guideSelect');
-        
-        // Current state
+
+        // State
         let currentCategory = 'all';
-        let currentSearch = '';
-        let userProgress = {};
-        let currentGuide = null;
-        let currentStep = 0;
-        
+        let searchTerm = '';
+
+        // DOM Elements
+        const guidesGrid = document.getElementById('guidesGrid');
+        const popularList = document.getElementById('popularGuidesList');
+        const searchInput = document.getElementById('searchInput');
+        const resultsCount = document.getElementById('resultsCount');
+        const categoryChips = document.querySelectorAll('.category-chip');
+        const categoryCards = document.querySelectorAll('.category-card');
+
         // Initialize
-        loadGuides();
-        loadPopularGuides();
-        checkUserProgress();
-        setupEventListeners();
-        
-        // Functions
-        function loadGuides() {
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAllGuides();
+            loadPopularGuides();
+            setupEventListeners();
+            updateResultsCount();
+        });
+
+        // Load all guides
+        function loadAllGuides() {
             guidesGrid.innerHTML = '';
             
-            // Filter guides based on category and search
-            const filteredGuides = guides.filter(guide => {
-                const matchesCategory = currentCategory === 'all' || guide.category === currentCategory;
-                const matchesSearch = currentSearch === '' || 
-                    guide.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
-                    guide.description.toLowerCase().includes(currentSearch.toLowerCase());
-                
-                return matchesCategory && matchesSearch;
-            });
-            
-            // Sort by popularity
-            filteredGuides.sort((a, b) => b.popularity - a.popularity);
+            const filteredGuides = filterGuides();
             
             if (filteredGuides.length === 0) {
                 guidesGrid.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
-                        <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1rem;"></i>
-                        <h3 style="color: var(--text); margin-bottom: 0.5rem;">No guides found</h3>
-                        <p style="color: var(--text-light);">Try a different search term or category</p>
+                    <div class="no-results">
+                        <i class="fas fa-search"></i>
+                        <h3>No guides found</h3>
+                        <p>Try a different search term or category</p>
+                        <button onclick="resetFilters()">
+                            <i class="fas fa-redo"></i> Reset Filters
+                        </button>
                     </div>
                 `;
                 return;
             }
             
-            // Create guide cards
             filteredGuides.forEach(guide => {
-                const guideCard = createGuideCard(guide);
-                guidesGrid.appendChild(guideCard);
+                const card = createGuideCard(guide);
+                guidesGrid.appendChild(card);
             });
             
-            // Update guide select for feedback
-            updateGuideSelect();
+            updateResultsCount(filteredGuides.length);
         }
-        
+
+        // Create guide card
         function createGuideCard(guide) {
             const card = document.createElement('div');
             card.className = 'guide-card';
-            card.dataset.id = guide.id;
-            
-            // Get progress percentage
-            const progress = userProgress[guide.id] || 0;
-            const progressPercent = Math.round((progress / guide.steps) * 100);
-            
-            // Difficulty colors
-            let difficultyColor = 'var(--guide-green)'; // Easy - green
-            if (guide.difficulty === 'medium') difficultyColor = 'var(--guide-yellow)'; // Medium - yellow
-            if (guide.difficulty === 'hard') difficultyColor = 'var(--guide-red)'; // Hard - red
+            card.onclick = () => window.location.href = `/guides/${guide.id}.html`;
             
             card.innerHTML = `
-                <div class="guide-header" style="background: linear-gradient(135deg, ${getCategoryColor(guide.category)}, ${difficultyColor})">
+                <div class="guide-header ${guide.category}">
                     <i class="fas ${guide.icon}"></i>
+                    <div class="guide-category-tag">${capitalizeFirst(guide.category)}</div>
                     <div class="guide-difficulty">${guide.difficulty.toUpperCase()}</div>
                 </div>
                 <div class="guide-content">
@@ -1389,719 +1276,154 @@
                     <div class="guide-description">${guide.description}</div>
                     
                     <div class="guide-meta">
-                        <span><i class="far fa-clock"></i> ${guide.time}</span>
-                        <span><i class="fas fa-steps"></i> ${guide.steps} steps</span>
-                        <span><i class="fas fa-users"></i> ${guide.popularity}% helpful</span>
+                        <span><i class="far fa-clock"></i> ${guide.read_time}</span>
+                        <span><i class="fas fa-list"></i> ${guide.steps} steps</span>
+                        <span><i class="fas fa-chart-line"></i> ${guide.popularity}%</span>
                     </div>
                     
-                    ${progress > 0 ? `
-                    <div class="guide-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: ${progressPercent}%"></div>
-                        </div>
-                        <div class="progress-text">${progressPercent}% complete</div>
-                    </div>
-                    ` : ''}
-                    
-                    <div class="guide-actions">
-                        <button class="btn-primary btn-block start-guide-btn" data-id="${guide.id}">
-                            <i class="fas fa-play-circle"></i> Start Guide
-                        </button>
-                        <button class="btn-outline btn-block print-guide-btn" data-id="${guide.id}">
-                            <i class="fas fa-print"></i> Print Guide
-                        </button>
+                    <div class="guide-btn">
+                        <i class="fas fa-book-open"></i> Read Guide
                     </div>
                 </div>
             `;
             
             return card;
         }
-        
-        function getCategoryColor(category) {
-            const colors = {
-                'sassa': 'var(--guide-blue)',
-                'id': 'var(--guide-green)',
-                'tax': 'var(--guide-red)',
-                'license': 'var(--guide-yellow)',
-                'business': 'var(--guide-purple)',
-                'education': '#00BCD4',
-                'health': '#FF5722',
-                'housing': '#795548'
-            };
-            return colors[category] || 'var(--guide-blue)';
-        }
-        
+
+        // Load popular guides
         function loadPopularGuides() {
-            popularGuides.innerHTML = '';
+            popularList.innerHTML = '';
             
-            // Sort by popularity and take top 5
-            const topGuides = [...guides]
+            const popular = [...guidesData]
                 .sort((a, b) => b.popularity - a.popularity)
-                .slice(0, 5);
+                .slice(0, 6);
             
-            topGuides.forEach((guide, index) => {
+            popular.forEach((guide, index) => {
                 const item = document.createElement('div');
                 item.className = 'popular-item';
-                item.dataset.id = guide.id;
+                item.onclick = () => window.location.href = `/guides/${guide.id}.html`;
+                
+                let rankClass = '';
+                if (index === 0) rankClass = 'gold';
+                else if (index === 1) rankClass = 'silver';
+                else if (index === 2) rankClass = 'bronze';
                 
                 item.innerHTML = `
-                    <div class="popular-rank">#${index + 1}</div>
-                    <div class="popular-content">
-                        <div class="popular-title" style="font-weight: 600; margin-bottom: 0.25rem;">${guide.title}</div>
-                        <div class="popular-meta" style="font-size: 0.85rem; opacity: 0.9;">
-                            <span><i class="far fa-clock"></i> ${guide.time}</span>
-                            <span style="margin-left: 0.75rem;"><i class="fas fa-steps"></i> ${guide.steps} steps</span>
-                        </div>
-                    </div>
-                    <i class="fas fa-chevron-right"></i>
+                    <div class="popular-rank ${rankClass}">${index + 1}</div>
+                    <div class="popular-title">${guide.title}</div>
+                    <i class="fas fa-chevron-right popular-arrow"></i>
                 `;
                 
-                popularGuides.appendChild(item);
+                popularList.appendChild(item);
             });
         }
-        
-        function checkUserProgress() {
-            // In a real app, this would check if user is logged in
-            // For now, we'll simulate user progress
-            userProgress = JSON.parse(localStorage.getItem('guideProgress')) || {};
-            
-            if (Object.keys(userProgress).length > 0) {
-                userProgressSection.style.display = 'block';
-                updateUserProgressDisplay();
-            }
-        }
-        
-        function updateUserProgressDisplay() {
-            userProgressGrid.innerHTML = '';
-            
-            // Calculate overall progress
-            const totalGuides = guides.length;
-            const completedGuides = Object.keys(userProgress).length;
-            const totalSteps = guides.reduce((sum, guide) => sum + guide.steps, 0);
-            const completedSteps = Object.values(userProgress).reduce((sum, steps) => sum + steps, 0);
-            const overallPercent = totalSteps > 0 ? Math.round((completedSteps / totalSteps) * 100) : 0;
-            
-            const stats = [
-                { label: 'Guides Started', value: completedGuides, total: totalGuides, percent: Math.round((completedGuides / totalGuides) * 100) },
-                { label: 'Steps Completed', value: completedSteps, total: totalSteps, percent: overallPercent },
-                { label: 'Average Progress', value: overallPercent + '%', percent: overallPercent },
-                { label: 'Learning Time', value: calculateLearningTime(), percent: 0 }
-            ];
-            
-            stats.forEach(stat => {
-                const item = document.createElement('div');
-                item.className = 'progress-item';
+
+        // Filter guides
+        function filterGuides() {
+            return guidesData.filter(guide => {
+                const matchesCategory = currentCategory === 'all' || guide.category === currentCategory;
+                const matchesSearch = searchTerm === '' || 
+                    guide.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    guide.description.toLowerCase().includes(searchTerm.toLowerCase());
                 
-                item.innerHTML = `
-                    <div class="progress-percent">${stat.value}</div>
-                    <div class="progress-label">${stat.label}</div>
-                    ${stat.percent > 0 ? `
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${stat.percent}%"></div>
-                    </div>
-                    ` : ''}
-                `;
-                
-                userProgressGrid.appendChild(item);
+                return matchesCategory && matchesSearch;
             });
         }
-        
-        function calculateLearningTime() {
-            const totalSteps = Object.values(userProgress).reduce((sum, steps) => sum + steps, 0);
-            const estimatedMinutes = totalSteps * 3; // Assume 3 minutes per step
-            const hours = Math.floor(estimatedMinutes / 60);
-            const minutes = estimatedMinutes % 60;
-            
-            if (hours > 0) {
-                return `${hours}h ${minutes}m`;
-            }
-            return `${minutes}m`;
+
+        // Update results count
+        function updateResultsCount(count = null) {
+            const total = count || guidesData.length;
+            resultsCount.textContent = `${total} guide${total !== 1 ? 's' : ''}`;
         }
-        
-        function startGuide(guideId) {
-            const guide = guides.find(g => g.id === guideId);
-            if (!guide) return;
-            
-            currentGuide = guide;
-            currentStep = userProgress[guideId] || 0;
-            
-            // Hide guides grid and show interactive guide
-            guidesGrid.style.display = 'none';
-            interactiveContainer.innerHTML = createInteractiveGuide(guide);
-            interactiveContainer.style.display = 'block';
-            
-            // Scroll to guide
-            interactiveContainer.scrollIntoView({ behavior: 'smooth' });
-            
-            // Setup interactive guide events
-            setTimeout(() => {
-                setupInteractiveGuideEvents();
-            }, 100);
+
+        // Capitalize first letter
+        function capitalizeFirst(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
         }
-        
-        function createInteractiveGuide(guide) {
-            const progress = userProgress[guide.id] || 0;
-            const steps = getGuideSteps(guide.id);
+
+        // Search function
+        window.searchGuides = function() {
+            searchTerm = searchInput.value.trim();
+            loadAllGuides();
+        };
+
+        // Filter by category
+        window.filterByCategory = function(category) {
+            currentCategory = category;
+            searchTerm = '';
+            searchInput.value = '';
             
-            return `
-                <div class="interactive-guide active" id="interactiveGuide-${guide.id}">
-                    <div class="guide-header">
-                        <h2><i class="fas ${guide.icon}"></i> ${guide.title}</h2>
-                        <p>${guide.description}</p>
-                        
-                        <div class="guide-meta">
-                            <span><i class="far fa-clock"></i> Estimated time: ${guide.time}</span>
-                            <span><i class="fas fa-steps"></i> ${steps.length} steps</span>
-                            <span><i class="fas fa-users"></i> ${guide.popularity}% found this helpful</span>
-                        </div>
-                    </div>
-                    
-                    <div class="step-indicator">
-                        <div class="step-dots">
-                            ${steps.map((step, index) => `
-                                <div class="step-dot ${index < currentStep ? 'completed' : index === currentStep ? 'active' : ''}" 
-                                     data-step="${index}"></div>
-                            `).join('')}
-                        </div>
-                        <div class="step-text">Step ${currentStep + 1} of ${steps.length}</div>
-                    </div>
-                    
-                    <div class="step-content" id="stepContent">
-                        ${createStepContent(steps[currentStep], currentStep)}
-                    </div>
-                    
-                    <div class="guide-navigation">
-                        <button class="btn-secondary" id="prevStepBtn" ${currentStep === 0 ? 'disabled' : ''}>
-                            <i class="fas fa-arrow-left"></i> Previous Step
-                        </button>
-                        
-                        <div class="guide-extra-actions">
-                            <button class="btn-outline" id="saveProgressBtn">
-                                <i class="far fa-save"></i> Save Progress
-                            </button>
-                            <button class="btn-outline" id="printGuideBtn">
-                                <i class="fas fa-print"></i> Print Guide
-                            </button>
-                            <button class="btn-secondary" id="exitGuideBtn">
-                                <i class="fas fa-times"></i> Exit Guide
-                            </button>
-                        </div>
-                        
-                        <button class="btn-primary" id="nextStepBtn">
-                            ${currentStep === steps.length - 1 ? 'Complete Guide' : 'Next Step'}
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            `;
-        }
-        
-        function getGuideSteps(guideId) {
-            // Step data for each guide
-            const stepData = {
-                'sassa-srd-application': [
-                    {
-                        title: 'Check Eligibility 2026',
-                        content: 'Verify you meet the SRD R350 grant requirements for 2026:',
-                        checklist: [
-                            'South African citizen, permanent resident, or refugee',
-                            'Between 18 and 60 years old',
-                            'Unemployed with no income',
-                            'Not receiving any other social grant',
-                            'Not receiving UIF payment',
-                            'Not a resident in a government institution'
-                        ],
-                        notes: 'You can check eligibility on the official SASSA website before applying.'
-                    },
-                    {
-                        title: 'Gather Required Documents',
-                        content: 'Prepare these documents before starting your application:',
-                        checklist: [
-                            'Original SA ID document (not expired)',
-                            'Proof of residential address (not older than 3 months)',
-                            'Bank statement showing account holder name',
-                            'Proof of unemployment (if available)',
-                            'Contact details: phone number and email'
-                        ],
-                        notes: 'All documents must be clear and legible. Take photos if applying online.'
-                    },
-                    {
-                        title: 'Choose Application Method',
-                        content: 'Select how you want to apply for the SRD grant in 2026:',
-                        checklist: [
-                            'Online via SASSA SRD website (recommended)',
-                            'WhatsApp: 082 046 8553',
-                            'USSD: *134*7737#',
-                            'Visit SASSA office (bring all documents)'
-                        ],
-                        notes: 'Online applications are processed faster. Save your reference number!'
-                    },
-                    {
-                        title: 'Complete Application Form',
-                        content: 'Fill in all required information accurately:',
-                        checklist: [
-                            'Personal details (match your ID exactly)',
-                            'Contact information',
-                            'Banking details (if choosing bank payment)',
-                            'Review all information before submitting'
-                        ],
-                        notes: 'Double-check your ID number and banking details. Errors cause delays.'
-                    },
-                    {
-                        title: 'Submit and Get Reference',
-                        content: 'After submitting your application:',
-                        checklist: [
-                            'Save your reference number immediately',
-                            'Take screenshot or write it down',
-                            'You\'ll receive SMS confirmation',
-                            'Application status: Pending verification'
-                        ],
-                        notes: 'Reference number is crucial for checking status and appeals.'
-                    },
-                    {
-                        title: 'Verification Process',
-                        content: 'SASSA will verify your details:',
-                        checklist: [
-                            'ID verification with Home Affairs',
-                            'Bank account verification',
-                            'Income check with SARS',
-                            'UIF status check',
-                            'NSFAS registration check'
-                        ],
-                        notes: 'Verification takes 7-14 days. You\'ll receive SMS updates.'
-                    },
-                    {
-                        title: 'Payment Collection 2026',
-                        content: 'Once approved, choose payment method for 2026:',
-                        checklist: [
-                            'Bank account deposit (fastest)',
-                            'Post Office collection',
-                            'Cash Send via mobile phone',
-                            'Check payment date each month'
-                        ],
-                        notes: 'Payments are monthly. Update SASSA if your details change.'
-                    }
-                ],
-                'id-application': [
-                    {
-                        title: 'Check Requirements 2026',
-                        content: 'Before applying for a Smart ID Card, ensure you:',
-                        checklist: [
-                            'Are a South African citizen',
-                            'Have existing ID or birth certificate',
-                            'Can provide proof of residence',
-                            'Have R140 application fee (prices may change)'
-                        ],
-                        notes: 'First-time applicants need birth certificate. Lost IDs require affidavit.'
-                    },
-                    // More steps would follow for other guides...
-                ]
-            };
+            // Update active chip
+            categoryChips.forEach(c => c.classList.remove('active'));
+            const activeChip = Array.from(categoryChips).find(c => c.dataset.category === category);
+            if (activeChip) activeChip.classList.add('active');
             
-            return stepData[guideId] || [
-                {
-                    title: 'Guide Content Loading',
-                    content: 'Detailed steps for this guide are being loaded...',
-                    checklist: ['Step details will appear here'],
-                    notes: 'Please check back soon for complete guide content.'
-                }
-            ];
-        }
-        
-        function createStepContent(step, stepIndex) {
-            return `
-                <h3>Step ${stepIndex + 1}: ${step.title}</h3>
-                <p>${step.content}</p>
-                
-                ${step.checklist ? `
-                <ul class="step-checklist">
-                    ${step.checklist.map(item => `
-                        <li>
-                            <div class="checklist-checkbox" data-item="${item}"></div>
-                            <span>${item}</span>
-                        </li>
-                    `).join('')}
-                </ul>
-                ` : ''}
-                
-                ${step.notes ? `
-                <div class="step-notes" style="background: #e3f2fd; border-left: 4px solid var(--primary); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
-                    <strong><i class="fas fa-lightbulb"></i> Important Note:</strong>
-                    <p>${step.notes}</p>
-                </div>
-                ` : ''}
-                
-                ${stepIndex === 0 ? `
-                <div class="step-tips" style="background: #f3e5f5; border-left: 4px solid var(--guide-purple); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;">
-                    <h4><i class="fas fa-tips"></i> Pro Tips:</h4>
-                    <ul>
-                        <li>Complete all steps in one sitting if possible</li>
-                        <li>Have all required documents ready</li>
-                        <li>Check boxes as you complete each item</li>
-                        <li>Save your progress regularly</li>
-                    </ul>
-                </div>
-                ` : ''}
-            `;
-        }
-        
-        function showPrintableGuide(guideId) {
-            const guide = guides.find(g => g.id === guideId);
-            if (!guide) return;
+            loadAllGuides();
             
-            const steps = getGuideSteps(guideId);
+            // Scroll to guides
+            document.querySelector('.guides-header').scrollIntoView({ behavior: 'smooth' });
+        };
+
+        // Reset filters
+        window.resetFilters = function() {
+            currentCategory = 'all';
+            searchTerm = '';
+            searchInput.value = '';
             
-            printableContainer.innerHTML = `
-                <div class="printable-guide" id="printable-${guideId}">
-                    <div class="print-header">
-                        <h2>${guide.title}</h2>
-                        <p>${guide.description}</p>
-                        <div class="print-meta">
-                            <span><i class="far fa-clock"></i> ${guide.time}</span>
-                            <span><i class="fas fa-steps"></i> ${steps.length} steps</span>
-                            <span><i class="fas fa-print"></i> Printable Version</span>
-                        </div>
-                    </div>
-                    
-                    <div class="print-content">
-                        ${steps.map((step, index) => `
-                            <div class="print-step">
-                                <h3>Step ${index + 1}: ${step.title}</h3>
-                                <p>${step.content}</p>
-                                
-                                ${step.checklist ? `
-                                <ul>
-                                    ${step.checklist.map(item => `<li>${item}</li>`).join('')}
-                                </ul>
-                                ` : ''}
-                                
-                                ${step.notes ? `
-                                <div class="print-note">
-                                    <strong>Note:</strong> ${step.notes}
-                                </div>
-                                ` : ''}
-                            </div>
-                        `).join('')}
-                        
-                        <div class="print-tips">
-                            <h3>Additional Tips</h3>
-                            <ul>
-                                <li>Always verify information with official government websites</li>
-                                <li>Keep copies of all submitted documents</li>
-                                <li>Save reference numbers and confirmation emails</li>
-                                <li>Follow up if you don't receive updates within expected timeframes</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="print-footer">
-                        <p>Printed from SA Daily Portal - ${new Date().toLocaleDateString('en-ZA')}</p>
-                        <p><i class="fas fa-info-circle"></i> This guide is for informational purposes only. Verify with official sources.</p>
-                        <p>Portal URL: https://sadailyportal.co.za/howto</p>
-                    </div>
-                </div>
-                
-                <div class="print-controls" style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
-                    <button class="btn-primary" onclick="window.print()">
-                        <i class="fas fa-print"></i> Print Guide
-                    </button>
-                    <button class="btn-secondary" id="closePrintBtn">
-                        <i class="fas fa-times"></i> Close Printable View
-                    </button>
-                </div>
-            `;
+            categoryChips.forEach(c => c.classList.remove('active'));
+            const allChip = Array.from(categoryChips).find(c => c.dataset.category === 'all');
+            if (allChip) allChip.classList.add('active');
             
-            // Hide other content and show printable
-            guidesGrid.style.display = 'none';
-            interactiveContainer.style.display = 'none';
-            printableContainer.style.display = 'block';
-            
-            // Scroll to printable
-            printableContainer.scrollIntoView({ behavior: 'smooth' });
-        }
-        
+            loadAllGuides();
+        };
+
+        // Setup event listeners
         function setupEventListeners() {
-            // Search functionality
-            searchBtn.addEventListener('click', () => {
-                currentSearch = guideSearch.value.trim();
-                loadGuides();
-            });
-            
-            guideSearch.addEventListener('keypress', (e) => {
+            // Search on Enter key
+            searchInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
-                    currentSearch = guideSearch.value.trim();
-                    loadGuides();
+                    searchGuides();
                 }
             });
             
-            // Category filtering
+            // Category chips
             categoryChips.forEach(chip => {
                 chip.addEventListener('click', () => {
-                    currentCategory = chip.dataset.category;
                     categoryChips.forEach(c => c.classList.remove('active'));
                     chip.classList.add('active');
-                    loadGuides();
+                    
+                    currentCategory = chip.dataset.category;
+                    searchTerm = '';
+                    searchInput.value = '';
+                    
+                    loadAllGuides();
                 });
             });
             
-            // Guide card clicks (delegated)
-            guidesGrid.addEventListener('click', (e) => {
-                const startBtn = e.target.closest('.start-guide-btn');
-                const printBtn = e.target.closest('.print-guide-btn');
-                
-                if (startBtn) {
-                    const guideId = startBtn.dataset.id;
-                    startGuide(guideId);
-                }
-                
-                if (printBtn) {
-                    const guideId = printBtn.dataset.id;
-                    showPrintableGuide(guideId);
-                }
-            });
-            
-            // Popular guides clicks
-            popularGuides.addEventListener('click', (e) => {
-                const item = e.target.closest('.popular-item');
-                if (item) {
-                    const guideId = item.dataset.id;
-                    startGuide(guideId);
-                }
-            });
-            
-            // Printable guide close button
-            printableContainer.addEventListener('click', (e) => {
-                if (e.target.closest('#closePrintBtn')) {
-                    printableContainer.style.display = 'none';
-                    guidesGrid.style.display = 'grid';
-                }
-            });
-            
-            // Feedback form
-            feedbackForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                const guideId = guideSelect.value;
-                const rating = document.getElementById('feedbackRating').value;
-                const comment = document.getElementById('feedbackComment').value.trim();
-                
-                if (!guideId || !rating || !comment) {
-                    alert('Please complete all fields');
-                    return;
-                }
-                
-                try {
-                    // In production, save to backend
-                    alert('Thank you for your feedback! It helps us improve our guides.');
-                    feedbackForm.reset();
+            // Category cards
+            categoryCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const category = card.dataset.category;
                     
-                    // Reset stars
-                    document.querySelectorAll('.rating-stars .star').forEach(star => {
-                        star.textContent = '☆';
-                    });
-                    document.getElementById('feedbackRating').value = '0';
+                    categoryChips.forEach(c => c.classList.remove('active'));
+                    const activeChip = Array.from(categoryChips).find(c => c.dataset.category === category);
+                    if (activeChip) activeChip.classList.add('active');
                     
-                } catch (error) {
-                    alert('Failed to submit feedback. Please try again.');
-                }
-            });
-            
-            // Star rating
-            document.querySelector('.rating-stars')?.addEventListener('click', (e) => {
-                if (e.target.classList.contains('star')) {
-                    const value = parseInt(e.target.dataset.value);
-                    const stars = document.querySelectorAll('.rating-stars .star');
+                    currentCategory = category;
+                    searchTerm = '';
+                    searchInput.value = '';
                     
-                    // Update star display
-                    stars.forEach((star, index) => {
-                        star.textContent = index < value ? '★' : '☆';
-                    });
+                    loadAllGuides();
                     
-                    // Update hidden input
-                    document.getElementById('feedbackRating').value = value;
-                }
-            });
-        }
-        
-        function setupInteractiveGuideEvents() {
-            // Checklist checkboxes
-            document.querySelectorAll('.checklist-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('click', () => {
-                    checkbox.classList.toggle('checked');
+                    // Scroll to guides
+                    document.querySelector('.guides-header').scrollIntoView({ behavior: 'smooth' });
                 });
             });
-            
-            // Previous step button
-            document.getElementById('prevStepBtn')?.addEventListener('click', () => {
-                if (currentStep > 0) {
-                    currentStep--;
-                    updateInteractiveGuide();
-                }
-            });
-            
-            // Next step button
-            document.getElementById('nextStepBtn')?.addEventListener('click', () => {
-                const steps = getGuideSteps(currentGuide.id);
-                if (currentStep < steps.length - 1) {
-                    currentStep++;
-                    updateInteractiveGuide();
-                } else {
-                    completeGuide();
-                }
-            });
-            
-            // Save progress button
-            document.getElementById('saveProgressBtn')?.addEventListener('click', saveGuideProgress);
-            
-            // Print guide button
-            document.getElementById('printGuideBtn')?.addEventListener('click', () => {
-                showPrintableGuide(currentGuide.id);
-            });
-            
-            // Exit guide button
-            document.getElementById('exitGuideBtn')?.addEventListener('click', exitGuide);
         }
-        
-        function updateInteractiveGuide() {
-            const guideElement = document.getElementById(`interactiveGuide-${currentGuide.id}`);
-            if (!guideElement) return;
-            
-            const steps = getGuideSteps(currentGuide.id);
-            
-            // Update step content
-            document.getElementById('stepContent').innerHTML = createStepContent(steps[currentStep], currentStep);
-            
-            // Update step dots
-            document.querySelectorAll('.step-dot').forEach((dot, index) => {
-                dot.classList.remove('active', 'completed');
-                if (index < currentStep) {
-                    dot.classList.add('completed');
-                } else if (index === currentStep) {
-                    dot.classList.add('active');
-                }
-            });
-            
-            // Update step text
-            document.querySelector('.step-text').textContent = `Step ${currentStep + 1} of ${steps.length}`;
-            
-            // Update next button text
-            const nextBtn = document.getElementById('nextStepBtn');
-            if (nextBtn) {
-                nextBtn.innerHTML = currentStep === steps.length - 1 ? 
-                    'Complete Guide <i class="fas fa-check"></i>' : 
-                    'Next Step <i class="fas fa-arrow-right"></i>';
-            }
-            
-            // Update previous button state
-            const prevBtn = document.getElementById('prevStepBtn');
-            if (prevBtn) {
-                prevBtn.disabled = currentStep === 0;
-            }
-            
-            // Re-attach event listeners
-            setTimeout(() => {
-                setupInteractiveGuideEvents();
-            }, 100);
-        }
-        
-        function saveGuideProgress() {
-            if (!currentGuide) return;
-            
-            // Save progress to localStorage
-            userProgress[currentGuide.id] = currentStep + 1;
-            localStorage.setItem('guideProgress', JSON.stringify(userProgress));
-            
-            // Update display
-            updateUserProgressDisplay();
-            
-            // Show success message
-            const saveBtn = document.getElementById('saveProgressBtn');
-            const originalText = saveBtn.innerHTML;
-            saveBtn.innerHTML = '<i class="fas fa-check"></i> Progress Saved!';
-            saveBtn.classList.add('btn-success');
-            
-            setTimeout(() => {
-                saveBtn.innerHTML = originalText;
-                saveBtn.classList.remove('btn-success');
-            }, 2000);
-        }
-        
-        function completeGuide() {
-            if (!currentGuide) return;
-            
-            // Mark as complete in local progress
-            userProgress[currentGuide.id] = getGuideSteps(currentGuide.id).length;
-            localStorage.setItem('guideProgress', JSON.stringify(userProgress));
-            
-            // Show completion message
-            interactiveContainer.innerHTML = `
-                <div class="guide-completion">
-                    <div class="completion-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h2>Guide Complete! 🎉</h2>
-                    <p>You've successfully completed the <strong>${currentGuide.title}</strong> guide.</p>
-                    <p>Your progress has been saved.</p>
-                    
-                    <div class="completion-actions">
-                        <button class="btn-primary" id="restartGuideBtn2">
-                            <i class="fas fa-redo"></i> Start Over
-                        </button>
-                        <button class="btn-outline" onclick="window.print()">
-                            <i class="fas fa-print"></i> Print Certificate
-                        </button>
-                        <button class="btn-secondary" id="exitToGuidesBtn">
-                            <i class="fas fa-book"></i> Browse More Guides
-                        </button>
-                    </div>
-                </div>
-            `;
-            
-            // Update user progress display
-            updateUserProgressDisplay();
-            
-            // Add event listeners for completion buttons
-            setTimeout(() => {
-                document.getElementById('restartGuideBtn2')?.addEventListener('click', () => {
-                    currentStep = 0;
-                    updateInteractiveGuide();
-                });
-                
-                document.getElementById('exitToGuidesBtn')?.addEventListener('click', exitGuide);
-            }, 100);
-        }
-        
-        function exitGuide() {
-            // Show guides grid and hide interactive guide
-            guidesGrid.style.display = 'grid';
-            interactiveContainer.style.display = 'none';
-            printableContainer.style.display = 'none';
-            
-            // Reset current guide
-            currentGuide = null;
-            currentStep = 0;
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-        
-        function updateGuideSelect() {
-            guideSelect.innerHTML = '<option value="">-- Select a guide --</option>';
-            
-            guides.forEach(guide => {
-                const option = document.createElement('option');
-                option.value = guide.id;
-                option.textContent = guide.title;
-                guideSelect.appendChild(option);
-            });
-        }
-        
+
         // Initialize AdSense
         (adsbygoogle = window.adsbygoogle || []).push({});
-        
-        // Load initial guides
-        loadGuides();
-    });
+        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 </body>
 </html>

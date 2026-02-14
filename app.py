@@ -1,5 +1,5 @@
-# app.py - UPDATED WITH ALL ROUTES
-from flask import Flask, render_template, jsonify, request, redirect, url_for, send_from_directory
+# app.py - UPDATED WITH GUIDE SERVING ROUTE
+from flask import Flask, render_template, jsonify, request, redirect, url_for, send_from_directory, abort
 from flask_cors import CORS
 import requests
 from datetime import datetime, timedelta
@@ -15,12 +15,11 @@ import os
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-
-
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Load environment variables
+load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -669,11 +668,59 @@ def index():
         live_data = football_service.get_live_matches()
         standings_data = football_service.get_standings()
         
+        # Get list of guides for homepage
+        guides = [
+            {
+                'title': 'How to Check SASSA Status Online',
+                'description': 'Step-by-step guide for South Africans to check their SASSA grant status online.',
+                'url': '/article/sassa-status-check',
+                'image': 'sassa-status.jpg',
+                'category': 'SASSA'
+            },
+            {
+                'title': 'How to Make Money Online in South Africa',
+                'description': 'Legitimate ways to earn money online from South Africa in 2026.',
+                'url': '/article/make-money-online-sa',
+                'image': 'make-money.jpg',
+                'category': 'Finance'
+            },
+            {
+                'title': 'How to Write a CV in South Africa',
+                'description': 'Create a professional CV that stands out to South African employers.',
+                'url': '/article/how-to-write-cv-sa',
+                'image': 'cv-writing.jpg',
+                'category': 'Career'
+            },
+            {
+                'title': 'Best Job Websites in South Africa',
+                'description': 'Top platforms to find employment opportunities in South Africa.',
+                'url': '/article/best-job-websites-sa',
+                'image': 'job-websites.jpg',
+                'category': 'Career'
+            },
+            {
+                'title': 'How Students Can Make Money Online',
+                'description': 'Practical online income opportunities for South African students.',
+                'url': '/article/students-make-money-online',
+                'image': 'students-money.jpg',
+                'category': 'Finance'
+            },
+            {
+                'title': 'How to Start an Online Business in South Africa',
+                'description': 'Complete guide to launching your online business in South Africa.',
+                'url': '/article/start-online-business-sa',
+                'image': 'online-business.jpg',
+                'category': 'Business'
+            }
+        ]
+        
         return render_template('index.html',
                              sports_data=live_data,
                              standings_data=standings_data,
+                             guides=guides,
                              current_year=datetime.now().year,
-                             page_title='SA Daily Portal 2026',
+                             page_title='SA Daily Portal 2026 - South African Information Hub',
+                             page_description='Your complete guide to South African weather, SASSA grants, European football, and helpful how-to guides.',
                              current_date=datetime.now().strftime('%d %B %Y'))
         
     except Exception as e:
@@ -686,14 +733,16 @@ def weather():
     """Weather page"""
     return render_template('weather.html',
                          current_year=datetime.now().year,
-                         page_title='South African Weather 2026')
+                         page_title='South African Weather 2026 - Live Forecasts',
+                         page_description='Real-time weather forecasts for South African cities. Hourly updates, 5-day forecast, and weather alerts.')
 
 @app.route('/sassa')
 def sassa():
     """SASSA page"""
     return render_template('sassa.html',
                          current_year=datetime.now().year,
-                         page_title='SASSA 2026')
+                         page_title='SASSA 2026 - Grants and Payment Information',
+                         page_description='Unofficial guide to SASSA grants, payment dates, application processes, and status checks for 2026.')
 
 @app.route('/sports')
 def sports():
@@ -709,7 +758,8 @@ def sports():
                              standings_data=standings_data,
                              fixtures_data=fixtures_data,
                              current_year=datetime.now().year,
-                             page_title='European Football 2026',
+                             page_title='European Football 2026 - Live Scores and Standings',
+                             page_description='Live European football scores, Premier League standings, upcoming fixtures, and match predictions.',
                              current_date=datetime.now().strftime('%d %B %Y'))
         
     except Exception as e:
@@ -719,50 +769,197 @@ def sports():
 
 @app.route('/howto')
 def howto():
-    """How-to guides"""
+    """How-to guides listing page"""
+    guides = [
+        {
+            'title': 'How to Check SASSA Status Online',
+            'description': 'Complete guide to checking your SASSA grant application status online.',
+            'url': '/article/sassa-status-check',
+            'category': 'SASSA',
+            'read_time': '5 min'
+        },
+        {
+            'title': 'How to Apply for SASSA SRD Grant',
+            'description': 'Step-by-step application process for the SASSA R350 grant.',
+            'url': '/article/sassa-srd-application',
+            'category': 'SASSA',
+            'read_time': '8 min'
+        },
+        {
+            'title': 'How to Make Money Online in South Africa',
+            'description': 'Legitimate ways to earn income online from South Africa.',
+            'url': '/article/make-money-online-sa',
+            'category': 'Finance',
+            'read_time': '10 min'
+        },
+        {
+            'title': 'How to Write a CV in South Africa',
+            'description': 'Create a professional CV that gets you hired in South Africa.',
+            'url': '/article/how-to-write-cv-sa',
+            'category': 'Career',
+            'read_time': '7 min'
+        },
+        {
+            'title': 'Best Job Websites in South Africa',
+            'description': 'Top platforms to find jobs in South Africa.',
+            'url': '/article/best-job-websites-sa',
+            'category': 'Career',
+            'read_time': '6 min'
+        },
+        {
+            'title': 'How Students Can Make Money Online',
+            'description': 'Practical online income opportunities for students.',
+            'url': '/article/students-make-money-online',
+            'category': 'Finance',
+            'read_time': '8 min'
+        },
+        {
+            'title': 'How to Start an Online Business in South Africa',
+            'description': 'Complete guide to launching your online business.',
+            'url': '/article/start-online-business-sa',
+            'category': 'Business',
+            'read_time': '12 min'
+        },
+        {
+            'title': 'Freelancing Guide for Beginners',
+            'description': 'Start your freelancing career in South Africa.',
+            'url': '/article/freelancing-guide-beginners',
+            'category': 'Career',
+            'read_time': '9 min'
+        },
+        {
+            'title': 'NSFAS Application Guide',
+            'description': 'How to apply for NSFAS funding in 2026.',
+            'url': '/article/nsfas-application-guide',
+            'category': 'Education',
+            'read_time': '7 min'
+        },
+        {
+            'title': 'Best Skills to Learn in 2026',
+            'description': 'High-demand skills for South Africans.',
+            'url': '/article/best-skills-learn-2026',
+            'category': 'Career',
+            'read_time': '8 min'
+        }
+    ]
+    
     return render_template('howto.html',
+                         guides=guides,
                          current_year=datetime.now().year,
-                         page_title='How-To Guides 2026')
+                         page_title='How-To Guides for South Africans 2026',
+                         page_description='Practical step-by-step guides for SASSA, careers, online income, and more.')
+
+@app.route('/article/<article_name>')
+def article(article_name):
+    """Dynamic article rendering"""
+    try:
+        # List of valid articles for security
+        valid_articles = [
+            'sassa-status-check',
+            'sassa-srd-application',
+            'make-money-online-sa',
+            'how-to-write-cv-sa',
+            'best-job-websites-sa',
+            'students-make-money-online',
+            'start-online-business-sa',
+            'freelancing-guide-beginners',
+            'nsfas-application-guide',
+            'best-skills-learn-2026',
+            'become-freelancer-sa',
+            'find-jobs-without-experience',
+            'earn-money-student-sa'
+        ]
+        
+        if article_name not in valid_articles:
+            abort(404)
+        
+        # Get related articles for sidebar
+        related_articles = []
+        if article_name == 'sassa-status-check':
+            related_articles = [
+                {'title': 'How to Apply for SASSA SRD Grant', 'url': '/article/sassa-srd-application'},
+                {'title': 'NSFAS Application Guide', 'url': '/article/nsfas-application-guide'}
+            ]
+        elif article_name == 'make-money-online-sa':
+            related_articles = [
+                {'title': 'How Students Can Make Money Online', 'url': '/article/students-make-money-online'},
+                {'title': 'Freelancing Guide for Beginners', 'url': '/article/freelancing-guide-beginners'}
+            ]
+        elif article_name == 'how-to-write-cv-sa':
+            related_articles = [
+                {'title': 'Best Job Websites in South Africa', 'url': '/article/best-job-websites-sa'},
+                {'title': 'Best Skills to Learn in 2026', 'url': '/article/best-skills-learn-2026'}
+            ]
+        
+        return render_template(f'guides/{article_name}.html',
+                             current_year=datetime.now().year,
+                             related_articles=related_articles)
+    except Exception as e:
+        logger.error(f"Article error: {str(e)}")
+        abort(404)
+
+# =========== NEW ROUTE TO SERVE GUIDES DIRECTLY ===========
+@app.route('/guides/<path:filename>')
+def serve_guide(filename):
+    """Serve guide HTML files from templates/guides folder"""
+    try:
+        # Ensure the filename ends with .html
+        if not filename.endswith('.html'):
+            filename += '.html'
+        
+        # Send the file from the templates/guides directory
+        return send_from_directory('templates/guides', filename)
+    except Exception as e:
+        logger.error(f"Guide not found: {filename} - Error: {str(e)}")
+        abort(404)
 
 @app.route('/contact')
 def contact():
     """Contact page"""
     return render_template('contact.html',
                          current_year=datetime.now().year,
-                         page_title='Contact Developer - SA Daily Portal 2026')
+                         page_title='Contact Developer - SA Daily Portal 2026',
+                         page_description='Get in touch with the developer of SA Daily Portal for questions, suggestions, or feedback.')
 
-@app.route('/disclaimer')
-def disclaimer():
-    """Disclaimer page"""
-    return render_template('disclaimer.html',
+@app.route('/about')
+def about():
+    """About page"""
+    return render_template('about.html',
                          current_year=datetime.now().year,
-                         page_title='Disclaimer - SA Daily Portal 2026')
+                         page_title='About SA Daily Portal 2026',
+                         page_description='Learn about SA Daily Portal, your source for South African information, weather, and guides.')
 
-@app.route('/faq')
-def faq():
-    """FAQ page"""
-    return render_template('faq.html',
-                         current_year=datetime.now().year,
-                         page_title='Frequently Asked Questions - SA Daily Portal 2026')
-
-@app.route('/privacy')
-def privacy():
+@app.route('/privacy-policy')
+def privacy_policy():
     """Privacy policy page"""
-    return render_template('privacy.html',
+    return render_template('privacy-policy.html',
                          current_year=datetime.now().year,
-                         page_title='Privacy Policy - SA Daily Portal 2026')
+                         page_title='Privacy Policy - SA Daily Portal 2026',
+                         page_description='Privacy policy for SA Daily Portal. Learn how we handle your data.')
 
 @app.route('/terms')
 def terms():
     """Terms of service page"""
     return render_template('terms.html',
                          current_year=datetime.now().year,
-                         page_title='Terms of Service - SA Daily Portal 2026')
+                         page_title='Terms of Service - SA Daily Portal 2026',
+                         page_description='Terms and conditions for using SA Daily Portal.')
 
-@app.route('/about')
-def about():
-    """About page - redirected from /about"""
-    return redirect(url_for('contact'))
+@app.route('/disclaimer')
+def disclaimer():
+    """Disclaimer page"""
+    return render_template('disclaimer.html',
+                         current_year=datetime.now().year,
+                         page_title='Disclaimer - SA Daily Portal 2026',
+                         page_description='Important disclaimer about the unofficial nature of information on SA Daily Portal.')
+
+@app.route('/faq')
+def faq():
+    """FAQ page"""
+    return render_template('faq.html',
+                         current_year=datetime.now().year,
+                         page_title='Frequently Asked Questions - SA Daily Portal 2026',
+                         page_description='Answers to common questions about SA Daily Portal.')
 
 # =========== API ENDPOINTS ===========
 
@@ -903,77 +1100,6 @@ def api_sports_upcoming():
             'success': False,
             'error': 'Upcoming matches service updating',
             'timestamp': datetime.now().isoformat()
-        }), 503@app.route('/api/weather', methods=['GET'])
-def api_weather():
-    """Weather API endpoint WITH HOURLY FORECAST"""
-    location = request.args.get('location', '').strip()
-    lat = request.args.get('lat')
-    lon = request.args.get('lon')
-    
-    try:
-        weather_service = WeatherService()
-        location_service = LocationService()
-        
-        coordinates = None
-        location_name = 'Your Location'
-        location_accuracy = 'unknown'
-        
-        if lat and lon:
-            try:
-                lat_float = float(lat)
-                lon_float = float(lon)
-                coordinates = (lat_float, lon_float)
-                
-                # Get location data with improved reverse geocoding
-                location_data = location_service.reverse_geocode(lat_float, lon_float)
-                
-                if location_data and location_data.get('success', False):
-                    location_name = location_data.get('name', f"Location ({lat_float:.4f}, {lon_float:.4f})")
-                    location_accuracy = location_data.get('accuracy', 'coordinates')
-                else:
-                    # Fallback if reverse geocoding fails
-                    location_name = f"Location ({lat_float:.4f}, {lon_float:.4f})"
-                    location_accuracy = 'coordinates'
-                    
-            except ValueError:
-                return jsonify({'success': False, 'error': 'Invalid coordinates'}), 400
-        elif location:
-            # Location search by name (simplified - could be enhanced)
-            location_name = location
-            coordinates = (-26.2041, 28.0473)  # Default to Johannesburg
-            location_accuracy = 'search'
-        else:
-            return jsonify({'success': False, 'error': 'Location required'}), 400
-        
-        lat, lon = coordinates
-        weather_data = weather_service.get_weather_with_forecast(lat, lon)
-        
-        if weather_data:
-            response_data = {
-                'success': weather_data.get('success', False),
-                'location': location_name,
-                'location_accuracy': location_accuracy,
-                'coordinates': {'lat': lat, 'lon': lon},
-                'current': weather_data.get('current', {}),
-                'hourly': weather_data.get('hourly', []),
-                'forecast': weather_data.get('forecast', []),
-                'timestamp': datetime.now().isoformat(),
-                'cached': weather_data.get('cached', False)
-            }
-            return jsonify(response_data)
-        else:
-            return jsonify({
-                'success': False,
-                'error': 'Weather service temporarily unavailable',
-                'timestamp': datetime.now().isoformat()
-            }), 503
-        
-    except Exception as e:
-        logger.error(f"Weather API error: {str(e)}")
-        return jsonify({
-            'success': False,
-            'error': 'Weather service temporarily unavailable',
-            'timestamp': datetime.now().isoformat()
         }), 503
 
 @app.route('/api/sassa/payment-dates', methods=['GET'])
@@ -1056,55 +1182,6 @@ def api_contact_submit():
             'timestamp': datetime.now().isoformat()
         }), 500
 
-@app.route('/api/guides/list', methods=['GET'])
-def api_guides_list():
-    """List of available guides"""
-    guides = [
-        {
-            'id': 'sassa-srd-application',
-            'title': 'SRD R350 Grant Application',
-            'description': 'Complete step-by-step guide to applying for the Social Relief of Distress R350 grant',
-            'category': 'sassa',
-            'difficulty': 'easy',
-            'estimated_time': '15 minutes',
-            'steps': 7
-        },
-        {
-            'id': 'id-application',
-            'title': 'Smart ID Card Application',
-            'description': 'How to apply for a South African Smart ID Card',
-            'category': 'id',
-            'difficulty': 'medium',
-            'estimated_time': '30 minutes',
-            'steps': 8
-        },
-        {
-            'id': 'tax-return',
-            'title': 'SARS Tax Return Filing',
-            'description': 'Guide to filing your annual tax return with SARS',
-            'category': 'tax',
-            'difficulty': 'medium',
-            'estimated_time': '25 minutes',
-            'steps': 6
-        },
-        {
-            'id': 'drivers-license',
-            'title': 'Drivers License Renewal',
-            'description': 'Complete process for renewing your South African drivers license',
-            'category': 'license',
-            'difficulty': 'medium',
-            'estimated_time': '20 minutes',
-            'steps': 5
-        }
-    ]
-    
-    return jsonify({
-        'success': True,
-        'guides': guides,
-        'total': len(guides),
-        'timestamp': datetime.now().isoformat()
-    })
-
 @app.route('/api/status', methods=['GET'])
 def api_status():
     """API status"""
@@ -1180,410 +1257,18 @@ def redirect_help():
 def redirect_questions():
     return redirect(url_for('faq'))
 
+@app.route('/privacy')
+def redirect_privacy():
+    return redirect(url_for('privacy_policy'))
+
 # =========== APPLICATION START ===========
 
 if __name__ == '__main__':
     # Create necessary directories
-    required_dirs = ['templates', 'static/css', 'static/js', 'static/images']
+    required_dirs = ['templates', 'templates/guides', 'static/css', 'static/js', 'static/images']
     for dir_name in required_dirs:
         os.makedirs(dir_name, exist_ok=True)
     
-    # Create basic templates if they don't exist
-    basic_templates = {
-        'contact.html': '''<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Developer - SA Daily Portal 2026</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --background: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --border: #e5e7eb;
-        }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 20px; background: var(--background); color: var(--text); min-height: 100vh; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .contact-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 3rem 2rem; border-radius: 16px; margin-bottom: 2rem; text-align: center; }
-        .contact-hero h1 { margin: 0 0 1rem 0; font-size: 2.5rem; }
-        .contact-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-        .contact-form { background: var(--card-bg); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 2rem 0; }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text); }
-        .form-control { width: 100%; padding: 0.85rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; transition: border-color 0.3s; }
-        .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
-        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 0.85rem 1.75rem; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
-        .btn-primary:hover { background: linear-gradient(135deg, var(--primary-dark), #1e40af); transform: translateY(-3px); box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25); }
-        .contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .info-card { background: var(--card-bg); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
-        .info-card h3 { margin: 0 0 1rem 0; color: var(--primary); display: flex; align-items: center; gap: 0.5rem; }
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="contact-hero">
-            <h1>Contact Developer</h1>
-            <p>Have questions, suggestions, or feedback? Get in touch with the developer of SA Daily Portal 2026.</p>
-        </div>
-        
-        <div class="contact-info">
-            <div class="info-card">
-                <h3><i class="fas fa-user"></i> Developer Info</h3>
-                <p><strong>Name:</strong> Nompumelelo</p>
-                <p><strong>Location:</strong> Ermelo, South Africa</p>
-                <p><strong>Email:</strong> sibiyan4444@gmail.com</p>
-                <p><strong>Phone:</strong> 072 472 8166</p>
-                <p><strong>Hours:</strong> 9am-5pm Weekdays</p>
-            </div>
-            
-            <div class="info-card">
-                <h3><i class="fas fa-question-circle"></i> Support</h3>
-                <p>For technical issues or website feedback, please use the contact form or email directly.</p>
-                <p>For SASSA-related questions, always contact official SASSA channels first.</p>
-                <p>Response time: 24-48 hours</p>
-            </div>
-        </div>
-        
-        <div class="contact-form">
-            <h2 style="margin: 0 0 1.5rem 0; color: var(--primary);">Send Message</h2>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" class="form-control" rows="6" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn-primary">
-                    <i class="fas fa-paper-plane"></i> Send Message
-                </button>
-            </form>
-        </div>
-        
-        <p style="text-align: center; margin-top: 2rem;">
-            <a href="/">← Return to Home</a>
-        </p>
-    </div>
-    
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-            
-            try {
-                const response = await fetch('/api/contact/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: new URLSearchParams(formData)
-                });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    alert('Message sent successfully! We\'ll respond within 24-48 hours.');
-                    document.getElementById('contactForm').reset();
-                } else {
-                    alert('Failed to send message: ' + data.error);
-                }
-            } catch (error) {
-                alert('Network error. Please try again or email directly.');
-            }
-        });
-    </script>
-</body>
-</html>''',
-        'disclaimer.html': '''<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disclaimer - SA Daily Portal 2026</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --background: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --border: #e5e7eb;
-        }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 20px; background: var(--background); color: var(--text); min-height: 100vh; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .disclaimer-hero { background: linear-gradient(135deg, var(--danger), #dc2626); color: white; padding: 3rem 2rem; border-radius: 16px; margin-bottom: 2rem; text-align: center; }
-        .disclaimer-hero h1 { margin: 0 0 1rem 0; font-size: 2.5rem; }
-        .disclaimer-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-        .disclaimer-content { background: var(--card-bg); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 2rem 0; }
-        .warning-box { background: #fef3c7; border: 2px solid var(--accent); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
-        .warning-box h3 { color: #d97706; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem; }
-        h2 { color: var(--primary); margin: 2rem 0 1rem 0; }
-        p { line-height: 1.7; margin-bottom: 1rem; }
-        ul { padding-left: 1.5rem; margin-bottom: 1rem; }
-        li { margin-bottom: 0.5rem; line-height: 1.6; }
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="disclaimer-hero">
-            <h1>⚠️ Important Disclaimer</h1>
-            <p>Please read this disclaimer carefully before using SA Daily Portal 2026</p>
-        </div>
-        
-        <div class="disclaimer-content">
-            <div class="warning-box">
-                <h3><i class="fas fa-exclamation-triangle"></i> CRITICAL NOTICE</h3>
-                <p><strong>SA Daily Portal is an UNOFFICIAL information website. We are NOT affiliated with any government department, SASSA, SARS, or official weather services.</strong></p>
-            </div>
-            
-            <h2>1. Nature of Information</h2>
-            <p>All information provided on this website is for general informational purposes only. We strive to provide accurate and up-to-date information, but we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the information.</p>
-            
-            <h2>2. Government Services Information</h2>
-            <p>Information regarding SASSA grants, payment dates, application processes, and other government services is based on:</p>
-            <ul>
-                <li>Publicly available information</li>
-                <li>Historical patterns and trends</li>
-                <li>User experiences and reports</li>
-                <li>Official announcements (when available)</li>
-            </ul>
-            <p><strong>Always verify with official sources before making decisions based on this information.</strong></p>
-            
-            <h2>3. Weather Information</h2>
-            <p>Weather data is sourced from third-party providers. While we strive for accuracy, weather predictions are inherently uncertain. Never make safety-critical decisions based solely on our weather information.</p>
-            
-            <h2>4. Sports Data</h2>
-            <p>European football data is provided by third-party APIs. Match schedules, scores, and standings are subject to change. Always check official league websites for confirmed information.</p>
-            
-            <h2>5. No Professional Advice</h2>
-            <p>The information on this website does not constitute professional advice of any kind. For specific advice regarding grants, taxes, legal matters, or other issues, consult qualified professionals or official government channels.</p>
-            
-            <h2>6. Limitation of Liability</h2>
-            <p>We shall not be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
-            
-            <h2>7. External Links</h2>
-            <p>Our website may contain links to external websites. We have no control over the nature, content, and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.</p>
-            
-            <h2>8. User Responsibility</h2>
-            <p>By using this website, you acknowledge that:</p>
-            <ul>
-                <li>You understand the informational nature of this site</li>
-                <li>You will verify critical information with official sources</li>
-                <li>You use the information at your own risk</li>
-                <li>You will not hold us liable for decisions made based on our information</li>
-            </ul>
-            
-            <div class="warning-box">
-                <h3><i class="fas fa-shield-alt"></i> Official Channels</h3>
-                <p><strong>For official information always use:</strong></p>
-                <ul>
-                    <li>SASSA: 0800 60 10 11 or www.sassa.gov.za</li>
-                    <li>SARS: 0800 00 7277 or www.sars.gov.za</li>
-                    <li>Home Affairs: Visit your local office</li>
-                    <li>Weather: www.weathersa.co.za</li>
-                </ul>
-            </div>
-            
-            <p style="text-align: center; margin-top: 2rem; font-weight: 600;">
-                Last updated: February 2026
-            </p>
-        </div>
-        
-        <p style="text-align: center; margin-top: 2rem;">
-            <a href="/">← Return to Home</a> | 
-            <a href="/contact">Contact Developer</a>
-        </p>
-    </div>
-</body>
-</html>'''
-    }
-    
-    # Add missing templates from previous list
-    basic_templates.update({
-        'privacy.html': '''<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - SA Daily Portal 2026</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --background: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --border: #e5e7eb;
-        }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 20px; background: var(--background); color: var(--text); }
-        .container { max-width: 800px; margin: 0 auto; background: var(--card-bg); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        h1 { color: var(--primary); margin-top: 0; }
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <p>SA Daily Portal 2026 respects your privacy. We use cookies for analytics and advertising through Google AdSense. We don't collect personal information unless you voluntarily provide it through our contact form.</p>
-        <p>For full privacy policy details, please contact the developer.</p>
-        <p><a href="/">Return to Home</a></p>
-    </div>
-</body>
-</html>''',
-        'terms.html': '''<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - SA Daily Portal 2026</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --background: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --border: #e5e7eb;
-        }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 20px; background: var(--background); color: var(--text); }
-        .container { max-width: 800px; margin: 0 auto; background: var(--card-bg); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        h1 { color: var(--primary); margin-top: 0; }
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Terms of Service</h1>
-        <p>By using SA Daily Portal 2026, you agree to our terms. This is an unofficial information portal. Always verify information with official sources. We are not liable for decisions made based on information from this site.</p>
-        <p>For full terms, please see our <a href="/disclaimer">Disclaimer</a> page.</p>
-        <p><a href="/">Return to Home</a></p>
-    </div>
-</body>
-</html>''',
-        '404.html': '''<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - SA Daily Portal 2026</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --background: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --border: #e5e7eb;
-        }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 20px; background: var(--background); color: var(--text); display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-        .container { max-width: 600px; margin: 0 auto; background: var(--card-bg); padding: 3rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; }
-        h1 { color: var(--primary); margin-top: 0; font-size: 3rem; }
-        p { font-size: 1.1rem; color: var(--text-light); }
-        a { color: var(--primary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--primary); color: white; border-radius: 8px; }
-        a:hover { background: var(--primary-dark); }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>404</h1>
-        <p>Page not found. The page you're looking for doesn't exist or has been moved.</p>
-        <a href="/">Return to Home</a>
-    </div>
-</body>
-</html>''',
-        '500.html': '''<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server Error - SA Daily Portal 2026</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --background: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --border: #e5e7eb;
-        }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 20px; background: var(--background); color: var(--text); display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-        .container { max-width: 600px; margin: 0 auto; background: var(--card-bg); padding: 3rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; }
-        h1 { color: var(--danger); margin-top: 0; font-size: 3rem; }
-        p { font-size: 1.1rem; color: var(--text-light); }
-        a { color: var(--primary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--primary); color: white; border-radius: 8px; }
-        a:hover { background: var(--primary-dark); }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>500</h1>
-        <p>Server error. Something went wrong on our end. Please try again later.</p>
-        <a href="/">Return to Home</a>
-    </div>
-</body>
-</html>'''
-    })
-    
-    for template, content in basic_templates.items():
-        template_path = f'templates/{template}'
-        if not os.path.exists(template_path):
-            with open(template_path, 'w') as f:
-                f.write(content)
-    
-   # =========== PRODUCTION SERVER CONFIG ===========
-if __name__ == '__main__':
     # Get port from environment variable
     port = int(os.environ.get('PORT', 10000))
     
