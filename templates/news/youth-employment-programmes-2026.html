@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Employment Programmes in South Africa 2026 - SA Daily Portal</title>
+    <meta name="description" content="Information on youth employment: BEEI work opportunities, school placements, and how to apply via sayouth.mobi.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AdSense Verification Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9621668436424790" crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z2ZSZKQ5F7');
+    </script>
+    
+    <style>
+        /* Same CSS as previous articles - keeping consistent */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --background: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        /* Article Layout */
+        .article-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+        
+        .article-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .article-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .article-header h1 {
+            font-size: 2.2rem;
+            margin: 0 0 1rem 0;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+        
+        .article-meta i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .article-section {
+            margin: 2rem 0;
+        }
+        
+        .article-section h2 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .article-section h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .article-section p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .article-section ul, 
+        .article-section ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .article-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-box {
+            background: #f0f9ff;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .info-box h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .success-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .sources-section {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--border);
+        }
+        
+        .sources-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .sources-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sources-list li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .sources-list a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .sources-list a:hover {
+            text-decoration: underline;
+        }
+        
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+        
+        .sidebar-widget h3 {
+            margin: 0 0 1rem 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .related-articles {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .related-articles li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .related-articles li:last-child {
+            border-bottom: none;
+        }
+        
+        .related-articles a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            transition: color 0.2s;
+        }
+        
+        .related-articles a:hover {
+            color: var(--primary);
+        }
+        
+        .related-articles i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #1e40af);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #f3f4f6;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+        
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-social a {
+            color: #9ca3af;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+        
+        .footer-social a:hover {
+            color: white;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+        
+        .footer-contact i {
+            width: 20px;
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+        }
+        
+        .footer-disclaimer {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .article-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-flag"></i>
+                </div>
+                <span>SA Daily Portal <span style="background: var(--accent); padding: 0.2rem 0.5rem; border-radius: 12px; font-size: 0.8rem; margin-left: 0.5rem; color: white;">2026</span></span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/weather" class="nav-link">
+                    <i class="fas fa-cloud-sun"></i> Weather
+                </a>
+                <a href="/sports" class="nav-link">
+                    <i class="fas fa-futbol"></i> Sports
+                </a>
+                <a href="/howto" class="nav-link">
+                    <i class="fas fa-book-open"></i> Guides
+                </a>
+                <a href="/news" class="nav-link active">
+                    <i class="fas fa-newspaper"></i> News
+                </a>
+                <a href="/contact" class="nav-link">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="article-container">
+            <!-- Article Content -->
+            <div class="article-content">
+                <div class="article-header">
+                    <h1>Youth Employment Programmes in South Africa 2026</h1>
+                    <div class="article-meta">
+                        <span><i class="far fa-calendar-alt"></i> Published: 16 February 2026</span>
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                        <span><i class="fas fa-user"></i> By SA Daily Portal</span>
+                        <span><i class="fas fa-tag"></i> News, Employment</span>
+                    </div>
+                </div>
+
+                <!-- Introduction -->
+                <div class="article-section">
+                    <p>Following the State of the Nation Address, President Ramaphosa released his weekly newsletter on 16 February 2026 detailing government's youth employment initiatives. This article summarizes information from official government sources.</p>
+                    
+                    <div class="info-box">
+                        <h4><i class="fas fa-bullhorn"></i> Key Statistics at a Glance</h4>
+                        <ul>
+                            <li><strong>BEEI work opportunities created:</strong> More than 1.3 million</li>
+                            <li><strong>Schools with education assistants:</strong> 19,000 no-fee primary schools</li>
+                            <li><strong>Education assistants with tertiary qualifications:</strong> 32%</li>
+                            <li><strong>ECD children reached:</strong> Over 50,000</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section: Basic Education Employment Initiative -->
+                <div class="article-section">
+                    <h2>📚 Basic Education Employment Initiative (BEEI)</h2>
+                    <p>The Basic Education Employment Initiative was founded in 2020 as part of the Presidential Employment Stimulus. It deploys young people to schools as education and general school assistants.</p>
+                    
+                    <ul>
+                        <li>Has created <strong>more than 1.3 million work opportunities</strong> to date.</li>
+                        <li>It is the largest youth employment programme in South Africa's history.</li>
+                        <li>Education assistants placed in <strong>19,000 no-fee primary schools</strong>.</li>
+                        <li>Assistants support numeracy and serve as Reading Champions to improve literacy.</li>
+                        <li>"The work of the education assistants allows teachers to spend more time on teaching and on lesson preparation" – President Ramaphosa.</li>
+                    </ul>
+                </div>
+
+                <!-- Section: Requirements -->
+                <div class="article-section">
+                    <h2>✅ Programme Requirements</h2>
+                    
+                    <ul>
+                        <li><strong>General school assistants:</strong> Need to have at least a Grade 9 qualification.</li>
+                        <li><strong>Education assistants:</strong> Need at least a matric certificate.</li>
+                        <li><strong>32%</strong> of education assistants had some form of tertiary qualification.</li>
+                        <li><strong>14%</strong> held a teaching qualification.</li>
+                        <li>Training provided includes: school safety, online safety, financial literacy, word processing, AI fluency and coding.</li>
+                    </ul>
+                </div>
+
+                <!-- Section: PYEI Results -->
+                <div class="article-section">
+                    <h2>📊 Presidential Youth Employment Intervention (PYEI) Results</h2>
+                    
+                    <ul>
+                        <li><strong>PYEI has reached more than 5 million young people</strong> since inception.</li>
+                        <li><strong>2.36 million earning opportunities</strong> facilitated through SA Youth.</li>
+                    </ul>
+                    
+                    <h3>Third quarter results (Oct-Dec 2025):</h3>
+                    <ul>
+                        <li><strong>294,530 earning opportunities</strong> secured for youth.</li>
+                        <li><strong>More than 11,000 work experience opportunities</strong> created through partnerships.</li>
+                        <li><strong>132,784 young people</strong> placed in paid service opportunities through the National Youth Service.</li>
+                    </ul>
+                </div>
+
+                <!-- Section: Early Childhood Development -->
+                <div class="article-section">
+                    <h2>🧸 Early Childhood Development Support</h2>
+                    
+                    <ul>
+                        <li>More than <strong>1,000 previously disadvantaged ECD centres</strong> receiving support.</li>
+                        <li>Centres receive nutritional support, toys, books and learning materials.</li>
+                        <li>The Social Employment Fund now reaches <strong>over 50,000 children in ECD centres</strong> across the country.</li>
+                    </ul>
+                </div>
+
+                <!-- Section: How to Apply -->
+                <div class="article-section">
+                    <h2>📱 How to Apply</h2>
+                    <p>Young people are encouraged to take up opportunities on the zero-rated <strong>sayouth.mobi</strong> site.</p>
+                    
+                    <div class="success-box">
+                        <h4><i class="fas fa-mobile-alt"></i> SA Youth Platform</h4>
+                        <p>On sayouth.mobi, you will find:</p>
+                        <ul>
+                            <li>Earning and learning opportunities</li>
+                            <li>Access to work experience and enterprise support</li>
+                            <li>Work readiness support and guidance</li>
+                        </ul>
+                        <p>"This platform is designed to ensure that no young person is excluded because of cost, location or lack of access to information."</p>
+                    </div>
+                </div>
+
+                <!-- Section: Official Quote -->
+                <div class="article-section">
+                    <h2>🗣️ Official Statement</h2>
+                    <p>President Ramaphosa stated in his newsletter:</p>
+                    <p>"Meeting the constitutional imperative to provide quality education to our nation's young is an all-of-society effort. These initiatives illustrate clearly the benefits of multisectoral cooperation between government, the private sector and civil society.</p>
+                    <p>It is our aspiration that this successful programme should continue to grow as we strive to create more work opportunities for young South Africans and at the same time deliver quality education for all."</p>
+                </div>
+
+                <!-- Sources Section -->
+                <div class="sources-section">
+                    <h3><i class="fas fa-link"></i> Source</h3>
+                    <ul class="sources-list">
+                        <li><a href="https://www.thepresidency.gov.za" target="_blank">The Presidency of South Africa</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="article-sidebar">
+                <!-- Related Articles -->
+                <div class="sidebar-widget">
+                    <h3><i class="fas fa-newspaper"></i> Related News</h3>
+                    <ul class="related-articles">
+                        <li><a href="/article/sona-2026"><i class="fas fa-arrow-right"></i> SONA 2026</a></li>
+                        <li><a href="/article/eskom-electricity-update-february-2026"><i class="fas fa-arrow-right"></i> Eskom Update</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="sidebar-widget">
+                    <h3><i class="fas fa-bolt"></i> Quick Stats</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">
+                            <strong><i class="fas fa-users" style="color: var(--accent);"></i> BEEI opportunities</strong>
+                            <p>1.3 million+</p>
+                        </li>
+                        <li style="margin-bottom: 1rem;">
+                            <strong><i class="fas fa-school" style="color: var(--accent);"></i> Schools reached</strong>
+                            <p>19,000</p>
+                        </li>
+                        <li style="margin-bottom: 1rem;">
+                            <strong><i class="fas fa-child" style="color: var(--accent);"></i> ECD children</strong>
+                            <p>50,000+</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Apply Button -->
+                <div class="sidebar-widget">
+                    <h3><i class="fas fa-mobile-alt"></i> Apply Now</h3>
+                    <p>Visit the zero-rated site:</p>
+                    <a href="http://sayouth.mobi" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <i class="fas fa-external-link-alt"></i> sayouth.mobi
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>SA Daily Portal 2026</h4>
+                    <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African news, practical how-to guides and weather forecasts.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: #374151; color: #f59e0b; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">
+                            <i class="fas fa-exclamation-triangle"></i> FOR INFORMATION PURPOSES ONLY
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/howto">Guides</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/weather">Weather</a></li>
+                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Popular Guides</h4>
+                    <ul class="footer-links">
+                        <li><a href="/guides/sassa-status-check.html">SASSA Status Check</a></li>
+                        <li><a href="/guides/sassa-srd-application.html">SASSA SRD Application</a></li>
+                        <li><a href="/guides/make-money-online-sa.html">Make Money Online</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-user"></i> Developer: Nompumelelo Sibiya</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mpumalanga, South Africa</li>
+                        <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p style="color: #f59e0b; font-weight: 600; margin-bottom: 0.5rem; font-size: 1rem;">
+                    <i class="fas fa-exclamation-triangle"></i> ALWAYS VERIFY with official sources.
+                </p>
+                <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal - not affiliated with any government department.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

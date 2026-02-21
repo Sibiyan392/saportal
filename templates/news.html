@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest News South Africa 2026 - SA Daily Portal</title>
+    <meta name="description" content="Latest news affecting South Africans: SONA 2026, Eskom updates, youth employment programmes, SASSA, and more. Stay informed with SA Daily Portal.">
+    <meta name="keywords" content="South Africa news 2026, SONA 2026, Eskom news, youth employment SA, SASSA news, SA politics, energy crisis SA">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AdSense Verification Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9621668436424790" crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z2ZSZKQ5F7');
+    </script>
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --background: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 30px 30px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin: 0 0 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+        
+        /* News Grid */
+        .news-section {
+            margin: 3rem 0;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .news-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-color: var(--primary);
+        }
+        
+        .news-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .news-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .news-date {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .news-content {
+            padding: 1.5rem;
+            flex: 1;
+        }
+        
+        .news-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+            line-height: 1.4;
+        }
+        
+        .news-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .news-read-time {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        
+        .news-read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+        
+        .news-read-more:hover {
+            gap: 0.75rem;
+            color: var(--primary-dark);
+        }
+        
+        /* Featured News */
+        .featured-news {
+            margin-bottom: 3rem;
+        }
+        
+        .featured-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+        
+        .featured-image {
+            height: 100%;
+            min-height: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .featured-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .featured-label {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+        
+        .featured-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            line-height: 1.3;
+        }
+        
+        .featured-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .featured-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .featured-meta i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+        
+        /* Category Filters */
+        .category-filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .category-filter {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            background: white;
+            color: var(--text);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-filter:hover,
+        .category-filter.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar-widget h3 {
+            margin: 0 0 1rem 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .trending-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .trending-list li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .trending-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-list a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            transition: color 0.2s;
+        }
+        
+        .trending-list a:hover {
+            color: var(--primary);
+        }
+        
+        .trending-list i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #1e40af);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #f3f4f6;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-social a {
+            color: #9ca3af;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+        
+        .footer-social a:hover {
+            color: white;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+        
+        .footer-contact i {
+            width: 20px;
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+        }
+        
+        .footer-disclaimer {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .compliance-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .compliance-badge {
+            padding: 0.35rem 0.75rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .featured-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-image {
+                min-height: 200px;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-flag"></i>
+                </div>
+                <span>SA Daily Portal <span style="background: var(--accent); padding: 0.2rem 0.5rem; border-radius: 12px; font-size: 0.8rem; margin-left: 0.5rem; color: white;">2026</span></span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/weather" class="nav-link">
+                    <i class="fas fa-cloud-sun"></i> Weather
+                </a>
+                <a href="/sports" class="nav-link">
+                    <i class="fas fa-futbol"></i> Sports
+                </a>
+                <a href="/howto" class="nav-link">
+                    <i class="fas fa-book-open"></i> Guides
+                </a>
+                <a href="/news" class="nav-link active">
+                    <i class="fas fa-newspaper"></i> News
+                </a>
+                <a href="/contact" class="nav-link">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>
+                <i class="fas fa-newspaper"></i> 
+                Latest News South Africa 2026
+            </h1>
+            <p>Stay informed with the latest news affecting South Africans. SONA updates, Eskom developments, youth employment opportunities, and more.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Category Filters -->
+        <div class="category-filters">
+            <span class="category-filter active">All News</span>
+            <span class="category-filter">Politics</span>
+            <span class="category-filter">Energy</span>
+            <span class="category-filter">Employment</span>
+            <span class="category-filter">Economy</span>
+            <span class="category-filter">SASSA</span>
+        </div>
+
+        <!-- Featured News -->
+        <section class="featured-news">
+            <div class="featured-card">
+                <div class="featured-image">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="featured-content">
+                    <span class="featured-label">FEATURED</span>
+                    <h2>SONA 2026: Key Announcements That Affect South Africans</h2>
+                    <p>Complete breakdown of President Ramaphosa's SONA 2026: R24 billion youth jobs fund, economic reforms, Eskom progress, and new government programmes announced.</p>
+                    <div class="featured-meta">
+                        <span><i class="far fa-calendar-alt"></i> 13 Feb 2026</span>
+                        <span><i class="far fa-clock"></i> 10 min read</span>
+                        <span><i class="fas fa-tag"></i> Politics</span>
+                    </div>
+                    <a href="/article/sona-2026" class="btn btn-primary">
+                        Read Full Article <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Grid -->
+        <section class="news-section">
+            <div class="news-grid">
+                <!-- SONA 2026 -->
+                <div class="news-card" onclick="window.location.href='/article/sona-2026'">
+                    <div class="news-image" style="background: linear-gradient(135deg, #2563eb, #3b82f6);">
+                        <span class="news-category">Politics</span>
+                        <span class="news-date">13 Feb</span>
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="news-content">
+                        <h3>SONA 2026: Key Announcements That Affect South Africans</h3>
+                        <p>Complete breakdown of President Ramaphosa's SONA 2026: jobs fund, youth employment initiatives, economic reforms, and new government programmes.</p>
+                        <div class="news-meta">
+                            <span class="news-read-time"><i class="far fa-clock"></i> 10 min read</span>
+                            <a href="/article/sona-2026" class="news-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eskom Update -->
+                <div class="news-card" onclick="window.location.href='/article/eskom-electricity-update-february-2026'">
+                    <div class="news-image" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
+                        <span class="news-category">Energy</span>
+                        <span class="news-date">15 Feb</span>
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="news-content">
+                        <h3>Eskom Electricity Update February 2026 – Latest Energy News</h3>
+                        <p>Latest Eskom electricity update for February 2026: load shedding status, energy availability factor, new power stations, and what to expect this winter.</p>
+                        <div class="news-meta">
+                            <span class="news-read-time"><i class="far fa-clock"></i> 8 min read</span>
+                            <a href="/article/eskom-electricity-update-february-2026" class="news-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Youth Employment -->
+                <div class="news-card" onclick="window.location.href='/article/youth-employment-programmes-2026'">
+                    <div class="news-image" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <span class="news-category">Employment</span>
+                        <span class="news-date">14 Feb</span>
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="news-content">
+                        <h3>New Youth Employment Programmes Open in South Africa 2026</h3>
+                        <p>Complete guide to youth employment programmes in South Africa 2026: YES, PYEI, apprenticeships, learnerships, and how to apply.</p>
+                        <div class="news-meta">
+                            <span class="news-read-time"><i class="far fa-clock"></i> 12 min read</span>
+                            <a href="/article/youth-employment-programmes-2026" class="news-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SASSA Updates (placeholder for future) -->
+                <div class="news-card" style="opacity: 0.8;">
+                    <div class="news-image" style="background: linear-gradient(135deg, #6b7280, #4b5563);">
+                        <span class="news-category">SASSA</span>
+                        <span class="news-date">Coming Soon</span>
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="news-content">
+                        <h3>SASSA Payment Dates 2026 – March Update</h3>
+                        <p>Complete schedule of SASSA grant payment dates for March 2026. Old age pension, child support, disability grants, and SRD payments.</p>
+                        <div class="news-meta">
+                            <span class="news-read-time"><i class="far fa-clock"></i> Coming Soon</span>
+                            <span class="news-read-more" style="opacity: 0.5;">Read Article <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Speech (placeholder for future) -->
+                <div class="news-card" style="opacity: 0.8;">
+                    <div class="news-image" style="background: linear-gradient(135deg, #6b7280, #4b5563);">
+                        <span class="news-category">Economy</span>
+                        <span class="news-date">Coming Soon</span>
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="news-content">
+                        <h3>Budget Speech 2026: What It Means for Your Pocket</h3>
+                        <p>Complete analysis of Finance Minister's Budget Speech 2026. Tax changes, fuel levies, social grants, and economic outlook.</p>
+                        <div class="news-meta">
+                            <span class="news-read-time"><i class="far fa-clock"></i> Coming Soon</span>
+                            <span class="news-read-more" style="opacity: 0.5;">Read Article <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load Shedding Schedule (placeholder for future) -->
+                <div class="news-card" style="opacity: 0.8;">
+                    <div class="news-image" style="background: linear-gradient(135deg, #6b7280, #4b5563);">
+                        <span class="news-category">Energy</span>
+                        <span class="news-date">Coming Soon</span>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="news-content">
+                        <h3>Load Shedding Schedule March 2026 – Updated</h3>
+                        <p>Latest load shedding schedule for March 2026. Stage forecasts, area-specific timetables, and Eskom's winter preparation plans.</p>
+                        <div class="news-meta">
+                            <span class="news-read-time"><i class="far fa-clock"></i> Coming Soon</span>
+                            <span class="news-read-more" style="opacity: 0.5;">Read Article <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- View All Button -->
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="/news" class="btn btn-secondary">
+                <i class="fas fa-sync-alt"></i> Load More Articles
+            </a>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div style="background: linear-gradient(135deg, #f0f9ff, #e6f2ff); border-radius: 16px; padding: 3rem; margin: 3rem 0; text-align: center;">
+            <i class="fas fa-envelope-open-text" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--text);">Stay Updated with SA News</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--text-light);">Get the latest news delivered to your inbox. SONA updates, Eskom announcements, and youth opportunities.</p>
+            <div style="display: flex; max-width: 500px; margin: 0 auto;">
+                <input type="email" placeholder="Enter your email address" style="flex: 1; padding: 1rem; border: 1px solid var(--border); border-radius: 8px 0 0 8px; font-family: inherit;">
+                <button class="btn btn-primary" style="border-radius: 0 8px 8px 0;">Subscribe</button>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 1rem;">We respect your privacy. Unsubscribe anytime.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>SA Daily Portal 2026</h4>
+                    <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African news, practical how-to guides and weather forecasts. Helping South Africans navigate daily life since 2024.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: #374151; color: #f59e0b; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">
+                            <i class="fas fa-exclamation-triangle"></i> FOR INFORMATION PURPOSES ONLY
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/howto">Guides</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/weather">Weather</a></li>
+                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Popular Guides</h4>
+                    <ul class="footer-links">
+                        <li><a href="/guides/sassa-status-check.html">SASSA Status Check</a></li>
+                        <li><a href="/guides/sassa-srd-application.html">SASSA SRD Application</a></li>
+                        <li><a href="/guides/make-money-online-sa.html">Make Money Online</a></li>
+                        <li><a href="/guides/how-to-write-cv-sa.html">How to Write a CV</a></li>
+                        <li><a href="/guides/best-job-websites-sa.html">Best Job Websites</a></li>
+                        <li><a href="/guides/nsfas-application-guide.html">NSFAS Application</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-user"></i> Developer: Nompumelelo Sibiya</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mpumalanga, South Africa</li>
+                        <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +27 72 472 8166</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9am - 5pm</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p style="color: #f59e0b; font-weight: 600; margin-bottom: 0.5rem; font-size: 1rem;">
+                    <i class="fas fa-exclamation-triangle"></i> ALWAYS VERIFY with official sources before acting on any information.
+                </p>
+                <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal - not affiliated with any government department.</p>
+                <p class="footer-disclaimer" style="color: #9ca3af; font-size: 0.85rem; margin-top: 0.5rem;">
+                    <i class="fas fa-info-circle"></i> This site is for INFORMATION PURPOSES ONLY. All content is researched to the best of our ability, but information may change. Always check official websites for current updates.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

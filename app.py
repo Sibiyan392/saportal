@@ -1,4 +1,4 @@
-# app.py - UPDATED WITH GUIDE SERVING ROUTE
+# app.py - UPDATED WITH NEWS SECTION AND ROUTES
 from flask import Flask, render_template, jsonify, request, redirect, url_for, send_from_directory, abort
 from flask_cors import CORS
 import requests
@@ -849,12 +849,51 @@ def howto():
                          page_title='How-To Guides for South Africans 2026',
                          page_description='Practical step-by-step guides for SASSA, careers, online income, and more.')
 
+@app.route('/news')
+def news():
+    """News listing page"""
+    news_articles = [
+        {
+            'title': 'SONA 2026: Key Announcements That Affect South Africans',
+            'description': 'Complete breakdown of President Ramaphosa\'s SONA 2026: jobs fund, youth employment initiatives, economic reforms, and new government programmes.',
+            'url': '/article/sona-2026',
+            'category': 'Politics',
+            'read_time': '10 min',
+            'date': '13 February 2026',
+            'image': 'sona-2026.jpg'
+        },
+        {
+            'title': 'Eskom Electricity Update February 2026 – Latest Energy News',
+            'description': 'Latest Eskom electricity update for February 2026: load shedding status, energy availability factor, new power stations, and what to expect this winter.',
+            'url': '/article/eskom-electricity-update-february-2026',
+            'category': 'Energy',
+            'read_time': '8 min',
+            'date': '15 February 2026',
+            'image': 'eskom-update.jpg'
+        },
+        {
+            'title': 'New Youth Employment Programmes Open in South Africa 2026',
+            'description': 'Complete guide to youth employment programmes in South Africa 2026: YES, PYEI, apprenticeships, learnerships, and how to apply.',
+            'url': '/article/youth-employment-programmes-2026',
+            'category': 'Employment',
+            'read_time': '12 min',
+            'date': '14 February 2026',
+            'image': 'youth-employment.jpg'
+        }
+    ]
+    
+    return render_template('news.html',
+                         news_articles=news_articles,
+                         current_year=datetime.now().year,
+                         page_title='Latest News South Africa 2026',
+                         page_description='Latest news affecting South Africans: SONA 2026, Eskom updates, youth employment programmes, and more.')
+
 @app.route('/article/<article_name>')
 def article(article_name):
-    """Dynamic article rendering"""
+    """Dynamic article rendering (includes both guides and news)"""
     try:
-        # List of valid articles for security
-        valid_articles = [
+        # List of valid articles (guides)
+        valid_guides = [
             'sassa-status-check',
             'sassa-srd-application',
             'make-money-online-sa',
@@ -870,30 +909,61 @@ def article(article_name):
             'earn-money-student-sa'
         ]
         
-        if article_name not in valid_articles:
+        # List of valid news articles
+        valid_news = [
+            'sona-2026',
+            'eskom-electricity-update-february-2026',
+            'youth-employment-programmes-2026'
+        ]
+        
+        if article_name in valid_guides:
+            # Get related articles for sidebar
+            related_articles = []
+            if article_name == 'sassa-status-check':
+                related_articles = [
+                    {'title': 'How to Apply for SASSA SRD Grant', 'url': '/article/sassa-srd-application'},
+                    {'title': 'NSFAS Application Guide', 'url': '/article/nsfas-application-guide'}
+                ]
+            elif article_name == 'make-money-online-sa':
+                related_articles = [
+                    {'title': 'How Students Can Make Money Online', 'url': '/article/students-make-money-online'},
+                    {'title': 'Freelancing Guide for Beginners', 'url': '/article/freelancing-guide-beginners'}
+                ]
+            elif article_name == 'how-to-write-cv-sa':
+                related_articles = [
+                    {'title': 'Best Job Websites in South Africa', 'url': '/article/best-job-websites-sa'},
+                    {'title': 'Best Skills to Learn in 2026', 'url': '/article/best-skills-learn-2026'}
+                ]
+            
+            return render_template(f'guides/{article_name}.html',
+                                 current_year=datetime.now().year,
+                                 related_articles=related_articles)
+        
+        elif article_name in valid_news:
+            # Get related news for sidebar
+            related_news = []
+            if article_name == 'sona-2026':
+                related_news = [
+                    {'title': 'Eskom Electricity Update Feb 2026', 'url': '/article/eskom-electricity-update-february-2026'},
+                    {'title': 'Youth Employment Programmes 2026', 'url': '/article/youth-employment-programmes-2026'}
+                ]
+            elif article_name == 'eskom-electricity-update-february-2026':
+                related_news = [
+                    {'title': 'SONA 2026 Energy Announcements', 'url': '/article/sona-2026'},
+                    {'title': 'Youth Employment Programmes 2026', 'url': '/article/youth-employment-programmes-2026'}
+                ]
+            elif article_name == 'youth-employment-programmes-2026':
+                related_news = [
+                    {'title': 'SONA 2026 Key Announcements', 'url': '/article/sona-2026'},
+                    {'title': 'How to Write a CV in SA', 'url': '/article/how-to-write-cv-sa'}
+                ]
+            
+            return render_template(f'news/{article_name}.html',
+                                 current_year=datetime.now().year,
+                                 related_articles=related_news)
+        else:
             abort(404)
-        
-        # Get related articles for sidebar
-        related_articles = []
-        if article_name == 'sassa-status-check':
-            related_articles = [
-                {'title': 'How to Apply for SASSA SRD Grant', 'url': '/article/sassa-srd-application'},
-                {'title': 'NSFAS Application Guide', 'url': '/article/nsfas-application-guide'}
-            ]
-        elif article_name == 'make-money-online-sa':
-            related_articles = [
-                {'title': 'How Students Can Make Money Online', 'url': '/article/students-make-money-online'},
-                {'title': 'Freelancing Guide for Beginners', 'url': '/article/freelancing-guide-beginners'}
-            ]
-        elif article_name == 'how-to-write-cv-sa':
-            related_articles = [
-                {'title': 'Best Job Websites in South Africa', 'url': '/article/best-job-websites-sa'},
-                {'title': 'Best Skills to Learn in 2026', 'url': '/article/best-skills-learn-2026'}
-            ]
-        
-        return render_template(f'guides/{article_name}.html',
-                             current_year=datetime.now().year,
-                             related_articles=related_articles)
+            
     except Exception as e:
         logger.error(f"Article error: {str(e)}")
         abort(404)
@@ -911,6 +981,21 @@ def serve_guide(filename):
         return send_from_directory('templates/guides', filename)
     except Exception as e:
         logger.error(f"Guide not found: {filename} - Error: {str(e)}")
+        abort(404)
+
+# =========== NEW ROUTE TO SERVE NEWS ARTICLES DIRECTLY ===========
+@app.route('/news/<path:filename>')
+def serve_news(filename):
+    """Serve news HTML files from templates/news folder"""
+    try:
+        # Ensure the filename ends with .html
+        if not filename.endswith('.html'):
+            filename += '.html'
+        
+        # Send the file from the templates/news directory
+        return send_from_directory('templates/news', filename)
+    except Exception as e:
+        logger.error(f"News article not found: {filename} - Error: {str(e)}")
         abort(404)
 
 @app.route('/contact')
@@ -1194,10 +1279,11 @@ def api_status():
             'football': 'active',
             'sassa_2026': 'active',
             'guides': 'active',
+            'news': 'active',
             'contact': 'active',
             'faq': 'active'
         },
-        'version': '2026.2.0',
+        'version': '2026.3.0',
         'uptime': '100%',
         'last_updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     })
@@ -1265,7 +1351,7 @@ def redirect_privacy():
 
 if __name__ == '__main__':
     # Create necessary directories
-    required_dirs = ['templates', 'templates/guides', 'static/css', 'static/js', 'static/images']
+    required_dirs = ['templates', 'templates/guides', 'templates/news', 'static/css', 'static/js', 'static/images']
     for dir_name in required_dirs:
         os.makedirs(dir_name, exist_ok=True)
     
