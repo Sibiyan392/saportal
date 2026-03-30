@@ -1,254 +1,90 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - SA Daily Portal 2026</title>
-    <meta name="description" content="Learn about SA Daily Portal, your trusted source for South African information, weather updates, and helpful guides.">
+    <title>About SA Daily Portal 2026 - Our Mission & Story | South African Information Portal</title>
+    <meta name="description" content="Learn about SA Daily Portal, your trusted source for practical how-to guides on SASSA grants, jobs, and making money online in South Africa. Meet developer Nompumelelo Sibiya.">
+    <meta name="keywords" content="about SA Daily Portal, South African information website, SASSA guide author, about us, website mission, Nompumelelo Sibiya, SA guides creator">
+    <meta name="author" content="Nompumelelo Sibiya">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="ZA-MP">
+    <meta name="geo.placename" content="Mpumalanga">
+    <link rel="canonical" href="https://saportal.site/about">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="About SA Daily Portal 2026 - Our Mission & Story">
+    <meta property="og:description" content="Your trusted source for South African practical how-to guides. Helping South Africans navigate SASSA, jobs, and online money since 2024.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saportal.site/about">
+    <meta property="og:site_name" content="SA Daily Portal">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="About SA Daily Portal">
+    <meta name="twitter:description" content="Your trusted source for South African how-to guides.">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9621668436424790" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
+    
     
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --background: #f8fafc;
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #059669;
+            --accent: #d97706;
+            --background: #f9fafb;
             --card-bg: #ffffff;
             --text: #1f2937;
             --text-light: #6b7280;
             --border: #e5e7eb;
+            --radius: 12px;
         }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background);
-            color: var(--text);
-            margin: 0;
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        
-        .header {
-            background: var(--card-bg);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        
-        .badge-2026 {
-            background: var(--accent);
-            color: white;
-            padding: 0.35rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .nav-menu {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .nav-link {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary);
-        }
-        
-        .about-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 3rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 1px solid var(--border);
-        }
-        
-        .about-card h1 {
-            color: var(--primary);
-            font-size: 2.5rem;
-            margin: 0 0 1rem 0;
-        }
-        
-        .about-card h2 {
-            color: var(--text);
-            font-size: 1.8rem;
-            margin: 2rem 0 1rem 0;
-        }
-        
-        .about-card h3 {
-            color: var(--primary);
-            font-size: 1.3rem;
-            margin: 1.5rem 0 0.75rem 0;
-        }
-        
-        .about-card p {
-            color: var(--text);
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-        }
-        
-        .about-card ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-card li {
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .stat-card {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-        
-        .footer {
-            background: #1f2937;
-            color: white;
-            padding: 2rem 0;
-            margin-top: 3rem;
-            text-align: center;
-        }
-        
-        .footer a {
-            color: #9ca3af;
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            color: white;
-        }
-        
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .nav-menu {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .about-card {
-                padding: 1.5rem;
-            }
-            
-            .about-card h1 {
-                font-size: 2rem;
-            }
-        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--background); color: var(--text); line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+        .header { background: var(--card-bg); box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
+        .header-container { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+        .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; }
+        .nav-menu { display: flex; gap: 2rem; }
+        .nav-link { color: var(--text); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+        .about-card { background: var(--card-bg); border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid var(--border); }
+        .about-card h1 { color: var(--primary); font-size: 2.5rem; margin: 0 0 1rem 0; }
+        .about-card h2 { color: var(--text); font-size: 1.8rem; margin: 2rem 0 1rem 0; }
+        .about-card h3 { color: var(--primary); font-size: 1.3rem; margin: 1.5rem 0 0.75rem 0; }
+        .about-card p { margin-bottom: 1rem; }
+        .about-card ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        .highlight-box { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border-left: 4px solid var(--primary); padding: 1.5rem; border-radius: 8px; margin: 2rem 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .stat-card { background: linear-gradient(135deg, #f8fafc, #f1f5f9); padding: 1.5rem; border-radius: 12px; text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; }
+        .stat-label { color: var(--text-light); font-size: 0.95rem; }
+        .footer { background: #1f2937; color: white; padding: 2rem 0; margin-top: 3rem; text-align: center; }
+        .footer a { color: #9ca3af; text-decoration: none; }
+        .footer a:hover { color: white; }
+        .btn { background: var(--primary); color: white; padding: 0.85rem 2rem; border-radius: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn:hover { background: var(--primary-light); }
+        @media (max-width: 768px) { .header-container { flex-direction: column; gap: 1rem; } .nav-menu { flex-wrap: wrap; justify-content: center; gap: 1rem; } .about-card { padding: 1.5rem; } .about-card h1 { font-size: 2rem; } }
     </style>
-</head>
+
+      
+</head> 
 <body>
     <header class="header">
         <div class="header-container">
-            <a href="/" class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-flag"></i>
-                </div>
-                <span>SA Daily Portal <span class="badge-2026">2026</span></span>
-            </a>
-            
+            <a href="/" class="logo"><div class="logo-icon"><i class="fas fa-map-marked-alt"></i></div><span>SA Daily Portal <span style="background: var(--accent); color: white; padding: 0.2rem 0.5rem; border-radius: 30px; font-size: 0.8rem;">2026</span></span></a>
             <nav class="nav-menu">
-                <a href="/" class="nav-link">
-                    <i class="fas fa-home"></i> Home
-                </a>
-                <a href="/weather" class="nav-link">
-                    <i class="fas fa-cloud-sun"></i> Weather
-                </a>
-                <a href="/sports" class="nav-link">
-                    <i class="fas fa-futbol"></i> Sports
-                </a>
-                <a href="/howto" class="nav-link">
-                    <i class="fas fa-book-open"></i> Guides
-                </a>
-                <a href="/news" class="nav-link active">
-                    <i class="fas fa-newspaper"></i> News
-                </a>
-                <a href="/contact" class="nav-link">
-                    <i class="fas fa-envelope"></i> Contact
-                </a>
+                <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="/sassa" class="nav-link"><i class="fas fa-hand-holding-heart"></i> SASSA</a>
+                <a href="/howto" class="nav-link active"><i class="fas fa-book-open"></i> Guides</a>
+                <a href="/about" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
+                <a href="/contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </nav>
         </div>
     </header>
@@ -260,112 +96,120 @@
             <div class="highlight-box">
                 <p style="margin: 0; font-size: 1.1rem; font-weight: 500;">
                     <i class="fas fa-quote-left" style="color: var(--primary); margin-right: 0.5rem;"></i>
-                    Your trusted source for South African information, real-time weather, SASSA updates, European football scores, and practical how-to guides.
+                    Your trusted source for South African practical how-to guides — helping you navigate SASSA grants, jobs, and making money online.
                 </p>
             </div>
             
             <h2>Our Mission</h2>
             <p>
-                SA Daily Portal was created to provide South Africans with easy access to essential information all in one place. We understand that navigating government services, finding reliable weather forecasts, and staying updated with sports can be challenging. Our mission is to simplify access to this information and provide practical guides that help you navigate everyday tasks.
+                SA Daily Portal was created to provide South Africans with easy-to-follow, practical guides that help navigate everyday challenges. From SASSA grant applications to finding employment and making money online, our mission is to simplify complex processes and provide clear, actionable information.
             </p>
             
             <h2>What We Offer</h2>
             
-            <h3>🌤️ Real-time Weather</h3>
+            <h3>🏦 SASSA Guides</h3>
             <p>
-                Get accurate, up-to-date weather information for your location. Our weather service provides current conditions, hourly forecasts, and 5-day predictions to help you plan your day.
+                Comprehensive guides on checking SASSA status, applying for SRD grants, appealing rejections, and updating banking details. We compile publicly available information to help beneficiaries access the support they need.
             </p>
             
-            <h3>🏦 SASSA Information</h3>
+            <h3>💰 Make Money Online</h3>
             <p>
-                Stay informed about SASSA grant payment dates, application processes, and status checks. We compile publicly available information to help beneficiaries access the support they need.
+                Practical, legitimate ways to earn income online from South Africa. No scams — just real opportunities for students, job seekers, and anyone looking to supplement their income.
             </p>
             
-            <h3>⚽ European Football</h3>
+            <h3>📄 Jobs & Career</h3>
             <p>
-                Follow live scores, upcoming fixtures, and Premier League standings. Our sports section keeps you updated on all the action from European football.
+                CV writing guides, job hunting tips, and information on finding employment in South Africa — whether you have experience or are just starting out.
             </p>
             
-            <h3>📚 How-To Guides</h3>
+            <h3>📚 Education & NSFAS</h3>
             <p>
-                Our comprehensive guides cover a range of topics relevant to South Africans:
+                Step-by-step guides for NSFAS funding applications and status checks, helping students access education opportunities.
             </p>
-            <ul>
-                <li>SASSA grant applications and status checks</li>
-                <li>Making money online in South Africa</li>
-                <li>CV writing and job hunting tips</li>
-                <li>Online business startup guides</li>
-                <li>NSFAS applications</li>
-                <li>And much more</li>
-            </ul>
             
             <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Helpful Guides</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Live Updates</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Free Access</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">2026</div>
-                    <div class="stat-label">Current Year</div>
-                </div>
+                <div class="stat-card"><div class="stat-number">17+</div><div class="stat-label">Helpful Guides</div></div>
+                <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Guide Categories</div></div>
+                <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Free Access</div></div>
+                <div class="stat-card"><div class="stat-number">2026</div><div class="stat-label">Current Year</div></div>
             </div>
             
             <h2>Our Commitment</h2>
-            <p>
-                <strong>Accuracy:</strong> We strive to provide accurate and up-to-date information from reliable sources.
-            </p>
-            <p>
-                <strong>Transparency:</strong> SA Daily Portal is an unofficial information website. We clearly indicate when we are not affiliated with official organizations.
-            </p>
-            <p>
-                <strong>User-First:</strong> Our content is designed to be helpful, practical, and easy to understand for all South Africans.
-            </p>
+            <p><strong>Accuracy:</strong> We strive to provide accurate and up-to-date information from reliable sources.</p>
+            <p><strong>Transparency:</strong> SA Daily Portal is an unofficial information website. We clearly indicate when we are not affiliated with official organizations.</p>
+            <p><strong>User-First:</strong> Our content is designed to be helpful, practical, and easy to understand for all South Africans.</p>
             
             <div class="highlight-box">
                 <h3 style="margin-top: 0;">Important Notice</h3>
-                <p style="margin-bottom: 0;">
-                    SA Daily Portal is an UNOFFICIAL information website. We are not affiliated with SASSA, SARS, the South African government, or any official organizations. Always verify critical information with official sources.
-                </p>
+                <p style="margin-bottom: 0;">SA Daily Portal is an UNOFFICIAL information website. We are not affiliated with SASSA, SARS, the South African government, or any official organizations. Always verify critical information with official sources.</p>
             </div>
             
-            <h2>Contact Us</h2>
-            <p>
-                Have questions, suggestions, or feedback? We'd love to hear from you!
-            </p>
+            <h2>Contact Developer</h2>
+            <p>Have questions, suggestions, or feedback? I'd love to hear from you!</p>
             <ul>
-                <li><strong>Developer:</strong> Nompumelelo</li>
+                <li><strong>Developer:</strong> Nompumelelo Sibiya</li>
                 <li><strong>Email:</strong> sibiyan4444@gmail.com</li>
                 <li><strong>Phone:</strong> 072 472 8166</li>
                 <li><strong>Location:</strong> Mpumalanga, South Africa</li>
             </ul>
             
             <p style="margin-top: 2rem;">
-                <a href="/contact" class="btn" style="background: var(--primary); color: white; padding: 0.85rem 2rem; border-radius: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
-                    <i class="fas fa-envelope"></i> Contact Developer
-                </a>
+                <a href="/contact" class="btn"><i class="fas fa-envelope"></i> Contact Developer</a>
                 <a href="/" style="margin-left: 1rem; color: var(--primary); text-decoration: none;">← Return to Home</a>
             </p>
         </div>
     </main>
     
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 SA Daily Portal. All rights reserved.</p>
-            <p>
-                <a href="/privacy-policy">Privacy Policy</a> | 
-                <a href="/terms">Terms of Service</a> | 
-                <a href="/disclaimer">Disclaimer</a> | 
-                <a href="/contact">Contact</a>
+    <!-- Footer - Original Design -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>SA Daily Portal 2026</h4>
+                <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African how-to guides — helping South Africans navigate SASSA, jobs, online money, and daily life.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/howto">All Guides</a></li>
+                    <li><a href="/sassa">SASSA Center</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service">Terms of Service</a></li>
+                    <li><a href="/disclaimer">Disclaimer</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-user"></i> Developer: Nompumelelo Sibiya</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Mpumalanga, South Africa</li>
+                    <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +27 72 472 8166</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p style="color: #f59e0b; font-weight: 600; margin-bottom: 0.5rem; font-size: 1rem;">
+                <i class="fas fa-exclamation-triangle"></i> ALWAYS VERIFY with official sources before acting on any information.
+            </p>
+            <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal not affiliated with any government department.</p>
+            <p style="font-size: 0.7rem; color: #6b7280; margin-top: 0.5rem;">
+                <i class="fas fa-chart-line"></i> This site uses Google Analytics and Google AdSense to improve your experience and serve relevant ads.
             </p>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>

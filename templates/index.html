@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SA Daily Portal 2026 - South African News, How-To Guides & Weather</title>
-    <meta name="description" content="Your complete South African information hub: latest news, 12+ practical how-to guides for SASSA, jobs, and daily life, plus accurate weather forecasts.">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="South Africa news 2026, SONA 2026, Eskom update, how-to guides, SASSA guide 2026, South African jobs, online money South Africa, SA weather today">
+    <title>SA Daily Portal 2026 - Practical How-To Guides for South Africans</title>
+    <meta name="description" content="Practical step-by-step guides for SASSA grants, making money online, CV writing, job applications, NSFAS funding, and daily life in South Africa. Free guides updated for 2026.">
+    <meta name="keywords" content="SASSA status check, SRD grant application, make money online South Africa, how to write a CV, best job websites, NSFAS application, SASSA appeal, South Africa guides 2026">
     <meta name="author" content="SA Daily Portal">
     <meta name="robots" content="index, follow">
-    <meta name="google-adsense-account" content="ca-pub-9621668436424790">
+    <meta name="googlebot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="geo.region" content="ZA">
+    <meta name="geo.placename" content="South Africa">
+    <link rel="canonical" href="https://saportal.site/">
     
-    <!-- Font Awesome -->
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SA Daily Portal 2026 - Practical How-To Guides for South Africans">
+    <meta property="og:description" content="Free step-by-step guides for SASSA, jobs, and making money online. Updated for 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saportal.site/">
+    <meta property="og:image" content="https://saportal.site/images/og-image.jpg">
+    <meta property="og:site_name" content="SA Daily Portal">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SA Daily Portal 2026 - Practical How-To Guides">
+    <meta name="twitter:description" content="Free guides for SASSA, jobs, and making money online in South Africa.">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- AdSense Verification Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9621668436424790" crossorigin="anonymous"></script>
-    
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -34,8 +40,9 @@
         gtag('config', 'G-Z2ZSZKQ5F7');
     </script>
     
+    
     <style>
-        /* Modern CSS Reset */
+        /* Modern CSS Reset - Matching Original Design */
         * {
             margin: 0;
             padding: 0;
@@ -76,7 +83,7 @@
             width: 100%;
         }
 
-        /* Header Styles */
+        /* Header Styles - Original Design */
         .header {
             background: var(--card-bg);
             box-shadow: var(--shadow-sm);
@@ -150,167 +157,6 @@
             background: var(--primary);
         }
 
-        /* Sports Ticker */
-        .sports-ticker-container {
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
-            color: white;
-            overflow: hidden;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .sports-ticker {
-            display: flex;
-            align-items: center;
-            animation: ticker-scroll 40s linear infinite;
-            white-space: nowrap;
-        }
-
-        @keyframes ticker-scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        .ticker-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            background: rgba(255,255,255,0.15);
-            padding: 0.4rem 1rem;
-            border-radius: 30px;
-            margin-right: 1.5rem;
-            white-space: nowrap;
-            backdrop-filter: blur(5px);
-        }
-
-        .ticker-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.4rem 1.2rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 30px;
-            margin-right: 1rem;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .ticker-item:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        /* Weather Widget */
-        .weather-widget {
-            background: linear-gradient(135deg, var(--primary), #312e81);
-            color: white;
-            border-radius: var(--radius);
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .weather-widget::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        .weather-widget > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .weather-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .weather-header h2 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .weather-freshness {
-            font-size: 0.85rem;
-            background: rgba(255,255,255,0.15);
-            padding: 0.4rem 1rem;
-            border-radius: 30px;
-            backdrop-filter: blur(5px);
-        }
-
-        .weather-main {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-        }
-
-        .weather-temp {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .weather-location {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .weather-description {
-            opacity: 0.9;
-            font-size: 1rem;
-        }
-
-        .weather-icon {
-            font-size: 4rem;
-            opacity: 0.9;
-        }
-
-        .weather-details {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .weather-detail {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-        }
-
-        .detail-icon {
-            font-size: 1.25rem;
-            opacity: 0.9;
-        }
-
-        .weather-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
         /* Welcome Section */
         .welcome-section {
             background: linear-gradient(135deg, #f0f9ff, #ffffff);
@@ -372,10 +218,10 @@
             flex-shrink: 0;
         }
 
-        .feature-icon.news { background: linear-gradient(135deg, #d97706, #f59e0b); }
-        .feature-icon.guides { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
-        .feature-icon.weather { background: linear-gradient(135deg, #059669, #10b981); }
-        .feature-icon.sports { background: linear-gradient(135deg, #d97706, #f59e0b); }
+        .feature-icon.sassa { background: linear-gradient(135deg, #059669, #10b981); }
+        .feature-icon.money { background: linear-gradient(135deg, #d97706, #f59e0b); }
+        .feature-icon.jobs { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
+        .feature-icon.education { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
 
         .feature-content h3 {
             font-size: 1.1rem;
@@ -408,122 +254,10 @@
             font-size: 1.1rem;
         }
 
-        /* News Grid - Clean */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .news-card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-light);
-        }
-
-        .news-image {
-            height: 160px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-        }
-
-        .news-category {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(5px);
-            padding: 0.25rem 1rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: white;
-        }
-
-        .news-date {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(5px);
-            padding: 0.25rem 1rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: white;
-        }
-
-        .news-content {
-            padding: 1.5rem;
-            flex: 1;
-        }
-
-        .news-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: var(--text);
-            line-height: 1.4;
-        }
-
-        .news-content p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .news-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .news-read-time {
-            color: var(--text-light);
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .news-read-more {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s;
-        }
-
-        .news-read-more:hover {
-            gap: 0.75rem;
-        }
-
         /* Guides Grid */
         .guides-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-bottom: 2rem;
         }
@@ -561,7 +295,7 @@
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background: rgba(255,255,255,0.2);
+            background: rgba(0,0,0,0.4);
             backdrop-filter: blur(5px);
             padding: 0.25rem 1rem;
             border-radius: 30px;
@@ -577,7 +311,7 @@
 
         .guide-content h3 {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             color: var(--text);
             line-height: 1.4;
         }
@@ -592,11 +326,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 0.75rem;
+            padding-top: 1rem;
             border-top: 1px solid var(--border);
         }
 
-        .guide-read-time {
+        .guide-steps {
             color: var(--text-light);
             font-size: 0.8rem;
             display: flex;
@@ -656,10 +390,12 @@
             font-size: 1.5rem;
         }
 
-        .icon-news { background: linear-gradient(135deg, #d97706, #f59e0b); }
-        .icon-weather { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
-        .icon-guides { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-        .icon-sports { background: linear-gradient(135deg, var(--secondary), #10b981); }
+        .icon-sassa { background: linear-gradient(135deg, #059669, #10b981); }
+        .icon-money { background: linear-gradient(135deg, #d97706, #f59e0b); }
+        .icon-cv { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .icon-jobs { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
+        .icon-nsfas { background: linear-gradient(135deg, #ec4899, #db2777); }
+        .icon-appeal { background: linear-gradient(135deg, #ef4444, #dc2626); }
 
         /* Buttons */
         .btn {
@@ -686,17 +422,6 @@
             transform: translateY(-2px);
         }
 
-        .btn-secondary {
-            background: white;
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background: #f9fafb;
-            transform: translateY(-2px);
-        }
-
         .text-center {
             text-align: center;
         }
@@ -705,7 +430,7 @@
             margin-top: 2rem;
         }
 
-        /* Footer */
+        /* Footer - Original Design */
         .footer {
             background: #1f2937;
             color: white;
@@ -784,32 +509,6 @@
             margin: 1rem 0;
         }
 
-        /* Loading States */
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--border);
-            border-top: 3px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Error State */
-        .weather-error {
-            background: rgba(239, 68, 68, 0.2);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-            text-align: center;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .header-container {
@@ -823,19 +522,7 @@
                 justify-content: center;
             }
 
-            .weather-details {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .welcome-features {
-                grid-template-columns: 1fr;
-            }
-
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .quick-access-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -843,44 +530,41 @@
                 grid-template-columns: 1fr;
             }
 
+            .quick-access-grid {
+                grid-template-columns: 1fr;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-
-            .weather-actions {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
         }
 
         @media (max-width: 480px) {
-            .weather-main {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            .weather-temp {
-                font-size: 3rem;
-            }
-
-            .weather-details {
-                grid-template-columns: 1fr;
-            }
-
             .welcome-header h1 {
                 font-size: 1.8rem;
             }
+            
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+        }
+        
+        /* AdSense Notice */
+        .adsense-note {
+            background: #fef9e3;
+            border-left: 4px solid var(--accent);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: #92400e;
         }
     </style>
+    
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header - Original Design -->
     <header class="header">
         <div class="container header-container">
             <a href="/" class="logo">
@@ -894,17 +578,14 @@
                 <a href="/" class="nav-link active">
                     <i class="fas fa-home"></i> Home
                 </a>
-                <a href="/news" class="nav-link">
-                    <i class="fas fa-newspaper"></i> News
+                <a href="/sassa" class="nav-link">
+                    <i class="fas fa-hand-holding-heart"></i> SASSA
                 </a>
                 <a href="/howto" class="nav-link">
                     <i class="fas fa-book-open"></i> Guides
                 </a>
-                <a href="/weather" class="nav-link">
-                    <i class="fas fa-cloud-sun"></i> Weather
-                </a>
-                <a href="/sports" class="nav-link">
-                    <i class="fas fa-futbol"></i> Sports
+                <a href="/about" class="nav-link">
+                    <i class="fas fa-info-circle"></i> About
                 </a>
                 <a href="/contact" class="nav-link">
                     <i class="fas fa-envelope"></i> Contact
@@ -913,281 +594,71 @@
         </div>
     </header>
 
-    <!-- Sports Ticker -->
-    <div class="sports-ticker-container">
-        <div class="container">
-            <div class="sports-ticker" id="sportsTicker">
-                <div class="ticker-header">
-                    <i class="fas fa-futbol"></i>
-                    <span>⚽ European Football 2026</span>
-                </div>
-                <div class="ticker-item">
-                    <span>Loading matches...</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Content -->
     <main class="container">
         <!-- Welcome Section -->
         <section class="welcome-section">
             <div class="welcome-header">
                 <h1>Welcome to SA Daily Portal 2026</h1>
-                <p>Your complete guide to navigating daily life in South Africa. Get the latest news, browse our library of 12+ practical how-to guides, and check accurate weather forecasts.</p>
+                <p>Your complete guide to navigating daily life in South Africa. Browse our library of 12+ practical how-to guides for SASSA grants, jobs, online money, and more.</p>
                 
                 <div class="welcome-features">
                     <div class="feature-item">
-                        <div class="feature-icon news">
-                            <i class="fas fa-newspaper"></i>
+                        <div class="feature-icon sassa">
+                            <i class="fas fa-hand-holding-heart"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Latest News</h3>
-                            <p>SONA 2026, Eskom updates, youth employment</p>
+                            <h3>SASSA Guides</h3>
+                            <p>Status checks, SRD applications, appeals & banking details</p>
                         </div>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon guides">
-                            <i class="fas fa-book-open"></i>
+                        <div class="feature-icon money">
+                            <i class="fas fa-coins"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>12+ How-To Guides</h3>
-                            <p>SASSA, banking, jobs, and online money</p>
+                            <h3>Make Money Online</h3>
+                            <p>Legit ways to earn from your phone or computer</p>
                         </div>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon weather">
-                            <i class="fas fa-cloud-sun"></i>
+                        <div class="feature-icon jobs">
+                            <i class="fas fa-briefcase"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Live Weather</h3>
-                            <p>Real-time conditions for your location</p>
+                            <h3>Jobs & Career</h3>
+                            <p>CV writing, job websites, interview tips</p>
                         </div>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon sports">
-                            <i class="fas fa-futbol"></i>
+                        <div class="feature-icon education">
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>European Football</h3>
-                            <p>Upcoming fixtures & schedules</p>
+                            <h3>Education</h3>
+                            <p>NSFAS funding, bursaries, study tips</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Weather Widget -->
-        <section class="weather-widget">
-            <div class="weather-header">
-                <h2>
-                    <i class="fas fa-map-marker-alt"></i> Current Weather
-                </h2>
-                <div class="weather-freshness" id="weatherFreshness">
-                    <i class="fas fa-sync-alt fa-spin"></i> Loading...
-                </div>
-            </div>
-            
-            <div id="weatherContent">
-                <div class="weather-main">
-                    <div>
-                        <div class="weather-temp" id="currentTemp">--°C</div>
-                        <div class="weather-location" id="weatherLocation">Detecting your location...</div>
-                        <div class="weather-description" id="weatherDescription">Please allow location access</div>
-                        <div style="margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.9;">
-                            Feels like <span id="feelsLike">--°C</span>
-                        </div>
-                    </div>
-                    <div class="weather-icon" id="weatherIcon">
-                        <i class="fas fa-cloud-sun"></i>
-                    </div>
-                </div>
-                
-                <div class="weather-details" id="weatherDetails">
-                    <div class="weather-detail">
-                        <div class="detail-icon"><i class="fas fa-wind"></i></div>
-                        <div>
-                            <div style="font-weight: 600;" id="windSpeed">-- km/h</div>
-                            <div style="font-size: 0.75rem; opacity: 0.8;">Wind</div>
-                        </div>
-                    </div>
-                    
-                    <div class="weather-detail">
-                        <div class="detail-icon"><i class="fas fa-tint"></i></div>
-                        <div>
-                            <div style="font-weight: 600;" id="humidity">--%</div>
-                            <div style="font-size: 0.75rem; opacity: 0.8;">Humidity</div>
-                        </div>
-                    </div>
-                    
-                    <div class="weather-detail">
-                        <div class="detail-icon"><i class="fas fa-eye"></i></div>
-                        <div>
-                            <div style="font-weight: 600;" id="visibility">-- km</div>
-                            <div style="font-size: 0.75rem; opacity: 0.8;">Visibility</div>
-                        </div>
-                    </div>
-                    
-                    <div class="weather-detail">
-                        <div class="detail-icon"><i class="fas fa-cloud"></i></div>
-                        <div>
-                            <div style="font-weight: 600;" id="clouds">--%</div>
-                            <div style="font-size: 0.75rem; opacity: 0.8;">Clouds</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="weather-actions">
-                    <button onclick="getWeatherByLocation()" class="btn btn-primary">
-                        <i class="fas fa-location-crosshairs"></i> Use My Location
-                    </button>
-                    <button onclick="refreshWeather()" class="btn btn-secondary">
-                        <i class="fas fa-sync-alt"></i> Refresh
-                    </button>
-                    <a href="/weather" class="btn btn-secondary">
-                        <i class="fas fa-search"></i> Search City
-                    </a>
-                </div>
-            </div>
-            
-            <div id="weatherError" style="display: none;" class="weather-error">
-                <i class="fas fa-exclamation-circle"></i>
-                <span id="errorMessage"></span>
-                <button onclick="getWeatherByLocation()" style="margin-left: 1rem; background: white; color: var(--danger); border: none; padding: 0.25rem 1rem; border-radius: 30px; cursor: pointer;">Try Again</button>
-            </div>
-        </section>
+        <!-- AdSense Notice - Shows compliance -->
+        <div class="adsense-note">
+            <i class="fas fa-info-circle"></i> This site provides helpful information only. Always verify with official government sources. We use cookies to improve your experience.
+        </div>
 
-        <!-- Latest News Section -->
-        <section>
-            <div class="section-header">
-                <h2>
-                    <i class="fas fa-newspaper" style="color: var(--accent);"></i> 
-                    Latest News
-                </h2>
-                <p>Recent developments affecting South Africans</p>
-            </div>
-            
-            <div class="news-grid">
-                <!-- SONA 2026 -->
-                <div class="news-card" onclick="window.location.href='/article/sona-2026'">
-                    <div class="news-image" style="background: linear-gradient(135deg, #2563eb, #3b82f6);">
-                        <span class="news-category">Politics</span>
-                        <span class="news-date">13 Feb</span>
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <div class="news-content">
-                        <h3>SONA 2026: Key Announcements</h3>
-                        <p>SANDF deployment, R156bn water infrastructure, and energy reforms announced.</p>
-                        <div class="news-meta">
-                            <span class="news-read-time"><i class="far fa-clock"></i> 8 min</span>
-                            <a href="/article/sona-2026" class="news-read-more">Read <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Eskom Update -->
-                <div class="news-card" onclick="window.location.href='/article/eskom-electricity-update-february-2026'">
-                    <div class="news-image" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
-                        <span class="news-category">Energy</span>
-                        <span class="news-date">15 Feb</span>
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div class="news-content">
-                        <h3>Eskom Update February 2026</h3>
-                        <p>EAF at 65%, independent transmission operator confirmed.</p>
-                        <div class="news-meta">
-                            <span class="news-read-time"><i class="far fa-clock"></i> 6 min</span>
-                            <a href="/article/eskom-electricity-update-february-2026" class="news-read-more">Read <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Youth Employment -->
-                <div class="news-card" onclick="window.location.href='/article/youth-employment-programmes-2026'">
-                    <div class="news-image" style="background: linear-gradient(135deg, #10b981, #059669);">
-                        <span class="news-category">Employment</span>
-                        <span class="news-date">14 Feb</span>
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="news-content">
-                        <h3>Youth Employment Programmes</h3>
-                        <p>1.3 million opportunities created, sayouth.mobi open for applications.</p>
-                        <div class="news-meta">
-                            <span class="news-read-time"><i class="far fa-clock"></i> 7 min</span>
-                            <a href="/article/youth-employment-programmes-2026" class="news-read-more">Read <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-4">
-                <a href="/news" class="btn btn-primary">
-                    <i class="fas fa-newspaper"></i> View All News
-                </a>
-            </div>
-        </section>
-
-        <!-- Quick Access -->
-        <section>
-            <div class="section-header">
-                <h2>
-                    <i class="fas fa-bolt"></i> Quick Access
-                </h2>
-            </div>
-            <div class="quick-access-grid">
-                <a href="/news" class="quick-access-card">
-                    <div class="card-icon icon-news">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <h3 style="margin: 0 0 0.5rem; font-size: 1.2rem;">Latest News</h3>
-                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">
-                        SONA, Eskom, youth employment
-                    </p>
-                </a>
-                
-                <a href="/howto" class="quick-access-card">
-                    <div class="card-icon icon-guides">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 style="margin: 0 0 0.5rem; font-size: 1.2rem;">12+ Guides</h3>
-                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">
-                        SASSA, banking, jobs, online money
-                    </p>
-                </a>
-                
-                <a href="/weather" class="quick-access-card">
-                    <div class="card-icon icon-weather">
-                        <i class="fas fa-cloud-sun-rain"></i>
-                    </div>
-                    <h3 style="margin: 0 0 0.5rem; font-size: 1.2rem;">SA Weather</h3>
-                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">
-                        Current conditions and 5-day forecast
-                    </p>
-                </a>
-                
-                <a href="/sports" class="quick-access-card">
-                    <div class="card-icon icon-sports">
-                        <i class="fas fa-futbol"></i>
-                    </div>
-                    <h3 style="margin: 0 0 0.5rem; font-size: 1.2rem;">Football</h3>
-                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">
-                        European leagues & fixtures
-                    </p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Guides Section -->
+        <!-- Guides Section - 12+ Practical Guides (read time removed for consistency) -->
         <section>
             <div class="section-header">
                 <h2>
                     <i class="fas fa-book-open" style="color: var(--primary);"></i> 
                     Popular How-To Guides
                 </h2>
-                <p>Step-by-step tutorials for South Africans</p>
+                <p>Step-by-step tutorials for South Africans — updated for 2026</p>
             </div>
             
             <div class="guides-grid">
@@ -1199,9 +670,9 @@
                     </div>
                     <div class="guide-content">
                         <h3>How to Check SASSA Status Online</h3>
-                        <p>Check SRD, older persons, disability, and child support grant status.</p>
+                        <p>Check SRD, older persons, disability, and child support grant status quickly.</p>
                         <div class="guide-meta">
-                            <span class="guide-read-time"><i class="far fa-clock"></i> 5 min</span>
+                            <span class="guide-steps"><i class="fas fa-list"></i> 6 steps</span>
                             <a href="/guides/sassa-status-check.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -1209,16 +680,48 @@
 
                 <!-- SASSA SRD Application -->
                 <div class="guide-card" onclick="window.location.href='/guides/sassa-srd-application.html'">
-                    <div class="guide-image" style="background: linear-gradient(135deg, #2563eb, #3b82f6);">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #10b981, #059669);">
                         <span class="guide-category">SASSA</span>
                         <i class="fas fa-file-alt"></i>
                     </div>
                     <div class="guide-content">
-                        <h3>SASSA SRD Grant Application</h3>
-                        <p>Apply for the R350 grant online, check status, and appeal rejections.</p>
+                        <h3>SASSA SRD Grant Application 2026</h3>
+                        <p>Apply for the R370 grant online, via WhatsApp, and fix common application errors.</p>
                         <div class="guide-meta">
-                            <span class="guide-read-time"><i class="far fa-clock"></i> 7 min</span>
+                            <span class="guide-steps"><i class="fas fa-list"></i> 8 steps</span>
                             <a href="/guides/sassa-srd-application.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SASSA Appeal Process -->
+                <div class="guide-card" onclick="window.location.href='/guides/sassa-appeal-process.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #dc2626, #ef4444);">
+                        <span class="guide-category">SASSA</span>
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Appeal SASSA Rejection</h3>
+                        <p>Step-by-step guide to appeal rejected SRD or other grant applications.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 5 steps</span>
+                            <a href="/guides/sassa-appeal-process.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SASSA Banking Details -->
+                <div class="guide-card" onclick="window.location.href='/guides/sassa-update-banking-details.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                        <span class="guide-category">SASSA</span>
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Update SASSA Banking Details</h3>
+                        <p>How to change payment method for SRD and other grants safely.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 4 steps</span>
+                            <a href="/guides/sassa-update-banking-details.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1231,10 +734,106 @@
                     </div>
                     <div class="guide-content">
                         <h3>Make Money Online in SA</h3>
-                        <p>14 legitimate ways to earn income online from South Africa.</p>
+                        <p>14 legitimate ways to earn income online from South Africa — no investment needed.</p>
                         <div class="guide-meta">
-                            <span class="guide-read-time"><i class="far fa-clock"></i> 10 min</span>
+                            <span class="guide-steps"><i class="fas fa-list"></i> 12 steps</span>
                             <a href="/guides/make-money-online-sa.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to Write a CV -->
+                <div class="guide-card" onclick="window.location.href='/guides/how-to-write-cv-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                        <span class="guide-category">Career</span>
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Write a CV (No Experience)</h3>
+                        <p>Create a professional CV that gets noticed — templates and examples included.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 8 steps</span>
+                            <a href="/guides/how-to-write-cv-sa.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Best Job Websites -->
+                <div class="guide-card" onclick="window.location.href='/guides/best-job-websites-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, var(--primary), var(--primary-light));">
+                        <span class="guide-category">Career</span>
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Best Job Websites in SA</h3>
+                        <p>Top platforms to find real jobs — Indeed, Pnet, Career24, and government vacancies.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 5 steps</span>
+                            <a href="/guides/best-job-websites-sa.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NSFAS Application -->
+                <div class="guide-card" onclick="window.location.href='/guides/nsfas-application-2026.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                        <span class="guide-category">Education</span>
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>NSFAS Application 2026</h3>
+                        <p>Apply for funding for university or TVET college — requirements and deadlines.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 7 steps</span>
+                            <a href="/guides/nsfas-application-guide.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UIF Application -->
+                <div class="guide-card" onclick="window.location.href='/guides/uif-application-guide.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #0891b2, #06b6d4);">
+                        <span class="guide-category">Finance</span>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>UIF Application Guide</h3>
+                        <p>How to claim unemployment benefits — step-by-step process.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 6 steps</span>
+                            <a href="/guides/uif-application-guide.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to Start a Side Hustle -->
+                <div class="guide-card" onclick="window.location.href='/guides/side-hustle-ideas-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                        <span class="guide-category">Finance</span>
+                        <i class="fas fa-chart-simple"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Side Hustle Ideas SA</h3>
+                        <p>20+ side business ideas to earn extra income while working or studying.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 8 steps</span>
+                            <a href="/guides/side-hustle-ideas-sa.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ID Document Application -->
+                <div class="guide-card" onclick="window.location.href='/guides/id-document-application.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #6366f1, #818cf8);">
+                        <span class="guide-category">Documents</span>
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Apply for Smart ID</h3>
+                        <p>Step-by-step guide to getting your South African Smart ID Card.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 6 steps</span>
+                            <a href="/guides/id-document-application.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1246,20 +845,57 @@
                 </a>
             </div>
         </section>
+
+        <!-- Quick Access Section -->
+        <section>
+            <div class="section-header">
+                <h2>
+                    <i class="fas fa-bolt"></i> Quick Access
+                </h2>
+            </div>
+            <div class="quick-access-grid">
+                <a href="/guides/sassa-status-check.html" class="quick-access-card">
+                    <div class="card-icon icon-sassa">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 style="margin: 0 0 0.5rem;">SASSA Status Check</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Check your grant status online</p>
+                </a>
+                
+                <a href="/guides/sassa-srd-application.html" class="quick-access-card">
+                    <div class="card-icon icon-sassa">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 style="margin: 0 0 0.5rem;">SRD Application</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Apply for R370 grant</p>
+                </a>
+                
+                <a href="/guides/make-money-online-sa.html" class="quick-access-card">
+                    <div class="card-icon icon-money">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 style="margin: 0 0 0.5rem;">Make Money Online</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">14 legit ways to earn</p>
+                </a>
+                
+                <a href="/guides/how-to-write-cv-sa.html" class="quick-access-card">
+                    <div class="card-icon icon-cv">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 style="margin: 0 0 0.5rem;">CV Writing Guide</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Professional CV templates</p>
+                </a>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer - Original Design -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h4>SA Daily Portal 2026</h4>
-                    <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African news, practical how-to guides and weather forecasts. Helping South Africans navigate daily life since 2024.</p>
-                    <div style="margin-top: 1rem;">
-                        <span style="background: #374151; color: #f59e0b; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">
-                            <i class="fas fa-exclamation-triangle"></i> FOR INFORMATION PURPOSES ONLY
-                        </span>
-                    </div>
+                    <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African how-to guides — helping South Africans navigate SASSA, jobs, online money, and daily life.</p>
                 </div>
                 
                 <div class="footer-section">
@@ -1267,10 +903,8 @@
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About Us</a></li>
-                        <li><a href="/howto">Guides</a></li>
-                        <li><a href="/news">News</a></li>
-                        <li><a href="/weather">Weather</a></li>
-                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/howto">All Guides</a></li>
+                        <li><a href="/sassa">SASSA Center</a></li>
                         <li><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
@@ -1281,17 +915,6 @@
                         <li><a href="/privacy-policy">Privacy Policy</a></li>
                         <li><a href="/terms-of-service">Terms of Service</a></li>
                         <li><a href="/disclaimer">Disclaimer</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Popular Guides</h4>
-                    <ul class="footer-links">
-                        <li><a href="/guides/sassa-status-check.html">SASSA Status Check</a></li>
-                        <li><a href="/guides/sassa-srd-application.html">SASSA SRD Application</a></li>
-                        <li><a href="/guides/make-money-online-sa.html">Make Money Online</a></li>
-                        <li><a href="/guides/how-to-write-cv-sa.html">How to Write a CV</a></li>
-                        <li><a href="/guides/best-job-websites-sa.html">Best Job Websites</a></li>
                     </ul>
                 </div>
                 
@@ -1310,139 +933,12 @@
                 <p style="color: #f59e0b; font-weight: 600; margin-bottom: 0.5rem; font-size: 1rem;">
                     <i class="fas fa-exclamation-triangle"></i> ALWAYS VERIFY with official sources before acting on any information.
                 </p>
-                <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal - not affiliated with any government department.</p>
+                <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal not affiliated with any government department.</p>
+                <p style="font-size: 0.7rem; color: #6b7280; margin-top: 0.5rem;">
+                    <i class="fas fa-chart-line"></i> This site uses Google Analytics and Google AdSense to improve your experience and serve relevant ads.
+                </p>
             </div>
         </div>
     </footer>
-    
-    <script>
-        // Main application
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('SA Daily Portal 2026 - Loading...');
-            getWeatherByLocation();
-            loadSportsTicker();
-            
-            // Auto-refresh every 5 minutes
-            setInterval(getWeatherByLocation, 300000);
-            setInterval(loadSportsTicker, 120000);
-        });
-
-        // Weather Functions
-        function getWeatherByLocation() {
-            const freshness = document.getElementById('weatherFreshness');
-            const weatherContent = document.getElementById('weatherContent');
-            const weatherError = document.getElementById('weatherError');
-            
-            if (navigator.geolocation) {
-                freshness.innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Detecting location...';
-                weatherContent.style.display = 'block';
-                weatherError.style.display = 'none';
-                
-                navigator.geolocation.getCurrentPosition(
-                    async (position) => {
-                        try {
-                            const lat = position.coords.latitude;
-                            const lon = position.coords.longitude;
-                            
-                            const apiKey = '343239f3cf54b54415a375bf3211fe5e';
-                            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`);
-                            
-                            if (!response.ok) {
-                                throw new Error('Weather data not available');
-                            }
-                            
-                            const data = await response.json();
-                            
-                            document.getElementById('currentTemp').textContent = `${Math.round(data.main.temp)}°C`;
-                            document.getElementById('weatherLocation').textContent = data.name + ', South Africa';
-                            document.getElementById('weatherDescription').textContent = data.weather[0].description;
-                            document.getElementById('feelsLike').textContent = `${Math.round(data.main.feels_like)}°C`;
-                            document.getElementById('windSpeed').textContent = `${Math.round(data.wind.speed * 3.6)} km/h`;
-                            document.getElementById('humidity').textContent = `${data.main.humidity}%`;
-                            document.getElementById('visibility').textContent = `${(data.visibility / 1000).toFixed(1)} km`;
-                            document.getElementById('clouds').textContent = `${data.clouds.all}%`;
-                            
-                            const iconCode = data.weather[0].icon;
-                            const iconMap = {
-                                '01d': 'fa-sun', '01n': 'fa-moon',
-                                '02d': 'fa-cloud-sun', '02n': 'fa-cloud-moon',
-                                '03d': 'fa-cloud', '03n': 'fa-cloud',
-                                '04d': 'fa-cloud', '04n': 'fa-cloud',
-                                '09d': 'fa-cloud-rain', '09n': 'fa-cloud-rain',
-                                '10d': 'fa-cloud-sun-rain', '10n': 'fa-cloud-moon-rain',
-                                '11d': 'fa-bolt', '11n': 'fa-bolt',
-                                '13d': 'fa-snowflake', '13n': 'fa-snowflake',
-                                '50d': 'fa-smog', '50n': 'fa-smog'
-                            };
-                            
-                            const iconClass = iconMap[iconCode] || 'fa-cloud-sun';
-                            document.getElementById('weatherIcon').innerHTML = `<i class="fas ${iconClass}"></i>`;
-                            
-                            freshness.innerHTML = `<i class="fas fa-check-circle"></i> Updated ${new Date().toLocaleTimeString()}`;
-                            
-                        } catch (error) {
-                            console.error('Weather error:', error);
-                            weatherContent.style.display = 'none';
-                            weatherError.style.display = 'block';
-                            document.getElementById('errorMessage').textContent = 'Unable to fetch weather data.';
-                            freshness.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error';
-                        }
-                    },
-                    (error) => {
-                        weatherContent.style.display = 'none';
-                        weatherError.style.display = 'block';
-                        
-                        let errorMsg = 'Please enable location access for weather.';
-                        if (error.code === 1) {
-                            errorMsg = 'Location access denied.';
-                        }
-                        
-                        document.getElementById('errorMessage').textContent = errorMsg;
-                        freshness.innerHTML = '<i class="fas fa-location-slash"></i> Location denied';
-                    }
-                );
-            } else {
-                weatherContent.style.display = 'none';
-                weatherError.style.display = 'block';
-                document.getElementById('errorMessage').textContent = 'Geolocation not supported.';
-                freshness.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Not supported';
-            }
-        }
-
-        function refreshWeather() {
-            getWeatherByLocation();
-        }
-
-        // Sports Ticker
-        function loadSportsTicker() {
-            const ticker = document.getElementById('sportsTicker');
-            
-            const matches = [
-                { home: 'Liverpool', away: 'Manchester City', time: '18:30' },
-                { home: 'Arsenal', away: 'Chelsea', time: '20:45' },
-                { home: 'Real Madrid', away: 'Barcelona', time: '21:00' },
-                { home: 'Bayern Munich', away: 'Dortmund', time: '19:30' },
-                { home: 'AC Milan', away: 'Inter Milan', time: '20:00' }
-            ];
-            
-            let html = `
-                <div class="ticker-header">
-                    <i class="fas fa-futbol"></i>
-                    <span>⚽ European Football 2026</span>
-                </div>
-            `;
-            
-            matches.forEach(match => {
-                html += `
-                    <div class="ticker-item">
-                        <span>${match.home} vs ${match.away}</span>
-                        <span style="background: rgba(255,255,255,0.3); padding: 0.2rem 0.5rem; border-radius: 30px; font-size: 0.8rem;">${match.time}</span>
-                    </div>
-                `;
-            });
-            
-            ticker.innerHTML = html;
-        }
-    </script>
 </body>
 </html>
