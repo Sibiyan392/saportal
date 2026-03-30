@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SASSA Guides 2026 | Status Check, SRD Application, Appeal & Banking Details | SA Daily Portal</title>
     <meta name="description" content="Complete SASSA guides for 2026: How to check SASSA status online, apply for SRD R370 grant, appeal rejections, update banking details, and understand grant status meanings. Free step-by-step guides.">
@@ -34,9 +34,7 @@
         gtag('config', 'G-Z2ZSZKQ5F7');
     </script>
     
-    
     <style>
-        /* Modern CSS Reset */
         * {
             margin: 0;
             padding: 0;
@@ -58,8 +56,6 @@
             --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
             --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
             --radius: 12px;
-            
-            /* SASSA Brand Color */
             --sassa-green: #059669;
             --sassa-light: #10b981;
         }
@@ -266,7 +262,7 @@
             margin-top: 0.5rem;
         }
 
-        /* Guides Grid - SASSA Cards */
+        /* Guides Grid */
         .guides-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -387,7 +383,7 @@
             transform: translateY(-2px);
         }
 
-        /* Quick Tips Section */
+        /* Quick Tips */
         .tips-section {
             background: linear-gradient(135deg, #ecfdf5, #d1fae5);
             border-radius: var(--radius);
@@ -584,27 +580,22 @@
             color: #9ca3af;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 gap: 1rem;
             }
-
             .nav-menu {
                 gap: 1rem;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .sassa-hero h1 {
                 font-size: 1.8rem;
             }
-
             .guides-grid {
                 grid-template-columns: 1fr;
             }
-
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -613,7 +604,7 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header with corrected active navigation (SASSA page active) -->
     <header class="header">
         <div class="container header-container">
             <a href="/" class="logo">
@@ -622,18 +613,16 @@
                 </div>
                 <span>SA Daily Portal <span style="background: var(--accent); color: white; padding: 0.2rem 0.5rem; border-radius: 30px; font-size: 0.8rem; margin-left: 0.5rem;">2026</span></span>
             </a>
-            
-              <nav class="nav-menu">
+            <nav class="nav-menu">
                 <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
-                <a href="/sassa" class="nav-link"><i class="fas fa-hand-holding-heart"></i> SASSA</a>
-                <a href="/howto" class="nav-link active"><i class="fas fa-book-open"></i> Guides</a>
+                <a href="/sassa" class="nav-link active"><i class="fas fa-hand-holding-heart"></i> SASSA</a>
+                <a href="/howto" class="nav-link"><i class="fas fa-book-open"></i> Guides</a>
                 <a href="/about" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
                 <a href="/contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="main-content">
         <div class="container">
             <!-- SASSA Hero Section -->
@@ -673,7 +662,7 @@
                 </div>
             </div>
 
-            <!-- All SASSA Guides Section -->
+            <!-- All SASSA Guides Section (using the exact guide data from howto.html) -->
             <div class="section-header">
                 <h2>
                     <i class="fas fa-book-open"></i>
@@ -682,9 +671,7 @@
                 <p>Step-by-step tutorials to help you navigate SASSA grants in 2026</p>
             </div>
 
-            <div class="guides-grid" id="sassaGuidesGrid">
-                <!-- Guide cards will be populated by JavaScript -->
-            </div>
+            <div class="guides-grid" id="sassaGuidesGrid"></div>
 
             <!-- Quick Tips Section -->
             <div class="tips-section">
@@ -693,30 +680,12 @@
                     Quick Tips for SASSA Applications
                 </h3>
                 <div class="tips-list">
-                    <div class="tip-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Always use your correct ID number and cellphone number</span>
-                    </div>
-                    <div class="tip-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Keep your SASSA reference number after applying</span>
-                    </div>
-                    <div class="tip-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Check your status weekly for updates</span>
-                    </div>
-                    <div class="tip-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Appeal within 30 days if your application is rejected</span>
-                    </div>
-                    <div class="tip-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Update banking details immediately if your bank changes</span>
-                    </div>
-                    <div class="tip-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Use the official SASSA website or WhatsApp line only</span>
-                    </div>
+                    <div class="tip-item"><i class="fas fa-check-circle"></i><span>Always use your correct ID number and cellphone number</span></div>
+                    <div class="tip-item"><i class="fas fa-check-circle"></i><span>Keep your SASSA reference number after applying</span></div>
+                    <div class="tip-item"><i class="fas fa-check-circle"></i><span>Check your status weekly for updates</span></div>
+                    <div class="tip-item"><i class="fas fa-check-circle"></i><span>Appeal within 30 days if your application is rejected</span></div>
+                    <div class="tip-item"><i class="fas fa-check-circle"></i><span>Update banking details immediately if your bank changes</span></div>
+                    <div class="tip-item"><i class="fas fa-check-circle"></i><span>Use the official SASSA website or WhatsApp line only</span></div>
                 </div>
             </div>
 
@@ -736,155 +705,120 @@
 
             <!-- Official SASSA Links -->
             <div class="official-links">
-                <h3>
-                    <i class="fas fa-link"></i>
-                    Official SASSA Resources
-                </h3>
+                <h3><i class="fas fa-link"></i> Official SASSA Resources</h3>
                 <div class="link-buttons">
-                    <a href="https://www.sassa.gov.za" target="_blank" rel="noopener noreferrer" class="official-btn">
-                        <i class="fas fa-globe"></i> Official SASSA Website
-                    </a>
-                    <a href="https://srd.sassa.gov.za" target="_blank" rel="noopener noreferrer" class="official-btn">
-                        <i class="fas fa-chart-line"></i> SRD Grant Portal
-                    </a>
-                    <a href="https://whatsapp.com/channel/0029VaDxZ6r6wV5Qk8X8n43R" target="_blank" rel="noopener noreferrer" class="official-btn">
-                        <i class="fab fa-whatsapp"></i> SASSA WhatsApp
-                    </a>
-                    <a href="tel:0800601011" class="official-btn">
-                        <i class="fas fa-phone-alt"></i> SASSA Call Centre: 0800 60 10 11
-                    </a>
+                    <a href="https://www.sassa.gov.za" target="_blank" rel="noopener noreferrer" class="official-btn"><i class="fas fa-globe"></i> Official SASSA Website</a>
+                    <a href="https://srd.sassa.gov.za" target="_blank" rel="noopener noreferrer" class="official-btn"><i class="fas fa-chart-line"></i> SRD Grant Portal</a>
+                    <a href="https://whatsapp.com/channel/0029VaDxZ6r6wV5Qk8X8n43R" target="_blank" rel="noopener noreferrer" class="official-btn"><i class="fab fa-whatsapp"></i> SASSA WhatsApp</a>
+                    <a href="tel:0800601011" class="official-btn"><i class="fas fa-phone-alt"></i> SASSA Call Centre: 0800 60 10 11</a>
                 </div>
             </div>
         </div>
     </main>
 
-<!-- Footer - Original Design -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h4>SA Daily Portal 2026</h4>
-                <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African how-to guides — helping South Africans navigate SASSA, jobs, online money, and daily life.</p>
+    <!-- Footer - Consistent with other pages -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>SA Daily Portal 2026</h4>
+                    <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African how-to guides — helping South Africans navigate SASSA, jobs, online money, and daily life.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/howto">All Guides</a></li>
+                        <li><a href="/sassa">SASSA Center</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-user"></i> Developer: Nompumelelo Sibiya</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mpumalanga, South Africa</li>
+                        <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +27 72 472 8166</li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/howto">All Guides</a></li>
-                    <li><a href="/sassa">SASSA Center</a></li>
-                    <li><a href="/contact">Contact Us</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul class="footer-links">
-                    <li><a href="/privacy-policy">Privacy Policy</a></li>
-                    <li><a href="/terms-of-service">Terms of Service</a></li>
-                    <li><a href="/disclaimer">Disclaimer</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Contact Info</h4>
-                <ul class="footer-contact">
-                    <li><i class="fas fa-user"></i> Developer: Nompumelelo Sibiya</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Mpumalanga, South Africa</li>
-                    <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
-                    <li><i class="fas fa-phone"></i> +27 72 472 8166</li>
-                </ul>
+            <div class="footer-bottom">
+                <p style="color: #f59e0b; font-weight: 600; margin-bottom: 0.5rem;"><i class="fas fa-exclamation-triangle"></i> ALWAYS VERIFY with official sources before acting on any information.</p>
+                <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal not affiliated with any government department.</p>
+                <p style="font-size: 0.7rem; color: #6b7280; margin-top: 0.5rem;"><i class="fas fa-chart-line"></i> This site uses Google Analytics and Google AdSense to improve your experience and serve relevant ads.</p>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <p style="color: #f59e0b; font-weight: 600; margin-bottom: 0.5rem; font-size: 1rem;">
-                <i class="fas fa-exclamation-triangle"></i> ALWAYS VERIFY with official sources before acting on any information.
-            </p>
-            <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal not affiliated with any government department.</p>
-            <p style="font-size: 0.7rem; color: #6b7280; margin-top: 0.5rem;">
-                <i class="fas fa-chart-line"></i> This site uses Google Analytics and Google AdSense to improve your experience and serve relevant ads.
-            </p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script>
-        // SASSA Guides Data
+        // ============================================================
+        // SASSA Guides Data - Updated to match howto.html content exactly
+        // This ensures consistency across both pages (sassa.html and howto.html)
+        // ============================================================
         const sassaGuides = [
             {
                 id: "sassa-status-check",
                 title: "How to Check SASSA Status Online",
-                description: "Step-by-step guide to check your SASSA SRD, child support, disability, or older persons grant status online in 2026.",
+                description: "Complete guide to check SASSA SRD, child support, disability grant status online.",
                 icon: "fa-chart-line",
-                read_time: "5 min",
                 steps: 6,
                 popularity: 98,
-                difficulty: "Beginner"
+                difficulty: "Beginner",
+                read_time: "5 min"
             },
             {
                 id: "sassa-srd-application",
-                title: "SASSA SRD Grant Application 2026 (R370)",
-                description: "Complete guide to applying for the SRD R370 grant online, via WhatsApp, and USSD. Includes OTP troubleshooting and tips.",
+                title: "SASSA SRD Grant Application 2026",
+                description: "Apply for the R370 SRD grant online, via WhatsApp, and fix common errors.",
                 icon: "fa-file-alt",
-                read_time: "8 min",
                 steps: 8,
                 popularity: 100,
-                difficulty: "Beginner"
+                difficulty: "Beginner",
+                read_time: "8 min"
             },
             {
-                id: "sassa-appeal",
+                id: "sassa-appeal-process",
                 title: "How to Appeal SASSA Rejection",
-                description: "Step-by-step guide to appeal a rejected SASSA SRD or other grant application within the 30-day window.",
+                description: "Step-by-step guide to appeal rejected SRD or other grant applications.",
                 icon: "fa-gavel",
-                read_time: "6 min",
                 steps: 5,
-                popularity: 92,
-                difficulty: "Intermediate"
+                popularity: 95,
+                difficulty: "Intermediate",
+                read_time: "6 min"
             },
             {
-                id: "sassa-banking-details",
-                title: "How to Update SASSA Banking Details",
-                description: "Learn how to change or update your banking details for SASSA payments securely to avoid payment delays.",
+                id: "sassa-update-banking-details",
+                title: "Update SASSA Banking Details",
+                description: "Learn how to change banking details for SASSA payments safely and avoid delays.",
                 icon: "fa-university",
-                read_time: "5 min",
                 steps: 4,
-                popularity: 89,
-                difficulty: "Beginner"
+                popularity: 92,
+                difficulty: "Beginner",
+                read_time: "5 min"
             },
-            {
-                id: "sassa-status-meanings",
-                title: "SASSA Status Meanings Explained",
-                description: "Understand what each SASSA status means: Approved, Pending, Rejected, Bank Details Pending, and more.",
-                icon: "fa-question-circle",
-                read_time: "4 min",
-                steps: 7,
-                popularity: 85,
-                difficulty: "Beginner"
-            },
-            {
-                id: "sassa-other-grants",
-                title: "Other SASSA Grants: Child Support, Disability & Older Persons",
-                description: "Complete guide to applying for Child Support Grant, Disability Grant, and Older Persons Grant in South Africa.",
-                icon: "fa-hand-holding-heart",
-                read_time: "7 min",
-                steps: 6,
-                popularity: 88,
-                difficulty: "Beginner"
-            }
+           
         ];
 
-        // Render Guides Grid
-        function renderGuides() {
+        // Render SASSA Guides Grid
+        function renderSassaguides() {
             const grid = document.getElementById('sassaGuidesGrid');
             if (!grid) return;
-            
             grid.innerHTML = '';
             
             sassaGuides.forEach(guide => {
                 const card = document.createElement('div');
                 card.className = 'guide-card';
+                // Navigation: links to the actual guide page (same as howto.html structure)
                 card.onclick = () => {
                     window.location.href = `/guides/${guide.id}.html`;
                 };
@@ -898,35 +832,29 @@
                     <div class="guide-content">
                         <div class="guide-title">${guide.title}</div>
                         <div class="guide-description">${guide.description}</div>
-                        
                         <div class="guide-meta">
                             <span><i class="far fa-clock"></i> ${guide.read_time}</span>
                             <span><i class="fas fa-list"></i> ${guide.steps} steps</span>
                             <span><i class="fas fa-chart-line"></i> ${guide.popularity}% helpful</span>
                         </div>
-                        
                         <div class="guide-btn">
                             <i class="fas fa-book-open"></i> Read Full Guide
                         </div>
                     </div>
                 `;
-                
                 grid.appendChild(card);
             });
         }
 
         // Initialize on load
         document.addEventListener('DOMContentLoaded', () => {
-            renderGuides();
-            
-            // Initialize AdSense
+            renderSassaguides();
+            // AdSense re-initialization (safe call)
             if (typeof adsbygoogle !== 'undefined') {
                 try {
                     (adsbygoogle = window.adsbygoogle || []).push({});
                     (adsbygoogle = window.adsbygoogle || []).push({});
-                } catch(e) {
-                    console.log('AdSense initialization');
-                }
+                } catch(e) { /* silent */ }
             }
         });
     </script>
