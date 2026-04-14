@@ -729,7 +729,7 @@ def index():
                              current_year=datetime.now().year)
 
 @app.route('/weather')
-def weather():
+def weather():  
     """Weather page"""
     return render_template('weather.html',
                          current_year=datetime.now().year,
@@ -1029,6 +1029,12 @@ def terms():
                          current_year=datetime.now().year,
                          page_title='Terms of Service - SA Daily Portal 2026',
                          page_description='Terms and conditions for using SA Daily Portal.')
+
+
+@app.route('/trending')
+def trending():
+    # Read the HTML file you saved
+    return render_template('trending.html')                       
 
 @app.route('/disclaimer')
 def disclaimer():
