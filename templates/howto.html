@@ -23,8 +23,19 @@
     <meta name="twitter:title" content="13+ How-To Guides for South Africans">
     <meta name="twitter:description" content="Free step-by-step guides for SASSA, jobs, and making money online.">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Font Awesome - deferred -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all';this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    
+    <!-- Google Fonts - optimized -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
     <meta name="044409dba0e425c305331af675d988ff9c8b286b" content="044409dba0e425c305331af675d988ff9c8b286b" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
     <script>
@@ -43,7 +54,7 @@
             --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1); --radius: 12px;
             --sassa: #059669; --money: #d97706; --jobs: #2563eb; --freelance: #7c3aed; --business: #dc2626; --education: #8b5cf6;
         }
-        body { font-family: 'Inter', sans-serif; background-color: var(--background); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: var(--background); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; width: 100%; }
         .header { background: var(--card-bg); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
         .header-container { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
@@ -122,12 +133,11 @@
         .guide-meta span { display: flex; align-items: center; gap: 0.35rem; }
         .guide-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.75rem; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease; }
         .guide-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
-        .adsense-container { margin: 2rem 0; text-align: center; }
-        .ad-label { color: var(--text-light); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
         .disclaimer { background: #fef3c7; border: 1px solid #fbbf24; border-radius: var(--radius); padding: 1.5rem; margin: 2rem 0; color: #92400e; }
         .disclaimer h3 { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
         .no-results { grid-column: 1 / -1; text-align: center; padding: 3rem; background: white; border-radius: var(--radius); border: 1px solid var(--border); }
         .footer { background: #1f2937; color: white; padding: 3rem 0 2rem; margin-top: 3rem; }
+        .ad-container { margin: 1.5rem 0; min-height: 90px; background: transparent; border-radius: 8px; overflow: hidden; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 2rem; margin-bottom: 2rem; }
         .footer-section h4 { color: white; margin-bottom: 1rem; font-size: 1rem; }
         .footer-links { list-style: none; padding: 0; }
@@ -141,7 +151,7 @@
         .footer-bottom p { color: #9ca3af; font-size: 0.85rem; }
         .compliance-badges { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
         .compliance-badge { padding: 0.25rem 0.75rem; background: rgba(255,255,255,0.1); border-radius: 30px; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 0.35rem; color: #9ca3af; }
-        @media (max-width: 768px) { .header-container { flex-direction: column; gap: 1rem; } .nav-menu { gap: 1rem; flex-wrap: wrap; justify-content: center; } .guides-hero h1 { font-size: 2rem; } .search-box { flex-direction: column; } .search-box button { padding: 1rem; } .guides-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+        @media (max-width: 768px) { .header-container { flex-direction: column; gap: 1rem; } .nav-menu { gap: 1rem; flex-wrap: wrap; justify-content: center; } .guides-hero h1 { font-size: 2rem; } .search-box { flex-direction: column; } .search-box button { padding: 1rem; } .guides-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; } .ad-container { min-height: 50px; } }
         @media (max-width: 480px) { .guides-hero h1 { font-size: 1.8rem; } .hero-stats { flex-direction: column; align-items: center; } .stat-item { width: 100%; } .category-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
@@ -167,18 +177,21 @@
                 <div class="hero-stats"><div class="stat-item"><i class="fas fa-book-open"></i><span>13+ Guides</span></div><div class="stat-item"><i class="fas fa-check-circle"></i><span>Updated 2026</span></div><div class="stat-item"><i class="fas fa-mobile-alt"></i><span>Mobile Friendly</span></div></div>
             </section>
 
-            <script>
-(function(rltq){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = rltq || {};
-s.src = "\/\/conventionalresponse.com\/btXAVks.dTGnl_0iYcWZcu\/Oegmj9guxZwUTlDk\/PUTdYM5WNyTScF1\/MvTjM\/t_N\/j\/kv1HNYzXU\/xaNbwm";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
+            <!-- Ad: Multi-tag banner - after hero, before search -->
+            <div class="ad-container">
+                <script>
+                (function(weyi){
+                var d = document,
+                    s = d.createElement('script'),
+                    l = d.scripts[d.scripts.length - 1];
+                s.settings = weyi || {};
+                s.src = "\/\/conventionalresponse.com\/bLX.VHskdOGVlW0\/YuWXcA\/mermQ9LudZSUIl\/kLPOTUYE5sNMTUcS1MMTz\/cAt_NtjAk\/1QN\/zyUN0\/M\/QB";
+                s.async = true;
+                s.referrerPolicy = 'no-referrer-when-downgrade';
+                l.parentNode.insertBefore(s, l);
+                })({})
+                </script>
+            </div>
 
             <section class="search-section">
                 <h2><i class="fas fa-search"></i> Find the Right Guide</h2>
@@ -205,25 +218,27 @@ l.parentNode.insertBefore(s, l);
 
             <section class="popular-section"><h2><i class="fas fa-fire" style="color: #d97706;"></i> Most Popular Guides</h2><div class="popular-list" id="popularGuidesList"></div></section>
 
-            <div class="adsense-container"><div class="ad-label">Advertisement</div><div class="ad-unit"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9621668436424790" data-ad-slot="2345678901" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div>
-
             <div class="guides-header"><h2><i class="fas fa-book-open" style="color: var(--primary);"></i> All Guides</h2><span class="results-count" id="resultsCount">13 guides</span></div>
             <div class="guides-grid" id="guidesGrid"></div>
 
+            <!-- Ad: In-page tag - before disclaimer section -->
+            <div class="ad-container" style="margin-top: 2rem;">
+                <script>
+                (function(weyi){
+                var d = document,
+                    s = d.createElement('script'),
+                    l = d.scripts[d.scripts.length - 1];
+                s.settings = weyi || {};
+                s.src = "\/\/conventionalresponse.com\/bFX\/Vws.dPGFlP0LYaWVct\/je_ml9FuiZsUSl\/kvPZTxYB5bNAT\/ck1zMdT\/MFtZNej\/kl1-NFzwU\/xNNZwk";
+                s.async = true;
+                s.referrerPolicy = 'no-referrer-when-downgrade';
+                l.parentNode.insertBefore(s, l);
+                })({})
+                </script>
+            </div>
+
             <div class="disclaimer"><h3><i class="fas fa-info-circle"></i> Important Information</h3><p>All guides are for informational purposes only. Processes, requirements, and dates may change. Always verify with official sources (SASSA, NSFAS, Department of Employment and Labour) before submitting applications.</p><p style="margin-top: 0.5rem;"><strong>Note:</strong> We are an independent information portal and are not affiliated with any government department.</p></div>
         </div>
-        <script>
-(function(onjy){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = onjy || {};
-s.src = "\/\/conventionalresponse.com\/bmX.V\/ssdqGRla0JYuWEcZ\/se\/mk9\/uQZVU_lzk-PwTOYk5MNvTQcF1\/MAzucCtaNUjGkX1PNAztU\/0bMnQm";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
     </main>
 
     <footer class="footer">
@@ -240,52 +255,25 @@ l.parentNode.insertBefore(s, l);
     <i class="fas fa-chart-line"></i> This site uses cookies and third-party ads to improve your experience.
 </p></div>
         </div>
-        <script>
-(function(mti){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = mti || {};
-s.src = "\/\/conventionalresponse.com\/b.XsVZszd_GOlU0pYlWGcM\/KeXm\/9_u\/ZmUHlckFPzTbYA5CNqTygRw\/NjTaMutXNmjukr1iO-DBAt1XNGwy";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
     </footer>
 
     <script>
-    // Updated guide data with read_time removed for consistency with actual articles.
-    // Step counts and popularity remain as reference, but "minutes read" is omitted from UI display.
     const guidesData = [
-        // SASSA Guides (5)
         { id: 'sassa-status-check', title: 'How to Check SASSA Status Online', description: 'Complete guide to check SASSA SRD, child support, disability grant status online.', category: 'sassa', icon: 'fa-hand-holding-heart', steps: 6, popularity: 98, difficulty: 'beginner' },
         { id: 'sassa-srd-application', title: 'SASSA SRD Grant Application 2026', description: 'Apply for the R370 SRD grant online, via WhatsApp, and fix common errors.', category: 'sassa', icon: 'fa-file-alt', steps: 8, popularity: 100, difficulty: 'beginner' },
         { id: 'sassa-appeal-process', title: 'How to Appeal SASSA Rejection', description: 'Step-by-step guide to appeal rejected SRD or other grant applications.', category: 'sassa', icon: 'fa-gavel', steps: 5, popularity: 95, difficulty: 'intermediate' },
         { id: 'sassa-update-banking-details', title: 'Update SASSA Banking Details', description: 'Learn how to change banking details for SASSA payments safely and avoid delays.', category: 'sassa', icon: 'fa-university', steps: 4, popularity: 92, difficulty: 'beginner' },
-        
-        // Money Guides (3)
         { id: 'make-money-online-sa', title: 'How to Make Money Online in SA', description: '14 legitimate ways to earn income online from South Africa.', category: 'money', icon: 'fa-coins', steps: 12, popularity: 99, difficulty: 'intermediate' },
         { id: 'students-make-money-online', title: 'How Students Can Make Money Online', description: 'Practical online income opportunities for South African students.', category: 'money', icon: 'fa-graduation-cap', steps: 7, popularity: 91, difficulty: 'beginner' },
         { id: 'earn-money-student-sa', title: 'How to Earn Money as a Student', description: 'Practical ways for students to earn income while studying.', category: 'money', icon: 'fa-coins', steps: 5, popularity: 86, difficulty: 'beginner' },
-        
-        // Jobs & CV Guides (4)
         { id: 'how-to-write-cv-sa', title: 'How to Write a CV (with Template)', description: 'Create a professional CV that stands out to South African employers.', category: 'jobs', icon: 'fa-file-pdf', steps: 8, popularity: 97, difficulty: 'beginner' },
         { id: 'best-job-websites-sa', title: 'Best Job Websites in SA 2026', description: 'Top 10 job portals in South Africa for finding employment.', category: 'jobs', icon: 'fa-briefcase', steps: 5, popularity: 94, difficulty: 'beginner' },
         { id: 'best-skills-learn-2026', title: 'Best Skills to Learn in 2026', description: 'High-demand skills for the South African job market.', category: 'jobs', icon: 'fa-brain', steps: 6, popularity: 89, difficulty: 'beginner' },
         { id: 'find-jobs-without-experience', title: 'How to Find Jobs Without Experience', description: 'Practical strategies for entry-level job seekers.', category: 'jobs', icon: 'fa-briefcase', steps: 6, popularity: 87, difficulty: 'beginner' },
-        
-        // Freelance Guides (2)
         { id: 'freelancing-guide-beginners', title: 'Freelancing Guide for Beginners', description: 'Start your freelancing career in South Africa.', category: 'freelance', icon: 'fa-laptop-code', steps: 8, popularity: 91, difficulty: 'intermediate' },
         { id: 'become-freelancer-sa', title: 'How to Become a Freelancer in SA', description: 'Complete roadmap to becoming a successful freelancer.', category: 'freelance', icon: 'fa-chart-line', steps: 9, popularity: 88, difficulty: 'intermediate' },
-        
-        // Business Guide (1)
         { id: 'start-online-business-sa', title: 'How to Start an Online Business', description: 'Complete guide to launching your online business in South Africa.', category: 'business', icon: 'fa-store', steps: 10, popularity: 92, difficulty: 'advanced' },
-        
-        // Education Guides (2)
         { id: 'nsfas-application-guide', title: 'How to Apply for NSFAS Funding 2026', description: 'Complete guide to applying for NSFAS funding for university or TVET college.', category: 'education', icon: 'fa-graduation-cap', steps: 7, popularity: 96, difficulty: 'beginner' },
-        
-        // Additional Guides (Side Hustle, UIF, ID Document)
         { id: 'side-hustle-ideas-sa', title: '20+ Side Hustle Ideas in SA', description: 'Discover 20+ side hustle ideas to make extra money in South Africa.', category: 'money', icon: 'fa-chart-simple', steps: 8, popularity: 93, difficulty: 'beginner' },
         { id: 'uif-application-guide', title: 'UIF Application Guide 2026', description: 'Complete guide to claiming unemployment benefits from UIF.', category: 'jobs', icon: 'fa-chart-line', steps: 6, popularity: 90, difficulty: 'intermediate' },
         { id: 'id-document-application', title: 'How to Apply for Smart ID Card', description: 'Step-by-step guide to getting your South African Smart ID Card.', category: 'jobs', icon: 'fa-id-card', steps: 6, popularity: 88, difficulty: 'beginner' }

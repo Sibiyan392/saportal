@@ -28,13 +28,23 @@
     <meta name="twitter:title" content="SA Daily Portal 2026 - Practical How-To Guides">
     <meta name="twitter:description" content="Free guides for SASSA, jobs, and making money online in South Africa.">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Font Awesome - deferred -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all';this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    
+    <!-- Google Fonts - optimized -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- HilltopAds Verification -->
     <meta name="044409dba0e425c305331af675d988ff9c8b286b" content="044409dba0e425c305331af675d988ff9c8b286b" />
     
-    <!-- Google Analytics (Keep for traffic insights) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -44,633 +54,145 @@
     </script>
     
     <style>
-        /* Modern CSS Reset - Matching Original Design */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #1e3a8a;
-            --primary-light: #3b82f6;
-            --secondary: #059669;
-            --accent: #d97706;
-            --danger: #dc2626;
-            --background: #f9fafb;
-            --card-bg: #ffffff;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --border: #e5e7eb;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --primary: #1e3a8a; --primary-light: #3b82f6; --secondary: #059669; --accent: #d97706;
+            --danger: #dc2626; --background: #f9fafb; --card-bg: #ffffff; --text: #1f2937;
+            --text-light: #6b7280; --border: #e5e7eb; --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1); --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
             --radius: 12px;
         }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background);
-            color: var(--text);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            width: 100%;
-        }
-
-        /* Header Styles */
-        .header {
-            background: var(--card-bg);
-            box-shadow: var(--shadow-sm);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 0;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .nav-link {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s;
-            font-size: 0.95rem;
-        }
-
-        .nav-link:hover {
-            color: var(--primary);
-        }
-
-        .nav-link.active {
-            color: var(--primary);
-        }
-
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--primary);
-        }
-
-        .trending-badge {
-            background: var(--danger);
-            color: white;
-            font-size: 0.6rem;
-            padding: 0.2rem 0.5rem;
-            border-radius: 30px;
-            margin-left: 0.25rem;
-        }
-
-        /* Welcome Section */
-        .welcome-section {
-            background: linear-gradient(135deg, #f0f9ff, #ffffff);
-            border-radius: var(--radius);
-            padding: 2.5rem;
-            margin: 2rem 0;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            box-shadow: var(--shadow-md);
-        }
-
-        .welcome-header h1 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .welcome-header p {
-            color: var(--text);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-        }
-
-        .welcome-features {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.25rem;
-            background: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--primary-light);
-        }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: var(--background); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; width: 100%; }
+        .header { background: var(--card-bg); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
+        .header-container { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; flex-wrap: wrap; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+        .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; }
+        .nav-menu { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .nav-link { color: var(--text); text-decoration: none; font-weight: 500; padding: 0.5rem 0; position: relative; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; font-size: 0.95rem; }
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+        .nav-link.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--primary); }
+        .trending-badge { background: var(--danger); color: white; font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 30px; margin-left: 0.25rem; }
+        .welcome-section { background: linear-gradient(135deg, #f0f9ff, #ffffff); border-radius: var(--radius); padding: 2.5rem; margin: 2rem 0; border: 1px solid rgba(37, 99, 235, 0.1); box-shadow: var(--shadow-md); }
+        .welcome-header h1 { font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+        .welcome-header p { color: var(--text); font-size: 1.1rem; margin-bottom: 2rem; max-width: 800px; }
+        .welcome-features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        .feature-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--border); transition: transform 0.3s ease; }
+        .feature-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--primary-light); }
+        .feature-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.25rem; flex-shrink: 0; }
         .feature-icon.sassa { background: linear-gradient(135deg, #059669, #10b981); }
         .feature-icon.money { background: linear-gradient(135deg, #d97706, #f59e0b); }
         .feature-icon.jobs { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
         .feature-icon.education { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-        .feature-icon.trending { background: linear-gradient(135deg, #dc2626, #ef4444); }
-        .feature-icon.sports { background: linear-gradient(135deg, #0891b2, #06b6d4); }
-        .feature-icon.weather { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
-
-        .feature-content h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-            color: var(--text);
-        }
-
-        .feature-content p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin: 0;
-        }
-
-        /* Section Headers */
-        .section-header {
-            margin: 3rem 0 2rem;
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .section-header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        /* Guides Grid */
-        .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .guide-card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .guide-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-light);
-        }
-
-        .guide-image {
-            height: 140px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-        }
-
-        .guide-category {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background: rgba(0,0,0,0.4);
-            backdrop-filter: blur(5px);
-            padding: 0.25rem 1rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: white;
-        }
-
-        .guide-content {
-            padding: 1.5rem;
-            flex: 1;
-        }
-
-        .guide-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: var(--text);
-            line-height: 1.4;
-        }
-
-        .guide-content p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .guide-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .guide-steps {
-            color: var(--text-light);
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .guide-read-more {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s;
-        }
-
-        .guide-read-more:hover {
-            gap: 0.75rem;
-        }
-
-        /* Quick Access */
-        .quick-access-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .quick-access-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .quick-access-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
-        }
-
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin-bottom: 1.25rem;
-            font-size: 1.5rem;
-        }
-
+        .feature-content h3 { font-size: 1.1rem; margin-bottom: 0.25rem; color: var(--text); }
+        .feature-content p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
+        .section-header { margin: 3rem 0 2rem; }
+        .section-header h2 { font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.75rem; }
+        .section-header p { color: var(--text-light); font-size: 1.1rem; }
+        .guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem; }
+        .guide-card { background: var(--card-bg); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid var(--border); display: flex; flex-direction: column; cursor: pointer; }
+        .guide-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--primary-light); }
+        .guide-image { height: 140px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); position: relative; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; }
+        .guide-category { position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.4); backdrop-filter: blur(5px); padding: 0.25rem 1rem; border-radius: 30px; font-size: 0.75rem; font-weight: 600; color: white; }
+        .guide-content { padding: 1.5rem; flex: 1; }
+        .guide-content h3 { font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text); line-height: 1.4; }
+        .guide-content p { color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem; }
+        .guide-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .guide-steps { color: var(--text-light); font-size: 0.8rem; display: flex; align-items: center; gap: 0.35rem; }
+        .guide-read-more { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
+        .guide-read-more:hover { gap: 0.75rem; }
+        .quick-access-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 2rem 0; }
+        .quick-access-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-decoration: none; color: var(--text); transition: all 0.3s ease; box-shadow: var(--shadow-sm); }
+        .quick-access-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .card-icon { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 1.25rem; font-size: 1.5rem; }
         .icon-sassa { background: linear-gradient(135deg, #059669, #10b981); }
         .icon-money { background: linear-gradient(135deg, #d97706, #f59e0b); }
         .icon-cv { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
         .icon-jobs { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
-        .icon-nsfas { background: linear-gradient(135deg, #ec4899, #db2777); }
-        .icon-appeal { background: linear-gradient(135deg, #ef4444, #dc2626); }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.7rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .mt-4 {
-            margin-top: 2rem;
-        }
-
-        /* Footer */
-        .footer {
-            background: #1f2937;
-            color: white;
-            padding: 3rem 0 2rem;
-            margin-top: 3rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: #9ca3af;
-            text-decoration: none;
-            transition: color 0.2s;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-contact {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-contact li {
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: #9ca3af;
-        }
-
-        .footer-contact i {
-            width: 20px;
-            color: var(--primary-light);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #374151;
-        }
-
-        .footer-bottom p {
-            color: #9ca3af;
-            font-size: 0.85rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .nav-menu {
-                justify-content: center;
-                gap: 0.75rem;
-            }
-            .nav-link {
-                font-size: 0.85rem;
-            }
-            .welcome-features {
-                grid-template-columns: 1fr;
-            }
-            .guides-grid {
-                grid-template-columns: 1fr;
-            }
-            .quick-access-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .welcome-header h1 {
-                font-size: 1.8rem;
-            }
-            .section-header h2 {
-                font-size: 1.6rem;
-            }
-        }
-        
-        /* Notice */
-        .info-note {
-            background: #fef9e3;
-            border-left: 4px solid var(--accent);
-            padding: 0.75rem 1rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            color: #92400e;
-        }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.5rem; border: none; border-radius: 8px; font-weight: 500; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
+        .text-center { text-align: center; }
+        .mt-4 { margin-top: 2rem; }
+        .footer { background: #1f2937; color: white; padding: 3rem 0 2rem; margin-top: 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 2rem; margin-bottom: 2rem; }
+        .footer-section h4 { color: white; margin-bottom: 1rem; font-size: 1rem; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #9ca3af; text-decoration: none; transition: color 0.2s; font-size: 0.9rem; }
+        .footer-links a:hover { color: white; }
+        .footer-contact { list-style: none; padding: 0; }
+        .footer-contact li { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #9ca3af; }
+        .footer-contact i { width: 20px; color: var(--primary-light); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #374151; }
+        .footer-bottom p { color: #9ca3af; font-size: 0.85rem; }
+        .info-note { background: #fef9e3; border-left: 4px solid var(--accent); padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 8px; font-size: 0.8rem; color: #92400e; }
+        .ad-container { margin: 1.5rem 0; min-height: 90px; background: transparent; border-radius: 8px; overflow: hidden; }
+        @media (max-width: 768px) { .header-container { flex-direction: column; gap: 1rem; } .nav-menu { justify-content: center; gap: 0.75rem; } .nav-link { font-size: 0.85rem; } .welcome-features { grid-template-columns: 1fr; } .guides-grid { grid-template-columns: 1fr; } .quick-access-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; } .ad-container { min-height: 50px; } }
+        @media (max-width: 480px) { .welcome-header h1 { font-size: 1.8rem; } .section-header h2 { font-size: 1.6rem; } }
     </style>
-    
 </head>
 <body>
-    <!-- Header - Updated with Trending, Sports, Weather -->
+    <!-- Header -->
     <header class="header">
         <div class="container header-container">
             <a href="/" class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-map-marked-alt"></i>
-                </div>
+                <div class="logo-icon"><i class="fas fa-map-marked-alt"></i></div>
                 <span>SA Daily Portal <span style="background: var(--accent); color: white; padding: 0.2rem 0.5rem; border-radius: 30px; font-size: 0.8rem; margin-left: 0.5rem;">2026</span></span>
             </a>
-            
             <nav class="nav-menu">
-                <a href="/" class="nav-link active">
-                    <i class="fas fa-home"></i> Home
-                </a>
-                <a href="/sassa" class="nav-link">
-                    <i class="fas fa-hand-holding-heart"></i> SASSA
-                </a>
-                <a href="/howto" class="nav-link">
-                    <i class="fas fa-book-open"></i> Guides
-                </a>
-                <a href="/trending" class="nav-link">
-                    <i class="fas fa-chart-line"></i> Trending <span class="trending-badge">LIVE</span>
-                </a>
-            
-                <a href="/weather" class="nav-link">
-                    <i class="fas fa-cloud-sun"></i> Weather
-                </a>
-                <a href="/about" class="nav-link">
-                    <i class="fas fa-info-circle"></i> About
-                </a>
-                <a href="/contact" class="nav-link">
-                    <i class="fas fa-envelope"></i> Contact
-                </a>
+                <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="/sassa" class="nav-link"><i class="fas fa-hand-holding-heart"></i> SASSA</a>
+                <a href="/howto" class="nav-link active"><i class="fas fa-book-open"></i> Guides</a>
+                <a href="/about" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
+                <a href="/contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Welcome Section - Updated with new categories -->
+        <!-- Welcome Section -->
         <section class="welcome-section">
             <div class="welcome-header">
                 <h1>Welcome to SA Daily Portal 2026</h1>
                 <p>Your complete guide to navigating daily life in South Africa. Browse our library of practical how-to guides for SASSA grants, jobs, online money, and stay updated with trending news, sports, and weather.</p>
-                
                 <div class="welcome-features">
                     <div class="feature-item">
-                        <div class="feature-icon sassa">
-                            <i class="fas fa-hand-holding-heart"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>SASSA Guides</h3>
-                            <p>Status checks, SRD applications, appeals & banking details</p>
-                        </div>
+                        <div class="feature-icon sassa"><i class="fas fa-hand-holding-heart"></i></div>
+                        <div class="feature-content"><h3>SASSA Guides</h3><p>Status checks, SRD applications, appeals & banking details</p></div>
                     </div>
-                    
                     <div class="feature-item">
-                        <div class="feature-icon money">
-                            <i class="fas fa-coins"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>Make Money Online</h3>
-                            <p>Legit ways to earn from your phone or computer</p>
-                        </div>
+                        <div class="feature-icon money"><i class="fas fa-coins"></i></div>
+                        <div class="feature-content"><h3>Make Money Online</h3><p>Legit ways to earn from your phone or computer</p></div>
                     </div>
-                    
                     <div class="feature-item">
-                        <div class="feature-icon jobs">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>Jobs & Career</h3>
-                            <p>CV writing, job websites, interview tips</p>
-                        </div>
+                        <div class="feature-icon jobs"><i class="fas fa-briefcase"></i></div>
+                        <div class="feature-content"><h3>Jobs & Career</h3><p>CV writing, job websites, interview tips</p></div>
                     </div>
-                    
                     <div class="feature-item">
-                        <div class="feature-icon education">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>Education</h3>
-                            <p>NSFAS funding, bursaries, study tips</p>
-                        </div>
+                        <div class="feature-icon education"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="feature-content"><h3>Education</h3><p>NSFAS funding, bursaries, study tips</p></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- HilltopAds Script 1 -->
-        <script>
-        (function(rltq){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = rltq || {};
-        s.src = "\/\/conventionalresponse.com\/btXAVks.dTGnl_0iYcWZcu\/Oegmj9guxZwUTlDk\/PUTdYM5WNyTScF1\/MvTjM\/t_N\/j\/kv1HNYzXU\/xaNbwm";
-        s.async = true;
-        s.referrerPolicy = 'no-referrer-when-downgrade';
-        l.parentNode.insertBefore(s, l);
-        })({})
-        </script>
+        <!-- Ad: Multi-tag banner - after welcome, before info note -->
+        <div class="ad-container">
+            <script>
+            (function(weyi){
+            var d = document,
+                s = d.createElement('script'),
+                l = d.scripts[d.scripts.length - 1];
+            s.settings = weyi || {};
+            s.src = "\/\/conventionalresponse.com\/bLX.VHskdOGVlW0\/YuWXcA\/mermQ9LudZSUIl\/kLPOTUYE5sNMTUcS1MMTz\/cAt_NtjAk\/1QN\/zyUN0\/M\/QB";
+            s.async = true;
+            s.referrerPolicy = 'no-referrer-when-downgrade';
+            l.parentNode.insertBefore(s, l);
+            })({})
+            </script>
+        </div>
 
         <!-- Info Notice -->
         <div class="info-note">
@@ -680,19 +202,13 @@
         <!-- Guides Section -->
         <section>
             <div class="section-header">
-                <h2>
-                    <i class="fas fa-book-open" style="color: var(--primary);"></i> 
-                    Popular How-To Guides
-                </h2>
+                <h2><i class="fas fa-book-open" style="color: var(--primary);"></i> Popular How-To Guides</h2>
                 <p>Step-by-step tutorials for South Africans — updated for 2026</p>
             </div>
-            
             <div class="guides-grid">
-                <!-- SASSA Status Check -->
                 <div class="guide-card" onclick="window.location.href='/guides/sassa-status-check.html'">
                     <div class="guide-image" style="background: linear-gradient(135deg, #059669, #10b981);">
-                        <span class="guide-category">SASSA</span>
-                        <i class="fas fa-hand-holding-heart"></i>
+                        <span class="guide-category">SASSA</span><i class="fas fa-hand-holding-heart"></i>
                     </div>
                     <div class="guide-content">
                         <h3>How to Check SASSA Status Online</h3>
@@ -703,12 +219,9 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- SASSA SRD Application -->
                 <div class="guide-card" onclick="window.location.href='/guides/sassa-srd-application.html'">
                     <div class="guide-image" style="background: linear-gradient(135deg, #10b981, #059669);">
-                        <span class="guide-category">SASSA</span>
-                        <i class="fas fa-file-alt"></i>
+                        <span class="guide-category">SASSA</span><i class="fas fa-file-alt"></i>
                     </div>
                     <div class="guide-content">
                         <h3>SASSA SRD Grant Application 2026</h3>
@@ -719,12 +232,9 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Make Money Online -->
                 <div class="guide-card" onclick="window.location.href='/guides/make-money-online-sa.html'">
                     <div class="guide-image" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
-                        <span class="guide-category">Finance</span>
-                        <i class="fas fa-coins"></i>
+                        <span class="guide-category">Finance</span><i class="fas fa-coins"></i>
                     </div>
                     <div class="guide-content">
                         <h3>Make Money Online in SA</h3>
@@ -735,12 +245,9 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- How to Write a CV -->
                 <div class="guide-card" onclick="window.location.href='/guides/how-to-write-cv-sa.html'">
                     <div class="guide-image" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
-                        <span class="guide-category">Career</span>
-                        <i class="fas fa-file-alt"></i>
+                        <span class="guide-category">Career</span><i class="fas fa-file-alt"></i>
                     </div>
                     <div class="guide-content">
                         <h3>How to Write a CV (No Experience)</h3>
@@ -751,12 +258,9 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Best Job Websites -->
                 <div class="guide-card" onclick="window.location.href='/guides/best-job-websites-sa.html'">
                     <div class="guide-image" style="background: linear-gradient(135deg, var(--primary), var(--primary-light));">
-                        <span class="guide-category">Career</span>
-                        <i class="fas fa-briefcase"></i>
+                        <span class="guide-category">Career</span><i class="fas fa-briefcase"></i>
                     </div>
                     <div class="guide-content">
                         <h3>Best Job Websites in SA</h3>
@@ -767,13 +271,9 @@
                         </div>
                     </div>
                 </div>
-                
-
-                <!-- SASSA Appeal -->
                 <div class="guide-card" onclick="window.location.href='/guides/sassa-appeal-process.html'">
                     <div class="guide-image" style="background: linear-gradient(135deg, #dc2626, #ef4444);">
-                        <span class="guide-category">SASSA</span>
-                        <i class="fas fa-gavel"></i>
+                        <span class="guide-category">SASSA</span><i class="fas fa-gavel"></i>
                     </div>
                     <div class="guide-content">
                         <h3>How to Appeal SASSA Rejection</h3>
@@ -785,68 +285,52 @@
                     </div>
                 </div>
             </div>
-
             <div class="text-center mt-4">
-                <a href="/howto" class="btn btn-primary">
-                    <i class="fas fa-book-open"></i> Browse All 12+ Guides
-                </a>
+                <a href="/howto" class="btn btn-primary"><i class="fas fa-book-open"></i> Browse All 12+ Guides</a>
             </div>
         </section>
 
-        <!-- Quick Access Section - Updated with new links -->
+        <!-- Quick Access Section -->
         <section>
-            <div class="section-header">
-                <h2>
-                    <i class="fas fa-bolt"></i> Quick Access
-                </h2>
-            </div>
+            <div class="section-header"><h2><i class="fas fa-bolt"></i> Quick Access</h2></div>
             <div class="quick-access-grid">
                 <a href="/guides/sassa-status-check.html" class="quick-access-card">
-                    <div class="card-icon icon-sassa">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
+                    <div class="card-icon icon-sassa"><i class="fas fa-hand-holding-heart"></i></div>
                     <h3 style="margin: 0 0 0.5rem;">SASSA Status Check</h3>
                     <p style="color: var(--text-light); font-size: 0.9rem;">Check your grant status online</p>
                 </a>
-                
                 <a href="/guides/sassa-srd-application.html" class="quick-access-card">
-                    <div class="card-icon icon-sassa">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
+                    <div class="card-icon icon-sassa"><i class="fas fa-file-alt"></i></div>
                     <h3 style="margin: 0 0 0.5rem;">SRD Application</h3>
                     <p style="color: var(--text-light); font-size: 0.9rem;">Apply for R370 grant</p>
                 </a>
-                
                 <a href="/guides/make-money-online-sa.html" class="quick-access-card">
-                    <div class="card-icon icon-money">
-                        <i class="fas fa-coins"></i>
-                    </div>
+                    <div class="card-icon icon-money"><i class="fas fa-coins"></i></div>
                     <h3 style="margin: 0 0 0.5rem;">Make Money Online</h3>
                     <p style="color: var(--text-light); font-size: 0.9rem;">14 legit ways to earn</p>
                 </a>
-                
                 <a href="/guides/how-to-write-cv-sa.html" class="quick-access-card">
-                    <div class="card-icon icon-cv">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
+                    <div class="card-icon icon-cv"><i class="fas fa-file-alt"></i></div>
                     <h3 style="margin: 0 0 0.5rem;">CV Writing Guide</h3>
                     <p style="color: var(--text-light); font-size: 0.9rem;">Professional CV templates</p>
                 </a>
             </div>
-            
-            <!-- HilltopAds Script 2 -->
-            <script>
-            (function(rltq){
-            var d = document,
-                s = d.createElement('script'),
-                l = d.scripts[d.scripts.length - 1];
-            s.settings = rltq || {};
-            s.src = "\/\/conventionalresponse.com\/btXAVks.dTGnl_0iYcWZcu\/Oegmj9guxZwUTlDk\/PUTdYM5WNyTScF1\/MvTjM\/t_N\/j\/kv1HNYzXU\/xaNbwm";
-            s.async = true;
-            s.referrerPolicy = 'no-referrer-when-downgrade';
-            l.parentNode.insertBefore(s, l);
-            })({})
-            </script>
+
+            <!-- Ad: In-page tag - after quick access, before footer -->
+            <div class="ad-container" style="margin-top: 2rem;">
+                <script>
+                (function(weyi){
+                var d = document,
+                    s = d.createElement('script'),
+                    l = d.scripts[d.scripts.length - 1];
+                s.settings = weyi || {};
+                s.src = "\/\/conventionalresponse.com\/bFX\/Vws.dPGFlP0LYaWVct\/je_ml9FuiZsUSl\/kvPZTxYB5bNAT\/ck1zMdT\/MFtZNej\/kl1-NFzwU\/xNNZwk";
+                s.async = true;
+                s.referrerPolicy = 'no-referrer-when-downgrade';
+                l.parentNode.insertBefore(s, l);
+                })({})
+                </script>
+            </div>
         </section>
     </main>
 
@@ -858,7 +342,6 @@
                     <h4>SA Daily Portal 2026</h4>
                     <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African how-to guides — helping South Africans navigate SASSA, jobs, online money, and daily life.</p>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
@@ -872,7 +355,6 @@
                         <li><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Legal</h4>
                     <ul class="footer-links">
@@ -881,7 +363,6 @@
                         <li><a href="/disclaimer">Disclaimer</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <ul class="footer-contact">
@@ -892,7 +373,6 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <p style="color: #f59e0b; font-weight: 600; margin-bottom: 0.5rem; font-size: 1rem;">
                     <i class="fas fa-exclamation-triangle"></i> ALWAYS VERIFY with official sources before acting on any information.

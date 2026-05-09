@@ -21,10 +21,27 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Contact SA Daily Portal Developer">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<meta name="044409dba0e425c305331af675d988ff9c8b286b" content="044409dba0e425c305331af675d988ff9c8b286b" />
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Font Awesome - deferred -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all';this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    
+    <!-- Google Fonts - optimized -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <meta name="044409dba0e425c305331af675d988ff9c8b286b" content="044409dba0e425c305331af675d988ff9c8b286b" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z2ZSZKQ5F7');
+    </script>
     
     <style>
         :root {
@@ -41,7 +58,7 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--background);
             color: var(--text);
             margin: 0;
@@ -237,7 +254,7 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             font-size: 1rem;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             transition: border-color 0.3s;
         }
         
@@ -351,6 +368,14 @@
             color: white;
         }
         
+        .ad-container {
+            margin: 1.5rem 0;
+            min-height: 90px;
+            background: transparent;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -365,11 +390,12 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .ad-container {
+                min-height: 50px;
+            }
         }
     </style>
-
-
-
 </head>
 <body>
     <header class="header">
@@ -381,8 +407,8 @@
                 <span>SA Daily Portal <span class="badge-2026">2026</span></span>
             </a>
             
-               <nav class="nav-menu">
-                <a href="/" class="nav-link active">
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">
                     <i class="fas fa-home"></i> Home
                 </a>
                 <a href="/sassa" class="nav-link">
@@ -394,8 +420,6 @@
                 <a href="/about" class="nav-link">
                     <i class="fas fa-info-circle"></i> About
                 </a>
-
-                
                 <a href="/contact" class="nav-link">
                     <i class="fas fa-envelope"></i> Contact
                 </a>
@@ -404,21 +428,25 @@
     </header>
     
     <main class="container">
-        <script>
-(function(rltq){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = rltq || {};
-s.src = "\/\/conventionalresponse.com\/btXAVks.dTGnl_0iYcWZcu\/Oegmj9guxZwUTlDk\/PUTdYM5WNyTScF1\/MvTjM\/t_N\/j\/kv1HNYzXU\/xaNbwm";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
         <div class="contact-hero">
             <h1><i class="fas fa-paper-plane"></i> Contact Developer</h1>
             <p>Have questions, suggestions, or feedback? I'd love to hear from you! Get in touch with the developer of SA Daily Portal 2026.</p>
+        </div>
+
+        <!-- Ad: Multi-tag banner - placed between hero and contact form for good visibility -->
+        <div class="ad-container">
+            <script>
+            (function(weyi){
+            var d = document,
+                s = d.createElement('script'),
+                l = d.scripts[d.scripts.length - 1];
+            s.settings = weyi || {};
+            s.src = "\/\/conventionalresponse.com\/bLX.VHskdOGVlW0\/YuWXcA\/mermQ9LudZSUIl\/kLPOTUYE5sNMTUcS1MMTz\/cAt_NtjAk\/1QN\/zyUN0\/M\/QB";
+            s.async = true;
+            s.referrerPolicy = 'no-referrer-when-downgrade';
+            l.parentNode.insertBefore(s, l);
+            })({})
+            </script>
         </div>
         
         <div class="contact-grid">
@@ -431,7 +459,7 @@ l.parentNode.insertBefore(s, l);
                     </div>
                     <div class="info-content">
                         <h3>Name</h3>
-                        <p>Nompumelelo</p>
+                        <p>Nompumelelo Sibiya</p>
                     </div>
                 </div>
                 
@@ -441,7 +469,7 @@ l.parentNode.insertBefore(s, l);
                     </div>
                     <div class="info-content">
                         <h3>Location</h3>
-                        <p> Mpumalanga, South Africa</p>
+                        <p>Mpumalanga, South Africa</p>
                     </div>
                 </div>
                 
@@ -485,7 +513,8 @@ l.parentNode.insertBefore(s, l);
                     </div>
                 </div>
             </div>
-            
+          
+        </div>
         
         <div class="faq-preview">
             <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
@@ -519,19 +548,23 @@ l.parentNode.insertBefore(s, l);
                     No, SA Daily Portal is completely free. I don't charge for information or assistance. If you need help with the website, feel free to reach out.
                 </div>
             </div>
-            
-          <script>
-(function(onjy){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = onjy || {};
-s.src = "\/\/conventionalresponse.com\/bmX.V\/ssdqGRla0JYuWEcZ\/se\/mk9\/uQZVU_lzk-PwTOYk5MNvTQcF1\/MAzucCtaNUjGkX1PNAztU\/0bMnQm";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
+        </div>
+
+        <!-- Ad: In-page tag - placed after FAQ section, before footer -->
+        <div class="ad-container" style="margin-top: 2rem;">
+            <script>
+            (function(weyi){
+            var d = document,
+                s = d.createElement('script'),
+                l = d.scripts[d.scripts.length - 1];
+            s.settings = weyi || {};
+            s.src = "\/\/conventionalresponse.com\/bFX\/Vws.dPGFlP0LYaWVct\/je_ml9FuiZsUSl\/kvPZTxYB5bNAT\/ck1zMdT\/MFtZNej\/kl1-NFzwU\/xNNZwk";
+            s.async = true;
+            s.referrerPolicy = 'no-referrer-when-downgrade';
+            l.parentNode.insertBefore(s, l);
+            })({})
+            </script>
+        </div>
     </main>
     
     <!-- Footer - Original Design -->
@@ -579,12 +612,30 @@ l.parentNode.insertBefore(s, l);
                 <i class="fas fa-exclamation-triangle"></i> ALWAYS VERIFY with official sources before acting on any information.
             </p>
             <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal not affiliated with any government department.</p>
-           <p style="font-size: 0.7rem; color: #6b7280; margin-top: 0.5rem;">
+            <p style="font-size: 0.7rem; color: #6b7280; margin-top: 0.5rem;">
     <i class="fas fa-chart-line"></i> This site uses cookies and third-party ads to improve your experience.
 </p>
         </div>
     </div>
 </footer>
+
+<!-- Footer Styles -->
+<style>
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 2rem; margin-bottom: 2rem; }
+    .footer-section h4 { color: white; margin-bottom: 1rem; font-size: 1rem; }
+    .footer-links { list-style: none; padding: 0; }
+    .footer-links li { margin-bottom: 0.5rem; }
+    .footer-links a { color: #9ca3af; text-decoration: none; font-size: 0.9rem; }
+    .footer-links a:hover { color: white; }
+    .footer-contact { list-style: none; padding: 0; }
+    .footer-contact li { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #9ca3af; }
+    .footer-contact i { width: 20px; color: #3b82f6; }
+    .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #374151; }
+    .footer-bottom p { color: #9ca3af; font-size: 0.85rem; }
+    @media (max-width: 768px) { 
+        .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; } 
+    }
+</style>
     
     <script>
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
@@ -593,7 +644,6 @@ l.parentNode.insertBefore(s, l);
             const submitBtn = document.getElementById('submitBtn');
             const alertDiv = document.getElementById('alertMessage');
             
-            // Disable button and show loading
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             
@@ -622,7 +672,6 @@ l.parentNode.insertBefore(s, l);
                     
                     document.getElementById('contactForm').reset();
                     
-                    // Hide alert after 5 seconds
                     setTimeout(() => {
                         alertDiv.style.display = 'none';
                     }, 5000);
@@ -634,7 +683,6 @@ l.parentNode.insertBefore(s, l);
                 alertDiv.className = 'alert alert-error';
                 alertDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + error.message + ' Please try again or email directly.';
             } finally {
-                // Re-enable button
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
             }
