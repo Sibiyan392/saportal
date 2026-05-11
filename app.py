@@ -736,6 +736,10 @@ def weather():
                          page_title='South African Weather 2026 - Live Forecasts',
                          page_description='Real-time weather forecasts for South African cities. Hourly updates, 5-day forecast, and weather alerts.')
 
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('.', 'sitemap.xml')
+
 @app.route('/sassa')
 def sassa():
     """SASSA page"""
@@ -1304,9 +1308,7 @@ def api_status():
     })
 
 
-    @app.route('/sitemap.xml')
-def sitemap():
-    return send_from_directory('.', 'sitemap.xml')
+    
 
 # =========== ERROR HANDLERS ===========
 
