@@ -1303,6 +1303,11 @@ def api_status():
         'last_updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     })
 
+
+    @app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('.', 'sitemap.xml')
+
 # =========== ERROR HANDLERS ===========
 
 @app.errorhandler(404)
