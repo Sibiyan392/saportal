@@ -968,6 +968,16 @@ def article(article_name):
         logger.error(f"Article error: {str(e)}")
         abort(404)
 
+        @app.route("/robots.txt")
+def robots_txt():
+    return render_template("robots.txt")
+
+@app.route("/sitemap.xml")
+def sitemap_xml():
+    response = make_response(render_template("sitemap.xml"))
+    response.headers['Content-Type'] = 'application/xml'
+    return response
+
 # =========== NEW ROUTE TO SERVE GUIDES DIRECTLY ===========
 @app.route('/guides/<path:filename>')
 def serve_guide(filename):
