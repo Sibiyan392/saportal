@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disclaimer - Unofficial Information Portal | SA Daily Portal 2026</title>
-    <meta name="description" content="Important legal disclaimer: SA Daily Portal is an UNOFFICIAL information website. We are not affiliated with SASSA, NSFAS, or any South African government department. Read our full disclaimer.">
-    <meta name="keywords" content="SASSA disclaimer, unofficial website, legal disclaimer, information purposes only, not affiliated with SASSA, SA Daily Portal terms">
+    <title>SA Daily Portal 2026 - Practical How-To Guides for South Africans</title>
+    <meta name="description" content="Practical step-by-step guides for SASSA grants, making money online, CV writing, job applications, NSFAS funding, and daily life in South Africa. Free guides updated for 2026.">
+    <meta name="keywords" content="SASSA status check, SRD grant application, make money online South Africa, how to write a CV, best job websites, NSFAS application, SASSA appeal, South Africa guides 2026, trending news SA">
+    <meta name="author" content="SA Daily Portal">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
-    <link rel="canonical" href="https://saportal.site/disclaimer">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="1 day">
+    <meta name="geo.region" content="ZA">
+    <meta name="geo.placename" content="South Africa">
+    <link rel="canonical" href="https://saportal.site/">
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="Disclaimer - Unofficial Information Portal">
-    <meta property="og:description" content="SA Daily Portal is an unofficial information website. Always verify with official sources.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SA Daily Portal 2026 - Practical How-To Guides for South Africans">
+    <meta property="og:description" content="Free step-by-step guides for SASSA, jobs, and making money online. Updated for 2026 with trending news and practical tips.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://saportal.site/disclaimer">
+    <meta property="og:url" content="https://saportal.site/">
+    <meta property="og:image" content="https://saportal.site/images/og-image.jpg">
+    <meta property="og:site_name" content="SA Daily Portal">
     
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Disclaimer - SA Daily Portal">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SA Daily Portal 2026 - Practical How-To Guides">
+    <meta name="twitter:description" content="Free guides for SASSA, jobs, and making money online in South Africa.">
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -32,8 +40,11 @@
     <!-- Google Fonts - optimized -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-
+    
+    <!-- HilltopAds Verification -->
     <meta name="044409dba0e425c305331af675d988ff9c8b286b" content="044409dba0e425c305331af675d988ff9c8b286b" />
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2ZSZKQ5F7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -45,43 +56,135 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #1e3a8a;
-            --primary-light: #3b82f6;
-            --accent: #d97706;
-            --background: #f9fafb;
-            --card-bg: #ffffff;
-            --text: #1f2937;
-            --border: #e5e7eb;
+            --primary: #1e3a8a; --primary-light: #3b82f6; --secondary: #059669; --accent: #d97706;
+            --danger: #dc2626; --background: #f9fafb; --card-bg: #ffffff; --text: #1f2937;
+            --text-light: #6b7280; --border: #e5e7eb; --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1); --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius: 12px;
         }
-        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: var(--background); color: var(--text); line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
-        .header { background: var(--card-bg); box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
-        .header-container { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: var(--background); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; width: 100%; }
+        .header { background: var(--card-bg); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
+        .header-container { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; flex-wrap: wrap; }
         .logo { display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; }
-        .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; }
-        .nav-menu { display: flex; gap: 2rem; }
-        .nav-link { color: var(--text); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+        .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; }
+        .nav-menu { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .nav-link { color: var(--text); text-decoration: none; font-weight: 500; padding: 0.5rem 0; position: relative; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; font-size: 0.95rem; }
         .nav-link:hover, .nav-link.active { color: var(--primary); }
-        .disclaimer-card { background: var(--card-bg); border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid var(--border); }
-        .disclaimer-card h1 { color: #dc2626; font-size: 2.5rem; margin: 0 0 0.5rem 0; }
-        .last-updated { color: #6b7280; font-size: 0.9rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
-        .disclaimer-card h2 { font-size: 1.8rem; margin: 2rem 0 1rem 0; }
-        .disclaimer-card h3 { color: var(--primary); font-size: 1.3rem; margin: 1.5rem 0 0.75rem 0; }
-        .disclaimer-card p, .disclaimer-card ul { margin-bottom: 1rem; }
-        .disclaimer-card ul { padding-left: 1.5rem; }
-        .warning-box { background: #fef3c7; border: 2px solid var(--accent); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
-        .official-channels { background: #f0f9ff; border-left: 4px solid var(--primary); padding: 1.5rem; border-radius: 8px; margin: 2rem 0; }
-        .footer { background: #1f2937; color: white; padding: 2rem 0; margin-top: 3rem; text-align: center; }
-        .footer a { color: #9ca3af; text-decoration: none; }
-        .footer a:hover { color: white; }
+        .nav-link.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--primary); }
+        .trending-badge { background: var(--danger); color: white; font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 30px; margin-left: 0.25rem; }
+        .welcome-section { background: linear-gradient(135deg, #f0f9ff, #ffffff); border-radius: var(--radius); padding: 2.5rem; margin: 2rem 0; border: 1px solid rgba(37, 99, 235, 0.1); box-shadow: var(--shadow-md); }
+        .welcome-header h1 { font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+        .welcome-header p { color: var(--text); font-size: 1.1rem; margin-bottom: 2rem; max-width: 800px; }
+        .welcome-features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        .feature-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--border); transition: transform 0.3s ease; }
+        .feature-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--primary-light); }
+        .feature-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.25rem; flex-shrink: 0; }
+        .feature-icon.sassa { background: linear-gradient(135deg, #059669, #10b981); }
+        .feature-icon.money { background: linear-gradient(135deg, #d97706, #f59e0b); }
+        .feature-icon.jobs { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
+        .feature-icon.education { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .feature-content h3 { font-size: 1.1rem; margin-bottom: 0.25rem; color: var(--text); }
+        .feature-content p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
+        .section-header { margin: 3rem 0 2rem; }
+        .section-header h2 { font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.75rem; }
+        .section-header p { color: var(--text-light); font-size: 1.1rem; }
+        .guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem; }
+        .guide-card { background: var(--card-bg); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid var(--border); display: flex; flex-direction: column; cursor: pointer; }
+        .guide-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--primary-light); }
+        .guide-image { height: 140px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); position: relative; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; }
+        .guide-category { position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.4); backdrop-filter: blur(5px); padding: 0.25rem 1rem; border-radius: 30px; font-size: 0.75rem; font-weight: 600; color: white; }
+        .guide-content { padding: 1.5rem; flex: 1; }
+        .guide-content h3 { font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text); line-height: 1.4; }
+        .guide-content p { color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem; }
+        .guide-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .guide-steps { color: var(--text-light); font-size: 0.8rem; display: flex; align-items: center; gap: 0.35rem; }
+        .guide-read-more { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
+        .guide-read-more:hover { gap: 0.75rem; }
+        .quick-access-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 2rem 0; }
+        .quick-access-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-decoration: none; color: var(--text); transition: all 0.3s ease; box-shadow: var(--shadow-sm); }
+        .quick-access-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .card-icon { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 1.25rem; font-size: 1.5rem; }
+        .icon-sassa { background: linear-gradient(135deg, #059669, #10b981); }
+        .icon-money { background: linear-gradient(135deg, #d97706, #f59e0b); }
+        .icon-cv { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .icon-jobs { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.5rem; border: none; border-radius: 8px; font-weight: 500; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
+        .text-center { text-align: center; }
+        .mt-4 { margin-top: 2rem; }
+        .footer { background: #1f2937; color: white; padding: 3rem 0 2rem; margin-top: 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 2rem; margin-bottom: 2rem; }
+        .footer-section h4 { color: white; margin-bottom: 1rem; font-size: 1rem; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #9ca3af; text-decoration: none; transition: color 0.2s; font-size: 0.9rem; }
+        .footer-links a:hover { color: white; }
+        .footer-contact { list-style: none; padding: 0; }
+        .footer-contact li { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #9ca3af; }
+        .footer-contact i { width: 20px; color: var(--primary-light); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #374151; }
+        .footer-bottom p { color: #9ca3af; font-size: 0.85rem; }
+        .info-note { background: #fef9e3; border-left: 4px solid var(--accent); padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 8px; font-size: 0.8rem; color: #92400e; }
         .ad-container { margin: 1.5rem 0; min-height: 90px; background: transparent; border-radius: 8px; overflow: hidden; }
-        @media (max-width: 768px) { .header-container { flex-direction: column; gap: 1rem; } .nav-menu { flex-wrap: wrap; justify-content: center; gap: 1rem; } .disclaimer-card { padding: 1.5rem; } .disclaimer-card h1 { font-size: 2rem; } .ad-container { min-height: 50px; } }
+        
+        /* Risk and Consent Banner - New Section */
+        .risk-consent-banner {
+            background: #fff0f0;
+            border-left: 5px solid #dc2626;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+        .risk-consent-banner p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .risk-title {
+            font-weight: 800;
+            color: #b91c1c;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .consent-highlight {
+            background: #1e293b;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        @media (max-width: 768px) { 
+            .header-container { flex-direction: column; gap: 1rem; } 
+            .nav-menu { justify-content: center; gap: 0.75rem; } 
+            .nav-link { font-size: 0.85rem; } 
+            .welcome-features { grid-template-columns: 1fr; } 
+            .guides-grid { grid-template-columns: 1fr; } 
+            .quick-access-grid { grid-template-columns: 1fr; } 
+            .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; } 
+            .ad-container { min-height: 50px; }
+            .risk-consent-banner { padding: 1rem; }
+        }
+        @media (max-width: 480px) { .welcome-header h1 { font-size: 1.8rem; } .section-header h2 { font-size: 1.6rem; } }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
-        <div class="header-container">
-            <a href="/" class="logo"><div class="logo-icon"><i class="fas fa-map-marked-alt"></i></div><span>SA Daily Portal <span style="background: var(--accent); color: white; padding: 0.2rem 0.5rem; border-radius: 30px; font-size: 0.8rem;">2026</span></span></a>
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <div class="logo-icon"><i class="fas fa-map-marked-alt"></i></div>
+                <span>SA Daily Portal <span style="background: var(--accent); color: white; padding: 0.2rem 0.5rem; border-radius: 30px; font-size: 0.8rem; margin-left: 0.5rem;">2026</span></span>
+            </a>
             <nav class="nav-menu">
                 <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
                 <a href="/sassa" class="nav-link"><i class="fas fa-hand-holding-heart"></i> SASSA</a>
@@ -91,128 +194,217 @@
             </nav>
         </div>
     </header>
-    
+
+    <!-- Main Content -->
     <main class="container">
-        <!-- Ad: Multi-tag banner - before disclaimer content -->
-        <div class="ad-container">
-            <script>
-            (function(weyi){
-            var d = document,
-                s = d.createElement('script'),
-                l = d.scripts[d.scripts.length - 1];
-            s.settings = weyi || {};
-            s.src = "\/\/conventionalresponse.com\/bLX.VHskdOGVlW0\/YuWXcA\/mermQ9LudZSUIl\/kLPOTUYE5sNMTUcS1MMTz\/cAt_NtjAk\/1QN\/zyUN0\/M\/QB";
-            s.async = true;
-            s.referrerPolicy = 'no-referrer-when-downgrade';
-            l.parentNode.insertBefore(s, l);
-            })({})
-            </script>
-        </div>
-
-        <div class="disclaimer-card">
-            <h1><i class="fas fa-exclamation-triangle"></i> Important Disclaimer</h1>
-            <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last Updated: March 2026</div>
-            
-            <div class="warning-box"><h3 style="color: #d97706;"><i class="fas fa-exclamation-circle"></i> CRITICAL NOTICE</h3><p><strong>SA Daily Portal is an UNOFFICIAL information website. We are NOT affiliated with SASSA, NSFAS, or any government department.</strong></p></div>
-            
-            <h2>1. Nature of Information</h2><p>All guides are for informational purposes only. We do not guarantee accuracy or completeness.</p>
-            <h2>2. Government Services Information</h2><p>SASSA and NSFAS information is based on public sources. Always verify with official channels.</p>
-            <h2>3. No Professional Advice</h2><p>Our guides do not constitute professional legal, financial, or career advice.</p>
-            <h2>4. Limitation of Liability</h2><p>We are not liable for any decisions made based on our information.</p>
-            
-            <div class="official-channels">
-                <h3><i class="fas fa-shield-alt"></i> Official Channels</h3>
-                <ul><li><strong>SASSA:</strong> 0800 60 10 11 | <a href="https://www.sassa.gov.za" target="_blank">www.sassa.gov.za</a></li><li><strong>NSFAS:</strong> <a href="https://www.nsfas.org.za" target="_blank">www.nsfas.org.za</a></li><li><strong>Department of Home Affairs:</strong> <a href="http://www.dha.gov.za" target="_blank">www.dha.gov.za</a></li></ul>
+        <!-- RISK & CONSENT BANNER (as requested) -->
+        <div class="risk-consent-banner">
+            <div class="risk-title">
+                <i class="fas fa-shield-alt"></i> 
+                <span>⚠️ FINANCIAL & THIRD-PARTY RISK WARNING</span>
             </div>
-            
-            <p><a href="/" style="color: var(--primary); text-decoration: none;">← Return to Home</a></p>
+            <p><strong>Any money spent on platforms, services, or products that you are directed to from this website is ENTIRELY AT YOUR OWN RISK.</strong> SA Daily Portal does not endorse, guarantee, or take responsibility for any transactions, investments, or payments made through external links or recommendations. Always conduct your own research before spending money online.</p>
+            <p><span class="consent-highlight"><i class="fas fa-gavel"></i> LEGAL CONSENT</span> <strong>By using this site, you automatically agree to our full Terms & Conditions and Privacy Policy.</strong> Continued use of SA Daily Portal constitutes your explicit acceptance of these legally binding terms. If you do not agree, please discontinue use immediately.</p>
+            <p style="font-size: 0.8rem; margin-top: 6px;"><i class="fas fa-external-link-alt"></i> See our <a href="/terms" style="color: #b91c1c; text-decoration: underline;">Terms & Conditions</a> and <a href="/privacy-policy" style="color: #b91c1c; text-decoration: underline;">Privacy Policy</a> for full details.</p>
         </div>
 
-        <!-- Ad: In-page tag - after content, before footer -->
-        <div class="ad-container" style="margin-top: 2rem;">
-            <script>
-            (function(weyi){
-            var d = document,
-                s = d.createElement('script'),
-                l = d.scripts[d.scripts.length - 1];
-            s.settings = weyi || {};
-            s.src = "\/\/conventionalresponse.com\/bFX\/Vws.dPGFlP0LYaWVct\/je_ml9FuiZsUSl\/kvPZTxYB5bNAT\/ck1zMdT\/MFtZNej\/kl1-NFzwU\/xNNZwk";
-            s.async = true;
-            s.referrerPolicy = 'no-referrer-when-downgrade';
-            l.parentNode.insertBefore(s, l);
-            })({})
-            </script>
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-header">
+                <h1>Welcome to SA Daily Portal 2026</h1>
+                <p>Your complete guide to navigating daily life in South Africa. Browse our library of practical how-to guides for SASSA grants, jobs, online money, and stay updated with trending news and practical tips.</p>
+                <div class="welcome-features">
+                    <div class="feature-item">
+                        <div class="feature-icon sassa"><i class="fas fa-hand-holding-heart"></i></div>
+                        <div class="feature-content"><h3>SASSA Guides</h3><p>Status checks, SRD applications, appeals & banking details</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon money"><i class="fas fa-coins"></i></div>
+                        <div class="feature-content"><h3>Make Money Online</h3><p>Legit ways to earn from your phone or computer</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon jobs"><i class="fas fa-briefcase"></i></div>
+                        <div class="feature-content"><h3>Jobs & Career</h3><p>CV writing, job websites, interview tips</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon education"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="feature-content"><h3>Education</h3><p>NSFAS funding, bursaries, study tips</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Notice -->
+        <div class="info-note">
+            <i class="fas fa-info-circle"></i> This site provides helpful information only. Always verify with official government sources. We use cookies to improve your experience.
         </div>
+
+        <!-- Guides Section -->
+        <section>
+            <div class="section-header">
+                <h2><i class="fas fa-book-open" style="color: var(--primary);"></i> Popular How-To Guides</h2>
+                <p>Step-by-step tutorials for South Africans — updated for 2026</p>
+            </div>
+            <div class="guides-grid">
+                <div class="guide-card" onclick="window.location.href='/guides/sassa-status-check.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #059669, #10b981);">
+                        <span class="guide-category">SASSA</span><i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Check SASSA Status Online</h3>
+                        <p>Check SRD, older persons, disability, and child support grant status quickly.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 6 steps</span>
+                            <a href="/guides/sassa-status-check.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-card" onclick="window.location.href='/guides/sassa-srd-application.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <span class="guide-category">SASSA</span><i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>SASSA SRD Grant Application 2026</h3>
+                        <p>Apply for the R370 grant online, via WhatsApp, and fix common application errors.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 8 steps</span>
+                            <a href="/guides/sassa-srd-application.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-card" onclick="window.location.href='/guides/make-money-online-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
+                        <span class="guide-category">Finance</span><i class="fas fa-coins"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Make Money Online in SA</h3>
+                        <p>14 legitimate ways to earn income online from South Africa — no investment needed.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 12 steps</span>
+                            <a href="/guides/make-money-online-sa.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-card" onclick="window.location.href='/guides/how-to-write-cv-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                        <span class="guide-category">Career</span><i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Write a CV (No Experience)</h3>
+                        <p>Create a professional CV that gets noticed — templates and examples included.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 8 steps</span>
+                            <a href="/guides/how-to-write-cv-sa.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-card" onclick="window.location.href='/guides/best-job-websites-sa.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, var(--primary), var(--primary-light));">
+                        <span class="guide-category">Career</span><i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Best Job Websites in SA</h3>
+                        <p>Top platforms to find real jobs — Indeed, Pnet, Career24, and government vacancies.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 5 steps</span>
+                            <a href="/guides/best-job-websites-sa.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-card" onclick="window.location.href='/guides/sassa-appeal-process.html'">
+                    <div class="guide-image" style="background: linear-gradient(135deg, #dc2626, #ef4444);">
+                        <span class="guide-category">SASSA</span><i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Appeal SASSA Rejection</h3>
+                        <p>Step-by-step guide to appeal rejected SRD or other grant applications.</p>
+                        <div class="guide-meta">
+                            <span class="guide-steps"><i class="fas fa-list"></i> 5 steps</span>
+                            <a href="/guides/sassa-appeal-process.html" class="guide-read-more">Read <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="/howto" class="btn btn-primary"><i class="fas fa-book-open"></i> Browse All 12+ Guides</a>
+            </div>
+        </section>
+
+        <!-- Quick Access Section -->
+        <section>
+            <div class="section-header"><h2><i class="fas fa-bolt"></i> Quick Access</h2></div>
+            <div class="quick-access-grid">
+                <a href="/guides/sassa-status-check.html" class="quick-access-card">
+                    <div class="card-icon icon-sassa"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3 style="margin: 0 0 0.5rem;">SASSA Status Check</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Check your grant status online</p>
+                </a>
+                <a href="/guides/sassa-srd-application.html" class="quick-access-card">
+                    <div class="card-icon icon-sassa"><i class="fas fa-file-alt"></i></div>
+                    <h3 style="margin: 0 0 0.5rem;">SRD Application</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Apply for R370 grant</p>
+                </a>
+                <a href="/guides/make-money-online-sa.html" class="quick-access-card">
+                    <div class="card-icon icon-money"><i class="fas fa-coins"></i></div>
+                    <h3 style="margin: 0 0 0.5rem;">Make Money Online</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">14 legit ways to earn</p>
+                </a>
+                <a href="/guides/how-to-write-cv-sa.html" class="quick-access-card">
+                    <div class="card-icon icon-cv"><i class="fas fa-file-alt"></i></div>
+                    <h3 style="margin: 0 0 0.5rem;">CV Writing Guide</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Professional CV templates</p>
+                </a>
+            </div>
+        </section>
     </main>
-    
-    <!-- Footer - Original Design -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h4>SA Daily Portal 2026</h4>
-                <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African how-to guides — helping South Africans navigate SASSA, jobs, online money, and daily life.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/howto">All Guides</a></li>
-                    <li><a href="/sassa">SASSA Center</a></li>
-                    <li><a href="/contact">Contact Us</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul class="footer-links">
-                    <li><a href="/privacy-policy">Privacy Policy</a></li>
-                    <li><a href="/terms">Terms of Service</a></li>
-                    <li><a href="/disclaimer">Disclaimer</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Contact Info</h4>
-                <ul class="footer-contact">
-                    <li><i class="fas fa-user"></i> Developer: Nompumelelo Sibiya</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Mpumalanga, South Africa</li>
-                    <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
-                    <li><i class="fas fa-phone"></i> +27 72 472 8166</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p style="color: #f59e0b; font-weight: 600; margin-bottom: 0.5rem; font-size: 1rem;">
-                <i class="fas fa-exclamation-triangle"></i> ALWAYS VERIFY with official sources before acting on any information.
-            </p>
-            <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal not affiliated with any government department.</p>
-            <p style="font-size: 0.7rem; color: #6b7280; margin-top: 0.5rem;">
-    <i class="fas fa-chart-line"></i> This site uses cookies and third-party ads to improve your experience.
-</p>
-        </div>
-    </div>
-</footer>
 
-<!-- Footer Styles -->
-<style>
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 2rem; margin-bottom: 2rem; }
-    .footer-section h4 { color: white; margin-bottom: 1rem; font-size: 1rem; }
-    .footer-links { list-style: none; padding: 0; }
-    .footer-links li { margin-bottom: 0.5rem; }
-    .footer-links a { color: #9ca3af; text-decoration: none; font-size: 0.9rem; }
-    .footer-links a:hover { color: white; }
-    .footer-contact { list-style: none; padding: 0; }
-    .footer-contact li { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #9ca3af; }
-    .footer-contact i { width: 20px; color: #3b82f6; }
-    .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #374151; }
-    .footer-bottom p { color: #9ca3af; font-size: 0.85rem; }
-    @media (max-width: 768px) { 
-        .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; } 
-    }
-</style>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>SA Daily Portal 2026</h4>
+                    <p style="color: #9ca3af; font-size: 0.9rem;">Your trusted source for South African how-to guides — helping South Africans navigate SASSA, jobs, online money, and daily life.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/howto">All Guides</a></li>
+                        <li><a href="/sassa">SASSA Center</a></li>
+                        <li><a href="/trending-sa-april-2026">Trending News</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-user"></i> Developer: Nompumelelo Sibiya</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mpumalanga, South Africa</li>
+                        <li><i class="fas fa-envelope"></i> sibiyan4444@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +27 72 472 8166</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: #f59e0b; font-weight: 600; margin-bottom: 0.5rem; font-size: 1rem;">
+                    <i class="fas fa-exclamation-triangle"></i> ALWAYS VERIFY with official sources before acting on any information.
+                </p>
+                <p>&copy; 2026 SA Daily Portal. All rights reserved. An independent information portal not affiliated with any government department.</p>
+                <p style="font-size: 0.7rem; color: #6b7280; margin-top: 0.5rem;">
+                    <i class="fas fa-chart-line"></i> This site uses cookies and third-party ads to improve your experience.
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
